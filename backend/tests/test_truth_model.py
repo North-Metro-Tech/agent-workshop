@@ -199,7 +199,8 @@ def test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh(model, now, exp
     assert model.feed_quality('transport', now=now) == 'fresh'
     if now >= 45:
         assert model.summary('role-a', now=now)['availability'] == 'unknown'
-        assert model.summary('role-a', now=now)['coverage'] == 'unreachable' if now >= 120 else model.summary('role-a', now=now)['coverage'] == 'partial'
+        expected_coverage = 'unreachable' if now >= 120 else 'partial'
+        assert model.summary('role-a', now=now)['coverage'] == expected_coverage
 
 
 def test_A04_feed_freshness_cannot_refresh_individual_signal_or_reconciliation(model):

@@ -1,52 +1,54 @@
 # RESUME — Agent Workshop
 
-Initialised 20 Oct 2026 (AEDT) from the Core handoff at
-`/home/aaron/vitruvius/RESUME.md`, which this file now supersedes for project
-sessions. This repository is the project home: public, Apache-2.0,
-`github.com/vitruvius-nmt/agent-workshop`.
-
 ## Objective
 
-Build the Workshop: human–machine interface for LLM-driven actors using
-control-systems engineering (ISA-101 HMI, ISA-18.2-aligned alarms,
-reconciliation-gated availability). Hermes is adapter one. Release 1 is a
-read-only supervisory layer — Workshop observes, it never controls.
+Build the read-only Workshop supervisory layer. Card t_941ea707 is strictly the
+Phase 1 A01–A04 synthetic truth-model reducer slice, not a renderer, live
+integration, fleet change or full Phase 1 completion.
 
 ## Last decision
 
-Repository destination resolved by discovery and vault evidence (operations
-journal, 13 Oct 2026): the authorised namespace is the **North-Metro-Tech
-organisation** — the prior `vitruvius-nmt/...` CreateRepository failure was
-historical precedent for exactly this. Repository does not yet exist remotely;
-the host PAT lacks org-level `CreateRepository`, so creation is an owner
-action (org URL: https://github.com/organizations/North-Metro-Tech/repositories/new).
-Local repository is initialised with README, Apache-2.0 licence and this
-handoff; `origin` points at `North-Metro-Tech/agent-workshop` ready for the
-first push once created. Core packaged the project and filed the first
-implementation card on the `agent-workshop` Kanban board (`t_941ea707`,
-assignee `coder`, workspace `dir:/home/aaron/projects/agent-workshop`).
-Delivery roster remains editorial + coder; model routes locked to 18 Jan 2027
-review.
+Core corrected the authorised destination to the North-Metro-Tech organisation
+using the existing operations-journal precedent. The intended public,
+Apache-2.0 repository is North-Metro-Tech/agent-workshop; origin already points
+there. This supersedes the older vitruvius-nmt destination in the original card.
+Remote provisioning is an owner action, already recorded by Core; this worker
+has not changed credentials. Current gh and git lookups cannot find/access it.
+
+The feature branch feat/a01-a04-truth-reducer now implements concurrent identity
+and explicit correlation, coverage and reconciliation-gated availability,
+per-feed/per-field freshness, local alarm occurrence/incident semantics and a
+read facade with the native-write interlock fixed off.
+
+Real executable red baseline: 42 failures before implementation. Adversarial QA
+captured and fixed five failing false-authority/availability regressions plus
+one cross-role identity-conflict regression. Final full suite: 66 passed. Compilation and whitespace
+gates passed. Exact evidence and limitations are in evidence/REVIEW.md and its
+adjacent captured output files. No live source or native database was targeted.
+
+Claude Code was not installed in the execution environment, so the Lead used
+the documented direct-implementation exception. No dependencies were installed,
+and no model/provider/profile or credential configuration was changed. Delivery
+roster remains editorial + coder, with the existing model-route lock unchanged.
 
 ## Next action
 
-Coder executes `t_941ea707`: write failing Phase 1 fixture tests for A01–A04,
-then implement the reducer until they pass. Preserve actual failing and
-passing test output. Nothing else — no renderer, live integrations, fleet
-restructuring, novel work, profile restructuring or further spec pass.
+Owner provisions or grants existing-identity access to
+North-Metro-Tech/agent-workshop. Then push only feat/a01-a04-truth-reducer,
+open the PR against main, verify its remote head, and call kanban_request_review
+with PR URL, changed files and recorded test evidence. Do not merge or mark
+this card done before review. No further implementation scope is authorised.
 
 ## Open question
 
-None blocking. Remote creation is the single owner action (Todoist); local
-Phase 1 work is not blocked by it. Recorded, not yet reconciled: coder
-AGENTS.md describes an isolated profile git/gh identity, but the profile's
-live config reads `home_mode: host`; routing facts travel on the card.
+Remote provisioning/access is the remaining delivery blocker, not a local
+fixture blocker. No PR URL or remote CI evidence exists yet. Core's prior note
+about isolated-profile versus host-mode gh identity remains unresolved; no
+credential work is authorised on this card.
 
-## References
+## Coordination
 
-- Specification v1.1:
-  `/home/aaron/vitruvius/.hermes/plans/2026-10-20_000818-agent-workshop-technical-specification.md`
-- Owner direction:
-  `/mnt/ironwolf/obsidian/vault/agent-workshop-direction-2026-10-20.md`
-- Kanban board: `agent-workshop` (card `t_941ea707`)
-- Superseded handoff: `/home/aaron/vitruvius/RESUME.md`
+Board: agent-workshop, card t_941ea707, assignee coder. RESUME.md was a bootstrap
+collision hotspot: guarded writes preserved Core's namespace correction before
+this handoff update. Use the task card for private specification/owner-direction
+references rather than publishing those source documents into this repository.
