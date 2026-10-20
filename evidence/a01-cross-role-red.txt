@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_A01_cross_role_identity_conflict_blocks_both_roles ____________
+backend/tests/test_truth_edges.py:182: in test_A01_cross_role_identity_conflict_blocks_both_roles
+    assert model.summary('role-b', now=1)['availability'] == 'unknown'
+E   AssertionError: assert 'available' == 'unknown'
+E     
+E     - unknown
+E     + available
+=========================== short test summary info ============================
+FAILED backend/tests/test_truth_edges.py::test_A01_cross_role_identity_conflict_blocks_both_roles
+1 failed, 65 deselected in 0.05s
+
+PYTEST_EXIT_CODE=1

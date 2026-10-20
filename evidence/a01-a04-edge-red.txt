@@ -1,0 +1,46 @@
+..FFFFF............                                                      [100%]
+=================================== FAILURES ===================================
+________ test_A01_corrobating_report_does_not_replace_runtime_authority ________
+backend/tests/test_truth_edges.py:33: in test_A01_corrobating_report_does_not_replace_runtime_authority
+    assert model.executions[a].lifecycle.source == 'runtime'
+E   AssertionError: assert 'agent-report' == 'runtime'
+E     
+E     - runtime
+E     + agent-report
+______ test_A02_unsupported_terminal_mapping_never_establishes_available _______
+backend/tests/test_truth_edges.py:43: in test_A02_unsupported_terminal_mapping_never_establishes_available
+    assert model.summary('role-a', now=0)['availability'] == 'unknown'
+E   AssertionError: assert 'available' == 'unknown'
+E     
+E     - unknown
+E     + available
+_ test_A03_inferred_or_agent_reported_values_cannot_prove_available[admission-enabled] _
+backend/tests/test_truth_edges.py:54: in test_A03_inferred_or_agent_reported_values_cannot_prove_available
+    assert model.summary('role-a', now=0)['availability'] == 'unknown'
+E   AssertionError: assert 'available' == 'unknown'
+E     
+E     - unknown
+E     + available
+_ test_A03_inferred_or_agent_reported_values_cannot_prove_available[reachability-reachable] _
+backend/tests/test_truth_edges.py:54: in test_A03_inferred_or_agent_reported_values_cannot_prove_available
+    assert model.summary('role-a', now=0)['availability'] == 'unknown'
+E   AssertionError: assert 'available' == 'unknown'
+E     
+E     - unknown
+E     + available
+_ test_A03_inferred_or_agent_reported_values_cannot_prove_available[capacity-value2] _
+backend/tests/test_truth_edges.py:54: in test_A03_inferred_or_agent_reported_values_cannot_prove_available
+    assert model.summary('role-a', now=0)['availability'] == 'unknown'
+E   AssertionError: assert 'available' == 'unknown'
+E     
+E     - unknown
+E     + available
+=========================== short test summary info ============================
+FAILED backend/tests/test_truth_edges.py::test_A01_corrobating_report_does_not_replace_runtime_authority
+FAILED backend/tests/test_truth_edges.py::test_A02_unsupported_terminal_mapping_never_establishes_available
+FAILED backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[admission-enabled]
+FAILED backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[reachability-reachable]
+FAILED backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[capacity-value2]
+5 failed, 14 passed in 0.06s
+
+PYTEST_EXIT_CODE=1
