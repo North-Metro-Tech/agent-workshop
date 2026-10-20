@@ -26,7 +26,7 @@ class Role:
     complete: bool = False
     reconciled_at: float | None = None
     reconcile_feed: str | None = None
-    signals: dict[str, tuple[Observation, float]] = field(default_factory=dict)
+    signals: dict[str, tuple[Observation, float | None]] = field(default_factory=dict)
     present: set[ExecutionKey] = field(default_factory=set)
     disputed: set[ExecutionKey] = field(default_factory=set)
 
@@ -58,7 +58,7 @@ class Reducer:
     def feed_quality(self, feed: str, *, now: float) -> str:
         return self.feeds[feed].quality(now)
 
-    def _observation_quality(self, o: Observation, acquired_at: float, now: float) -> str:
+    def _observation_quality(self, o: Observation, acquired_at: float | None, now: float) -> str:
         # The field's own acquisition is essential: another role/field on the
         # SAME feed cannot revive old evidence by advancing the feed clock.
         if not o.supported:
@@ -83,18 +83,25 @@ class Reducer:
 
     def observe_execution(self, role: str, key: ExecutionKey, *, session: str,
                           parent: ExecutionKey | None, task: TaskKey | None,
-                          lifecycle: Observation, acquired_at: float,
-                          canonical: ExecutionKey | None = None) -> ExecutionKey:
+                          lifecycle: Observation, acquired_at: float | None,
+                          canonical: ExecutionKey | None = None,
+                          source_ordered: bool = False) -> ExecutionKey:
         if canonical is not None:
             raise ValueError('Correlation must be registered explicitly, not asserted by an observation')
         r = self.roles[role]
         original = key
         key = self.correlations.get(key, (key, ''))[0]
         previous = self.executions.get(key)
-        timestamp(acquired_at)
+        if acquired_at is not None:
+            timestamp(acquired_at)
         # Never replace a fact with an older acquisition from another authority.
         # Preserve conflicts for inspection instead of guessing an ordering.
-        self.acquire(lifecycle.feed, acquired_at)
+        # Historical records may arrive behind another execution on this feed.
+        # Keep each field's original capture time without rewinding the feed.
+        feed = self.feeds[lifecycle.feed]
+        if acquired_at is not None and (feed.last_acquired_at is None
+                                       or acquired_at >= feed.last_acquired_at):
+            self.acquire(lifecycle.feed, acquired_at)
         observation = deepcopy(lifecycle)
         if previous:
             previous.observations.append(observation)
@@ -112,7 +119,10 @@ class Reducer:
                 # remains attached to the other role.
                 r.disputed.add(key)
                 self.roles[previous.role].disputed.add(key)
-            elif acquired_at >= previous.acquired_at and not terminal and not cross_authority:
+            elif ((source_ordered or observation.mapped in TERMINAL or
+                   (acquired_at is not None and
+                    (previous.acquired_at is None or acquired_at >= previous.acquired_at)))
+                  and not terminal and not cross_authority):
                 previous.lifecycle, previous.acquired_at = observation, acquired_at
         else:
             if not session:

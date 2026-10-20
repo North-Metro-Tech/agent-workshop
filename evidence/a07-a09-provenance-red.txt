@@ -1,0 +1,44 @@
+....................FFFF.......                                          [100%]
+=================================== FAILURES ===================================
+____ test_A07_standard_genai_span_without_domain_identity_is_corroboration _____
+backend/tests/test_ingest_edges.py:105: in test_A07_standard_genai_span_without_domain_identity_is_corroboration
+    result = ingest.otlp('traces', wire(p), context=context())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/workshop/ingest.py:456: in otlp
+    record = self._otlp_record(signal, item, safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/workshop/ingest.py:518: in _otlp_record
+    domain = self._domain(domain)
+             ^^^^^^^^^^^^^^^^^^^^
+backend/workshop/ingest.py:368: in _domain
+    _text(data.get(field), field)
+backend/workshop/ingest.py:43: in _text
+    raise ValueError(f'Invalid {label}')
+E   ValueError: Invalid session_id
+_____ test_A07_log_retains_occurrence_and_source_observed_times_separately _____
+backend/tests/test_ingest_edges.py:116: in test_A07_log_retains_occurrence_and_source_observed_times_separately
+    assert ingest.records[0]['source_observed_at'] == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'source_observed_at'
+____________ test_A09_unknown_order_does_not_hide_terminal_fact[ce] ____________
+backend/tests/test_ingest_edges.py:135: in test_A09_unknown_order_does_not_hide_terminal_fact
+    assert record(ingest).lifecycle.mapped == 'failed'
+E   AssertionError: assert 'active' == 'failed'
+E     
+E     - failed
+E     + active
+___________ test_A09_unknown_order_does_not_hide_terminal_fact[logs] ___________
+backend/tests/test_ingest_edges.py:135: in test_A09_unknown_order_does_not_hide_terminal_fact
+    assert record(ingest).lifecycle.mapped == 'failed'
+E   AssertionError: assert 'active' == 'failed'
+E     
+E     - failed
+E     + active
+=========================== short test summary info ============================
+FAILED backend/tests/test_ingest_edges.py::test_A07_standard_genai_span_without_domain_identity_is_corroboration
+FAILED backend/tests/test_ingest_edges.py::test_A07_log_retains_occurrence_and_source_observed_times_separately
+FAILED backend/tests/test_ingest_edges.py::test_A09_unknown_order_does_not_hide_terminal_fact[ce]
+FAILED backend/tests/test_ingest_edges.py::test_A09_unknown_order_does_not_hide_terminal_fact[logs]
+4 failed, 27 passed in 0.12s
+
+PYTEST_EXIT_CODE=1

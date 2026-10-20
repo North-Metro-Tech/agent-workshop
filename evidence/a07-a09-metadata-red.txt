@@ -1,0 +1,16 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_____ test_A07_scope_metadata_cannot_retain_arbitrary_nested_content[name] _____
+backend/tests/test_ingest_edges.py:163: in test_A07_scope_metadata_cannot_retain_arbitrary_nested_content
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+___ test_A07_scope_metadata_cannot_retain_arbitrary_nested_content[version] ____
+backend/tests/test_ingest_edges.py:163: in test_A07_scope_metadata_cannot_retain_arbitrary_nested_content
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED backend/tests/test_ingest_edges.py::test_A07_scope_metadata_cannot_retain_arbitrary_nested_content[name]
+FAILED backend/tests/test_ingest_edges.py::test_A07_scope_metadata_cannot_retain_arbitrary_nested_content[version]
+2 failed, 31 deselected in 0.05s
+
+PYTEST_EXIT_CODE=1

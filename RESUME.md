@@ -2,64 +2,58 @@
 
 ## Objective
 
-Build the read-only Workshop supervisory layer. Card t_941ea707 is strictly the
-Phase 1 A01–A04 synthetic truth-model reducer slice, not a renderer, live
-integration, fleet change or full Phase 1 completion.
+Build the read-only Workshop supervisory layer. Current card t_9466d0f8 is the
+Phase 1 A07/A09 function-level CloudEvents + OTLP observation-mapping slice on
+the merged A01–A04 reducer (PR #1, base 9f8e876). It is not full Phase 1,
+a renderer, collector, live integration or HTTP service.
 
 ## Last decision
 
-Core corrected the authorised destination to the North-Metro-Tech organisation
-using the existing operations-journal precedent. The intended public,
-Apache-2.0 repository is North-Metro-Tech/agent-workshop; origin already points
-there. This supersedes the older vitruvius-nmt destination in the original card.
-Remote provisioning is an owner action, already recorded by Core; this worker
-has not changed credentials. Current gh and git lookups cannot find/access it.
+Authorised repository is North-Metro-Tech/agent-workshop, public Apache-2.0.
+The old provisioning/transfer blocker is resolved: PR #1 was independently
+reviewed and merged. This slice is on feat/a07-a09-wire-ingest; no main push.
 
-The feature branch feat/a01-a04-truth-reducer now implements concurrent identity
-and explicit correlation, coverage and reconciliation-gated availability,
-per-feed/per-field freshness, local alarm occurrence/incident semantics and a
-read facade with the native-write interlock fixed off.
+Implemented bounded transactional CE/OTLP JSON ingestion, stable identity and
+changed-body protection, native-revision/acquisition ordering, retained terminal
+and conflict invariants, privacy allowlists and trusted acquisition context.
+Unknown acquisition is None, never receipt-derived freshness. Collector restart
+invalidates source live evidence and forces reconciliation; no ordinary event
+can clear that latch. Snapshot/historian recovery belongs to the next slice.
 
-Real executable red baseline: 42 failures before implementation. Adversarial QA
-captured and fixed five failing false-authority/availability regressions plus
-one cross-role identity-conflict regression. Final full suite: 66 passed. Compilation and whitespace
-gates passed. Exact evidence and limitations are in evidence/REVIEW.md and its
-adjacent captured output files. No live source or native database was targeted.
+Signed executable red baseline 7436aae: 83 failures before implementation.
+Adversarial assertion-red captures: 17 failures, 4 provenance failures and 2
+scope-metadata failures, all fixed. Final suite: 182 passed, including the
+existing 66. Python 3.11 and 3.14 compilation and whitespace checks passed.
+Exact captured outputs and
+limitations: evidence/INGEST_REVIEW.md and adjacent a07-a09-*.txt files.
 
-Claude Code was not installed in the execution environment, so the Lead used
-the documented direct-implementation exception. No dependencies were installed,
-and no model/provider/profile or credential configuration was changed. Delivery
-roster remains editorial + coder, with the existing model-route lock unchanged.
+No dependencies were installed; Claude Code remains unavailable, so the Lead
+used the documented direct-implementation exception. No provider/model/profile,
+credential, native database or runtime configuration was changed.
 
 ## Next action
 
-Owner provisions or grants existing-identity access to
-North-Metro-Tech/agent-workshop. Then push only feat/a01-a04-truth-reducer,
-open the PR against main, verify its remote head, and call kanban_request_review
-with PR URL, changed files and recorded test evidence. Do not merge or mark
-this card done before review. No further implementation scope is authorised.
+Core independently reviews the feature PR against main; the exact publication
+URL/head and evidence are recorded on this card's lifecycle handoff after
+read-back verification. Core reviews and merges (pre-authorised by the owner);
+implementer must not
+self-approve, enable auto-merge or mark the engineering change finally accepted.
+After review, continue only with the separately authorised Phase 1 cards.
+The task graph now includes the downstream MVP QA/release gate, so completion
+of this implementation phase releases existing children; it is not independent
+approval of PR #2. Downstream work must use the verified parent PR head and
+coordinate Core's merge, not assume unmerged main contains this slice.
 
 ## Open question
 
-Remote provisioning/access is the remaining delivery blocker, not a local
-fixture blocker. No PR URL or remote CI evidence exists yet. Core's prior note
-about isolated-profile versus host-mode gh identity remains unresolved; no
-credential work is authorised on this card.
+The supplied GenAI semconv revision 547934afa90a34298441caf80c43b27255c3a292
+returned upstream HTTP 422. Kept verbatim in docs/standards.lock; Core should
+confirm its source. No substituted pin or upstream-conformance claim is made.
+This no-transport slice maps standard OTLP JSON; binary HTTP/protobuf binding
+and SDK compatibility are explicitly not implemented or claimed here.
 
 ## Coordination
 
-Board: agent-workshop, card t_941ea707, assignee coder. RESUME.md was a bootstrap
-collision hotspot: guarded writes preserved Core's namespace correction before
-this handoff update. Use the task card for private specification/owner-direction
-references rather than publishing those source documents into this repository.
-
-## Core addendum — 20 Oct 2026, evening (post-handoff)
-
-Owner has created the repository and decided its final home: Wahzammo/agent-workshop
-currently exists (public, empty) and is being **transferred into the
-North-Metro-Tech organisation** per owner decision — the namespace where the
-bot identity already holds push precedent. Origin is already pointed at the
-post-transfer destination. When the transfer lands: Core pushes `main` and
-`feat/a01-a04-truth-reducer`, opens the PR against `main`, then unblocks card
-t_941ea707 so the coder's declared next action (remote head verification +
-kanban_request_review) applies unchanged.
+Board card t_9466d0f8, coder. RESUME.md remains a shared Core/coder collision
+hotspot: serialize handoff edits. Private specification and owner-direction
+source documents are referenced only on the task card, not published here.
