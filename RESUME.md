@@ -14,12 +14,19 @@ read-only supervisory layer — Workshop observes, it never controls.
 
 ## Last decision
 
-Repository destination resolved by discovery: no GitHub organisations exist
-under the authenticated host account; namespace is `vitruvius-nmt`. Repository
-created public on day one per owner direction. Core packaged the project and
-filed the first implementation card on the `agent-workshop` Kanban board
-(`t_941ea707`, assignee `coder`). Delivery roster remains editorial + coder;
-model routes locked to 18 Jan 2027 review.
+Repository destination resolved by discovery and vault evidence (operations
+journal, 13 Oct 2026): the authorised namespace is the **North-Metro-Tech
+organisation** — the prior `vitruvius-nmt/...` CreateRepository failure was
+historical precedent for exactly this. Repository does not yet exist remotely;
+the host PAT lacks org-level `CreateRepository`, so creation is an owner
+action (org URL: https://github.com/organizations/North-Metro-Tech/repositories/new).
+Local repository is initialised with README, Apache-2.0 licence and this
+handoff; `origin` points at `North-Metro-Tech/agent-workshop` ready for the
+first push once created. Core packaged the project and filed the first
+implementation card on the `agent-workshop` Kanban board (`t_941ea707`,
+assignee `coder`, workspace `dir:/home/aaron/projects/agent-workshop`).
+Delivery roster remains editorial + coder; model routes locked to 18 Jan 2027
+review.
 
 ## Next action
 
@@ -30,10 +37,10 @@ restructuring, novel work, profile restructuring or further spec pass.
 
 ## Open question
 
-None blocking. Note: coder AGENTS.md describes an isolated profile git/gh
-identity, but the profile's live config reads `home_mode: host`; routing facts
-travel on the card, and the identity discrepancy is recorded, not yet
-reconciled.
+None blocking. Remote creation is the single owner action (Todoist); local
+Phase 1 work is not blocked by it. Recorded, not yet reconciled: coder
+AGENTS.md describes an isolated profile git/gh identity, but the profile's
+live config reads `home_mode: host`; routing facts travel on the card.
 
 ## References
 
