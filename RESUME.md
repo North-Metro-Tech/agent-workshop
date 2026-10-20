@@ -52,3 +52,14 @@ Board: agent-workshop, card t_941ea707, assignee coder. RESUME.md was a bootstra
 collision hotspot: guarded writes preserved Core's namespace correction before
 this handoff update. Use the task card for private specification/owner-direction
 references rather than publishing those source documents into this repository.
+
+## Core addendum — 20 Oct 2026, evening (post-handoff)
+
+Owner has created the repository and decided its final home: Wahzammo/agent-workshop
+currently exists (public, empty) and is being **transferred into the
+North-Metro-Tech organisation** per owner decision — the namespace where the
+bot identity already holds push precedent. Origin is already pointed at the
+post-transfer destination. When the transfer lands: Core pushes `main` and
+`feat/a01-a04-truth-reducer`, opens the PR against `main`, then unblocks card
+t_941ea707 so the coder's declared next action (remote head verification +
+kanban_request_review) applies unchanged.
