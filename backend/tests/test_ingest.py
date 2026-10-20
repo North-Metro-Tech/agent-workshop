@@ -83,10 +83,12 @@ def test_A07_duplicate_is_noop_not_a_freshness_heartbeat(ingest, protocol):
 @pytest.mark.parametrize('protocol', ['ce', 'logs'])
 def test_A07_changed_body_reuse_rejected_without_mutation(ingest, protocol):
     submit(ingest, protocol)
-    before = deepcopy(ingest.reducer.__dict__)
+    before = deepcopy((ingest.reducer.roles, ingest.reducer.feeds,
+                       ingest.reducer.executions, ingest.reducer.alarms.__dict__))
     with pytest.raises(ValueError, match='identity'):
         submit(ingest, protocol, state='failed', ctx=context(20))
-    assert ingest.reducer.__dict__ == before
+    assert (ingest.reducer.roles, ingest.reducer.feeds,
+            ingest.reducer.executions, ingest.reducer.alarms.__dict__) == before
     assert len(ingest.records) == 1
 
 
@@ -215,7 +217,8 @@ def test_A07_domain_schema_rejects_malformed_or_unapproved_fields(ingest, change
 
 @pytest.mark.parametrize('payload', [b'{', b'null', b'42', b'{}\xff',
     b'{"id":"a","id":"b"}', b'{"x":NaN}', b'[]' * 50000,
-    b'[' * 1000 + b']' * 1000])
+    b'[' * 1000 + b']' * 1000],
+    ids=['truncated', 'null', 'scalar', 'utf8', 'duplicate-key', 'nan', 'many-values', 'deep'])
 def test_A07_malformed_json_rejected(ingest, payload):
     with pytest.raises(ValueError):
         ingest.cloudevents(payload, context=context())

@@ -1,0 +1,28 @@
+{
+  "scope": "Function-level A07/A09 ingress mappings only; not the whole Phase 0 lock",
+  "mapping": "workshop-ingest-v1",
+  "cloudevents": {
+    "specification": "1.0.2",
+    "specversion": "1.0",
+    "repository": "https://github.com/cloudevents/spec",
+    "commit": "fc1f6f31f5f011a72183f1bcea20c987cb683ade",
+    "verification": "GitHub tag ref v1.0.2 resolved to this commit"
+  },
+  "otlp": {
+    "definitions_reference": "1.3.2",
+    "repository": "https://github.com/open-telemetry/opentelemetry-proto",
+    "commit": "40b3c1b746767cbc13c2e39da3eaf1a23e54ffdd",
+    "encoding_in_this_slice": "OTLP JSON export request bytes (lowerCamelCase, hex trace/span IDs, integer enums)",
+    "verification": "GitHub tag v1.3.2 resolved; trace.proto and docs/specification.md read at commit",
+    "protobuf_sdk": null,
+    "binary_codec": "Not implemented or claimed; future HTTP/protobuf binding must use maintained definitions/SDK and pin its approved dependency"
+  },
+  "genai_semantic_conventions": {
+    "specified_revision": "547934afa90a34298441caf80c43b27255c3a292",
+    "stability_in_supplied_spec": "Development",
+    "verification": "Unresolved: GitHub open-telemetry/semantic-conventions commit endpoint returned HTTP 422. Kept exact supplied identifier; no substitute or upstream-conformance claim.",
+    "implementation": "Explicit attribute subset and synthetic fixtures documented in ingest.md; named attributes from the supplied specification only"
+  },
+  "span_merge_policy": "immutable-completed-span-v1",
+  "dependencies_added": []
+}

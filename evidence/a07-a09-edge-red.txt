@@ -1,0 +1,126 @@
+FFF..FFFFFFFFFFFFFF.                                                     [100%]
+=================================== FAILURES ===================================
+____ test_A09_duplicate_after_restart_still_invalidates_old_live_state[ce] _____
+backend/tests/test_ingest_edges.py:14: in test_A09_duplicate_after_restart_still_invalidates_old_live_state
+    assert ingest.reconcile_required
+E   assert False
+E    +  where False = <workshop.ingest.Ingest object at 0x79bf41791790>.reconcile_required
+___ test_A09_duplicate_after_restart_still_invalidates_old_live_state[logs] ____
+backend/tests/test_ingest_edges.py:14: in test_A09_duplicate_after_restart_still_invalidates_old_live_state
+    assert ingest.reconcile_required
+E   assert False
+E    +  where False = <workshop.ingest.Ingest object at 0x79bf415b3b90>.reconcile_required
+__________ test_A09_snapshot_represents_unknown_age_without_crashing ___________
+backend/tests/test_ingest_edges.py:21: in test_A09_snapshot_represents_unknown_age_without_crashing
+    e = LocalAPI(ingest.reducer).snapshot(now=100)['executions'][0]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/workshop/api.py:23: in snapshot
+    'executions': [{**deepcopy(asdict(e)),
+backend/workshop/api.py:25: in <listcomp>
+    'acquisition_age': max(0, now - e.acquired_at)}
+                              ^^^^^^^^^^^^^^^^^^^
+E   TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+______ test_A07_newer_native_revision_is_authority_not_capture_clock[ce] _______
+backend/tests/test_ingest_edges.py:38: in test_A07_newer_native_revision_is_authority_not_capture_clock
+    assert record(ingest).lifecycle.mapped == 'stopping'
+E   AssertionError: assert 'active' == 'stopping'
+E     
+E     - stopping
+E     + active
+_____ test_A07_newer_native_revision_is_authority_not_capture_clock[logs] ______
+backend/tests/test_ingest_edges.py:38: in test_A07_newer_native_revision_is_authority_not_capture_clock
+    assert record(ingest).lifecycle.mapped == 'stopping'
+E   AssertionError: assert 'active' == 'stopping'
+E     
+E     - stopping
+E     + active
+__________ test_A07_open_span_does_not_poison_completed_span_identity __________
+backend/tests/test_ingest_edges.py:45: in test_A07_open_span_does_not_poison_completed_span_identity
+    ingest.otlp('traces', wire(traces()), context=context(20))
+backend/workshop/ingest.py:445: in otlp
+    return self._transaction(records, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/workshop/ingest.py:295: in _transaction
+    staged._apply(record, context, result)
+backend/workshop/ingest.py:305: in _apply
+    raise ValueError('Changed content for existing observation identity')
+E   ValueError: Changed content for existing observation identity
+_______ test_A07_malformed_content_type_rejected_as_validation_error[7] ________
+backend/tests/test_ingest_edges.py:54: in test_A07_malformed_content_type_rejected_as_validation_error
+    ingest.cloudevents(wire(e), context=context())
+backend/workshop/ingest.py:394: in cloudevents
+    if event.get('datacontenttype', 'application/json').lower() != 'application/json':
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'int' object has no attribute 'lower'
+______ test_A07_malformed_content_type_rejected_as_validation_error[None] ______
+backend/tests/test_ingest_edges.py:54: in test_A07_malformed_content_type_rejected_as_validation_error
+    ingest.cloudevents(wire(e), context=context())
+backend/workshop/ingest.py:394: in cloudevents
+    if event.get('datacontenttype', 'application/json').lower() != 'application/json':
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'lower'
+_ test_A07_malformed_content_type_rejected_as_validation_error[content_type2] __
+backend/tests/test_ingest_edges.py:54: in test_A07_malformed_content_type_rejected_as_validation_error
+    ingest.cloudevents(wire(e), context=context())
+backend/workshop/ingest.py:394: in cloudevents
+    if event.get('datacontenttype', 'application/json').lower() != 'application/json':
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'list' object has no attribute 'lower'
+_ test_A07_malformed_content_type_rejected_as_validation_error[content_type3] __
+backend/tests/test_ingest_edges.py:54: in test_A07_malformed_content_type_rejected_as_validation_error
+    ingest.cloudevents(wire(e), context=context())
+backend/workshop/ingest.py:394: in cloudevents
+    if event.get('datacontenttype', 'application/json').lower() != 'application/json':
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'dict' object has no attribute 'lower'
+_________________ test_A07_json_content_type_parameters_valid __________________
+backend/tests/test_ingest_edges.py:60: in test_A07_json_content_type_parameters_valid
+    ingest.cloudevents(wire(e), context=context())
+backend/workshop/ingest.py:395: in cloudevents
+    raise ValueError('Only application/json domain data supported')
+E   ValueError: Only application/json domain data supported
+_________ test_A07_malformed_ce_context_extension_rejected[extension0] _________
+backend/tests/test_ingest_edges.py:68: in test_A07_malformed_ce_context_extension_rejected
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_________ test_A07_malformed_ce_context_extension_rejected[extension1] _________
+backend/tests/test_ingest_edges.py:68: in test_A07_malformed_ce_context_extension_rejected
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_________ test_A07_malformed_ce_context_extension_rejected[extension2] _________
+backend/tests/test_ingest_edges.py:68: in test_A07_malformed_ce_context_extension_rejected
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_______________ test_A07_malformed_otlp_anyvalue_rejected[body] ________________
+backend/tests/test_ingest_edges.py:80: in test_A07_malformed_otlp_anyvalue_rejected
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+_____________ test_A07_malformed_otlp_anyvalue_rejected[attribute] _____________
+backend/tests/test_ingest_edges.py:80: in test_A07_malformed_otlp_anyvalue_rejected
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+____________ test_A07_empty_otlp_request_validates_trusted_context _____________
+backend/tests/test_ingest_edges.py:85: in test_A07_empty_otlp_request_validates_trusted_context
+    with pytest.raises(ValueError):
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED backend/tests/test_ingest_edges.py::test_A09_duplicate_after_restart_still_invalidates_old_live_state[ce]
+FAILED backend/tests/test_ingest_edges.py::test_A09_duplicate_after_restart_still_invalidates_old_live_state[logs]
+FAILED backend/tests/test_ingest_edges.py::test_A09_snapshot_represents_unknown_age_without_crashing
+FAILED backend/tests/test_ingest_edges.py::test_A07_newer_native_revision_is_authority_not_capture_clock[ce]
+FAILED backend/tests/test_ingest_edges.py::test_A07_newer_native_revision_is_authority_not_capture_clock[logs]
+FAILED backend/tests/test_ingest_edges.py::test_A07_open_span_does_not_poison_completed_span_identity
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_content_type_rejected_as_validation_error[7]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_content_type_rejected_as_validation_error[None]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_content_type_rejected_as_validation_error[content_type2]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_content_type_rejected_as_validation_error[content_type3]
+FAILED backend/tests/test_ingest_edges.py::test_A07_json_content_type_parameters_valid
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_ce_context_extension_rejected[extension0]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_ce_context_extension_rejected[extension1]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_ce_context_extension_rejected[extension2]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_otlp_anyvalue_rejected[body]
+FAILED backend/tests/test_ingest_edges.py::test_A07_malformed_otlp_anyvalue_rejected[attribute]
+FAILED backend/tests/test_ingest_edges.py::test_A07_empty_otlp_request_validates_trusted_context
+17 failed, 3 passed in 0.15s
+
+PYTEST_EXIT_CODE=1

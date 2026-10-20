@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 """Domain contracts, not a replacement telemetry wire envelope.
 
-Times are acquisition-clock seconds supplied by the caller. This slice has no
-transport, historian, live adapter, or globally comparable source revisions.
+Acquisition times are caller-supplied acquisition-clock seconds, or None when
+not known. Observation times are source occurrence times and are never used
+as acquisition clocks. There is no I/O or globally comparable source revision.
 """
 from dataclasses import dataclass, field
 from typing import Any
@@ -35,12 +36,13 @@ class Observation:
     mapping_version: str
     source: str
     feed: str
-    observed_at: float
+    observed_at: float | None
     supported: bool = True
     evidence_class: str = 'runtime_observed'
 
     def __post_init__(self):
-        timestamp(self.observed_at)
+        if self.observed_at is not None:
+            timestamp(self.observed_at)
         if not all((self.mapping_version, self.source, self.feed)):
             raise ValueError('Observations require mapping and source provenance')
 
@@ -95,7 +97,7 @@ class Execution:
     parent: ExecutionKey | None
     task: TaskKey | None
     lifecycle: Observation
-    acquired_at: float
+    acquired_at: float | None
     observations: list[Observation] = field(default_factory=list)
     discrepancies: list[dict] = field(default_factory=list)
 

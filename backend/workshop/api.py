@@ -22,7 +22,8 @@ class LocalAPI:
             'roles': [self._reducer.summary(role, now=now) for role in self._reducer.roles],
             'executions': [{**deepcopy(asdict(e)),
                 'lifecycle_quality': self._reducer._observation_quality(e.lifecycle, e.acquired_at, now),
-                'acquisition_age': max(0, now - e.acquired_at)}
+                'acquisition_age': (max(0, now - e.acquired_at)
+                                    if e.acquired_at is not None else None)}
                 for e in self._reducer.executions.values()],
             'ambiguities': [asdict(a) for a in self._reducer.ambiguities],
             'correlations': [{'alias': asdict(alias), 'canonical': asdict(target),

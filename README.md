@@ -13,18 +13,21 @@ it does not control them.
 
 ## Status and scope
 
-The first local implementation slice covers synthetic A01–A04 fixtures only.
+The local implementation covers synthetic A01–A04 plus A07/A09 fixtures.
 It provides an in-memory reducer, explicit identity correlations, coverage and
-availability gating, per-feed freshness, Workshop-local alarms and a local
-read facade. It is not a running monitoring service or operational acceptance.
+availability gating, per-feed freshness, Workshop-local alarms, a local read
+facade, and bounded function-level CloudEvents/OTLP JSON observation mapping.
+It is not a running monitoring service or operational acceptance.
 
 There is no collector, native database access, network listener, command
 executor, renderer or runtime-write route. Local alarm acknowledgement changes
 only Workshop's in-memory records. The controller position cannot enable writes.
 No new dependencies were installed for this slice.
 
-The full Phase 1 ingress, historian, recovery, A07–A10 coverage and runnable demo
-remain outside this card. No third-party renderer code has been adopted.
+The binary OTLP/HTTP binding, historian, snapshot/restart recovery, A08/A10
+coverage and runnable demo remain later Phase 1 work. No third-party renderer
+code has been adopted. See `docs/ingest.md` for the exact supported wire subset,
+trusted acquisition context and conservative source-restart reconciliation latch.
 
 ## Development
 
@@ -34,8 +37,10 @@ Use an existing Python 3.11+ environment with pytest available. From the root:
     python -m compileall -q backend
     git diff --check
 
-Verified with Python 3.11.15 and pytest 9.1.1. See `evidence/REVIEW.md` for real
-red/green output, boundaries, and review attention areas.
+Verified with Python 3.11.15 and pytest 9.1.1: 182 passing synthetic cases.
+Compilation also checked with Python 3.14.7. See `evidence/REVIEW.md` for the
+original reducer evidence and `evidence/INGEST_REVIEW.md` for this ingress
+slice's real red/green output, boundaries, and review attention areas.
 
 `backend/workshop/api.py` is an in-process facade, not an HTTP server. Its
 `authorized` flag must come from a trusted local caller; it is not a substitute
