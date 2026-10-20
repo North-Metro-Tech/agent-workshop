@@ -1,0 +1,3 @@
+# Preserve byte-for-byte pytest assertion captures, including its "E     " lines.
+# This exception applies only to red stdout/stderr artifacts, never source code.
+evidence/*-red.txt -whitespace

@@ -54,6 +54,10 @@ avoids an unnecessary dependency install.
    Ingress-only independent command: `116 passed in 0.12s`, exit 0.
 7. `python -m compileall -q backend` executed successfully with both Python
    3.11.15 and 3.14.7. `git diff --check` passed.
+   Full PR-base check also passed: `git diff origin/main...HEAD --check`.
+   `.gitattributes` disables whitespace lint only for raw red captures, whose
+   pytest assertion output includes trailing spaces; source code keeps normal
+   whitespace checks. No captured evidence was rewritten to conceal whitespace.
 
 All evidence is actual captured output, not generated/reconstructed results.
 The PYTEST_EXIT_CODE footer captures pytest's pipeline status. The initial
@@ -99,5 +103,5 @@ this card. No auto-merge has been enabled by the implementer.
 
 Branch: `feat/a07-a09-wire-ingest`, based on merged PR #1 at `9f8e876`.
 Coordination hotspot: `RESUME.md` — shared Core/coder handoff; updates serialized.
-The exact PR URL and head SHA are supplied on the task's review transition after
+The exact PR URL and head SHA are supplied on the task's lifecycle handoff after
 publication and read-back verification, rather than guessed here.

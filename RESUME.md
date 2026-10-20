@@ -34,11 +34,15 @@ credential, native database or runtime configuration was changed.
 ## Next action
 
 Core independently reviews the feature PR against main; the exact publication
-URL/head and evidence are recorded on this card's review transition after
+URL/head and evidence are recorded on this card's lifecycle handoff after
 read-back verification. Core reviews and merges (pre-authorised by the owner);
 implementer must not
 self-approve, enable auto-merge or mark the engineering change finally accepted.
 After review, continue only with the separately authorised Phase 1 cards.
+The task graph now includes the downstream MVP QA/release gate, so completion
+of this implementation phase releases existing children; it is not independent
+approval of PR #2. Downstream work must use the verified parent PR head and
+coordinate Core's merge, not assume unmerged main contains this slice.
 
 ## Open question
 
