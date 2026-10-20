@@ -1,0 +1,47 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                               [100%]
+=========================== short test summary info ============================
+FAILED backend/tests/test_truth_model.py::test_A01_concurrent_executions_preserve_identity
+FAILED backend/tests/test_truth_model.py::test_A01_explicit_multisource_mapping_deduplicates
+FAILED backend/tests/test_truth_model.py::test_A01_similarity_never_merges_and_ambiguity_visible
+FAILED backend/tests/test_truth_model.py::test_A01_conflicting_explicit_identity_is_not_silently_overwritten
+FAILED backend/tests/test_truth_model.py::test_A02_configured_unobserved_never_available
+FAILED backend/tests/test_truth_model.py::test_A02_partial_scope_explicit[False-scope0]
+FAILED backend/tests/test_truth_model.py::test_A02_partial_scope_explicit[True-scope1]
+FAILED backend/tests/test_truth_model.py::test_A02_unknown_and_unsupported_values_preserved[new-native-value-None-True-unknown]
+FAILED backend/tests/test_truth_model.py::test_A02_unknown_and_unsupported_values_preserved[open-None-False-unsupported]
+FAILED backend/tests/test_truth_model.py::test_A02_inventory_incomplete_prevents_global_availability
+FAILED backend/tests/test_truth_model.py::test_A03_available_only_with_all_fresh_evidence_idle_never_alarms
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[admission-held]
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[reachability-unknown]
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped2]
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped3]
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped4]
+FAILED backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped5]
+FAILED backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[admission]
+FAILED backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[reachability]
+FAILED backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[capacity]
+FAILED backend/tests/test_truth_model.py::test_A03_active_execution_prevents_available_and_preserves_concurrency
+FAILED backend/tests/test_truth_model.py::test_A03_unknown_execution_cannot_mean_zero_active
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/dispatch]
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/cancel]
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/steer]
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/approve]
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/admission]
+FAILED backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/execute]
+FAILED backend/tests/test_truth_model.py::test_A03_ack_is_local_authorized_only
+FAILED backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[44-fresh]
+FAILED backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[45-stale]
+FAILED backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[119-stale]
+FAILED backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[120-disconnected]
+FAILED backend/tests/test_truth_model.py::test_A04_feed_freshness_cannot_refresh_individual_signal_or_reconciliation
+FAILED backend/tests/test_truth_model.py::test_A04_metadata_feed_has_its_own_policy
+FAILED backend/tests/test_truth_model.py::test_A04_freshness_loss_not_offline_and_not_out_of_service
+FAILED backend/tests/test_truth_model.py::test_A04_alarm_ack_clear_and_clear_before_ack
+FAILED backend/tests/test_truth_model.py::test_A04_grouping_preserves_children_first_out_and_uncertainty
+FAILED backend/tests/test_truth_model.py::test_A04_suppression_shelving_and_maintenance_preserve_underlying_condition
+FAILED backend/tests/test_truth_model.py::test_A04_suppression_does_not_erase_clear_before_ack
+FAILED backend/tests/test_truth_model.py::test_A04_on_off_delays_do_not_hide_signal_quality
+FAILED backend/tests/test_truth_model.py::test_A04_unrationalised_alarm_and_unaudited_suppression_rejected
+42 failed in 0.05s
+
+PYTEST_EXIT_CODE=1
