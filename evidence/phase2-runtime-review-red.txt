@@ -1,0 +1,98 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_live_proof_requires_current_attempts_not_historical_inventory ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-53/test_live_proof_requires_curre0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-53/test_live_proof_requires_curre0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d78262347d0>
+capsys = <_pytest.capture.CaptureFixture object at 0x7d782620c3d0>
+
+    def test_live_proof_requires_current_attempts_not_historical_inventory(native, tmp_path, monkeypatch, capsys):
+        monkeypatch.syspath_prepend(str(Path(__file__).parents[2] / 'scripts'))
+        import observe_runtime
+        monkeypatch.setattr(observe_runtime, 'ROOT', tmp_path)
+        monkeypatch.setattr(observe_runtime, 'approved_scope', lambda: collector(native).scope)
+        monkeypatch.setattr(sys, 'argv', ['observe_runtime.py', '--approved-local'])
+        observe_runtime.main()
+        capsys.readouterr()
+        change(native, 'DELETE FROM task_runs')
+>       with pytest.raises(RuntimeError, match='current.*attempt'):
+E       Failed: DID NOT RAISE RuntimeError
+
+backend/tests/test_runtime_entrypoint.py:20: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "historian": {
+    "binding_class": "source_record",
+    "correlated_attempts": 1,
+    "observations_accepted": 0,
+    "reconcile_required": true,
+    "reopened": true,
+    "source_cursor": 2,
+    "startup_live_freshness_invalidated": true,
+    "task_links": 1
+  },
+  "limitations": [
+    "Actual approved Kanban attempts; native facts are source_record, not runtime lifecycle proof.",
+    "Exact matching process incarnation only corroborates process liveness; no tool/session/progress inference.",
+    "Native tables and later proc samples have no shared atomic runtime watermark; no complete recovery claim.",
+    "Collector stream cursor is historian-owned monotonic input, NOT the diagnostic board event cursor.",
+    "Main DB/schema invariant excludes WAL/SHM reader coordination; native writers were not stopped.",
+    "One-shot observer naturally stops. Uninstall/schedule invariants use isolated deployment fixtures only.",
+    "Restore re-establishes observation, never runtime availability from disk; ordinary events do not clear reconciliation.",
+    "No renderer, outbox, daemon, hooks, schedule access, control, full Phase-2 or MVP acceptance."
+  ],
+  "native_complete": true,
+  "native_event_cursor": 1,
+  "native_fence": {
+    "after": {
+      "main_sha256": "fede86e146c1ae5cc446bdf7262844a1b6f8b5a5295fd3cad4c1701479800758",
+      "schema_sha256": "7a2a598c25cebac88a4c859e8532d9da24605154c155a77a8c37424e2ceea0bc"
+    },
+    "before": {
+      "main_sha256": "fede86e146c1ae5cc446bdf7262844a1b6f8b5a5295fd3cad4c1701479800758",
+      "schema_sha256": "7a2a598c25cebac88a4c859e8532d9da24605154c155a77a8c37424e2ceea0bc"
+    },
+    "unchanged": true
+  },
+  "native_write_enabled": false,
+  "observed_lifecycle": {},
+  "observed_processes": {},
+  "observed_task_stations": {},
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scope": {
+    "board": "synthetic-board",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "synthetic-instance"
+  }
+}
+________ test_A08_source_identity_survives_observer_and_service_restart ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-53/test_A08_source_identity_survi0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-53/test_A08_source_identity_survi0')
+
+    def test_A08_source_identity_survives_observer_and_service_restart(native, tmp_path):
+        observer, state = configured(native, probe=sample)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        publish(observer, store)
+        store.close()
+        old = native.with_suffix('.old')
+        native.rename(old)
+        native.write_bytes(old.read_bytes())  # new inode, same reused task/run IDs
+        observer, _ = configured(native, probe=sample)
+        store = Storage(tmp_path / 'historian.db')
+        before = store.snapshot(now=11)
+>       with pytest.raises(RecoveryRequired, match='identity'):
+E       Failed: DID NOT RAISE RecoveryRequired
+
+backend/tests/test_hermes_runtime.py:294: Failed
+=========================== short test summary info ============================
+FAILED backend/tests/test_runtime_entrypoint.py::test_live_proof_requires_current_attempts_not_historical_inventory
+FAILED backend/tests/test_hermes_runtime.py::test_A08_source_identity_survives_observer_and_service_restart
+2 failed, 1 passed, 30 deselected in 0.26s

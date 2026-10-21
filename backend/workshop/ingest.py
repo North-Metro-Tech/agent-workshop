@@ -36,6 +36,24 @@ ATTRIBUTE_FIELDS = {'gen_ai.operation.name', 'gen_ai.agent.id', 'gen_ai.agent.na
                     'workshop.parent_execution.id', 'workshop.lifecycle', 'workshop.revision',
                     'workshop.record.id', 'workshop.cursor', 'workshop.task.source_instance',
                     'workshop.task.namespace', 'workshop.task.native_id'}
+# Versioned, finite metadata vocabulary for the scoped Hermes attempt adapter.
+# These attributes corroborate process state; they NEVER promote lifecycle
+# evidence or select a binding. No PID, fingerprint, cmdline or free-form text.
+HERMES_VALUES = {
+    'workshop.hermes.mapping.version': {'hermes-runtime-v1'},
+    'workshop.hermes.process': {'alive', 'not_alive', 'unknown'},
+    'workshop.hermes.process.reason': {'no verified process observation',
+        'missing or unsupported spawn identity', 'invalid process sample',
+        'process identity mismatch / PID reuse rejected', 'unsupported process state',
+        'matching spawn identity'},
+    'workshop.hermes.attempt.status': {'running', 'done', 'failed', 'blocked', 'unknown'},
+    'workshop.hermes.attempt.outcome': {'completed', 'failed', 'cancelled', 'blocked',
+        'needs_input', 'timed_out', 'interrupted', 'unknown'},
+    'workshop.hermes.task.station': {'triage', 'todo', 'ready', 'running', 'blocked',
+        'review', 'done', 'archived', 'unknown'},
+}
+HERMES_FIELDS = set(HERMES_VALUES) | {'workshop.hermes.board.event_id', 'workshop.hermes.native.complete'}
+ATTRIBUTE_FIELDS |= HERMES_FIELDS
 
 
 def _text(value, label):
@@ -348,7 +366,7 @@ class Ingest:
                     if k not in {'domain', 'identity'}}
         metadata.update(source=self.binding.source, epoch=ctx.epoch,
                         acquired_at=acquired, received_at=ctx.received_at,
-                        mapping_version=MAPPING_VERSION)
+                        mapping_version=MAPPING_VERSION, evidence_class=self.binding.evidence_class)
         self.records.append(metadata)
         if record['domain'] is None:
             result.corroborated += 1
@@ -397,14 +415,46 @@ class Ingest:
         if 'parent_execution_id' in data:
             _text(data['parent_execution_id'], 'parent_execution_id')
         if 'task' in data:
-            task = _object(data['task'], 'task')
-            if set(task) != {'source_instance', 'namespace', 'native_id'}:
-                raise ValueError('Task requires composite identity')
-            for name, value in task.items():
-                _text(value, name)
-            if (task['source_instance'], task['namespace']) not in self.binding.task_scopes:
-                raise ValueError('Task link outside configured source scope')
+            self._task(data['task'])
         return deepcopy(data)
+
+    def _task(self, value):
+        task = _object(value, 'task')
+        if set(task) != {'source_instance', 'namespace', 'native_id'}:
+            raise ValueError('Task requires composite identity')
+        for name, value in task.items():
+            _text(value, name)
+        if (task['source_instance'], task['namespace']) not in self.binding.task_scopes:
+            raise ValueError('Task link outside configured source scope')
+
+    def _corroboration(self, attributes):
+        # Non-lifecycle OTLP records retain scoped correlation metadata too.
+        # The task allowlist must apply even when no domain record is eligible.
+        task = {name: attributes['workshop.task.' + name] for name in
+                ('source_instance', 'namespace', 'native_id') if 'workshop.task.' + name in attributes}
+        if task:
+            self._task(task)
+        for key in ('workshop.execution.id', 'workshop.session.id', 'workshop.parent_execution.id'):
+            if key in attributes:
+                _text(attributes[key], key)
+        present = HERMES_FIELDS.intersection(attributes)
+        if not present:
+            return
+        if present != HERMES_FIELDS:
+            raise ValueError('Incomplete Hermes corroboration metadata')
+        for key, values in HERMES_VALUES.items():
+            if not isinstance(attributes[key], str) or attributes[key] not in values:
+                raise ValueError('Unsupported Hermes corroboration mapping')
+        cursor = attributes['workshop.hermes.board.event_id']
+        if type(cursor) is not int or not 0 <= cursor < 2**63:
+            raise ValueError('Invalid native board event cursor metadata')
+        if type(attributes['workshop.hermes.native.complete']) is not bool:
+            raise ValueError('Invalid native completeness metadata')
+        if (not task or not all(key in attributes for key in
+                ('workshop.execution.id', 'workshop.session.id', 'workshop.record.id'))):
+            raise ValueError('Hermes corroboration requires scoped attempt identity')
+        if self.binding.evidence_class != 'source_record':
+            raise ValueError('Hermes attempt lifecycle requires source_record binding')
 
     def cloudevents(self, payload: bytes, *, context: Acquisition) -> IngestResult:
         value = _decode(payload)
@@ -488,6 +538,7 @@ class Ingest:
                     if signal == 'logs' and 'body' in item:
                         _attributes([{'key': '_body', 'value': item['body']}])
                     safe = {k: v for k, v in attributes.items() if k in ATTRIBUTE_FIELDS}
+                    self._corroboration(safe)
                     record = self._otlp_record(signal, item, safe)
                     # Hash before redaction, including native resource/scope,
                     # but never retain sensitive content or body/status text.

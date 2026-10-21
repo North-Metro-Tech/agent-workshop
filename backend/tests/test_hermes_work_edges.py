@@ -119,7 +119,8 @@ def test_collector_structural_no_control_native_helpers_network_or_clock():
     assert {n for n, f in inspect.getmembers(WorkSnapshot, inspect.isfunction) if not n.startswith('_')} == {'board_view', 'task_detail', 'workers', 'run', 'inspect', 'execution'}
     root = Path(__file__).parents[2] / 'collectors' / 'workshop_collectors'
     allowed = {'contextlib', 'dataclasses', 'json', 'pathlib', 'sqlite3', 'copy', 're',
-               'workshop.contracts', 'workshop.freshness'}
+               'workshop.contracts', 'workshop.freshness', 'workshop.ingest',
+               'workshop.reducer', 'workshop.storage'}
     for path in root.glob('*.py'):
         for node in ast.walk(ast.parse(path.read_text())):
             if isinstance(node, ast.Import):

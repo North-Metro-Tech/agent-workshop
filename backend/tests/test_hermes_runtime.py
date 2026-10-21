@@ -280,6 +280,40 @@ def test_A08_runtime_supported_complete_recovery_is_explicit_fixture_only(native
     store.close()
 
 
+def test_A08_source_identity_survives_observer_and_service_restart(native, tmp_path):
+    observer, state = configured(native, probe=sample)
+    store = Storage(tmp_path / 'historian.db', initial=state)
+    publish(observer, store)
+    store.close()
+    old = native.with_suffix('.old')
+    native.rename(old)
+    native.write_bytes(old.read_bytes())  # new inode, same reused task/run IDs
+    observer, _ = configured(native, probe=sample)
+    store = Storage(tmp_path / 'historian.db')
+    before = store.snapshot(now=11)
+    with pytest.raises(RecoveryRequired, match='identity'):
+        publish(observer, store, at=11, seq=2, epoch='collector-2')
+    assert store.snapshot(now=11) == before
+    assert store.read().source_cursors['runtime'] == 1
+    store.close()
+
+
+def test_A08_process_change_without_board_event_is_new_durable_evidence(native, tmp_path):
+    from workshop_collectors.hermes_work import ProcessSample
+    observer, state = configured(native, probe=sample)
+    store = Storage(tmp_path / 'historian.db', initial=state)
+    first = collect(observer)
+    publish(observer, store, first)
+    observer.work.process_probe = lambda pid: ProcessSample(pid, 'boot:1|22', 'Z')
+    second = collect(observer, 11)
+    assert first.native_event_cursor == second.native_event_cursor
+    publish(observer, store, second, at=11, seq=2)
+    saved = store.read()
+    assert [r['attributes']['workshop.hermes.process'] for r in saved.ingests['runtime'].records] == ['alive', 'not_alive']
+    assert next(iter(saved.reducer.executions.values())).lifecycle.mapped == 'active'
+    store.close()
+
+
 def test_A25_runtime_public_surface_has_no_start_stop_install_control():
     from workshop_collectors.hermes_runtime import HermesRuntime
     assert {n for n, f in inspect.getmembers(HermesRuntime, inspect.isfunction)

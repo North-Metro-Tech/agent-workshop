@@ -51,6 +51,16 @@ Use `LocalAPI(storage=storage)` for durable operator acknowledgement. Existing
 and viewer/operator/controller restrictions are unchanged; acknowledgement never
 clears a source condition, and no position enables native writes.
 
+## Phase 2 file-identity-bound adapter extension
+
+The Hermes runtime adapter adds an optional trusted `source_identity=(device,
+inode)` to durable ingress and persists it atomically with cursor and records.
+Once bound, changed or omitted identity is rejected, including across service
+restart. Already-observed unproven history cannot silently acquire a binding.
+Existing non-file-bound feeds and older saved state remain readable. This is
+trusted adapter configuration, not producer telemetry or a runtime watermark;
+see `hermes-runtime.md` for replacement/restore limitations and live evidence.
+
 ## Source snapshot contract and races
 
 Each stored Ingest requires a dedicated configured source, role, feed and runtime
