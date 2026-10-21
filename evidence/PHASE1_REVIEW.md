@@ -74,6 +74,12 @@ The clean-source-copy regression strips PYTHONPATH, provisions a no-pip venv,
 runs both demo entrypoints and runs the original truth-model test module via
 the documented helper. It copies no caches, local .venv or native source data.
 
+A separate clean `git archive` of signed implementation `f7b5c82` (with no
+inherited PYTHONPATH, .venv or untracked inputs) was then exercised end-to-end:
+no-pip Python 3.14 install, both demo entrypoints matching the committed JSON,
+full **294 passed in 2.70s**, and Python 3.11/3.14 compile checks. Raw capture:
+`evidence/phase1-clean-checkout.txt`, exit 0.
+
 Manually ran `python3 scripts/dev.py install`, installed `.venv/bin/python -m
 workshop.demo`, helper demo, and compile checks with Python 3.14.7. Installed and
 helper JSON outputs compare exactly; committed capture is `phase1-demo.json`.
