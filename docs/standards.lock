@@ -20,7 +20,8 @@
   "genai_semantic_conventions": {
     "specified_revision": "547934afa90a34298441caf80c43b27255c3a292",
     "stability_in_supplied_spec": "Development",
-    "verification": "Unresolved: GitHub open-telemetry/semantic-conventions commit endpoint returned HTTP 422. Kept exact supplied identifier; no substitute or upstream-conformance claim.",
+    "repository": "https://github.com/open-telemetry/semantic-conventions-genai",
+    "verification": "Resolved by Core on 2026-10-21 via GitHub API HTTP 200 at specified_revision in open-telemetry/semantic-conventions-genai; commit dated 2026-10-18: run conformance in strict mode, fix or declare violations (#444). The earlier 422 queried the wrong repository. Development stability; no upstream-conformance claim.",
     "implementation": "Explicit attribute subset and synthetic fixtures documented in ingest.md; named attributes from the supplied specification only"
   },
   "span_merge_policy": "immutable-completed-span-v1",

@@ -10,14 +10,20 @@ from dataclasses import asdict
 
 
 class LocalAPI:
-    def __init__(self, reducer):
+    def __init__(self, reducer=None, *, storage=None):
+        if (reducer is None) == (storage is None):
+            raise ValueError('Supply either a reducer or a Workshop historian')
         self._reducer = reducer
+        self._storage = storage
 
     @property
     def native_write_enabled(self):
         return False
 
     def snapshot(self, *, now):
+        if self._storage is not None:
+            return self._storage.snapshot(now=now)['projection']
+        assert self._reducer is not None
         return {'native_write_enabled': False,
             'roles': [self._reducer.summary(role, now=now) for role in self._reducer.roles],
             'executions': [{**deepcopy(asdict(e)),
@@ -39,7 +45,12 @@ class LocalAPI:
     def acknowledge(self, occurrence_id, *, now, authorized=False):
         if authorized is not True:
             raise PermissionError('Local operator authorization required')
-        self._reducer.alarms.acknowledge(occurrence_id, now=now, actor='local-operator')
+        if self._storage is not None:
+            with self._storage.transaction() as state:
+                state.reducer.alarms.acknowledge(occurrence_id, now=now, actor='local-operator')
+        else:
+            assert self._reducer is not None
+            self._reducer.alarms.acknowledge(occurrence_id, now=now, actor='local-operator')
 
     def request(self, method, path, *, position='viewer', authorized=False,
                 now=0, occurrence_id=None):
