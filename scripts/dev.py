@@ -34,18 +34,19 @@ def main():
         # newer venv context.lib_path convenience attribute is not.
         purelib = sysconfig.get_path('purelib', scheme='venv',
                                     vars={'base': str(target), 'platbase': str(target)})
-        Path(purelib, 'workshop-source.pth').write_text(str(ROOT / 'backend') + '\n')
+        Path(purelib, 'workshop-source.pth').write_text(
+            str(ROOT / 'backend') + '\n' + str(ROOT / 'collectors') + '\n')
         marker.write_text('Workshop source-only install; no third-party packages installed.\n')
         print('Workshop source linked in ' + str(target))
         return 0
     env = dict(os.environ)
-    env['PYTHONPATH'] = str(ROOT / 'backend')
+    env['PYTHONPATH'] = os.pathsep.join(str(ROOT / name) for name in ('backend', 'collectors'))
     if args.command == 'test':
         command = [sys.executable, '-m', 'pytest', *(rest or ['-q'])]
     elif args.command == 'demo':
         command = [sys.executable, '-m', 'workshop.demo']
     else:
-        command = [sys.executable, '-m', 'compileall', '-q', 'backend', 'scripts']
+        command = [sys.executable, '-m', 'compileall', '-q', 'backend', 'collectors', 'scripts']
     return subprocess.run(command, cwd=ROOT, env=env, check=False).returncode
 
 

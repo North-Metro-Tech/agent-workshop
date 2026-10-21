@@ -298,7 +298,7 @@ def test_A05_disconnect_preserves_last_observation_and_recovery(native):
 
 def test_A05_actual_silent_subprocess_identity(native):
     from workshop_collectors.hermes_work import linux_process_probe
-    # Test-owned silent child, no native agent signals. Pipe read blocks without emitting progress.
+    # Test-owned silent child, no native agent signals or progress output.
     child = subprocess.Popen(['sleep', '30'])
     try:
         identity = linux_process_probe(child.pid)

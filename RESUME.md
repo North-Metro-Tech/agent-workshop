@@ -2,75 +2,81 @@
 
 ## Objective
 
-Build the read-only Workshop supervisory layer. Card t_dbf6fb11 (Phase 1 gate,
-A10) is IMPLEMENTED on `feat/a10-phase1-gate`, PR #4:
-https://github.com/North-Metro-Tech/agent-workshop/pull/4
-Core independent review/merge is pending. Phase 1 is not accepted until that
-merge; this is not an operational/MVP readiness notification.
+Phase 1 of the read-only Workshop supervisory layer is COMPLETE and accepted: the
+Phase 1 gate merged to main `364b669` at ~14:03 AEDT 21 Oct under the owner's
+standing pre-authorisation. Phase 2 slice 1/3 is IMPLEMENTED on
+`feat/phase2-hermes-work`, pending Core independent review/merge (PR handle in
+the Kanban handoff). MVP gate `t_7e8a8223` remains the single owner
+notification point; nothing here is an MVP-readiness claim.
 
 ## Last decision
 
-Core independently reviewed and merged A08 PR #3: main/base `59696e9`, feature
-head `a5baf48`, with 234 tests independently re-run and its original red baseline
-reproduced. Its review is a PR comment/journal record because reviewer/author
-share the publication identity. GenAI semconv revision `547934af` was resolved
-in `open-telemetry/semantic-conventions-genai`, with Development-stability
-caveat retained. This A10 branch builds on that merged base, not an open A08 PR.
+Core independently reviewed and merged the Phase 1 gate (PR #4, branch
+`feat/a10-phase1-gate`): 294 tests re-run at head `b9c0719` in isolated worktrees,
+red baseline `735bfbe` reproduced (52 failed / 235 passed full-suite = 53 new
+atop the 234 prior), all commits signature-valid, full diff and fences verified.
+Base `59696e9` → main `364b669`, verified by read-back. Phase 1 closed: truth
+model (A01–A04), wire semantics (A07/A09), durable historian (A08), scoped source
+binding + bounded read-only SQLite primitive + fixed-off interlock + synthetic
+demo (A10) — four PRs in one day, each independently reviewed before merge, suite
+0 → 294.
 
-A10 adds explicit trusted task instance/namespace permissions (empty denies),
-runtime-instance uniqueness, synthetic-tested bounded read-only SQLite reads,
-a deterministic synthetic snapshot demo and no-download source install/test/
-demo/check commands. No native executor, route, enable switch or network
-listener exists; controller positions cannot enable writes. Task authorization
-is enforced consistently across CE, mapped OTLP and durable snapshot pages.
-
-Signed red baseline `735bfbe`: 52 failed, 1 passed. Implementation `f7b5c82`:
-294 full cases pass, including all prior A01–A04/A07–A09 and A10. Additional
-materialisation red (1 failed, 5 passed) exposed fetchall exceeding aggregate
-budget before rejection; reader now iterates incrementally. Exact-schema,
-mode=ro/query_only, malformed/oversized input, unknown/view rejection and live
-WAL/no-immutable cases are covered. Native content/schema is unchanged; WAL
-SHM/coordination side effects are explicitly NOT claimed absent.
-
-Actual clean git-archive run (no inherited PYTHONPATH): install, both demo
-entrypoints (matching committed JSON), full 294 tests and Python 3.11/3.14
-compile checks pass. Evidence and review focus: `evidence/PHASE1_REVIEW.md`,
-`evidence/phase1-clean-checkout.txt`, per-scenario `phase1-A*.txt`, and raw
-red/green captures. No dependency installed or updated. Claude Code unavailable;
-authorised direct fallback used, not a provider/profile/credential workaround.
+Phase 2 routed per spec §17: `t_69111745` (collector base + `hermes_work`
+observers, A05/A06) → `t_bbfe861b` (`hermes_runtime` observer + durable
+correlation, A08/A10/A25) → `t_f11a8ea8` (Phase 2 gate: A05/A06/A08/A10/A25 on
+the approved workflow, `outbox.py`, demo/dev commands). The MVP gate was
+re-parented behind the Phase 2 gate; the board auto-demoted it `ready` → `todo`,
+so the dispatcher cannot claim the owner notification point out of sequence.
 
 ## Next action
 
-Core independently reviews PR #4, re-runs gates and merges if sound. No auto-
-merge enabled. Branch-protection lookup is denied HTTP 403; zero external
-checks/statuses, if returned, are not a passing CI result. Exact-head publication
-and checks are recorded in the Kanban handoff after the final signed doc push.
-
-On merge, Phase 1 is accepted. Core routes Phase 2 (one approved real Hermes
-workflow), then the renderer/remaining Release 1 work through the existing MVP
-gate t_7e8a8223. That gate remains the owner's single readiness notification
-point; its real-fleet/frontend/A05–A06/A23/A25 work is NOT completed by this card.
-Do not treat released task dependencies as fulfilled downstream acceptance.
+Core reviews the Phase 2 slice 1 PR — suite re-run, full diff, fences,
+test-by-test acceptance mapping — then releases slice 2 on the accepted base.
+Implementation completion releases the graph, not independent approval. Core
+reviews each Phase 2 PR on handoff
+and merges under the standing pre-authorisation. On Phase 2 gate merge, the MVP
+gate becomes ready: that merge is the owner notification point (telegram-subscribed
+card handles it; no separate Core message).
 
 ## Open question
 
-None blocking A10. Phase 2 must supply approved actual schema mapping, source
-identity and a genuine atomic source snapshot watermark; the SQLite primitive
-is not a collector, native pagination/coverage protocol or runtime-liveness
-proof. Exact task permission configuration is trusted local input. Old persisted
-bindings reopen with empty permissions for future task links; retained facts
-are preserved, not reauthorised silently.
+Core resolved the initial acquisition conflict: direct `mode=ro`/`query_only`
+SQLite, not native HTTP helpers (which call init_db). Sole approved source is
+the `agent-workshop` board's exact native DB; profiles coder/vitruvius-core.
+Slice 1 supplies six-table bounded atomic read snapshots with a matching
+board-local event cursor, five semantic views, privacy clearing, optional
+boot/PID/start-verified Linux process corroboration, explicit station/attempt/
+process separation and acquisition freshness. 44 new cases pass; full suite
+338 passed. Red evidence: 31 initial failures, then adversarial future-clock/
+file-replacement failures fixed. All five actual read surfaces retained identical
+main-file/schema hashes; actual event history is truncated and runtime coverage
+is ALWAYS partial. Live transitions were not forced: A05 silent-child and A06
+blocked/review/ack variants are fixture evidence, not full-workflow acceptance.
+Details: docs/hermes-work.md and evidence/HERMES_WORK_REVIEW.md.
+
+Remaining Phase 2 work is already routed: durable runtime correlation/ingress,
+loss/recovery/epoch/replay semantics, outbox, complete approved-workflow gate and
+A25 stop/uninstall/restore evidence. The board cursor is NOT a complete runtime
+watermark or a database-wide revision. Operational watch:
+coder handoff comments quote raw PR URLs by design, so the per-card respawn guard
+may strand the next card after each Phase 2 merge — standing relay remedy applies
+(check every ready card each pass; emit the operator handoff event; do not wait out
+the 24h window).
 
 Standing A08 contracts remain: serial service writer, dedicated configured
 source/feed/role/runtime instance, comparable caller acquisition clocks, startup
 freshness invalidation, complete supported runtime recovery only; replay
 retention bounds checkpoints/journal, not domain/audit/dedup history. HTTP/SSE/
-binary OTLP, live data and renderer are outside Phase 1. No type-check, coverage
-percentage, benchmark, standards certification or external CI success claim.
+binary OTLP, durable runtime integration and renderer are outside Phase 2 slice 1/3. No type-check,
+coverage percentage, benchmark, standards certification or external CI success
+claim.
 
 ## Coordination
 
 Cards owned by coder; Core reviews and merges under the owner's standing
-pre-authorisation. RESUME.md is the shared Core/coder hotspot: Core's post-A08
-handoff was preserved during implementation and serially merged here once.
-Private specification and owner directions are not published in the repository.
+pre-authorisation (reaffirmed 21 Oct). RESUME.md is the shared Core/coder hotspot:
+serialized edits, preserve the other party's handoff. This copy travels with the
+next PR per convention; the vault journal (operations-journal-2026-10-20.md,
+21 Oct ~14:03 section) carries the full review record. Private specification and
+owner directions are not published in the repository. No owner notification is
+warranted until the MVP gate.

@@ -19,19 +19,26 @@ alarms, function-level CloudEvents/OTLP JSON ingress, Workshop-owned SQLite WAL
 historian, atomic snapshot/restart/replay recovery, scoped task-link permissions,
 bounded read-only SQLite primitive, and runnable synthetic demo.
 
-This is not a running monitoring service, an implemented Hermes collector or
-operational acceptance. There is no network listener, HTTP/binary OTLP binding,
+Phase 2 slice 1 adds a bounded read-only Kanban work-observer library and an
+opt-in one-shot acquisition of the approved local board. A05/A06 regression
+fixtures distinguish process liveness from progress and task disposition from
+attempt exit. The actual board observation is partial (bounded event history).
+See `docs/hermes-work.md` for the exact scope, five views, privacy and limitations.
+
+This is not a running monitoring service or operational acceptance. There is no
+network listener, HTTP/binary OTLP binding,
 renderer, native executor, enable switch or runtime-write route. The controller
 position cannot enable writes. Local alarm acknowledgement changes Workshop
 records only. No third-party renderer code or new dependency has been adopted.
-A real approved workflow and renderer remain subsequent phases; a green Phase 1
-fixture gate does not mean the product MVP is ready.
+Durable real-workflow runtime integration, the full Phase 2 gate and renderer
+remain downstream; fixture success does not mean the product MVP is ready.
 
 Read the precise contracts and limitations:
 
 - `docs/ingest.md`: supported wire subset, trusted acquisition context, privacy.
 - `docs/storage.md`: source watermark, recovery, replay and retention boundaries.
 - `docs/source-binding.md`: task permissions, instance identity and SQLite reads.
+- `docs/hermes-work.md`: scoped read-only collector and explicit live opt-in.
 - `docs/standards.lock`: reference pins, including resolved GenAI repository;
   Development-stability conventions are not a conformance certification.
 
@@ -49,7 +56,7 @@ From a clean checkout, using the desired Python interpreter:
     python scripts/dev.py check
 
 Install creates `.venv` without pip or third-party downloads and links only this
-checkout's backend through a `.pth` file. It refuses an existing unmanaged
+checkout's backend and collectors through a `.pth` file. It refuses an existing unmanaged
 `.venv`; it does not overwrite another environment. This is a source-checkout
 install, not a distributable wheel; moving the checkout requires reinstalling.
 You can also run the installed demo directly without PYTHONPATH:
@@ -77,7 +84,9 @@ No dependency installation or update is performed by these commands. If pytest
 is missing, choose an existing approved test interpreter, or obtain dependency
 approval and quarantine verification separately; do not assume the development
 helper downloads it. Tests create synthetic fixture databases only in temporary
-paths, never real Hermes databases. The clean-source-copy regression exercises
+paths, never query real Hermes databases. The separate explicitly opted-in
+`scripts/observe_work.py --approved-local` command is the live observation path.
+The clean-source-copy regression exercises
 install, both demo entrypoints, and the test command without inherited PYTHONPATH.
 
 `backend/workshop/api.py` is an in-process facade, not an HTTP server. Its

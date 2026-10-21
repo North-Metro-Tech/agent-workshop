@@ -12,7 +12,8 @@ from pathlib import Path
 import re
 import sqlite3
 
-from workshop.contracts import timestamp
+from workshop.contracts import FeedPolicy, timestamp
+from workshop.freshness import quality
 from .base import SCHEMAS, SourceScope, read_snapshot
 
 APPROVED_PATH = Path('/home/aaron/.hermes/kanban/boards/agent-workshop/kanban.db')
@@ -105,6 +106,12 @@ class WorkSnapshot:
         self._tables = tables
         self._inspections = inspections
 
+    def _provenance(self):
+        return {'source_instance': self.source_instance, 'board': self.board,
+                'acquired_at': self.acquired_at, 'mapping_version': self.mapping_version,
+                'latest_event_id': self.latest_event_id, 'complete': self.complete,
+                'runtime_coverage': self.runtime_coverage}
+
     def _row(self, table, key):
         for row in self._tables[table]:
             if row['id'] == key:
@@ -116,10 +123,9 @@ class WorkSnapshot:
         for task in self._tables['tasks']:
             columns[task['status'] if task['status'] in STATIONS else 'unknown'].append(deepcopy(task))
         columns['done'].sort(key=lambda t: (t['completed_at'] is not None, t['completed_at'] or 0, t['id']), reverse=True)
-        return {'columns': columns, 'latest_event_id': self.latest_event_id,
-                'complete': self.complete, 'runtime_coverage': self.runtime_coverage,
+        return {**self._provenance(), 'columns': columns,
                 'diagnostics': 'unsupported (native runtime/config helpers intentionally not imported)',
-                'mapping_version': self.mapping_version}
+                'evidence_class': 'source_record'}
 
     def task_detail(self, task_id):
         task = self._row('tasks', task_id)
@@ -129,7 +135,7 @@ class WorkSnapshot:
                 links['parents'].append(row['parent_id'])
             if row['parent_id'] == task_id:
                 links['children'].append(row['child_id'])
-        return {'task': task, 'station': task['status'] if task['status'] in STATIONS else 'unknown',
+        return {**self._provenance(), 'task': task, 'station': task['status'] if task['status'] in STATIONS else 'unknown',
                 'links': links, **{name: deepcopy([r for r in self._tables[table] if r['task_id'] == task_id])
                 for name, table in (('comments', 'task_comments'), ('events', 'task_events'),
                                     ('attachments', 'task_attachments'), ('runs', 'task_runs'))},
@@ -140,15 +146,15 @@ class WorkSnapshot:
         workers = [deepcopy(r) for r in self._tables['task_runs'] if r['ended_at'] is None
                    and r['worker_pid'] is not None and tasks.get(r['task_id'], {}).get('status') == 'running']
         workers.sort(key=lambda r: (r['started_at'], r['id']))
-        return {'workers': workers, 'count': len(workers), 'complete': self.complete,
+        return {**self._provenance(), 'workers': workers, 'count': len(workers),
                 'evidence_class': 'source_record', 'liveness': 'not established by claimed rows'}
 
     def run(self, run_id):
-        return {'run': self._row('task_runs', run_id), 'evidence_class': 'source_record'}
+        return {**self._provenance(), 'run': self._row('task_runs', run_id), 'evidence_class': 'source_record'}
 
     def inspect(self, run_id):
         self._row('task_runs', run_id)
-        return deepcopy(self._inspections[run_id])
+        return {**self._provenance(), **deepcopy(self._inspections[run_id])}
 
     def execution(self, run_id):
         run = self._row('task_runs', run_id)
@@ -176,6 +182,7 @@ class HermesWork:
         self.scope = scope
         self.row_limit, self.byte_limit, self.process_probe = row_limit, byte_limit, process_probe
         self.last_snapshot = None
+        self._source_identity: tuple[int, int] | None = None
         self._disconnected = False
 
     def observe(self, *, board, acquired_at):
@@ -186,6 +193,8 @@ class HermesWork:
             raise ValueError('Acquisition clock regressed')
         try:
             with read_snapshot(self.scope, row_limit=self.row_limit, byte_limit=self.byte_limit) as tx:
+                if self._source_identity is not None and tx.source_identity != self._source_identity:
+                    raise ValueError('Native source file identity changed; explicit rebind required')
                 watermark = tx.watermark()
                 tables = {table: tx.rows(table) for table in SCHEMAS}
                 truncated = tuple(tx.truncated)
@@ -214,6 +223,7 @@ class HermesWork:
             self._disconnected = True
             raise
         self.last_snapshot = result
+        self._source_identity = tx.source_identity
         self._disconnected = False
         return result
 
@@ -221,7 +231,7 @@ class HermesWork:
         timestamp(now)
         if self.last_snapshot is None:
             return 'unknown'
-        age = now - self.last_snapshot.acquired_at
-        if self._disconnected or age >= 30:
+        observed_quality = quality(self.last_snapshot.acquired_at, now, FeedPolicy(5, 15, 30))
+        if self._disconnected and observed_quality != 'unknown':
             return 'disconnected'
-        return 'stale' if age >= 15 else 'fresh'
+        return observed_quality

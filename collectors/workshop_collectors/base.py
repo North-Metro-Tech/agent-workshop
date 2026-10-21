@@ -55,6 +55,7 @@ class ReadTransaction:
     """Internal capability; must not escape read_snapshot's short context."""
     def __init__(self, db, *, row_limit, byte_limit):
         self._db = db
+        self.source_identity: tuple[int, int] | None = None
         self.row_limit, self.byte_limit = row_limit, byte_limit
         self.bytes_read = 0
         self.truncated = []
@@ -107,8 +108,16 @@ def read_snapshot(scope, *, row_limit=256, byte_limit=1048576):
         raise ValueError('Aggregate byte bound must be within 1..1048576')
     if scope.path != scope.path.resolve():
         raise ValueError('Source path binding changed')
+    try:
+        before = scope.path.stat()
+    except FileNotFoundError as exc:
+        raise sqlite3.OperationalError('Native source file missing') from exc
+    source_identity = (before.st_dev, before.st_ino)
     db = sqlite3.connect(scope.path.as_uri() + '?mode=ro', uri=True, timeout=.1, isolation_level=None)
     try:
+        after = scope.path.stat()
+        if (after.st_dev, after.st_ino) != source_identity:
+            raise ValueError('Native source file identity changed during connection')
         db.execute('PRAGMA query_only=ON')
         db.execute('PRAGMA trusted_schema=OFF')
         db.setlimit(sqlite3.SQLITE_LIMIT_LENGTH, 65536)
@@ -120,8 +129,12 @@ def read_snapshot(scope, *, row_limit=256, byte_limit=1048576):
         db.set_progress_handler(progress, 1000)
         db.execute('BEGIN DEFERRED')
         tx = ReadTransaction(db, row_limit=row_limit, byte_limit=byte_limit)
+        tx.source_identity = source_identity
         tx.validate()
         yield tx
+        stat = scope.path.stat()
+        if (stat.st_dev, stat.st_ino) != tx.source_identity:
+            raise ValueError('Native source file identity changed during snapshot')
         db.execute('COMMIT')
     except sqlite3.DataError as exc:
         raise ValueError('Source record exceeds byte bound') from exc

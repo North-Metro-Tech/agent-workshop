@@ -30,6 +30,20 @@ def test_replaced_same_path_is_not_same_source_instance(native, tmp_path):
     assert c.last_snapshot.acquired_at == 10
 
 
+def test_first_read_replacement_during_connect_rejected(native, monkeypatch):
+    from workshop_collectors import base
+    real = sqlite3.connect
+    def connect(database, **kwargs):
+        connection = real(database, **kwargs)
+        saved = native.with_suffix('.original')
+        native.rename(saved)
+        native.write_bytes(saved.read_bytes())
+        return connection
+    monkeypatch.setattr(base.sqlite3, 'connect', connect)
+    with pytest.raises(ValueError, match='identity'):
+        snap(native)
+
+
 def test_unknown_profile_fails_closed_no_last_refresh(native):
     c = collector(native)
     c.observe(board='synthetic-board', acquired_at=10)

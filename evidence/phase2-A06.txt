@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 338 items / 335 deselected / 3 selected
+
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[blocked] PASSED [ 33%]
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[review] PASSED [ 66%]
+backend/tests/test_hermes_work.py::test_A06_unknown_status_not_coerced_to_todo_or_accepted PASSED [100%]
+
+====================== 3 passed, 335 deselected in 0.15s =======================
