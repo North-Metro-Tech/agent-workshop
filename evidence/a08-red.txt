@@ -1,0 +1,761 @@
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEF                                       [100%]
+==================================== ERRORS ====================================
+__________ ERROR at setup of test_A08_migration_WAL_and_domain_tables __________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_migration_WAL_and_dom0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65f3fd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_migration_WAL_and_dom0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65e3110>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65f3a90>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_missing_terminal_repaired_by_snapshot_without_event _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_missing_terminal_repa0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65bb350>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_missing_terminal_repa0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6851810>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65bb690>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_restart_keeps_history_but_invalidates_live_evidence _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_restart_keeps_history0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6584f50>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_restart_keeps_history0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6e25390>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6584090>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_restart_preserves_terminal_identity_order_and_redaction _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_restart_preserves_ter0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6574a50>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_restart_preserves_ter0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6574f10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6574c50>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_partial_snapshots_never_delete_unseen_executions[incomplete] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6567d10>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6567f10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6567850>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_partial_snapshots_never_delete_unseen_executions[scope] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev1')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef672d010>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev1/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6c58a90>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef672c890>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_partial_snapshots_never_delete_unseen_executions[unsupported] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev2')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6709190>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_partial_snapshots_nev2/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6708750>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6708f90>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+__________ ERROR at setup of test_A08_paginated_replacement_is_atomic __________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_paginated_replacement0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6648e10>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_paginated_replacement0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6649210>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6649150>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_snapshot_event_race_replays_only_above_source_watermark _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_snapshot_event_race_r0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef659a890>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_snapshot_event_race_r0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef659a710>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6598cd0>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_snapshot_old_active_cannot_overwrite_new_terminal _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_snapshot_old_active_c0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65e1e90>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_snapshot_old_active_c0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65e1110>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65e1ed0>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_epoch_change_during_snapshot_forces_reconciliation _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_epoch_change_during_s0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6584d50>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_epoch_change_during_s0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef68730d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65be0d0>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+____ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[page] ____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65760d0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6577710>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65740d0>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[duplicate-body] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann1')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6567590>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann1/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6567350>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6564a90>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[duplicate-key] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann2')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6743550>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann2/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6740b90>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6741510>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[generation] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann3')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66bc150>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann3/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66bd990>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66be190>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[watermark] __
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann4')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef672d590>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann4/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6886790>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef672ee50>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+___ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[scope] ____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann5')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66ff010>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann5/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66ff9d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66fc110>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+___ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[clock] ____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann6')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef657fcd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann6/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef657de10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef657ea10>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+__ ERROR at setup of test_A08_invalid_snapshot_cannot_mutate_domain[manifest] __
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann7')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6694750>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_invalid_snapshot_cann7/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6696810>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6695c50>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_____ ERROR at setup of test_A08_old_generation_and_stale_tokens_rejected ______
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_old_generation_and_st0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65bffd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_old_generation_and_st0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65bf690>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65bd490>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_______ ERROR at setup of test_A08_browser_reconnect_and_expired_cursor ________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_browser_reconnect_and0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66eb510>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_browser_reconnect_and0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66e9e10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66e9c90>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6587bd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6586b10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6585e50>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[bad] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br1')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65b9890>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br1/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65bb310>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65bbbd0>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[other:1] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br2')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66baa10>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br2/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66b8ad0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66ba090>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[false:-1] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br3')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66a28d0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br3/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66a19d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66a1890>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[false:999999] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br4')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66de3d0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_or_invalid_br4/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef66dd490>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66ded10>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_retention_gap_during_snapshot_preserves_live_domain _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_retention_gap_during_0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65e0cd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_retention_gap_during_0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65e0f10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65e2990>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_transaction_error_rolls_back_memory_database_and_cursor _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_transaction_error_rol0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6694590>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_transaction_error_rol0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6697f50>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6697d90>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+____ ERROR at setup of test_A08_sql_failure_rolls_back_domain_and_revision _____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_sql_failure_rolls_bac0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef65e11d0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_sql_failure_rolls_bac0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65e32d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef65e0390>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_alarm_audit_controls_pending_and_first_out_survive_restart _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_alarm_audit_controls_0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66481d0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_alarm_audit_controls_0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef6649710>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6649990>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+______ ERROR at setup of test_A08_local_alarm_acknowledgement_is_durable _______
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_local_alarm_acknowled0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef6577f50>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_local_alarm_acknowled0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef65740d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef6577990>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+_ ERROR at setup of test_A08_correlations_ambiguities_tasks_and_conflicts_roundtrip _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_correlations_ambiguit0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef668ced0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_correlations_ambiguit0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef668cf10>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef668d090>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+____________ ERROR at setup of test_A08_read_returns_detached_state ____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_read_returns_detached0')
+
+    @pytest.fixture
+    def store(tmp_path):
+>       s = Storage(tmp_path / 'synthetic.db', initial=initial(), retention=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef668dbd0>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_read_returns_detached0/synthetic.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef668f9d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef668c090>}, source_cursors={}, generations={}), 'retention': 8}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+=================================== FAILURES ===================================
+__________ test_A08_foreign_database_is_rejected_without_modification __________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_database_is_r0')
+
+    def test_A08_foreign_database_is_rejected_without_modification(tmp_path):
+        path = tmp_path / 'synthetic-native.db'
+        db = sqlite3.connect(path)
+        db.execute('CREATE TABLE native_records(id INTEGER)')
+        db.execute('INSERT INTO native_records VALUES (7)')
+        db.commit()
+        db.close()
+        before = path.read_bytes()
+        with pytest.raises(ValueError):
+>           Storage(path, initial=initial())
+
+backend/tests/test_storage.py:386: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <workshop.storage.Storage object at 0x72bef66bc150>
+args = (PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-0/test_A08_foreign_database_is_r0/synthetic-native.db'),)
+kwargs = {'initial': State(reducer=<workshop.reducer.Reducer object at 0x72bef68711d0>, ingests={'source': <workshop.ingest.Ingest object at 0x72bef66bf250>}, source_cursors={}, generations={})}
+
+    def __init__(self, *args, **kwargs):
+>       raise NotImplementedError('A08 durable historian')
+E       NotImplementedError: A08 durable historian
+
+backend/workshop/storage.py:21: NotImplementedError
+=========================== short test summary info ============================
+FAILED backend/tests/test_storage.py::test_A08_foreign_database_is_rejected_without_modification
+ERROR backend/tests/test_storage.py::test_A08_migration_WAL_and_domain_tables
+ERROR backend/tests/test_storage.py::test_A08_missing_terminal_repaired_by_snapshot_without_event
+ERROR backend/tests/test_storage.py::test_A08_restart_keeps_history_but_invalidates_live_evidence
+ERROR backend/tests/test_storage.py::test_A08_restart_preserves_terminal_identity_order_and_redaction
+ERROR backend/tests/test_storage.py::test_A08_partial_snapshots_never_delete_unseen_executions[incomplete]
+ERROR backend/tests/test_storage.py::test_A08_partial_snapshots_never_delete_unseen_executions[scope]
+ERROR backend/tests/test_storage.py::test_A08_partial_snapshots_never_delete_unseen_executions[unsupported]
+ERROR backend/tests/test_storage.py::test_A08_paginated_replacement_is_atomic
+ERROR backend/tests/test_storage.py::test_A08_snapshot_event_race_replays_only_above_source_watermark
+ERROR backend/tests/test_storage.py::test_A08_snapshot_old_active_cannot_overwrite_new_terminal
+ERROR backend/tests/test_storage.py::test_A08_epoch_change_during_snapshot_forces_reconciliation
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[page]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[duplicate-body]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[duplicate-key]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[generation]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[watermark]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[scope]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[clock]
+ERROR backend/tests/test_storage.py::test_A08_invalid_snapshot_cannot_mutate_domain[manifest]
+ERROR backend/tests/test_storage.py::test_A08_old_generation_and_stale_tokens_rejected
+ERROR backend/tests/test_storage.py::test_A08_browser_reconnect_and_expired_cursor
+ERROR backend/tests/test_storage.py::test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[]
+ERROR backend/tests/test_storage.py::test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[bad]
+ERROR backend/tests/test_storage.py::test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[other:1]
+ERROR backend/tests/test_storage.py::test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[false:-1]
+ERROR backend/tests/test_storage.py::test_A08_foreign_or_invalid_browser_cursor_forces_snapshot[false:999999]
+ERROR backend/tests/test_storage.py::test_A08_retention_gap_during_snapshot_preserves_live_domain
+ERROR backend/tests/test_storage.py::test_A08_transaction_error_rolls_back_memory_database_and_cursor
+ERROR backend/tests/test_storage.py::test_A08_sql_failure_rolls_back_domain_and_revision
+ERROR backend/tests/test_storage.py::test_A08_alarm_audit_controls_pending_and_first_out_survive_restart
+ERROR backend/tests/test_storage.py::test_A08_local_alarm_acknowledgement_is_durable
+ERROR backend/tests/test_storage.py::test_A08_correlations_ambiguities_tasks_and_conflicts_roundtrip
+ERROR backend/tests/test_storage.py::test_A08_read_returns_detached_state - N...
+1 failed, 33 errors in 0.31s
+
+PYTEST_EXIT_CODE=1
