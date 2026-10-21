@@ -1,0 +1,54 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+plugins: anyio-4.15.0
+collecting ... collected 44 items
+
+backend/tests/test_hermes_work.py::test_A10_scope_mandatory_exact_path_and_board PASSED [  2%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[board_view] PASSED [  4%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[task_detail] PASSED [  6%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[workers] PASSED [  9%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[run] PASSED [ 11%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[inspect] PASSED [ 13%]
+backend/tests/test_hermes_work.py::test_A10_detail_grouping_links_runs_and_privacy PASSED [ 15%]
+backend/tests/test_hermes_work.py::test_A10_exact_schema_no_views_hidden_or_unknown_columns PASSED [ 18%]
+backend/tests/test_hermes_work.py::test_A10_view_refused PASSED          [ 20%]
+backend/tests/test_hermes_work.py::test_A10_snapshot_and_watermark_share_one_transaction PASSED [ 22%]
+backend/tests/test_hermes_work.py::test_A10_row_bound_partial_never_claims_runtime_complete PASSED [ 25%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[oversized] PASSED [ 27%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[aggregate] PASSED [ 29%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[blob] PASSED [ 31%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[nonfinite] PASSED [ 34%]
+backend/tests/test_hermes_work.py::test_A10_readonly_guards_adversarial PASSED [ 36%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[None] PASSED [ 38%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[22] PASSED [ 40%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[unverified] PASSED [ 43%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[other:1|22] PASSED [ 45%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[boot:1|23] PASSED [ 47%]
+backend/tests/test_hermes_work.py::test_A05_silent_process_is_liveness_not_progress_or_tool_activity PASSED [ 50%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[PermissionError] PASSED [ 52%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[FileNotFoundError] PASSED [ 54%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[OSError] PASSED [ 56%]
+backend/tests/test_hermes_work.py::test_A05_no_probe_and_turn_finalization_do_not_prove_process_death PASSED [ 59%]
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[blocked] PASSED [ 61%]
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[review] PASSED [ 63%]
+backend/tests/test_hermes_work.py::test_A06_unknown_status_not_coerced_to_todo_or_accepted PASSED [ 65%]
+backend/tests/test_hermes_work.py::test_A05_disconnect_preserves_last_observation_and_recovery PASSED [ 68%]
+backend/tests/test_hermes_work.py::test_A05_actual_silent_subprocess_identity PASSED [ 70%]
+backend/tests/test_hermes_work_edges.py::test_acquisition_clock_future_is_unknown PASSED [ 72%]
+backend/tests/test_hermes_work_edges.py::test_replaced_same_path_is_not_same_source_instance PASSED [ 75%]
+backend/tests/test_hermes_work_edges.py::test_first_read_replacement_during_connect_rejected PASSED [ 77%]
+backend/tests/test_hermes_work_edges.py::test_unknown_profile_fails_closed_no_last_refresh PASSED [ 79%]
+backend/tests/test_hermes_work_edges.py::test_source_schema_hidden_column_rejected PASSED [ 81%]
+backend/tests/test_hermes_work_edges.py::test_connections_close_and_never_omit_ro_uri[schema] PASSED [ 84%]
+backend/tests/test_hermes_work_edges.py::test_connections_close_and_never_omit_ro_uri[oversize] PASSED [ 86%]
+backend/tests/test_hermes_work_edges.py::test_connections_close_and_never_omit_ro_uri[success] PASSED [ 88%]
+backend/tests/test_hermes_work_edges.py::test_vm_scan_budget_bounded PASSED [ 90%]
+backend/tests/test_hermes_work_edges.py::test_partial_tasks_do_not_discard_attempt_or_guess_station PASSED [ 93%]
+backend/tests/test_hermes_work_edges.py::test_task_id_injection_is_data_not_sql PASSED [ 95%]
+backend/tests/test_hermes_work_edges.py::test_collector_structural_no_control_native_helpers_network_or_clock PASSED [ 97%]
+backend/tests/test_hermes_work_edges.py::test_approved_scope_ignores_board_and_db_environment PASSED [100%]
+
+============================== 44 passed in 1.42s ==============================

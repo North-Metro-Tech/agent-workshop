@@ -1,0 +1,131 @@
+{
+  "attempt_task_stations": {
+    "archived": 1,
+    "done": 5,
+    "running": 2
+  },
+  "latest_event_id": 1105,
+  "limitations": [
+    "Five independent snapshots; each snapshot has one read transaction plus a matching board-local event watermark.",
+    "Process corroboration is sampled after the DB transaction, not atomic with that watermark.",
+    "Native event cursor is not a global revision or a runtime inventory/replay guarantee.",
+    "Main DB/schema invariant excludes WAL/SHM reader coordination; live native writers were not stopped.",
+    "One-shot actual work observation, not continuous capture of every live station transition.",
+    "Historical source records are not fresh runtime execution or tool-progress evidence.",
+    "A05 silent tool, turn-finalisation and PID-reuse variants use isolated synthetic DBs plus a real test-owned silent child.",
+    "A06 blocked/review exit and acknowledgement variants use synthetic native DBs; no live task was changed.",
+    "No durable correlation/ingest, outbox, daemon, renderer or Phase-2/MVP acceptance in this slice."
+  ],
+  "mapping_version": "hermes-kanban-sqlite-v1",
+  "native_write_enabled": false,
+  "observed_attempt_statuses": {
+    "blocked": 2,
+    "completed": 1,
+    "done": 3,
+    "reclaimed": 1,
+    "running": 1
+  },
+  "observed_event_kinds": {
+    "archive_worker_termination": 1,
+    "archived": 1,
+    "blocked": 1,
+    "claimed": 3,
+    "commented": 12,
+    "completed": 2,
+    "created": 6,
+    "dependency_wait": 3,
+    "heartbeat": 37,
+    "promoted": 1,
+    "respawn_guarded": 185,
+    "spawned": 3,
+    "unblocked": 1
+  },
+  "observed_task_stations": {
+    "archived": 1,
+    "done": 4,
+    "running": 1,
+    "todo": 3
+  },
+  "process_observations": {
+    "alive": 1,
+    "unknown": 7
+  },
+  "progress": "unknown",
+  "retry": "not_requested",
+  "runtime_coverage": "partial",
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_snapshot_complete": false,
+  "surfaces": [
+    {
+      "after": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "before": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "surface": "board_view",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "before": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "surface": "task_detail",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "before": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "surface": "workers",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "before": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "surface": "run",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "before": {
+        "main_sha256": "003a2737bfc8e6cac1c390233e206bd098c54fda2525a70954c1e1191ed353a3",
+        "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+      },
+      "surface": "inspect",
+      "unchanged": true
+    }
+  ],
+  "tool_activity": "unsupported",
+  "truncated_tables": [
+    "task_events"
+  ]
+}

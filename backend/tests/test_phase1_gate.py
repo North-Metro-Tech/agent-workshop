@@ -98,7 +98,7 @@ def test_phase1_install_demo_and_test_commands_from_clean_source_copy(tmp_path):
     checkout = tmp_path / 'clean checkout'
     checkout.mkdir()
     # Copy tracked source layout, not local .venv/cache or any native records.
-    for name in ('backend', 'scripts'):
+    for name in ('backend', 'collectors', 'scripts'):
         shutil.copytree(root / name, checkout / name,
                         ignore=shutil.ignore_patterns('__pycache__', '.pytest_cache'))
     shutil.copy(root / 'pytest.ini', checkout / 'pytest.ini')
@@ -114,6 +114,13 @@ def test_phase1_install_demo_and_test_commands_from_clean_source_copy(tmp_path):
         cwd=checkout, env=env, text=True, capture_output=True, timeout=30)
     assert result.returncode == 0, result.stderr
     assert json.loads(result.stdout)['native_write_enabled'] is False
+    result = subprocess.run([str(checkout / '.venv/bin/python'), '-m',
+        'workshop_collectors.hermes_work'], cwd=checkout, env=env,
+        text=True, capture_output=True, timeout=30)
+    assert result.returncode == 0, result.stderr
+    result = subprocess.run([str(checkout / '.venv/bin/python'), 'scripts/observe_work.py'],
+        cwd=checkout, env=env, text=True, capture_output=True, timeout=30)
+    assert result.returncode == 2 and 'requires --approved-local' in result.stderr
     # Exercise dev.py test dispatch on the complete original A01–A04 fixture
     # module, avoiding recursive execution of this clean-checkout test itself.
     result = subprocess.run([sys.executable, 'scripts/dev.py', 'test',

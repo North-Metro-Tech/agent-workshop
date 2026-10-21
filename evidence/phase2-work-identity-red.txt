@@ -1,0 +1,26 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_first_read_replacement_during_connect_rejected ______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-40/test_first_read_replacement_du0/synthetic.db')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x729b77e62e50>
+
+    def test_first_read_replacement_during_connect_rejected(native, monkeypatch):
+        from workshop_collectors import base
+        real = sqlite3.connect
+        def connect(database, **kwargs):
+            connection = real(database, **kwargs)
+            saved = native.with_suffix('.original')
+            native.rename(saved)
+            native.write_bytes(saved.read_bytes())
+            return connection
+        monkeypatch.setattr(base.sqlite3, 'connect', connect)
+>       with pytest.raises(ValueError, match='identity'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_hermes_work_edges.py:43: Failed
+=========================== short test summary info ============================
+FAILED backend/tests/test_hermes_work_edges.py::test_first_read_replacement_during_connect_rejected
+1 failed, 12 deselected in 0.07s
+
+EXIT_CODE=1

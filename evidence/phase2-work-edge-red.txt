@@ -1,0 +1,37 @@
+FF..........                                                             [100%]
+=================================== FAILURES ===================================
+___________________ test_acquisition_clock_future_is_unknown ___________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-33/test_acquisition_clock_future_0/synthetic.db')
+
+    def test_acquisition_clock_future_is_unknown(native):
+        c = collector(native)
+        c.observe(board='synthetic-board', acquired_at=10)
+>       assert c.quality(now=9) == 'unknown'
+E       AssertionError: assert 'fresh' == 'unknown'
+E         
+E         - unknown
+E         + fresh
+
+backend/tests/test_hermes_work_edges.py:16: AssertionError
+_____________ test_replaced_same_path_is_not_same_source_instance ______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-33/test_replaced_same_path_is_not0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-33/test_replaced_same_path_is_not0')
+
+    def test_replaced_same_path_is_not_same_source_instance(native, tmp_path):
+        c = collector(native)
+        c.observe(board='synthetic-board', acquired_at=10)
+        old = native.with_suffix('.original')
+        native.rename(old)
+        native.write_bytes(old.read_bytes())
+>       with pytest.raises(ValueError, match='identity'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_hermes_work_edges.py:28: Failed
+=========================== short test summary info ============================
+FAILED backend/tests/test_hermes_work_edges.py::test_acquisition_clock_future_is_unknown
+FAILED backend/tests/test_hermes_work_edges.py::test_replaced_same_path_is_not_same_source_instance
+2 failed, 10 passed in 0.49s
+
+EXIT_CODE=1
