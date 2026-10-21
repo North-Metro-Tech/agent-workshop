@@ -1,5 +1,38 @@
 # RESUME — Agent Workshop
 
+## Latest implementation handoff — Phase 2 slice 2/3
+
+Task `t_bbfe861b` implemented on `feat/phase2-hermes-runtime`, based on the exact
+slice 1 head `f0b5811`; Core has now accepted/merged PR #5 (`main` merge
+`5f89fc8`). Signed red baseline `949646c` (29 failures) and implementation
+`791fe97`: 397 tests pass, including 59 new cases. Actual approved-board runs
+persisted 9 attempt/task correlations, 1 matching live process and 8 unknown
+processes; source main/schema hashes stayed unchanged, and empty task scope
+rejected the SAME actual evidence without durable mutation. Restart invalidates
+active freshness and leaves reconciliation latched. No atomic runtime watermark
+exists for the native DB plus later proc reads; runtime coverage remains partial,
+role availability unknown, lifecycle evidence source-record-only.
+
+Internal QA found/fixed two red regressions: file identity lost across observer
+restart (now durably bound atomically with cursor/records), and live-proof success
+from old history when current acquisition had no attempts. A25 actually installs,
+stops, uninstalls and restores a disposable source deployment with a real
+independent silent child and unchanged synthetic task/schedule stores. Actual
+live uninstall or schedule access was not attempted. Clean archive of `791fe97`
+passed source-only install/runtime import/all 397 tests/both demos/compile checks
+with PYTHONPATH unset; no external dependencies added.
+
+Core independently reviews/merges this slice's PR (handle in task handoff).
+Complete this implementation phase to release existing child `t_f11a8ea8`, NOT
+same-card review or a review-required block. That child owns outbox/full workflow
+and Phase 2 acceptance; `t_7e8a8223` remains the sole MVP notification gate. No
+outbox, renderer, native control, full Phase 2 or MVP readiness is claimed here.
+Evidence and caller contracts: `docs/hermes-runtime.md`,
+`evidence/HERMES_RUNTIME_REVIEW.md`, `evidence/phase2-runtime-*`.
+
+The earlier sections below are preserved historical/Core handoff context; this
+latest section supersedes their slice-1-pending and slice-2-not-implemented state.
+
 ## Objective
 
 Phase 1 of the read-only Workshop supervisory layer is COMPLETE and accepted: the
