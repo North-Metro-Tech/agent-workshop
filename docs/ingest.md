@@ -3,7 +3,7 @@
 This is the A07/A09 synthetic ingress slice, not a listening service, durable
 historian, collector, or interoperability certification. All methods are serial
 in-memory calls. No source is contacted, and no clock is read by the domain.
-Exact reference pins and the unresolved supplied GenAI revision are recorded in
+Exact reference pins and the Core-resolved supplied GenAI revision are recorded in
 `standards.lock`; there is deliberately no dependency installation.
 
 ## Local API and trust boundary
@@ -143,7 +143,9 @@ evidence and complete coverage, and sets reconcile_required. Even a duplicate
 first event of the new epoch triggers this invalidation. Retired epochs cannot
 reactivate the source. Terminal history remains terminal. No event clears the
 reconciliation latch: complete-scope snapshot recovery belongs to the next Phase
-1 slice. Restart recovery is deliberately conservative, not fabricated liveness.
+1 storage slice via `Storage`; see `storage.md`. Standalone Ingest objects remain
+in-memory and cannot clear the latch themselves. Restart recovery is deliberately
+conservative, not fabricated liveness.
 
 ## Bounds, privacy and atomicity
 
@@ -162,8 +164,11 @@ resource content. Hashes detect changed content before redaction; only bounded
 allowlisted metadata and mapped observations remain. Review identity fields as
 source metadata, not trusted display HTML/URLs.
 
-All retained state and indexes are in memory and currently grow with accepted
-history. This is not a durable/bounded historian or collector outbox. Persistence,
-retention, atomic snapshots, source-authority repair and process-restart replay
-are later slices. No live data, native databases, renderer or control path is
-part of these tests.
+Standalone Ingest state/indexes are in memory and grow with accepted history.
+`Storage` now persists them alongside the reducer atomically, and keeps a bounded
+validated/redacted replay journal; use its ingress methods for durable calls.
+The private `_last_batch`/`_last_effects` values expose only the last bounded
+validated call and its effective-record indices to that historian, never raw
+wire content. Deduplication identity and retained domain history are not evicted
+by replay retention. This is not a collector outbox. No live data, native
+databases, renderer or control path is part of these tests.

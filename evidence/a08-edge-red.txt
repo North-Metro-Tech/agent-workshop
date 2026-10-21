@@ -1,0 +1,217 @@
+FFFFFFFF.F...                                                            [100%]
+=================================== FAILURES ===================================
+______ test_A08_included_terminal_absent_from_snapshot_remains_in_history ______
+
+store = <workshop.storage.Storage object at 0x743226e58f50>
+
+    def test_A08_included_terminal_absent_from_snapshot_remains_in_history(store):
+        emit(store)
+        token = start(store, watermark=2)
+        emit(store, seq=2, at=21, id='terminal', state='succeeded', revision=2)
+        store.snapshot_page(token, 'a', [])
+        store.finish_snapshot(token)
+        e = store.read().reducer.executions[KEY]
+>       assert e.lifecycle.mapped == 'succeeded'
+E       AssertionError: assert 'active' == 'succeeded'
+E         
+E         - succeeded
+E         + active
+
+backend/tests/test_storage_edges.py:27: AssertionError
+_______ test_A08_partial_keeps_execution_received_while_collecting_pages _______
+
+store = <workshop.storage.Storage object at 0x743226dcd9d0>
+
+    def test_A08_partial_keeps_execution_received_while_collecting_pages(store):
+        emit(store)
+        token = start(store, watermark=2, complete=False)
+        emit(store, seq=2, at=21, id='two', native='two')
+        store.snapshot_page(token, 'a', [])
+        store.finish_snapshot(token)
+        r = store.read().reducer
+>       assert ExecutionKey('fixture-runtime', 'two') in r.executions
+E       AssertionError: assert ExecutionKey(runtime='fixture-runtime', native_id='two') in {ExecutionKey(runtime='fixture-runtime', native_id='one'): Execution(key=ExecutionKey(runtime='fixture-runtime', nativ...ture:source', feed='runtime', observed_at=None, supported=True, evidence_class='runtime_observed')], discrepancies=[])}
+E        +  where ExecutionKey(runtime='fixture-runtime', native_id='two') = ExecutionKey('fixture-runtime', 'two')
+E        +  and   {ExecutionKey(runtime='fixture-runtime', native_id='one'): Execution(key=ExecutionKey(runtime='fixture-runtime', nativ...ture:source', feed='runtime', observed_at=None, supported=True, evidence_class='runtime_observed')], discrepancies=[])} = <workshop.reducer.Reducer object at 0x743227998d50>.executions
+
+backend/tests/test_storage_edges.py:40: AssertionError
+_______ test_A08_partial_after_restart_does_not_reacquire_live_freshness _______
+
+store = <workshop.storage.Storage object at 0x743226dd3690>
+
+    def test_A08_partial_after_restart_does_not_reacquire_live_freshness(store):
+        emit(store)
+        path = store.path
+        store.close()
+        s = Storage(path)
+        complete(s, [domain()], complete=False)
+        state = s.read()
+        assert state.ingests['source'].reconcile_required
+>       assert state.reducer.executions[KEY].acquired_at is None
+E       AssertionError: assert 20 is None
+E        +  where 20 = Execution(key=ExecutionKey(runtime='fixture-runtime', native_id='one'), role='agent', session='session', parent=None, ...xture:source', feed='runtime', observed_at=None, supported=True, evidence_class='runtime_observed')], discrepancies=[]).acquired_at
+
+backend/tests/test_storage_edges.py:52: AssertionError
+__ test_A08_weak_empty_inventory_cannot_prove_runtime_availability[inferred] ___
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-5/test_A08_weak_empty_inventory_0')
+evidence_class = 'inferred'
+
+    @pytest.mark.parametrize('evidence_class', ['inferred', 'agent_reported', 'operator_recorded', 'source_record'])
+    def test_A08_weak_empty_inventory_cannot_prove_runtime_availability(tmp_path, evidence_class):
+        state = initial()
+        i = state.ingests['source']
+        state.ingests['source'] = Ingest(state.reducer, SourceBinding(i.binding.source,
+            i.binding.runtime, i.binding.role, i.binding.feed, evidence_class=evidence_class))
+        s = Storage(tmp_path / 'synthetic-provenance.db', initial=state)
+        with s.transaction() as current:
+            for name, value in [('admission', 'enabled'), ('reachability', 'reachable'),
+                                ('capacity', {'limit': 1, 'used': 0})]:
+                current.reducer.observe_role('agent', name, Observation(value, value,
+                    'fixture', 'urn:fixture:signals', 'runtime', 10), acquired_at=10)
+        complete(s, [], watermark=0)
+        role = s.snapshot(now=20)['projection']['roles'][0]
+>       assert role['availability'] == 'unknown'
+E       AssertionError: assert 'available' == 'unknown'
+E         
+E         - unknown
+E         + available
+
+backend/tests/test_storage_edges.py:72: AssertionError
+_ test_A08_weak_empty_inventory_cannot_prove_runtime_availability[agent_reported] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-5/test_A08_weak_empty_inventory_1')
+evidence_class = 'agent_reported'
+
+    @pytest.mark.parametrize('evidence_class', ['inferred', 'agent_reported', 'operator_recorded', 'source_record'])
+    def test_A08_weak_empty_inventory_cannot_prove_runtime_availability(tmp_path, evidence_class):
+        state = initial()
+        i = state.ingests['source']
+        state.ingests['source'] = Ingest(state.reducer, SourceBinding(i.binding.source,
+            i.binding.runtime, i.binding.role, i.binding.feed, evidence_class=evidence_class))
+        s = Storage(tmp_path / 'synthetic-provenance.db', initial=state)
+        with s.transaction() as current:
+            for name, value in [('admission', 'enabled'), ('reachability', 'reachable'),
+                                ('capacity', {'limit': 1, 'used': 0})]:
+                current.reducer.observe_role('agent', name, Observation(value, value,
+                    'fixture', 'urn:fixture:signals', 'runtime', 10), acquired_at=10)
+        complete(s, [], watermark=0)
+        role = s.snapshot(now=20)['projection']['roles'][0]
+>       assert role['availability'] == 'unknown'
+E       AssertionError: assert 'available' == 'unknown'
+E         
+E         - unknown
+E         + available
+
+backend/tests/test_storage_edges.py:72: AssertionError
+_ test_A08_weak_empty_inventory_cannot_prove_runtime_availability[operator_recorded] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-5/test_A08_weak_empty_inventory_2')
+evidence_class = 'operator_recorded'
+
+    @pytest.mark.parametrize('evidence_class', ['inferred', 'agent_reported', 'operator_recorded', 'source_record'])
+    def test_A08_weak_empty_inventory_cannot_prove_runtime_availability(tmp_path, evidence_class):
+        state = initial()
+        i = state.ingests['source']
+        state.ingests['source'] = Ingest(state.reducer, SourceBinding(i.binding.source,
+            i.binding.runtime, i.binding.role, i.binding.feed, evidence_class=evidence_class))
+        s = Storage(tmp_path / 'synthetic-provenance.db', initial=state)
+        with s.transaction() as current:
+            for name, value in [('admission', 'enabled'), ('reachability', 'reachable'),
+                                ('capacity', {'limit': 1, 'used': 0})]:
+                current.reducer.observe_role('agent', name, Observation(value, value,
+                    'fixture', 'urn:fixture:signals', 'runtime', 10), acquired_at=10)
+        complete(s, [], watermark=0)
+        role = s.snapshot(now=20)['projection']['roles'][0]
+>       assert role['availability'] == 'unknown'
+E       AssertionError: assert 'available' == 'unknown'
+E         
+E         - unknown
+E         + available
+
+backend/tests/test_storage_edges.py:72: AssertionError
+_ test_A08_weak_empty_inventory_cannot_prove_runtime_availability[source_record] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-5/test_A08_weak_empty_inventory_3')
+evidence_class = 'source_record'
+
+    @pytest.mark.parametrize('evidence_class', ['inferred', 'agent_reported', 'operator_recorded', 'source_record'])
+    def test_A08_weak_empty_inventory_cannot_prove_runtime_availability(tmp_path, evidence_class):
+        state = initial()
+        i = state.ingests['source']
+        state.ingests['source'] = Ingest(state.reducer, SourceBinding(i.binding.source,
+            i.binding.runtime, i.binding.role, i.binding.feed, evidence_class=evidence_class))
+        s = Storage(tmp_path / 'synthetic-provenance.db', initial=state)
+        with s.transaction() as current:
+            for name, value in [('admission', 'enabled'), ('reachability', 'reachable'),
+                                ('capacity', {'limit': 1, 'used': 0})]:
+                current.reducer.observe_role('agent', name, Observation(value, value,
+                    'fixture', 'urn:fixture:signals', 'runtime', 10), acquired_at=10)
+        complete(s, [], watermark=0)
+        role = s.snapshot(now=20)['projection']['roles'][0]
+>       assert role['availability'] == 'unknown'
+E       AssertionError: assert 'available' == 'unknown'
+E         
+E         - unknown
+E         + available
+
+backend/tests/test_storage_edges.py:72: AssertionError
+_________ test_A08_other_source_conflict_during_snapshot_is_not_erased _________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-5/test_A08_other_source_conflict0')
+
+    def test_A08_other_source_conflict_during_snapshot_is_not_erased(tmp_path):
+        state = initial()
+        state.reducer.register_role('other', scope=('chat',), inventory_approved=True)
+        state.reducer.register_feed('other', FeedPolicy(5, 15, 30), group='other')
+        state.ingests['other'] = Ingest(state.reducer, SourceBinding('urn:fixture:other',
+            'other-runtime', 'other', 'other'))
+        s = Storage(tmp_path / 'synthetic-multi-source.db', initial=state)
+        emit(s)
+        with s.transaction() as current:
+            current.reducer.add_correlation(ExecutionKey('other-runtime', 'alias'), KEY,
+                                            mapping_version='fixture')
+        token = start(s)
+        event = dict(specversion='1.0', source='urn:fixture:other', id='other', type=EVENT_TYPE,
+                     data=domain('alias', 'failed'))
+        s.cloudevents('other', json.dumps(event).encode(), context=Acquisition(21, 21, 'other-boot'),
+                      source_cursor=1)
+        s.snapshot_page(token, 'a', [domain()])
+        s.finish_snapshot(token)
+        r = s.read().reducer
+>       assert r.executions[KEY].discrepancies
+E       AssertionError: assert []
+E        +  where [] = Execution(key=ExecutionKey(runtime='fixture-runtime', native_id='one'), role='agent', session='session', parent=None, ...xture:source', feed='runtime', observed_at=None, supported=True, evidence_class='runtime_observed')], discrepancies=[]).discrepancies
+
+backend/tests/test_storage_edges.py:97: AssertionError
+_______ test_A08_newer_live_event_shadows_older_terminal_snapshot_record _______
+
+store = <workshop.storage.Storage object at 0x743226e2f690>
+
+    def test_A08_newer_live_event_shadows_older_terminal_snapshot_record(store):
+        emit(store)
+        token = start(store)
+        emit(store, seq=2, at=21, id='later-live', revision=3)
+        store.snapshot_page(token, 'a', [domain(state='succeeded', revision=2)])
+        store.finish_snapshot(token)
+        e = store.read().reducer.executions[KEY]
+>       assert e.lifecycle.mapped == 'active'
+E       AssertionError: assert 'succeeded' == 'active'
+E         
+E         - active
+E         + succeeded
+
+backend/tests/test_storage_edges.py:120: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_storage_edges.py::test_A08_included_terminal_absent_from_snapshot_remains_in_history
+FAILED backend/tests/test_storage_edges.py::test_A08_partial_keeps_execution_received_while_collecting_pages
+FAILED backend/tests/test_storage_edges.py::test_A08_partial_after_restart_does_not_reacquire_live_freshness
+FAILED backend/tests/test_storage_edges.py::test_A08_weak_empty_inventory_cannot_prove_runtime_availability[inferred]
+FAILED backend/tests/test_storage_edges.py::test_A08_weak_empty_inventory_cannot_prove_runtime_availability[agent_reported]
+FAILED backend/tests/test_storage_edges.py::test_A08_weak_empty_inventory_cannot_prove_runtime_availability[operator_recorded]
+FAILED backend/tests/test_storage_edges.py::test_A08_weak_empty_inventory_cannot_prove_runtime_availability[source_record]
+FAILED backend/tests/test_storage_edges.py::test_A08_other_source_conflict_during_snapshot_is_not_erased
+FAILED backend/tests/test_storage_edges.py::test_A08_newer_live_event_shadows_older_terminal_snapshot_record
+9 failed, 4 passed in 0.43s
+
+PYTEST_EXIT_CODE=1

@@ -233,8 +233,9 @@ class IngestResult:
 class Ingest:
     """One configured source/scope, sharing the existing reducer's actor identity.
 
-    Calls are serial, in-memory transactions. Identity/order indexes survive only
-    this object's lifetime. Durable replay and atomic snapshots are a later slice.
+    Calls are serial, in-memory transactions. Standalone identity/order indexes
+    survive only this object's lifetime; Storage wraps them for durable atomic
+    replay/snapshot recovery without retaining incoming wire content.
     """
     def __init__(self, reducer: Reducer, binding: SourceBinding):
         if binding.role not in reducer.roles or binding.feed not in reducer.feeds:
@@ -298,11 +299,19 @@ class Ingest:
             raise ValueError('Batch exceeds 256 observations')
         staged = deepcopy(self)
         result = IngestResult()
-        for record in records:
+        applied = []
+        for index, record in enumerate(records):
+            before = result.accepted
             staged._apply(record, context, result)
+            if result.accepted > before:
+                applied.append(index)
         self.reducer.__dict__.update(staged.reducer.__dict__)
         staged.reducer = self.reducer
         self.__dict__.update(staged.__dict__)
+        # Bounded, validated/redacted records for the Workshop historian's
+        # transactional replay journal. Never the incoming wire bytes/content.
+        self._last_batch = (deepcopy(records), context)
+        self._last_effects = tuple(applied)
         return result
 
     def _apply(self, record, ctx, result):

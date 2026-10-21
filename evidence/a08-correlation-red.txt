@@ -1,0 +1,43 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_A08_snapshot_newer_key_still_records_cross_role_identity_conflict ____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-10/test_A08_snapshot_newer_key_st0')
+
+    def test_A08_snapshot_newer_key_still_records_cross_role_identity_conflict(tmp_path):
+        state = initial()
+        r = state.reducer
+        r.register_role('other', scope=('chat',), inventory_approved=True)
+        r.register_feed('other', FeedPolicy(5, 15, 30), group='other')
+        state.ingests['other'] = Ingest(r, SourceBinding('urn:fixture:other', 'other-runtime', 'other', 'other'))
+        s = Storage(tmp_path / 'synthetic-correlated-race.db', initial=state)
+        def emit_other(id, seq, at, revision):
+            event = dict(specversion='1.0', source='urn:fixture:other', id=id, type=EVENT_TYPE,
+                         data=domain('canonical', revision=revision))
+            return s.cloudevents('other', json.dumps(event).encode(),
+                                context=Acquisition(at, at, 'other-boot'), source_cursor=seq)
+        emit_other('initial', 1, 10, 1)
+        canonical = ExecutionKey('other-runtime', 'canonical')
+        with s.transaction() as current:
+            current.reducer.add_correlation(KEY, canonical, mapping_version='fixture')
+            for name, value in [('admission', 'enabled'), ('reachability', 'reachable'),
+                                ('capacity', {'limit': 1, 'used': 0})]:
+                current.reducer.observe_role('agent', name, Observation(value, value,
+                    'fixture', 'urn:fixture:signals', 'runtime', 10), acquired_at=10)
+        token = start(s, watermark=0)
+        emit_other('newer', 2, 21, 2)
+        s.snapshot_page(token, 'a', [domain()])
+        s.finish_snapshot(token)
+        current = s.read().reducer
+>       assert current.summary('agent', now=21)['availability'] == 'unknown'
+E       AssertionError: assert 'available' == 'unknown'
+E         
+E         - unknown
+E         + available
+
+backend/tests/test_storage_edges.py:252: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_storage_edges.py::test_A08_snapshot_newer_key_still_records_cross_role_identity_conflict
+1 failed, 17 deselected in 0.08s
+
+PYTEST_EXIT_CODE=1
