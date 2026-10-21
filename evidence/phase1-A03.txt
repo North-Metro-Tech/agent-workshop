@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 294 items / 269 deselected / 25 selected
+
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[admission-enabled] PASSED [  4%]
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[reachability-reachable] PASSED [  8%]
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[capacity-value2] PASSED [ 12%]
+backend/tests/test_truth_edges.py::test_A03_same_feed_other_role_cannot_revive_reconciliation PASSED [ 16%]
+backend/tests/test_truth_edges.py::test_A03_snapshot_is_defensive_and_interlock_has_no_setter PASSED [ 20%]
+backend/tests/test_truth_edges.py::test_A03_unverified_terminal_report_cannot_prove_available PASSED [ 24%]
+backend/tests/test_truth_model.py::test_A03_available_only_with_all_fresh_evidence_idle_never_alarms PASSED [ 28%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[admission-held] PASSED [ 32%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[reachability-unknown] PASSED [ 36%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped2] PASSED [ 40%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped3] PASSED [ 44%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped4] PASSED [ 48%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped5] PASSED [ 52%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[admission] PASSED [ 56%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[reachability] PASSED [ 60%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[capacity] PASSED [ 64%]
+backend/tests/test_truth_model.py::test_A03_active_execution_prevents_available_and_preserves_concurrency PASSED [ 68%]
+backend/tests/test_truth_model.py::test_A03_unknown_execution_cannot_mean_zero_active PASSED [ 72%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/dispatch] PASSED [ 76%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/cancel] PASSED [ 80%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/steer] PASSED [ 84%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/approve] PASSED [ 88%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/admission] PASSED [ 92%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/execute] PASSED [ 96%]
+backend/tests/test_truth_model.py::test_A03_ack_is_local_authorized_only PASSED [100%]
+
+====================== 25 passed, 269 deselected in 0.06s ======================
+
+EXIT_CODE=0

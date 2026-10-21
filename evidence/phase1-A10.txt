@@ -1,0 +1,48 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 294 items / 259 deselected / 35 selected
+
+backend/tests/test_source_scope.py::test_A10_same_native_ids_have_distinct_instance_board_and_runtime_keys PASSED [  2%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-ce] PASSED [  5%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-otlp] PASSED [  8%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-snapshot] PASSED [ 11%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-ce] PASSED [ 14%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-otlp] PASSED [ 17%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-snapshot] PASSED [ 20%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-ce] PASSED [ 22%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-otlp] PASSED [ 25%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-snapshot] PASSED [ 28%]
+backend/tests/test_source_scope.py::test_A10_no_task_permission_by_default PASSED [ 31%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes0] PASSED [ 34%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes1] PASSED [ 37%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes2] PASSED [ 40%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes3] PASSED [ 42%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes4] PASSED [ 45%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes5] PASSED [ 48%]
+backend/tests/test_source_scope.py::test_A10_cloudevents_source_cannot_select_another_binding PASSED [ 51%]
+backend/tests/test_source_scope.py::test_A10_durable_runtime_instance_collision_is_rejected PASSED [ 54%]
+backend/tests/test_source_scope.py::test_A10_sqlite_bounded_scoped_acquisition_leaves_bytes_schema_and_records_unchanged PASSED [ 57%]
+backend/tests/test_source_scope.py::test_A10_sqlite_ro_and_query_only_are_enforced PASSED [ 60%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change0] PASSED [ 62%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change1] PASSED [ 65%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change2] PASSED [ 68%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change3] PASSED [ 71%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change4] PASSED [ 74%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change5] PASSED [ 77%]
+backend/tests/test_source_scope.py::test_A10_sqlite_does_not_create_missing_source PASSED [ 80%]
+backend/tests/test_source_scope.py::test_A10_sqlite_live_WAL_is_visible_without_immutable PASSED [ 82%]
+backend/tests/test_source_scope_edges.py::test_A10_aggregate_bound_stops_cursor_before_materializing_whole_batch PASSED [ 85%]
+backend/tests/test_source_scope_edges.py::test_A10_otlp_resource_and_identity_attributes_cannot_change_binding PASSED [ 88%]
+backend/tests/test_source_scope_edges.py::test_A10_unknown_SQLite_extra_column_rejected_and_bytes_unchanged PASSED [ 91%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[oversized] PASSED [ 94%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[blob] PASSED [ 97%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[view] PASSED [100%]
+
+====================== 35 passed, 259 deselected in 0.41s ======================
+
+EXIT_CODE=0

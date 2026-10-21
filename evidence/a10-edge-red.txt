@@ -1,0 +1,50 @@
+F.....                                                                   [100%]
+=================================== FAILURES ===================================
+____ test_A10_aggregate_bound_stops_cursor_before_materializing_whole_batch ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-20/test_A10_aggregate_bound_stops0/synthetic native?#%.db')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ac52eca9310>
+
+    def test_A10_aggregate_bound_stops_cursor_before_materializing_whole_batch(native, monkeypatch):
+        with sqlite3.connect(native) as db:
+            db.execute('DELETE FROM tasks')
+            db.executemany('INSERT INTO tasks VALUES (?,?,?)',
+                           [(str(i), 'a', 'x' * 40000) for i in range(50)])
+        from workshop import acquisition
+        real = sqlite3.connect
+        fetched = []
+        closed = []
+        class Cursor:
+            def __init__(self, inner):
+                self.inner = inner
+            def fetchall(self):
+                rows = self.inner.fetchall()
+                fetched.extend(rows)
+                return rows
+            def __iter__(self):
+                for row in self.inner:
+                    fetched.append(row)
+                    yield row
+        class Connection(sqlite3.Connection):
+            def execute(self, sql, *args):
+                result = super().execute(sql, *args)
+                return Cursor(result) if sql.startswith('SELECT *') else result
+            def close(self):
+                closed.append(True)
+                super().close()
+        def connect(database, **kw):
+            return real(database, factory=Connection, **kw)
+        monkeypatch.setattr(acquisition.sqlite3, 'connect', connect)
+        before = native.read_bytes()
+        with pytest.raises(ValueError, match='byte bound'):
+            read_table(native, table='tasks', schema=SCHEMA)
+>       assert 1 < len(fetched) < 50
+E       AssertionError: assert 50 < 50
+E        +  where 50 = len([('0', 'a', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'), ...])
+
+backend/tests/test_source_scope_edges.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_source_scope_edges.py::test_A10_aggregate_bound_stops_cursor_before_materializing_whole_batch
+1 failed, 5 passed in 0.14s
+
+EXIT_CODE=1

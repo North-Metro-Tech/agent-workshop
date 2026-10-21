@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 294 items / 286 deselected / 8 selected
+
+backend/tests/test_truth_edges.py::test_A02_unsupported_terminal_mapping_never_establishes_available PASSED [ 12%]
+backend/tests/test_truth_edges.py::test_A02_execution_projection_exposes_native_mapping_and_quality PASSED [ 25%]
+backend/tests/test_truth_model.py::test_A02_configured_unobserved_never_available PASSED [ 37%]
+backend/tests/test_truth_model.py::test_A02_partial_scope_explicit[False-scope0] PASSED [ 50%]
+backend/tests/test_truth_model.py::test_A02_partial_scope_explicit[True-scope1] PASSED [ 62%]
+backend/tests/test_truth_model.py::test_A02_unknown_and_unsupported_values_preserved[new-native-value-None-True-unknown] PASSED [ 75%]
+backend/tests/test_truth_model.py::test_A02_unknown_and_unsupported_values_preserved[open-None-False-unsupported] PASSED [ 87%]
+backend/tests/test_truth_model.py::test_A02_inventory_incomplete_prevents_global_availability PASSED [100%]
+
+====================== 8 passed, 286 deselected in 0.05s =======================
+
+EXIT_CODE=0

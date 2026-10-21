@@ -13,46 +13,88 @@ it does not control them.
 
 ## Status and scope
 
-The local implementation covers synthetic A01–A04 plus A07–A09 fixtures.
-It provides an in-memory reducer, explicit identity correlations, coverage and
-availability gating, per-feed freshness, Workshop-local alarms, a local read
-facade, bounded function-level CloudEvents/OTLP JSON observation mapping, and a
-Workshop-owned SQLite WAL historian with atomic snapshot/restart/replay recovery.
-It is not a running monitoring service or operational acceptance.
+Phase 1 implementation covers synthetic A01–A04 and A07–A10 fixtures: truth
+reducer, scoped identities, coverage/availability, freshness, Workshop-local
+alarms, function-level CloudEvents/OTLP JSON ingress, Workshop-owned SQLite WAL
+historian, atomic snapshot/restart/replay recovery, scoped task-link permissions,
+bounded read-only SQLite primitive, and runnable synthetic demo.
 
-There is no collector, native database access, network listener, command
-executor, renderer or runtime-write route. Local alarm acknowledgement changes
-only Workshop records (durable when using the historian-backed facade).
-The controller position cannot enable writes.
-No new dependencies were installed for this slice.
+This is not a running monitoring service, an implemented Hermes collector or
+operational acceptance. There is no network listener, HTTP/binary OTLP binding,
+renderer, native executor, enable switch or runtime-write route. The controller
+position cannot enable writes. Local alarm acknowledgement changes Workshop
+records only. No third-party renderer code or new dependency has been adopted.
+A real approved workflow and renderer remain subsequent phases; a green Phase 1
+fixture gate does not mean the product MVP is ready.
 
-The binary OTLP/HTTP binding, A10 coverage and runnable demo remain later work.
-No third-party renderer
-code has been adopted. See `docs/ingest.md` for the exact supported wire subset,
-trusted acquisition context. See `docs/storage.md` for the source watermark,
-pagination, recovery and retention contracts and explicit limitations.
+Read the precise contracts and limitations:
 
-## Development
+- `docs/ingest.md`: supported wire subset, trusted acquisition context, privacy.
+- `docs/storage.md`: source watermark, recovery, replay and retention boundaries.
+- `docs/source-binding.md`: task permissions, instance identity and SQLite reads.
+- `docs/standards.lock`: reference pins, including resolved GenAI repository;
+  Development-stability conventions are not a conformance certification.
 
-Use an existing Python 3.11+ environment with pytest available. From the root:
+## Development: install, test, demo
 
+Requires Python 3.11+ and its standard-library `venv` support. Runtime uses only
+the standard library. Tests additionally require pytest in an existing approved
+Python environment. The verified test environment uses Python 3.11.15 and pytest
+9.1.1; the no-pip runtime install/demo/check also work on Python 3.14.7.
+
+From a clean checkout, using the desired Python interpreter:
+
+    python scripts/dev.py install
+    python scripts/dev.py demo
+    python scripts/dev.py check
+
+Install creates `.venv` without pip or third-party downloads and links only this
+checkout's backend through a `.pth` file. It refuses an existing unmanaged
+`.venv`; it does not overwrite another environment. This is a source-checkout
+install, not a distributable wheel; moving the checkout requires reinstalling.
+You can also run the installed demo directly without PYTHONPATH:
+
+    .venv/bin/python -m workshop.demo
+
+Demo prints deterministic JSON to stdout; redirect it to a file if desired:
+
+    python scripts/dev.py demo > snapshot.json
+
+It seeds synthetic instances/boards with colliding native IDs, active roles,
+an available idle role and an unobserved role whose availability stays unknown.
+There are no wall-clock reads, native inputs, file writes or service listeners
+inside the demo. The snapshot always says `native_write_enabled: false`.
+
+Run tests using the interpreter which already has approved pytest, NOT the
+runtime-only `.venv` created above (that environment intentionally has no pytest):
+
+    python scripts/dev.py test
+    python scripts/dev.py test backend/tests/test_source_scope.py -q
     python -m pytest -q
-    python -m compileall -q backend
     git diff --check
 
-Verified with Python 3.11.15 and pytest 9.1.1: 234 passing synthetic cases.
-Compilation also checked with Python 3.14.7. See `evidence/REVIEW.md` for the
-original reducer evidence and `evidence/INGEST_REVIEW.md` for this ingress
-slice's real red/green output, boundaries, and review attention areas.
-`evidence/STORAGE_REVIEW.md` records A08 red/green and adversarial recovery
-evidence, including crash/WAL recovery and SQL rollback. Fixture databases are
-created only in temporary paths; never target a native database with Storage.
+No dependency installation or update is performed by these commands. If pytest
+is missing, choose an existing approved test interpreter, or obtain dependency
+approval and quarantine verification separately; do not assume the development
+helper downloads it. Tests create synthetic fixture databases only in temporary
+paths, never real Hermes databases. The clean-source-copy regression exercises
+install, both demo entrypoints, and the test command without inherited PYTHONPATH.
 
 `backend/workshop/api.py` is an in-process facade, not an HTTP server. Its
-`authorized` flag must come from a trusted local caller; it is not a substitute
-for authentication/CSRF protection in a future network binding. Correlation
-mappings are trusted local configuration. Observations passed to the reducer
-are already-mapped domain data, not a new public telemetry envelope.
+`authorized` flag is a trusted local input, not network authentication/CSRF.
+`SourceBinding.task_scopes` is an explicit local allowlist: empty permits no task
+links. Correlation mappings and runtime-instance names are trusted configuration.
+Native rows read by the SQLite primitive are not runtime-liveness evidence.
+Never point Storage at a native database; its writable file is Workshop-owned.
+
+## Evidence
+
+`evidence/PHASE1_REVIEW.md` maps the closing slice and its actual red/green output.
+`evidence/REVIEW.md`, `INGEST_REVIEW.md`, and `STORAGE_REVIEW.md` preserve the prior
+implementation slices' evidence and limitations. Per-scenario `phase1-A*.txt`
+captures name the fixture tests for A01–A04 and A07–A10. These synthetic results
+are not live-fleet, frontend, standards-conformance or certification claims.
+Core independently reviews and merges the feature PR before Phase 1 is accepted.
 
 ## License
 

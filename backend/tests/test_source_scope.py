@@ -7,6 +7,7 @@ import sqlite3
 
 import pytest
 
+from workshop.api import LocalAPI
 from workshop.contracts import ExecutionKey, FeedPolicy, TaskKey
 from workshop.ingest import Acquisition, EVENT_TYPE, Ingest, SourceBinding
 from workshop.reducer import Reducer
@@ -113,10 +114,10 @@ def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
 
 def test_A10_cloudevents_source_cannot_select_another_binding():
     state = configured()
-    before = deepcopy(state.reducer.__dict__)
+    before = LocalAPI(state.reducer).snapshot(now=10)
     with pytest.raises(ValueError, match='scope'):
         state.ingests['a'].cloudevents(wire(event('b')), context=Acquisition(10, 10, 'boot'))
-    assert state.reducer.__dict__ == before
+    assert LocalAPI(state.reducer).snapshot(now=10) == before
 
 
 def test_A10_durable_runtime_instance_collision_is_rejected(tmp_path):
@@ -168,12 +169,19 @@ def test_A10_sqlite_ro_and_query_only_are_enforced(native, monkeypatch):
             calls.append(sql)
             if sql.startswith('SELECT *'):
                 assert super().execute('PRAGMA query_only').fetchone() == (1,)
+                for statement in ("UPDATE tasks SET disposition='done'",
+                                  'CREATE TABLE injected(id TEXT)', 'DROP TABLE tasks'):
+                    with pytest.raises(sqlite3.OperationalError):
+                        super().execute(statement)
+                # Independently prove mode=ro, not just query_only, denies DML.
+                super().execute('PRAGMA query_only=OFF')
                 with pytest.raises(sqlite3.OperationalError):
                     super().execute("UPDATE tasks SET disposition='done'")
+                super().execute('PRAGMA query_only=ON')
             return super().execute(sql, *args)
-    def connect(uri, **kw):
-        assert uri.endswith('?mode=ro') and kw['uri'] is True
-        return real(uri, factory=Guard, **kw)
+    def connect(database, **kw):
+        assert database.endswith('?mode=ro') and kw['uri'] is True
+        return real(database, factory=Guard, **kw)
     monkeypatch.setattr(acquisition.sqlite3, 'connect', connect)
     acquisition.read_table(native, table='tasks', schema=SCHEMA)
     assert 'BEGIN' in calls

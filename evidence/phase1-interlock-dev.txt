@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+plugins: anyio-4.15.0
+collecting ... collected 25 items
+
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-viewer] PASSED [  4%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-operator] PASSED [  8%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-controller] PASSED [ 12%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-viewer] PASSED [ 16%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-operator] PASSED [ 20%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-controller] PASSED [ 24%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-viewer] PASSED [ 28%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-operator] PASSED [ 32%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-controller] PASSED [ 36%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-viewer] PASSED [ 40%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-operator] PASSED [ 44%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-controller] PASSED [ 48%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-viewer] PASSED [ 52%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-operator] PASSED [ 56%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-controller] PASSED [ 60%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-viewer] PASSED [ 64%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-operator] PASSED [ 68%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-controller] PASSED [ 72%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-viewer] PASSED [ 76%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-operator] PASSED [ 80%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-controller] PASSED [ 84%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_explicit_closed_public_mutation_surface PASSED [ 88%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_ignores_environment_and_observation_enable_flags PASSED [ 92%]
+backend/tests/test_phase1_gate.py::test_phase1_synthetic_demo_is_deterministic_json PASSED [ 96%]
+backend/tests/test_phase1_gate.py::test_phase1_install_demo_and_test_commands_from_clean_source_copy PASSED [100%]
+
+============================== 25 passed in 0.95s ==============================
+
+EXIT_CODE=0

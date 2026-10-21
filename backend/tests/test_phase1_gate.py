@@ -54,16 +54,30 @@ def test_phase1_interlock_explicit_closed_public_mutation_surface():
     # or arbitrary dynamic import forces an intentional interlock re-review.
     allowed = {'__future__', 'base64', 'binascii', 'collections', 'contextlib', 'copy',
         'dataclasses', 'datetime', 'hashlib', 'json', 'math', 'pathlib', 're', 'sqlite3',
-        'typing', 'urllib', 'uuid', 'argparse', 'sys'}
+        'typing', 'urllib.parse', 'uuid', 'argparse', 'sys'}
     for path in root.rglob('*.py'):
         tree = ast.parse(path.read_text())
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):
-                assert all(a.name.split('.')[0] in allowed for a in node.names), path
+                assert all(a.name in allowed for a in node.names), path
             elif isinstance(node, ast.ImportFrom) and node.level == 0:
-                assert node.module.split('.')[0] in allowed, path
+                assert node.module in allowed, path
             elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
                 assert node.func.id not in {'eval', 'exec', '__import__'}, path
+
+
+def test_phase1_interlock_ignores_environment_and_observation_enable_flags(tmp_path, monkeypatch):
+    monkeypatch.setenv('WORKSHOP_NATIVE_WRITE_ENABLED', 'true')
+    monkeypatch.setenv('WORKSHOP_EXECUTOR', 'synthetic-command')
+    store = Storage(tmp_path / 'synthetic.db', initial=configured())
+    value = event()
+    value['nativewriteenabled'] = True  # untrusted CE extension, never config
+    store.cloudevents('a', wire(value), context=Acquisition(10, 10, 'boot'), source_cursor=1)
+    assert LocalAPI(storage=store).snapshot(now=10)['native_write_enabled'] is False
+    assert LocalAPI(store.read().reducer).native_write_enabled is False
+    with pytest.raises(TypeError):
+        SourceBinding('urn:synthetic:x', 'runtime', 'role', 'feed', native_write_enabled=True)
+    store.close()
 
 
 def test_phase1_synthetic_demo_is_deterministic_json():

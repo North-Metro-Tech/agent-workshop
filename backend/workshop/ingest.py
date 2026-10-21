@@ -194,6 +194,9 @@ class SourceBinding:
     feed: str
     schema_url: str = ''
     evidence_class: str = 'runtime_observed'
+    # Explicit trusted task-link permissions. Empty means no task links, never
+    # a wildcard. An origin's own source label does not grant another board.
+    task_scopes: tuple[tuple[str, str], ...] = ()
 
     def __post_init__(self):
         _uri(self.source, 'configured source')
@@ -204,6 +207,15 @@ class SourceBinding:
         if self.evidence_class not in {'runtime_observed', 'source_record', 'agent_reported',
                                        'operator_recorded', 'inferred'}:
             raise ValueError('Unknown evidence class')
+        if not isinstance(self.task_scopes, tuple) or len(self.task_scopes) > MAX_BATCH:
+            raise ValueError('Task scopes require a bounded immutable allowlist')
+        for scope in self.task_scopes:
+            if not isinstance(scope, tuple) or len(scope) != 2:
+                raise ValueError('Task scope requires source instance and namespace')
+            for value in scope:
+                _text(value, 'configured task scope')
+        if len(set(self.task_scopes)) != len(self.task_scopes):
+            raise ValueError('Duplicate configured task scope')
 
 
 @dataclass(frozen=True)
@@ -390,6 +402,8 @@ class Ingest:
                 raise ValueError('Task requires composite identity')
             for name, value in task.items():
                 _text(value, name)
+            if (task['source_instance'], task['namespace']) not in self.binding.task_scopes:
+                raise ValueError('Task link outside configured source scope')
         return deepcopy(data)
 
     def cloudevents(self, payload: bytes, *, context: Acquisition) -> IngestResult:
