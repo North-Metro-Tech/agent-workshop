@@ -1,0 +1,1278 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.FF                    [100%]
+=================================== FAILURES ===================================
+____ test_A10_same_native_ids_have_distinct_instance_board_and_runtime_keys ____
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_same_native_ids_have_0')
+
+    def test_A10_same_native_ids_have_distinct_instance_board_and_runtime_keys(tmp_path):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+____________ test_A10_scope_spoof_rejected_atomically[instance-ce] _____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_0')
+transport = 'ce', attack = 'instance'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+___________ test_A10_scope_spoof_rejected_atomically[instance-otlp] ____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_1')
+transport = 'otlp', attack = 'instance'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_________ test_A10_scope_spoof_rejected_atomically[instance-snapshot] __________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_2')
+transport = 'snapshot', attack = 'instance'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+______________ test_A10_scope_spoof_rejected_atomically[board-ce] ______________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_3')
+transport = 'ce', attack = 'board'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_____________ test_A10_scope_spoof_rejected_atomically[board-otlp] _____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_4')
+transport = 'otlp', attack = 'board'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+___________ test_A10_scope_spoof_rejected_atomically[board-snapshot] ___________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_5')
+transport = 'snapshot', attack = 'board'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+______________ test_A10_scope_spoof_rejected_atomically[both-ce] _______________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_6')
+transport = 'ce', attack = 'both'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_____________ test_A10_scope_spoof_rejected_atomically[both-otlp] ______________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_7')
+transport = 'otlp', attack = 'both'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+___________ test_A10_scope_spoof_rejected_atomically[both-snapshot] ____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_scope_spoof_rejected_8')
+transport = 'snapshot', attack = 'both'
+
+    @pytest.mark.parametrize('transport', ['ce', 'otlp', 'snapshot'])
+    @pytest.mark.parametrize('attack', ['instance', 'board', 'both'])
+    def test_A10_scope_spoof_rejected_atomically(tmp_path, transport, attack):
+>       s = Storage(tmp_path / 'synthetic-historian.db', initial=configured())
+                                                                 ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+____________________ test_A10_no_task_permission_by_default ____________________
+
+    def test_A10_no_task_permission_by_default():
+>       state = configured()
+                ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes0] ______
+
+scopes = []
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes1] ______
+
+scopes = ('instance', 'board')
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes2] ______
+
+scopes = (('instance',),)
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes3] ______
+
+scopes = (('instance', 'board'), ('instance', 'board'))
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes4] ______
+
+scopes = (('', 'board'),)
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+______ test_A10_invalid_trusted_scope_configuration_fails_closed[scopes5] ______
+
+scopes = ((1, 'board'),)
+
+    @pytest.mark.parametrize('scopes', [[], ('instance', 'board'), (('instance',),),
+        (('instance', 'board'), ('instance', 'board')), (('', 'board'),), ((1, 'board'),)])
+    def test_A10_invalid_trusted_scope_configuration_fails_closed(scopes):
+        with pytest.raises(ValueError):
+>           SourceBinding('urn:synthetic:a', 'runtime-a', 'a', 'a', task_scopes=scopes)
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:111: TypeError
+__________ test_A10_cloudevents_source_cannot_select_another_binding ___________
+
+    def test_A10_cloudevents_source_cannot_select_another_binding():
+>       state = configured()
+                ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+___________ test_A10_durable_runtime_instance_collision_is_rejected ____________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_durable_runtime_insta0')
+
+    def test_A10_durable_runtime_instance_collision_is_rejected(tmp_path):
+>       state = configured()
+                ^^^^^^^^^^^^
+
+backend/tests/test_source_scope.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_A10_sqlite_bounded_scoped_acquisition_leaves_bytes_schema_and_records_unchanged _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_bounded_scoped0/synthetic native?#%.db')
+
+    def test_A10_sqlite_bounded_scoped_acquisition_leaves_bytes_schema_and_records_unchanged(native):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:146: ModuleNotFoundError
+________________ test_A10_sqlite_ro_and_query_only_are_enforced ________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_ro_and_query_o0/synthetic native?#%.db')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x788f4667f190>
+
+    def test_A10_sqlite_ro_and_query_only_are_enforced(native, monkeypatch):
+>       from workshop import acquisition
+E       ImportError: cannot import name 'acquisition' from 'workshop' (/home/aaron/projects/agent-workshop/backend/workshop/__init__.py)
+
+backend/tests/test_source_scope.py:163: ImportError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change0] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow0/synthetic native?#%.db')
+change = {'table': 'tasks; DROP TABLE tasks'}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change1] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow1/synthetic native?#%.db')
+change = {'schema': (('id', 'INTEGER'),)}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change2] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow2/synthetic native?#%.db')
+change = {'where': {'missing': 'a'}}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change3] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow3/synthetic native?#%.db')
+change = {'limit': 0}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change4] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow4/synthetic native?#%.db')
+change = {'limit': 257}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+_ test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change5] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_rejects_unknow5/synthetic native?#%.db')
+change = {'limit': True}
+
+    @pytest.mark.parametrize('change', [dict(table='tasks; DROP TABLE tasks'),
+        dict(schema=(('id', 'INTEGER'),)), dict(where={'missing': 'a'}), dict(limit=0),
+        dict(limit=257), dict(limit=True)])
+    def test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged(native, change):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:187: ModuleNotFoundError
+________________ test_A10_sqlite_does_not_create_missing_source ________________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_does_not_creat0')
+
+    def test_A10_sqlite_does_not_create_missing_source(tmp_path):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:195: ModuleNotFoundError
+____________ test_A10_sqlite_live_WAL_is_visible_without_immutable _____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_A10_sqlite_live_WAL_is_vi0/synthetic native?#%.db')
+
+    def test_A10_sqlite_live_WAL_is_visible_without_immutable(native):
+>       from workshop.acquisition import read_table
+E       ModuleNotFoundError: No module named 'workshop.acquisition'
+
+backend/tests/test_source_scope.py:203: ModuleNotFoundError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ0')
+position = 'viewer', path = '/native/run'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ1')
+position = 'operator', path = '/native/run'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ2')
+position = 'controller', path = '/native/run'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ3')
+position = 'viewer', path = '/native/stop'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ4')
+position = 'operator', path = '/native/stop'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ5')
+position = 'controller', path = '/native/stop'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ6')
+position = 'viewer', path = '/native/retry'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ7')
+position = 'operator', path = '/native/retry'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ8')
+position = 'controller', path = '/native/retry'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ9')
+position = 'viewer', path = '/native/write-enable'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ10')
+position = 'operator', path = '/native/write-enable'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ11')
+position = 'controller', path = '/native/write-enable'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ12')
+position = 'viewer', path = '/executions/start'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ13')
+position = 'operator', path = '/executions/start'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ14')
+position = 'controller', path = '/executions/start'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ15')
+position = 'viewer', path = '/tasks/update'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ16')
+position = 'operator', path = '/tasks/update'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ17')
+position = 'controller', path = '/tasks/update'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-viewer] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ18')
+position = 'viewer', path = '/hooks/install'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-operator] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ19')
+position = 'operator', path = '/hooks/install'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_ test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-controller] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_interlock_no_nativ20')
+position = 'controller', path = '/hooks/install'
+
+    @pytest.mark.parametrize('position', ['viewer', 'operator', 'controller'])
+    @pytest.mark.parametrize('path', ['/native/run', '/native/stop', '/native/retry',
+        '/native/write-enable', '/executions/start', '/tasks/update', '/hooks/install'])
+    def test_phase1_interlock_no_native_route_even_for_authorized_controller(tmp_path, position, path):
+>       store = Storage(tmp_path / 'synthetic.db', initial=configured())
+                                                           ^^^^^^^^^^^^
+
+backend/tests/test_phase1_gate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def configured():
+        r = Reducer()
+        ingests = {}
+        for name in ('a', 'b', 'c'):
+            r.register_role(name, scope=('chat',), inventory_approved=True)
+            r.register_feed(name, FeedPolicy(5, 15, 30), group=name)
+            instance, board = {'a': ('instance-a', 'board-a'),
+                               'b': ('instance-a', 'board-b'),
+                               'c': ('instance-b', 'board-a')}[name]
+>           ingests[name] = Ingest(r, SourceBinding('urn:synthetic:' + name,
+                'runtime-' + name, name, name, task_scopes=((instance, board),)))
+E           TypeError: SourceBinding.__init__() got an unexpected keyword argument 'task_scopes'
+
+backend/tests/test_source_scope.py:25: TypeError
+_______________ test_phase1_synthetic_demo_is_deterministic_json _______________
+
+    def test_phase1_synthetic_demo_is_deterministic_json():
+>       from workshop.demo import snapshot
+E       ModuleNotFoundError: No module named 'workshop.demo'
+
+backend/tests/test_phase1_gate.py:70: ModuleNotFoundError
+______ test_phase1_install_demo_and_test_commands_from_clean_source_copy _______
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_install_demo_and_t0')
+
+    def test_phase1_install_demo_and_test_commands_from_clean_source_copy(tmp_path):
+        root = Path(__file__).parents[2]
+        checkout = tmp_path / 'clean checkout'
+        checkout.mkdir()
+        # Copy tracked source layout, not local .venv/cache or any native records.
+        for name in ('backend', 'scripts'):
+>           shutil.copytree(root / name, checkout / name,
+                            ignore=shutil.ignore_patterns('__pycache__', '.pytest_cache'))
+
+backend/tests/test_phase1_gate.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+src = PosixPath('/home/aaron/projects/agent-workshop/scripts')
+dst = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-15/test_phase1_install_demo_and_t0/clean checkout/scripts')
+symlinks = False
+ignore = <function ignore_patterns.<locals>._ignore_patterns at 0x788f4694bec0>
+copy_function = <function copy2 at 0x788f474362a0>
+ignore_dangling_symlinks = False, dirs_exist_ok = False
+
+    def copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2,
+                 ignore_dangling_symlinks=False, dirs_exist_ok=False):
+        """Recursively copy a directory tree and return the destination directory.
+    
+        If exception(s) occur, an Error is raised with a list of reasons.
+    
+        If the optional symlinks flag is true, symbolic links in the
+        source tree result in symbolic links in the destination tree; if
+        it is false, the contents of the files pointed to by symbolic
+        links are copied. If the file pointed by the symlink doesn't
+        exist, an exception will be added in the list of errors raised in
+        an Error exception at the end of the copy process.
+    
+        You can set the optional ignore_dangling_symlinks flag to true if you
+        want to silence this exception. Notice that this has no effect on
+        platforms that don't support os.symlink.
+    
+        The optional ignore argument is a callable. If given, it
+        is called with the `src` parameter, which is the directory
+        being visited by copytree(), and `names` which is the list of
+        `src` contents, as returned by os.listdir():
+    
+            callable(src, names) -> ignored_names
+    
+        Since copytree() is called recursively, the callable will be
+        called once for each directory that is copied. It returns a
+        list of names relative to the `src` directory that should
+        not be copied.
+    
+        The optional copy_function argument is a callable that will be used
+        to copy each file. It will be called with the source path and the
+        destination path as arguments. By default, copy2() is used, but any
+        function that supports the same signature (like copy()) can be used.
+    
+        If dirs_exist_ok is false (the default) and `dst` already exists, a
+        `FileExistsError` is raised. If `dirs_exist_ok` is true, the copying
+        operation will continue if it encounters existing directories, and files
+        within the `dst` tree will be overwritten by corresponding files from the
+        `src` tree.
+        """
+        sys.audit("shutil.copytree", src, dst)
+>       with os.scandir(src) as itr:
+             ^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/aaron/projects/agent-workshop/scripts'
+
+../../.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py:571: FileNotFoundError
+=========================== short test summary info ============================
+FAILED backend/tests/test_source_scope.py::test_A10_same_native_ids_have_distinct_instance_board_and_runtime_keys
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-ce]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-otlp]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-snapshot]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-ce]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-otlp]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-snapshot]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-ce]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-otlp]
+FAILED backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-snapshot]
+FAILED backend/tests/test_source_scope.py::test_A10_no_task_permission_by_default
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes0]
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes1]
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes2]
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes3]
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes4]
+FAILED backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes5]
+FAILED backend/tests/test_source_scope.py::test_A10_cloudevents_source_cannot_select_another_binding
+FAILED backend/tests/test_source_scope.py::test_A10_durable_runtime_instance_collision_is_rejected
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_bounded_scoped_acquisition_leaves_bytes_schema_and_records_unchanged
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_ro_and_query_only_are_enforced
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change0]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change1]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change2]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change3]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change4]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change5]
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_does_not_create_missing_source
+FAILED backend/tests/test_source_scope.py::test_A10_sqlite_live_WAL_is_visible_without_immutable
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-viewer]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-operator]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-controller]
+FAILED backend/tests/test_phase1_gate.py::test_phase1_synthetic_demo_is_deterministic_json
+FAILED backend/tests/test_phase1_gate.py::test_phase1_install_demo_and_test_commands_from_clean_source_copy
+52 failed, 1 passed in 0.43s
+
+EXIT_CODE=1

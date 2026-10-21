@@ -15,7 +15,8 @@ def ingest():
     r = Reducer()
     r.register_role('agent', scope=('chat',), inventory_approved=True)
     r.register_feed('runtime', FeedPolicy(15, 45, 120), group='source')
-    return Ingest(r, SourceBinding('urn:fixture:source', 'runtime-a', 'agent', 'runtime'))
+    return Ingest(r, SourceBinding('urn:fixture:source', 'runtime-a', 'agent', 'runtime',
+                                  task_scopes=(('tasks', 'board'),)))
 
 
 def context(at=10, receipt=None, epoch='boot-a', receipt_unix=None):

@@ -199,9 +199,9 @@ class Storage:
             raise ValueError('Historian requires State')
         bindings = [i.binding for i in state.ingests.values()]
         # A complete-role inventory must have one configured reconciliation owner.
-        for attribute in ('source', 'feed', 'role'):
+        for attribute in ('source', 'feed', 'role', 'runtime'):
             if len({getattr(b, attribute) for b in bindings}) != len(bindings):
-                raise ValueError('Storage requires dedicated source, role and feed bindings')
+                raise ValueError('Storage requires dedicated source, role, feed and runtime bindings')
         for name, i in state.ingests.items():
             _text(name, 'ingest name')
             if i.reducer is not state.reducer:

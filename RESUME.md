@@ -2,67 +2,75 @@
 
 ## Objective
 
-Build the read-only Workshop supervisory layer. Card t_f6e9e637 delivers the
-Phase 1 A08 durable historian and atomic snapshot/replay recovery slice on
-merged A01–A04 + A07/A09 (PR #2, main ddbf893). Not full Phase 1, live operation,
-a renderer, native collector or HTTP service.
+Build the read-only Workshop supervisory layer. Card t_dbf6fb11 (Phase 1 gate,
+A10) is IMPLEMENTED on `feat/a10-phase1-gate`, PR #4:
+https://github.com/North-Metro-Tech/agent-workshop/pull/4
+Core independent review/merge is pending. Phase 1 is not accepted until that
+merge; this is not an operational/MVP readiness notification.
 
 ## Last decision
 
-Feature branch feat/a08-durable-recovery targets main. PR #2 was independently
-reviewed and merged; its old pending-review handoff is superseded.
+Core independently reviewed and merged A08 PR #3: main/base `59696e9`, feature
+head `a5baf48`, with 234 tests independently re-run and its original red baseline
+reproduced. Its review is a PR comment/journal record because reviewer/author
+share the publication identity. GenAI semconv revision `547934af` was resolved
+in `open-telemetry/semantic-conventions-genai`, with Development-stability
+caveat retained. This A10 branch builds on that merged base, not an open A08 PR.
 
-Workshop-owned SQLite WAL + explicit migration now persists domain state,
-alarms/occurrences/audit, source dedup/order/epoch indexes and revision checkpoints.
-Snapshots use a declared page manifest, scope, epoch and trusted atomic source
-watermark; journaled newer effective keys preserve lifecycle fields while all
-history/conflicts survive merge. Partial/weak evidence cannot establish covered
-runtime inventory, erase unseen records or restore restart freshness. Complete
-absence never fabricates a terminal state. Startup invalidates live clocks and
-coverage without losing facts. Atomic projection/service cursors support bounded
-browser-style replay and explicit snapshot reacquisition on expiry. Local alarm
-acknowledgement is durable when using the historian-backed facade; native writes
-remain disabled.
+A10 adds explicit trusted task instance/namespace permissions (empty denies),
+runtime-instance uniqueness, synthetic-tested bounded read-only SQLite reads,
+a deterministic synthetic snapshot demo and no-download source install/test/
+demo/check commands. No native executor, route, enable switch or network
+listener exists; controller positions cannot enable writes. Task authorization
+is enforced consistently across CE, mapped OTLP and durable snapshot pages.
 
-Signed test-first red baseline efdc872: 1 failed + 33 stub setup errors.
-Adversarial assertion-red captures: 9 failures plus 1 cross-role correlation
-failure, fixed and preserved. Full suite: 234 passed; storage subset 52 passed.
-Python 3.11.15 + 3.14.7 compilation and whitespace checks passed. See
-`evidence/STORAGE_REVIEW.md`, `evidence/a08-*.txt` and `docs/storage.md` for actual
-output, acceptance mapping, contracts, risks and limitations.
+Signed red baseline `735bfbe`: 52 failed, 1 passed. Implementation `f7b5c82`:
+294 full cases pass, including all prior A01–A04/A07–A09 and A10. Additional
+materialisation red (1 failed, 5 passed) exposed fetchall exceeding aggregate
+budget before rejection; reader now iterates incrementally. Exact-schema,
+mode=ro/query_only, malformed/oversized input, unknown/view rejection and live
+WAL/no-immutable cases are covered. Native content/schema is unchanged; WAL
+SHM/coordination side effects are explicitly NOT claimed absent.
 
-No dependency installs, native/live databases, provider/model/profile changes
-or runtime configuration changes. Claude Code absent; Lead used the authorised
-direct-implementation fallback and reviewed real tests/diffs.
-
-Core's standards correction is applied: unchanged GenAI revision
-547934afa90a34298441caf80c43b27255c3a292 is resolved in
-open-telemetry/semantic-conventions-genai (Core verified HTTP 200 on 21 October;
-commit 18 October 2026). Earlier 422 queried the wrong repository. Development
-stability remains; no upstream-conformance certification or dependency adoption.
+Actual clean git-archive run (no inherited PYTHONPATH): install, both demo
+entrypoints (matching committed JSON), full 294 tests and Python 3.11/3.14
+compile checks pass. Evidence and review focus: `evidence/PHASE1_REVIEW.md`,
+`evidence/phase1-clean-checkout.txt`, per-scenario `phase1-A*.txt`, and raw
+red/green captures. No dependency installed or updated. Claude Code unavailable;
+authorised direct fallback used, not a provider/profile/credential workaround.
 
 ## Next action
 
-Core independently reviews and merges the feature PR under the owner's standing
-authorisation. Published PR URL/exact head/signatures/check evidence are recorded
-on card t_f6e9e637 after external read-back. Implementer does not self-approve,
-enable auto-merge or merge. The task graph already includes A10 and MVP QA/release
-children: implementation completion releases those dependencies, not final
-engineering acceptance. Downstream work must coordinate Core's merge or use the
-verified parent PR head, not assume unmerged main has the historian.
+Core independently reviews PR #4, re-runs gates and merges if sound. No auto-
+merge enabled. Branch-protection lookup is denied HTTP 403; zero external
+checks/statuses, if returned, are not a passing CI result. Exact-head publication
+and checks are recorded in the Kanban handoff after the final signed doc push.
+
+On merge, Phase 1 is accepted. Core routes Phase 2 (one approved real Hermes
+workflow), then the renderer/remaining Release 1 work through the existing MVP
+gate t_7e8a8223. That gate remains the owner's single readiness notification
+point; its real-fleet/frontend/A05–A06/A23/A25 work is NOT completed by this card.
+Do not treat released task dependencies as fulfilled downstream acceptance.
 
 ## Open question
 
-No blocking design question within A08. Review the documented trust contract:
-adapter-supplied stable source sequence/atomic source watermark and comparable
-acquisition clocks; one serial service writer with dedicated source/feed/role.
-Local mutations overlapping snapshot collection conservatively require a fresh
-snapshot. Replay retention bounds checkpoints/journal, not all domain history,
-audit or dedup indexes; full-state checkpoint writes are correctness-first,
-not a throughput or total-disk-bound claim. Native binding/A10, HTTP/SSE/binary
-OTLP, outbox/archival policy, renderer and runnable demo remain later work.
+None blocking A10. Phase 2 must supply approved actual schema mapping, source
+identity and a genuine atomic source snapshot watermark; the SQLite primitive
+is not a collector, native pagination/coverage protocol or runtime-liveness
+proof. Exact task permission configuration is trusted local input. Old persisted
+bindings reopen with empty permissions for future task links; retained facts
+are preserved, not reauthorised silently.
+
+Standing A08 contracts remain: serial service writer, dedicated configured
+source/feed/role/runtime instance, comparable caller acquisition clocks, startup
+freshness invalidation, complete supported runtime recovery only; replay
+retention bounds checkpoints/journal, not domain/audit/dedup history. HTTP/SSE/
+binary OTLP, live data and renderer are outside Phase 1. No type-check, coverage
+percentage, benchmark, standards certification or external CI success claim.
 
 ## Coordination
 
-Card t_f6e9e637, coder. RESUME.md is the shared Core/coder hotspot: serialized
-handoff edit. Private specification/owner directions are not published here.
+Cards owned by coder; Core reviews and merges under the owner's standing
+pre-authorisation. RESUME.md is the shared Core/coder hotspot: Core's post-A08
+handoff was preserved during implementation and serially merged here once.
+Private specification and owner directions are not published in the repository.

@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 294 items / 286 deselected / 8 selected
+
+backend/tests/test_truth_edges.py::test_A01_identical_native_execution_ids_in_different_runtimes PASSED [ 12%]
+backend/tests/test_truth_edges.py::test_A01_unversioned_or_existing_alias_mapping_rejected PASSED [ 25%]
+backend/tests/test_truth_edges.py::test_A01_corrobating_report_does_not_replace_runtime_authority PASSED [ 37%]
+backend/tests/test_truth_edges.py::test_A01_cross_role_identity_conflict_blocks_both_roles PASSED [ 50%]
+backend/tests/test_truth_model.py::test_A01_concurrent_executions_preserve_identity PASSED [ 62%]
+backend/tests/test_truth_model.py::test_A01_explicit_multisource_mapping_deduplicates PASSED [ 75%]
+backend/tests/test_truth_model.py::test_A01_similarity_never_merges_and_ambiguity_visible PASSED [ 87%]
+backend/tests/test_truth_model.py::test_A01_conflicting_explicit_identity_is_not_silently_overwritten PASSED [100%]
+
+====================== 8 passed, 286 deselected in 0.05s =======================
+
+EXIT_CODE=0

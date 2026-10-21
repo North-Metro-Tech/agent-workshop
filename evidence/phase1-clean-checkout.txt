@@ -1,0 +1,11 @@
+Clean git archive of f7b5c82; inherited PYTHONPATH removed
+Workshop source linked in /home/aaron/.hermes/profiles/coder/cache/scratch/workshop-a10-clean-zHC5zc/.venv
+Both demo entrypoints match committed synthetic JSON
+........................................................................ [ 24%]
+........................................................................ [ 48%]
+........................................................................ [ 73%]
+........................................................................ [ 97%]
+......                                                                   [100%]
+294 passed in 2.70s
+
+EXIT_CODE=0

@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 294 items / 269 deselected / 25 selected
+
+backend/tests/test_truth_edges.py::test_A04_real_loss_group_retains_two_feeds_and_first_out PASSED [  4%]
+backend/tests/test_truth_edges.py::test_A04_recurrence_before_ack_retains_original_first_out PASSED [  8%]
+backend/tests/test_truth_edges.py::test_A04_shelved_recurrence_auto_expiry_and_audit PASSED [ 12%]
+backend/tests/test_truth_edges.py::test_A04_return_normal_while_shelved_is_visible_after_expiry PASSED [ 16%]
+backend/tests/test_truth_edges.py::test_A04_delay_chatter_never_creates_dropped_or_invented_alarm PASSED [ 20%]
+backend/tests/test_truth_edges.py::test_A04_simultaneous_first_out_marks_uncertainty PASSED [ 24%]
+backend/tests/test_truth_edges.py::test_A04_invalid_clock_cannot_fabricate_freshness[nan] PASSED [ 28%]
+backend/tests/test_truth_edges.py::test_A04_invalid_clock_cannot_fabricate_freshness[inf] PASSED [ 32%]
+backend/tests/test_truth_edges.py::test_A04_invalid_clock_cannot_fabricate_freshness[True] PASSED [ 36%]
+backend/tests/test_truth_edges.py::test_A04_caller_mutation_cannot_change_native_observation PASSED [ 40%]
+backend/tests/test_truth_edges.py::test_A04_delay_preserves_original_ordering_uncertainty PASSED [ 44%]
+backend/tests/test_truth_edges.py::test_A04_manual_unshelve_reevaluates_without_clearing_condition PASSED [ 48%]
+backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[44-fresh] PASSED [ 52%]
+backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[45-stale] PASSED [ 56%]
+backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[119-stale] PASSED [ 60%]
+backend/tests/test_truth_model.py::test_A04_per_feed_deadlines_unrelated_traffic_cannot_refresh[120-disconnected] PASSED [ 64%]
+backend/tests/test_truth_model.py::test_A04_feed_freshness_cannot_refresh_individual_signal_or_reconciliation PASSED [ 68%]
+backend/tests/test_truth_model.py::test_A04_metadata_feed_has_its_own_policy PASSED [ 72%]
+backend/tests/test_truth_model.py::test_A04_freshness_loss_not_offline_and_not_out_of_service PASSED [ 76%]
+backend/tests/test_truth_model.py::test_A04_alarm_ack_clear_and_clear_before_ack PASSED [ 80%]
+backend/tests/test_truth_model.py::test_A04_grouping_preserves_children_first_out_and_uncertainty PASSED [ 84%]
+backend/tests/test_truth_model.py::test_A04_suppression_shelving_and_maintenance_preserve_underlying_condition PASSED [ 88%]
+backend/tests/test_truth_model.py::test_A04_suppression_does_not_erase_clear_before_ack PASSED [ 92%]
+backend/tests/test_truth_model.py::test_A04_on_off_delays_do_not_hide_signal_quality PASSED [ 96%]
+backend/tests/test_truth_model.py::test_A04_unrationalised_alarm_and_unaudited_suppression_rejected PASSED [100%]
+
+====================== 25 passed, 269 deselected in 0.06s ======================
+
+EXIT_CODE=0

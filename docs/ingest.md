@@ -13,7 +13,8 @@ from workshop.ingest import Acquisition, Ingest, SourceBinding
 
 # r is the existing Reducer with this role/feed already registered.
 ingest = Ingest(r, SourceBinding(
-    source='urn:fixture:source', runtime='runtime-a', role='agent', feed='runtime'))
+    source='urn:fixture:source', runtime='runtime-a', role='agent', feed='runtime',
+    task_scopes=(('tasks', 'board'),)))
 result = ingest.cloudevents(payload_bytes, context=Acquisition(
     acquired_at=10, received_at=1000, epoch='boot-a'))
 # Or: ingest.otlp('logs', otlp_json_bytes, context=...)
@@ -28,6 +29,10 @@ Execution keys use the configured runtime and native execution ID. Only the
 reducer's explicit local correlation mappings can alias them. Task keys retain
 source instance + namespace + native ID; parentage is explicit native execution
 parentage, never inferred from a trace, timing or name similarity.
+
+Task links require an exact trusted `task_scopes` instance/namespace pair;
+empty permits none. CE, mapped OTLP and stored snapshot pages share this gate.
+See `source-binding.md` for A10 permissions, instance naming and SQLite reads.
 
 Acquisition is service/collector-owned context and must never be populated from
 untrusted event attributes. The caller supplies original successful acquisition

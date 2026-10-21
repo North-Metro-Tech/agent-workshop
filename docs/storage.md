@@ -1,7 +1,8 @@
 # A08 Workshop historian and recovery
 
 This is an in-process, synthetic-tested storage slice, not a running service,
-HTTP/SSE binding, collector, native SQLite reader or interoperability claim.
+HTTP/SSE binding, collector or interoperability claim. A10's separate bounded
+read-only SQLite primitive (not a native schema adapter) is in `source-binding.md`.
 It uses the Python standard library and the existing reducer/ingress contracts.
 
 ## Ownership and transaction model
@@ -22,7 +23,7 @@ The initial migration is `backend/workshop/migrations/001_initial.sql`.
 files and unsupported versions are rejected before WAL/schema mutations.
 Never point Storage at a native actor database. Fixture databases exist only
 under pytest temporary paths, including the foreign/native-shaped fixture.
-This is not yet the A10 native-source acquisition implementation.
+This historian is separate from the A10 read-only source acquisition primitive.
 
 WAL + `synchronous=FULL`, short `BEGIN IMMEDIATE` writer transactions and atomic
 commits persist domain tables and one monotonically increasing service revision
@@ -52,11 +53,12 @@ clears a source condition, and no position enables native writes.
 
 ## Source snapshot contract and races
 
-Each stored Ingest requires a dedicated configured source, role and feed. The
-binding must already exist; no identity is discovered from a producer. Distinct
-runtime identities remain caller configuration; A10 owns additional scoped
-binding assertions. Snapshot/domain records use Ingest's existing execution data
-schema, not a replacement CloudEvents envelope.
+Each stored Ingest requires a dedicated configured source, role, feed and runtime
+instance identity. The binding must already exist; no identity is discovered
+from a producer. A10 task instance/namespace allowlists are enforced by the same
+validator on durable snapshot pages; see `source-binding.md`. Snapshot/domain
+records use Ingest's existing execution data schema, not a replacement
+CloudEvents envelope.
 
 The trusted adapter supplies two DIFFERENT cursor domains:
 
@@ -159,7 +161,7 @@ checkpoint and domain table writes are straightforward replacements: this is
 correctness-first Phase 1, not a demonstrated high-volume historian or a disk
 quota/archival policy. Retention count does not claim a byte/time bound for all
 durable history. No bounded collector outbox, online-backup command, concurrent
-worker queue, native database reader, HTTP/auth/CSRF layer, renderer or binary
+worker queue, native schema adapter, HTTP/auth/CSRF layer, renderer or binary
 OTLP codec is included. Never delete dedup identity independently of retained
 source replay semantics. No external dependency was added or installed.
 
