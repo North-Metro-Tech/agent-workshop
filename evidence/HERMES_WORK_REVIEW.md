@@ -41,6 +41,10 @@ workaround, native helper import, hook install or process-control path was added
 - Full suite: 338 passed (`phase2-work-full.txt`).
 - Python 3.14 compile check and `git diff --check` passed. No external CI,
   type-check, coverage-percentage, performance or standards certification claim.
+- Actual clean git archive of implementation `3505818`, with inherited
+  PYTHONPATH removed: no-pip source install, installed collector import, both
+  unchanged synthetic demo entrypoints, 338 tests and Python 3.11/3.14 compile
+  checks passed. Raw output: `phase2-work-clean-checkout.txt`.
 
 ## Acceptance mapping
 
