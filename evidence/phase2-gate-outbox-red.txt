@@ -1,0 +1,325 @@
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+=================================== FAILURES ===================================
+__________ test_A08_outbox_offline_restart_fifo_original_acquisition ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_offline_restar0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_offline_restar0')
+
+    def test_A08_outbox_offline_restart_fifo_original_acquisition(native, tmp_path):
+        observer, state = configured(native, probe=sample)
+        before = hashes(native)
+        path = tmp_path / 'outbox.db'
+>       q = box(path, observer)
+            ^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_offline_restar0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a36c94d0>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+___________ test_A08_outbox_commit_ack_crash_replays_exact_identity ____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_commit_ack_cra0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_commit_ack_cra0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c31a34ef590>
+
+    def test_A08_outbox_commit_ack_crash_replays_exact_identity(native, tmp_path, monkeypatch):
+        observer, state = configured(native, probe=sample)
+>       q = box(tmp_path / 'outbox.db', observer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_commit_ack_cra0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a34ec9d0>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+______________ test_A08_outbox_ingest_failure_never_acknowledges _______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_ingest_failure0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_ingest_failure0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c31a36f5790>
+
+    def test_A08_outbox_ingest_failure_never_acknowledges(native, tmp_path, monkeypatch):
+        observer, state = configured(native)
+>       q = box(tmp_path / 'outbox.db', observer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_ingest_failure0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a36f5b50>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+_________ test_A08_outbox_backpressure_no_drop_or_sequence_consumption _________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_backpressure_n0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_backpressure_n0')
+
+    def test_A08_outbox_backpressure_no_drop_or_sequence_consumption(native, tmp_path):
+>       from workshop_collectors.outbox import OutboxFull
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:86: ModuleNotFoundError
+______________________ test_A08_outbox_byte_backpressure _______________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_byte_backpress0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_byte_backpress0')
+
+    def test_A08_outbox_byte_backpressure(native, tmp_path):
+>       from workshop_collectors.outbox import OutboxFull
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:98: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs0] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be0')
+kwargs = {'max_items': 0}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs1] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be1')
+kwargs = {'max_items': True}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs2] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be2/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be2')
+kwargs = {'max_items': 65}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs3] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be3/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be3')
+kwargs = {'max_bytes': 0}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs4] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be4/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be4')
+kwargs = {'max_bytes': True}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs5] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be5/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be5')
+kwargs = {'max_bytes': 4194305}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+__________ test_outbox_bounds_required_before_file_creation[kwargs6] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be6/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_outbox_bounds_required_be6')
+kwargs = {'clock_id': ''}
+
+    @pytest.mark.parametrize('kwargs', [{'max_items': 0}, {'max_items': True}, {'max_items': 65},
+        {'max_bytes': 0}, {'max_bytes': True}, {'max_bytes': 4194305}, {'clock_id': ''}])
+    def test_outbox_bounds_required_before_file_creation(native, tmp_path, kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:111: ModuleNotFoundError
+________ test_A10_outbox_rejects_native_historian_and_symlink_unchanged ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_rejects_native0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_rejects_native0')
+
+    def test_A10_outbox_rejects_native_historian_and_symlink_unchanged(native, tmp_path):
+        observer, state = configured(native)
+        before = hashes(native)
+        with pytest.raises(ValueError, match='outbox'):
+>           box(native, observer)
+
+backend/tests/test_outbox.py:125: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_rejects_native0/synthetic.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a375fcd0>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+___________ test_A08_outbox_clock_binding_and_limit_changes_rejected ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_clock_binding_0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_clock_binding_0')
+
+    def test_A08_outbox_clock_binding_and_limit_changes_rejected(native, tmp_path):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:141: ModuleNotFoundError
+______ test_A08_outbox_rejects_regressed_acquisition_and_replaced_source _______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_rejects_regres0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_rejects_regres0')
+
+    def test_A08_outbox_rejects_regressed_acquisition_and_replaced_source(native, tmp_path):
+        observer, _ = configured(native)
+>       q = box(tmp_path / 'outbox.db', observer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_rejects_regres0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a370e9d0>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+_________ test_A08_outbox_sequence_divergence_does_not_drop_or_rebase __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_sequence_diver0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_sequence_diver0')
+
+    def test_A08_outbox_sequence_divergence_does_not_drop_or_rebase(native, tmp_path):
+        observer, state = configured(native)
+>       q = box(tmp_path / 'outbox.db', observer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A08_outbox_sequence_diver0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a34d0ad0>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+__________ test_A10_outbox_wrong_historian_binding_and_early_receipt ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_wrong_historia0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_wrong_historia0')
+
+    def test_A10_outbox_wrong_historian_binding_and_early_receipt(native, tmp_path):
+        observer, state = configured(native)
+>       q = box(tmp_path / 'outbox.db', observer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_wrong_historia0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a36f5150>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+_________________ test_A10_outbox_source_privacy_and_fixed_off _________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_source_privacy0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_source_privacy0')
+
+    def test_A10_outbox_source_privacy_and_fixed_off(native, tmp_path):
+        observer, state = configured(native, probe=sample)
+        path = tmp_path / 'outbox.db'
+>       q = box(path, observer)
+            ^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_outbox.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-63/test_A10_outbox_source_privacy0/outbox.db')
+observer = <workshop_collectors.hermes_runtime.HermesRuntime object at 0x7c31a36ea950>
+kwargs = {}
+
+    def box(path, observer, **kwargs):
+>       from workshop_collectors.outbox import Outbox
+E       ModuleNotFoundError: No module named 'workshop_collectors.outbox'
+
+backend/tests/test_outbox.py:15: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED backend/tests/test_outbox.py::test_A08_outbox_offline_restart_fifo_original_acquisition
+FAILED backend/tests/test_outbox.py::test_A08_outbox_commit_ack_crash_replays_exact_identity
+FAILED backend/tests/test_outbox.py::test_A08_outbox_ingest_failure_never_acknowledges
+FAILED backend/tests/test_outbox.py::test_A08_outbox_backpressure_no_drop_or_sequence_consumption
+FAILED backend/tests/test_outbox.py::test_A08_outbox_byte_backpressure - Modu...
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs0]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs1]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs2]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs3]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs4]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs5]
+FAILED backend/tests/test_outbox.py::test_outbox_bounds_required_before_file_creation[kwargs6]
+FAILED backend/tests/test_outbox.py::test_A10_outbox_rejects_native_historian_and_symlink_unchanged
+FAILED backend/tests/test_outbox.py::test_A08_outbox_clock_binding_and_limit_changes_rejected
+FAILED backend/tests/test_outbox.py::test_A08_outbox_rejects_regressed_acquisition_and_replaced_source
+FAILED backend/tests/test_outbox.py::test_A08_outbox_sequence_divergence_does_not_drop_or_rebase
+FAILED backend/tests/test_outbox.py::test_A10_outbox_wrong_historian_binding_and_early_receipt
+FAILED backend/tests/test_outbox.py::test_A10_outbox_source_privacy_and_fixed_off
+18 failed in 0.67s

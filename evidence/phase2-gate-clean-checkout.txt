@@ -1,0 +1,454 @@
+Exact committed source archive: fe6467f36d5812d38b5954c2552f817be60ede12
+$ /home/aaron/.hermes/installs/31b2d5aca60ae088/environments/5c8437aa036b4ea4b36d8f53bdcbe1fd/venv/bin/python3 scripts/dev.py install
+Workshop source linked in /home/aaron/projects/agent-workshop/.workshop-state/phase2-clean-qu8hc5nu/.venv
+exit_code: 0
+$ /home/aaron/.hermes/installs/31b2d5aca60ae088/environments/5c8437aa036b4ea4b36d8f53bdcbe1fd/venv/bin/python3 scripts/dev.py demo
+{
+  "alarms": [],
+  "ambiguities": [],
+  "correlations": [],
+  "executions": [
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-a"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "a",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:a",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "a",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:a",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "a",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-a",
+        "native_id": "same-task",
+        "source_instance": "instance-a"
+      }
+    },
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-b"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "b",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:b",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "b",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:b",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "b",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-b",
+        "native_id": "same-task",
+        "source_instance": "instance-a"
+      }
+    },
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-c"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "c",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:c",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "c",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:c",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "c",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-a",
+        "native_id": "same-task",
+        "source_instance": "instance-b"
+      }
+    }
+  ],
+  "incidents": [],
+  "native_write_enabled": false,
+  "roles": [
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-a"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "a",
+      "signals": {}
+    },
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-b"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "b",
+      "signals": {}
+    },
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-c"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "c",
+      "signals": {}
+    },
+    {
+      "active_executions": [],
+      "availability": "available",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "available",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "idle",
+      "signals": {
+        "admission": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": "enabled",
+          "mapping_version": "synthetic-v1",
+          "native": "enabled",
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        },
+        "capacity": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": {
+            "limit": 1,
+            "used": 0
+          },
+          "mapping_version": "synthetic-v1",
+          "native": {
+            "limit": 1,
+            "used": 0
+          },
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        },
+        "reachability": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": "reachable",
+          "mapping_version": "synthetic-v1",
+          "native": "reachable",
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        }
+      }
+    },
+    {
+      "active_executions": [],
+      "availability": "unknown",
+      "claimed_scope": [],
+      "coverage": "not_configured",
+      "disputed_executions": [],
+      "indication": "no observed executions / availability unknown",
+      "inventory": "approved",
+      "reconciliation_quality": "unknown",
+      "role": "unobserved",
+      "signals": {}
+    }
+  ]
+}
+exit_code: 0
+$ /home/aaron/.hermes/installs/31b2d5aca60ae088/environments/5c8437aa036b4ea4b36d8f53bdcbe1fd/venv/bin/python3 scripts/dev.py collector-demo
+{
+  "acquisition_evidence": {
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 10,
+    "source_cursor": 1
+  },
+  "actual_live_observation": false,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 3,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-1",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-2",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "review",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-3",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "delivered_cursor": 1,
+  "feed_quality_at_delivery": "disconnected",
+  "limitations": [
+    "Synthetic fixture DB and process samples only; never live evidence.",
+    "Partial runtime coverage; queued receipt does not refresh original acquisition.",
+    "No global health, renderer, service, native controls or MVP-readiness claim."
+  ],
+  "native_event_cursor": 1,
+  "native_snapshot_complete": true,
+  "native_write_enabled": false,
+  "observations_accepted": 3,
+  "original_acquired_at": 10,
+  "pending": 0,
+  "process_samples": "synthetic, not OS processes",
+  "received_at": 100,
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "source_projection_agreement": true,
+  "synthetic_only": true,
+  "truncated_tables": []
+}
+exit_code: 0
+$ /home/aaron/projects/agent-workshop/.workshop-state/phase2-clean-qu8hc5nu/.venv/bin/python -m workshop_collectors.demo
+{
+  "acquisition_evidence": {
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 10,
+    "source_cursor": 1
+  },
+  "actual_live_observation": false,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 3,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-1",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-2",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "review",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-3",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "delivered_cursor": 1,
+  "feed_quality_at_delivery": "disconnected",
+  "limitations": [
+    "Synthetic fixture DB and process samples only; never live evidence.",
+    "Partial runtime coverage; queued receipt does not refresh original acquisition.",
+    "No global health, renderer, service, native controls or MVP-readiness claim."
+  ],
+  "native_event_cursor": 1,
+  "native_snapshot_complete": true,
+  "native_write_enabled": false,
+  "observations_accepted": 3,
+  "original_acquired_at": 10,
+  "pending": 0,
+  "process_samples": "synthetic, not OS processes",
+  "received_at": 100,
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "source_projection_agreement": true,
+  "synthetic_only": true,
+  "truncated_tables": []
+}
+exit_code: 0
+Collector demo bytes equal across both documented entrypoints: true
+$ /home/aaron/hermes-agent/.venv/bin/python scripts/dev.py test
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+........................................................................ [ 66%]
+........................................................................ [ 83%]
+........................................................................ [100%]
+432 passed in 11.13s
+exit_code: 0
+$ /home/aaron/.hermes/installs/31b2d5aca60ae088/environments/5c8437aa036b4ea4b36d8f53bdcbe1fd/venv/bin/python3 scripts/dev.py check
+exit_code: 0
+$ /home/aaron/.hermes/installs/31b2d5aca60ae088/environments/5c8437aa036b4ea4b36d8f53bdcbe1fd/venv/bin/python3 scripts/observe_workflow.py
+usage: observe_workflow.py [-h] [--approved-local]
+observe_workflow.py: error: native acquisition requires --approved-local; no implicit source discovery
+exit_code: 2
+Normal commands made no live observation state; no live acquisition attempted.
+CLEAN SOURCE VERIFICATION PASSED

@@ -1,5 +1,50 @@
 # RESUME — Agent Workshop
 
+## Latest implementation handoff — Phase 2 closing gate
+
+Task `t_f11a8ea8` implemented on `feat/phase2-workflow-gate`, incorporating
+accepted PR #6/main `d336ea6` via signed merge `b9bbc7d`. Signed red baseline
+`dbaa890` and implementation `fe6467f`: full suite 432 passed, closing focused
+suite 35 passed. Core independent review/merge of this gate's PR remains pending
+(handle in the task handoff); implementation completion is NOT Phase 2 acceptance
+or MVP readiness. Earlier/Core handoffs below are preserved verbatim and are
+historical where they describe this slice as not yet implemented.
+
+Bounded Workshop-owned outbox now feeds the existing OTLP validator/historian:
+serial at-least-once delivery, stable epoch/cursor/source-file identity, original
+acquisition retained, no-drop reject backpressure, commit-before-ack idempotent
+retry. Internal adversarial red/green fixes fence retired-epoch silent drops,
+empty-snapshot cursor consumption, undelivered-acquisition proof reuse and
+self-comparing status/outcome labels. No new dependencies, listener, daemon,
+renderer, native helpers/control, schedule access or runtime availability claim.
+Claude Code is absent; previously authorised direct fallback used.
+
+Actual approved-workflow runs after QA compare 10 source attempts/task links to
+retained data and projections, original acquisition identity verified, cursors 4
+then 5 in the same queue epoch, no pending entries, native main/schema unchanged,
+and same actual data denied by empty task scope without historian mutation.
+Historian reopened/freshness invalidated; reconcile_required remains true,
+coverage partial, role availability unknown. Native event history is truncated;
+board cursor is not an atomic runtime watermark. Forced A05/A06 variants,
+crash/overflow/offline and A25 uninstall/schedule invariants remain isolated
+fixture evidence (real silent children, synthetic native stores), not invented
+live transitions or shared-installation removal.
+
+Clean git archive of exact `fe6467f` (no inherited PYTHONPATH) exercised no-pip
+install, Phase 1 demo, both byte-equal deterministic collector demos, all 432
+tests, compile checks and live opt-out; normal commands read no native state.
+Evidence: `evidence/PHASE2_REVIEW.md`, `evidence/phase2-gate-*`,
+`docs/phase2-workflow.md`. Queue budgets bound logical pending payload only,
+not physical SQLite/WAL or historian/domain history. Clock/config/source change
+requires explicit recovery; no automatic rebasing or complete snapshot invented.
+
+Next: Core independently reviews and merges. Existing downstream `t_7e8a8223`
+was inspected: Phase 3 HMI, deployment and final MVP acceptance are still its
+work, not this implementation's deliverables. Release the existing dependency
+with implementation completion, without duplicating same-card review or enabling
+auto-merge. No owner-ready notification before that final gate. RESUME remains a
+serialized hotspot; this additive section preserves Core's pre-existing edits.
+
 ## Latest implementation handoff — Phase 2 slice 2/3
 
 Task `t_bbfe861b` implemented on `feat/phase2-hermes-runtime`, based on the exact
@@ -37,39 +82,46 @@ latest section supersedes their slice-1-pending and slice-2-not-implemented stat
 
 Phase 1 of the read-only Workshop supervisory layer is COMPLETE and accepted: the
 Phase 1 gate merged to main `364b669` at ~14:03 AEDT 21 Oct under the owner's
-standing pre-authorisation. Phase 2 slice 1/3 is IMPLEMENTED on
-`feat/phase2-hermes-work`, pending Core independent review/merge (PR handle in
-the Kanban handoff). MVP gate `t_7e8a8223` remains the single owner
-notification point; nothing here is an MVP-readiness claim.
+standing pre-authorisation. Phase 2 slices 1/3 and 2/3 are MERGED and accepted:
+PR #5 (`feat/phase2-hermes-work`) → main `5f89fc8` at 15:08 AEDT; PR #6
+(`feat/phase2-hermes-runtime`) → main `d336ea6` at 15:24 AEDT, both Core-reviewed
+under the standing pre-authorisation. Slice 3/3 (Phase 2 gate, `t_f11a8ea8`) is in
+implementation on `feat/phase2-workflow-gate` — this RESUME update travels with
+that PR per the serialized-hotspot convention. MVP gate `t_7e8a8223` remains the
+single owner notification point; nothing here is an MVP-readiness claim.
 
 ## Last decision
 
-Core independently reviewed and merged the Phase 1 gate (PR #4, branch
-`feat/a10-phase1-gate`): 294 tests re-run at head `b9c0719` in isolated worktrees,
-red baseline `735bfbe` reproduced (52 failed / 235 passed full-suite = 53 new
-atop the 234 prior), all commits signature-valid, full diff and fences verified.
-Base `59696e9` → main `364b669`, verified by read-back. Phase 1 closed: truth
-model (A01–A04), wire semantics (A07/A09), durable historian (A08), scoped source
-binding + bounded read-only SQLite primitive + fixed-off interlock + synthetic
-demo (A10) — four PRs in one day, each independently reviewed before merge, suite
-0 → 294.
+Core independently reviewed and merged Phase 2 slice 2 (PR #6, branch
+`feat/phase2-hermes-runtime`, head `c077457`): 397 tests re-run by Core in an
+isolated worktree, full diff read, all three commits signature-valid, chain
+parented exactly on merged slice-1 head `f0b5811`. A08/A10/A25 verified
+test-by-test against the card: dedicated composite-scope binding, serial durable
+path through `Storage.otlp`, atomic `(device, inode)` source-identity fence
+(mismatch/omission/silent-adoption all fail closed across restart), all-or-none
+finite Hermes metadata vocabulary, lifecycle evidence pinned to `source_record`
+(`RuntimeSnapshot.atomic_watermark` is the class constant `None` — structurally
+unpromotable), A25 proven on an isolated disposable deployment with a real
+independent child and unchanged synthetic native stores, live approved-board
+ingest read back twice with unchanged native hashes and verified empty-scope
+denial. One non-blocking advisory filed on the PR (package-wide AST import
+allowlist; per-module allowlist suggested for a later slice). Verdict comment on
+the PR; main `5f89fc8` → `d336ea6`, verified by read-back. Review worktree
+removed; shared checkout untouched.
 
-Phase 2 routed per spec §17: `t_69111745` (collector base + `hermes_work`
-observers, A05/A06) → `t_bbfe861b` (`hermes_runtime` observer + durable
-correlation, A08/A10/A25) → `t_f11a8ea8` (Phase 2 gate: A05/A06/A08/A10/A25 on
-the approved workflow, `outbox.py`, demo/dev commands). The MVP gate was
-re-parented behind the Phase 2 gate; the board auto-demoted it `ready` → `todo`,
-so the dispatcher cannot claim the owner notification point out of sequence.
+Phase 2 routing (spec §17): `t_69111745` slice 1 DONE+merged → `t_bbfe861b`
+slice 2 DONE+merged → `t_f11a8ea8` (Phase 2 gate: A05/A06/A08/A10/A25 on the
+approved workflow, `outbox.py`, demo/dev commands, running). The MVP gate stays
+re-parented behind the Phase 2 gate.
 
 ## Next action
 
-Core reviews the Phase 2 slice 1 PR — suite re-run, full diff, fences,
-test-by-test acceptance mapping — then releases slice 2 on the accepted base.
-Implementation completion releases the graph, not independent approval. Core
-reviews each Phase 2 PR on handoff
-and merges under the standing pre-authorisation. On Phase 2 gate merge, the MVP
-gate becomes ready: that merge is the owner notification point (telegram-subscribed
-card handles it; no separate Core message).
+Core reviews the Phase 2 gate PR (branch `feat/phase2-workflow-gate`) on handoff —
+suite re-run, full diff, fences, test-by-test acceptance mapping across
+A05/A06/A08/A10/A25 — then merges under the standing pre-authorisation; the
+graph is released, not pre-approved. On Phase 2 gate merge, the MVP gate becomes
+ready: that merge is the owner notification point (telegram-subscribed card
+handles it; no separate Core message).
 
 ## Open question
 
@@ -85,7 +137,8 @@ file-replacement failures fixed. All five actual read surfaces retained identica
 main-file/schema hashes; actual event history is truncated and runtime coverage
 is ALWAYS partial. Live transitions were not forced: A05 silent-child and A06
 blocked/review/ack variants are fixture evidence, not full-workflow acceptance.
-Details: docs/hermes-work.md and evidence/HERMES_WORK_REVIEW.md.
+Details: docs/hermes-work.md and evidence/HERMES_WORK_REVIEW.md. Slices 1+2
+merged; slice 3 (the gate) implements on the accepted base.
 
 Remaining Phase 2 work is already routed: durable runtime correlation/ingress,
 loss/recovery/epoch/replay semantics, outbox, complete approved-workflow gate and
@@ -94,7 +147,8 @@ watermark or a database-wide revision. Operational watch:
 coder handoff comments quote raw PR URLs by design, so the per-card respawn guard
 may strand the next card after each Phase 2 merge — standing relay remedy applies
 (check every ready card each pass; emit the operator handoff event; do not wait out
-the 24h window).
+the 24h window). After the PR #5 merge: checked — nothing stranded, no event
+needed.
 
 Standing A08 contracts remain: serial service writer, dedicated configured
 source/feed/role/runtime instance, comparable caller acquisition clocks, startup
@@ -110,6 +164,6 @@ Cards owned by coder; Core reviews and merges under the owner's standing
 pre-authorisation (reaffirmed 21 Oct). RESUME.md is the shared Core/coder hotspot:
 serialized edits, preserve the other party's handoff. This copy travels with the
 next PR per convention; the vault journal (operations-journal-2026-10-20.md,
-21 Oct ~14:03 section) carries the full review record. Private specification and
-owner directions are not published in the repository. No owner notification is
-warranted until the MVP gate.
+21 Oct ~15:25 section) carries the full PR #5 and #6 review/merge records.
+Private specification and owner directions are not published in the repository.
+No owner notification is warranted until the MVP gate.

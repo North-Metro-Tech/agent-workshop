@@ -1,0 +1,165 @@
+..................FF.......FFF..F..                                      [100%]
+=================================== FAILURES ===================================
+__________ test_A08_outbox_retired_epoch_adjacent_cursor_retains_head __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_A08_outbox_retired_epoch_0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_A08_outbox_retired_epoch_0')
+
+    def test_A08_outbox_retired_epoch_adjacent_cursor_retains_head(native, tmp_path):
+        observer, state = configured(native)
+        q = box(tmp_path / 'outbox.db', observer)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        q.enqueue(collect(observer))
+        q.deliver_one(store, received_at=10)
+        q.enqueue(collect(observer, 12))
+        # A divergent writer retires the queue's epoch at the adjacent numeric cursor.
+        with store.transaction() as saved:
+            ingest = saved.ingests['runtime']
+            ingest._retired_epochs.add(ingest._epoch)
+            ingest._epoch = 'other-writer'
+        before = store.snapshot(now=12)
+>       with pytest.raises(RecoveryRequired, match='epoch'):
+E       Failed: DID NOT RAISE RecoveryRequired
+
+backend/tests/test_outbox.py:237: Failed
+_______ test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor _______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_A08_outbox_empty_snapshot0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_A08_outbox_empty_snapshot0')
+
+    def test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor(native, tmp_path):
+        from test_hermes_work import change
+        change(native, 'DELETE FROM task_runs')
+        observer, _ = configured(native)
+        q = box(tmp_path / 'outbox.db', observer)
+        before = q.status()
+>       with pytest.raises(ValueError, match='empty'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_outbox.py:251: Failed
+______________ test_gate_cannot_verify_an_undelivered_acquisition ______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_cannot_verify_an_und0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_cannot_verify_an_und0')
+
+    def test_gate_cannot_verify_an_undelivered_acquisition(native, tmp_path):
+        observer, state = configured(native)
+        store = deliver(observer, state, collect(observer), tmp_path)
+        later = collect(observer, 20)
+>       with pytest.raises(ValueError, match='acquisition'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_phase2_gate.py:146: Failed
+____ test_gate_independently_compares_native_labels[attempt_status-failed] _____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_independently_compar0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_independently_compar0')
+field = 'attempt_status', value = 'failed'
+
+    @pytest.mark.parametrize('field,value', [('attempt_status', 'failed'), ('attempt_outcome', 'cancelled')])
+    def test_gate_independently_compares_native_labels(native, tmp_path, field, value):
+        observer, state = configured(native)
+        original = collect(observer)
+        rows = original.observations()
+        rows[0][field] = value
+        altered = replace(original, _observations_json=json.dumps(rows))
+        store = deliver(observer, state, altered, tmp_path)
+>       with pytest.raises(ValueError, match='disagreement'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_phase2_gate.py:159: Failed
+__ test_gate_independently_compares_native_labels[attempt_outcome-cancelled] ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_independently_compar1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_gate_independently_compar1')
+field = 'attempt_outcome', value = 'cancelled'
+
+    @pytest.mark.parametrize('field,value', [('attempt_status', 'failed'), ('attempt_outcome', 'cancelled')])
+    def test_gate_independently_compares_native_labels(native, tmp_path, field, value):
+        observer, state = configured(native)
+        original = collect(observer)
+        rows = original.observations()
+        rows[0][field] = value
+        altered = replace(original, _observations_json=json.dumps(rows))
+        store = deliver(observer, state, altered, tmp_path)
+>       with pytest.raises(ValueError, match='disagreement'):
+E       Failed: DID NOT RAISE ValueError
+
+backend/tests/test_phase2_gate.py:159: Failed
+___________ test_collector_clean_commands_and_no_implicit_live_reads ___________
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-68/test_collector_clean_commands_0')
+
+    def test_collector_clean_commands_and_no_implicit_live_reads(tmp_path):
+        root = Path(__file__).parents[2]
+        checkout = tmp_path / 'clean checkout'
+        checkout.mkdir()
+        for name in ('backend', 'collectors', 'scripts'):
+            shutil.copytree(root / name, checkout / name, ignore=shutil.ignore_patterns('__pycache__', '.pytest_cache'))
+        shutil.copy(root / 'pytest.ini', checkout / 'pytest.ini')
+        env = dict(os.environ)
+        env.pop('PYTHONPATH', None)
+        outputs = []
+        for command in ([sys.executable, 'scripts/dev.py', 'install'],
+                        [sys.executable, 'scripts/dev.py', 'collector-demo'],
+                        [str(checkout / '.venv/bin/python'), '-m', 'workshop_collectors.demo'],
+                        [sys.executable, 'scripts/dev.py', 'check'],
+                        [sys.executable, 'scripts/dev.py', 'test', 'backend/tests/test_outbox.py', '-q']):
+            result = subprocess.run(command, cwd=checkout, env=env, capture_output=True, text=True, timeout=60)
+>           assert result.returncode == 0, result.stdout + result.stderr
+E           AssertionError: ..................FF.                                                    [100%]
+E             =================================== FAILURES ===================================
+E             __________ test_A08_outbox_retired_epoch_adjacent_cursor_retains_head __________
+E             
+E             native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-69/test_A08_outbox_retired_epoch_0/synthetic.db')
+E             tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-69/test_A08_outbox_retired_epoch_0')
+E             
+E                 def test_A08_outbox_retired_epoch_adjacent_cursor_retains_head(native, tmp_path):
+E                     observer, state = configured(native)
+E                     q = box(tmp_path / 'outbox.db', observer)
+E                     store = Storage(tmp_path / 'historian.db', initial=state)
+E                     q.enqueue(collect(observer))
+E                     q.deliver_one(store, received_at=10)
+E                     q.enqueue(collect(observer, 12))
+E                     # A divergent writer retires the queue's epoch at the adjacent numeric cursor.
+E                     with store.transaction() as saved:
+E                         ingest = saved.ingests['runtime']
+E                         ingest._retired_epochs.add(ingest._epoch)
+E                         ingest._epoch = 'other-writer'
+E                     before = store.snapshot(now=12)
+E             >       with pytest.raises(RecoveryRequired, match='epoch'):
+E             E       Failed: DID NOT RAISE RecoveryRequired
+E             
+E             backend/tests/test_outbox.py:237: Failed
+E             _______ test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor _______
+E             
+E             native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-69/test_A08_outbox_empty_snapshot0/synthetic.db')
+E             tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-69/test_A08_outbox_empty_snapshot0')
+E             
+E                 def test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor(native, tmp_path):
+E                     from test_hermes_work import change
+E                     change(native, 'DELETE FROM task_runs')
+E                     observer, _ = configured(native)
+E                     q = box(tmp_path / 'outbox.db', observer)
+E                     before = q.status()
+E             >       with pytest.raises(ValueError, match='empty'):
+E             E       Failed: DID NOT RAISE ValueError
+E             
+E             backend/tests/test_outbox.py:251: Failed
+E             =========================== short test summary info ============================
+E             FAILED backend/tests/test_outbox.py::test_A08_outbox_retired_epoch_adjacent_cursor_retains_head
+E             FAILED backend/tests/test_outbox.py::test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor
+E             2 failed, 19 passed in 0.95s
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['/home/aaron/hermes-agent/.venv/bin/python', 'scripts/dev.py', 'test', 'backend/tests/test_outb...utbox.py::test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor\n2 failed, 19 passed in 0.95s\n", stderr='').returncode
+
+backend/tests/test_phase2_gate.py:215: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_outbox.py::test_A08_outbox_retired_epoch_adjacent_cursor_retains_head
+FAILED backend/tests/test_outbox.py::test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor
+FAILED backend/tests/test_phase2_gate.py::test_gate_cannot_verify_an_undelivered_acquisition
+FAILED backend/tests/test_phase2_gate.py::test_gate_independently_compares_native_labels[attempt_status-failed]
+FAILED backend/tests/test_phase2_gate.py::test_gate_independently_compares_native_labels[attempt_outcome-cancelled]
+FAILED backend/tests/test_phase2_gate.py::test_collector_clean_commands_and_no_implicit_live_reads
+6 failed, 29 passed in 3.73s

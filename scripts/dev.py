@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('install', 'test', 'demo', 'check'))
+    parser.add_argument('command', choices=('install', 'test', 'demo', 'collector-demo', 'check'))
     args, rest = parser.parse_known_args()
     if args.command != 'test' and rest:
         parser.error('extra arguments are supported only by test')
@@ -43,8 +43,9 @@ def main():
     env['PYTHONPATH'] = os.pathsep.join(str(ROOT / name) for name in ('backend', 'collectors'))
     if args.command == 'test':
         command = [sys.executable, '-m', 'pytest', *(rest or ['-q'])]
-    elif args.command == 'demo':
-        command = [sys.executable, '-m', 'workshop.demo']
+    elif args.command in ('demo', 'collector-demo'):
+        module = 'workshop.demo' if args.command == 'demo' else 'workshop_collectors.demo'
+        command = [sys.executable, '-m', module]
     else:
         command = [sys.executable, '-m', 'compileall', '-q', 'backend', 'collectors', 'scripts']
     return subprocess.run(command, cwd=ROOT, env=env, check=False).returncode
