@@ -1,0 +1,692 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                          [100%]
+=================================== FAILURES ===================================
+________________ test_A10_scope_mandatory_exact_path_and_board _________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_scope_mandatory_exact0/synthetic.db')
+
+    def test_A10_scope_mandatory_exact_path_and_board(native):
+>       c = collector(native)
+            ^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_scope_mandatory_exact0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______ test_A10_each_surface_native_bytes_schema_unchanged[board_view] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b0/synthetic.db')
+surface = 'board_view'
+
+    @pytest.mark.parametrize('surface', ['board_view', 'task_detail', 'workers', 'run', 'inspect'])
+    def test_A10_each_surface_native_bytes_schema_unchanged(native, surface):
+        before = hashes(native)
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______ test_A10_each_surface_native_bytes_schema_unchanged[task_detail] _______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b1/synthetic.db')
+surface = 'task_detail'
+
+    @pytest.mark.parametrize('surface', ['board_view', 'task_detail', 'workers', 'run', 'inspect'])
+    def test_A10_each_surface_native_bytes_schema_unchanged(native, surface):
+        before = hashes(native)
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b1/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_________ test_A10_each_surface_native_bytes_schema_unchanged[workers] _________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b2/synthetic.db')
+surface = 'workers'
+
+    @pytest.mark.parametrize('surface', ['board_view', 'task_detail', 'workers', 'run', 'inspect'])
+    def test_A10_each_surface_native_bytes_schema_unchanged(native, surface):
+        before = hashes(native)
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b2/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+___________ test_A10_each_surface_native_bytes_schema_unchanged[run] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b3/synthetic.db')
+surface = 'run'
+
+    @pytest.mark.parametrize('surface', ['board_view', 'task_detail', 'workers', 'run', 'inspect'])
+    def test_A10_each_surface_native_bytes_schema_unchanged(native, surface):
+        before = hashes(native)
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b3/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_________ test_A10_each_surface_native_bytes_schema_unchanged[inspect] _________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b4/synthetic.db')
+surface = 'inspect'
+
+    @pytest.mark.parametrize('surface', ['board_view', 'task_detail', 'workers', 'run', 'inspect'])
+    def test_A10_each_surface_native_bytes_schema_unchanged(native, surface):
+        before = hashes(native)
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_each_surface_native_b4/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______________ test_A10_detail_grouping_links_runs_and_privacy ________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_detail_grouping_links0/synthetic.db')
+
+    def test_A10_detail_grouping_links_runs_and_privacy(native):
+        insert_db = sqlite3.connect(native)
+        insert(insert_db, 'tasks', id='child', title='Child', assignee='coder', status='review', created_at=2)
+        insert(insert_db, 'task_links', parent_id='task', child_id='child')
+        insert_db.commit()
+        insert_db.close()
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_detail_grouping_links0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+___________ test_A10_exact_schema_no_views_hidden_or_unknown_columns ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_exact_schema_no_views0/synthetic.db')
+
+    def test_A10_exact_schema_no_views_hidden_or_unknown_columns(native):
+        change(native, 'ALTER TABLE tasks ADD COLUMN unexpected TEXT')
+        with pytest.raises(ValueError, match='schema'):
+>           snap(native)
+
+backend/tests/test_hermes_work.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_exact_schema_no_views0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+____________________________ test_A10_view_refused _____________________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_view_refused0/synthetic.db')
+
+    def test_A10_view_refused(native):
+        change(native, 'ALTER TABLE task_runs RENAME TO original_runs')
+        change(native, 'CREATE VIEW task_runs AS SELECT * FROM original_runs')
+        with pytest.raises(ValueError, match='table'):
+>           snap(native)
+
+backend/tests/test_hermes_work.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_view_refused0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+____________ test_A10_snapshot_and_watermark_share_one_transaction _____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_snapshot_and_watermar0/synthetic.db')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7747f80d5090>
+
+    def test_A10_snapshot_and_watermark_share_one_transaction(native, monkeypatch):
+        # Hook the bounded row reader after the snapshot's MAX(event.id) has established its read view.
+>       from workshop_collectors.base import ReadTransaction
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:142: ModuleNotFoundError
+___________ test_A10_row_bound_partial_never_claims_runtime_complete ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_row_bound_partial_nev0/synthetic.db')
+
+    def test_A10_row_bound_partial_never_claims_runtime_complete(native):
+>       s = snap(native, row_limit=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_row_bound_partial_nev0/synthetic.db')
+kwargs = {'row_limit': 1}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______ test_A10_bad_or_overbudget_record_no_partial_publish[oversized] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec0/synthetic.db')
+kind = 'oversized'
+
+    @pytest.mark.parametrize('kind', ['oversized', 'aggregate', 'blob', 'nonfinite'])
+    def test_A10_bad_or_overbudget_record_no_partial_publish(native, kind):
+        kwargs = {}
+        if kind == 'oversized':
+            change(native, 'UPDATE tasks SET body=?', ('x' * 70000,))
+        elif kind == 'aggregate':
+            kwargs = {'byte_limit': 100}
+        elif kind == 'blob':
+            change(native, 'UPDATE tasks SET body=?', (b'bad',))
+        else:
+            change(native, 'UPDATE tasks SET priority=?', (float('inf'),))
+        with pytest.raises((ValueError, sqlite3.Error)):
+>           snap(native, **kwargs)
+
+backend/tests/test_hermes_work.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______ test_A10_bad_or_overbudget_record_no_partial_publish[aggregate] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec1/synthetic.db')
+kind = 'aggregate'
+
+    @pytest.mark.parametrize('kind', ['oversized', 'aggregate', 'blob', 'nonfinite'])
+    def test_A10_bad_or_overbudget_record_no_partial_publish(native, kind):
+        kwargs = {}
+        if kind == 'oversized':
+            change(native, 'UPDATE tasks SET body=?', ('x' * 70000,))
+        elif kind == 'aggregate':
+            kwargs = {'byte_limit': 100}
+        elif kind == 'blob':
+            change(native, 'UPDATE tasks SET body=?', (b'bad',))
+        else:
+            change(native, 'UPDATE tasks SET priority=?', (float('inf'),))
+        with pytest.raises((ValueError, sqlite3.Error)):
+>           snap(native, **kwargs)
+
+backend/tests/test_hermes_work.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec1/synthetic.db')
+kwargs = {'byte_limit': 100}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+__________ test_A10_bad_or_overbudget_record_no_partial_publish[blob] __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec2/synthetic.db')
+kind = 'blob'
+
+    @pytest.mark.parametrize('kind', ['oversized', 'aggregate', 'blob', 'nonfinite'])
+    def test_A10_bad_or_overbudget_record_no_partial_publish(native, kind):
+        kwargs = {}
+        if kind == 'oversized':
+            change(native, 'UPDATE tasks SET body=?', ('x' * 70000,))
+        elif kind == 'aggregate':
+            kwargs = {'byte_limit': 100}
+        elif kind == 'blob':
+            change(native, 'UPDATE tasks SET body=?', (b'bad',))
+        else:
+            change(native, 'UPDATE tasks SET priority=?', (float('inf'),))
+        with pytest.raises((ValueError, sqlite3.Error)):
+>           snap(native, **kwargs)
+
+backend/tests/test_hermes_work.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec2/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_______ test_A10_bad_or_overbudget_record_no_partial_publish[nonfinite] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec3/synthetic.db')
+kind = 'nonfinite'
+
+    @pytest.mark.parametrize('kind', ['oversized', 'aggregate', 'blob', 'nonfinite'])
+    def test_A10_bad_or_overbudget_record_no_partial_publish(native, kind):
+        kwargs = {}
+        if kind == 'oversized':
+            change(native, 'UPDATE tasks SET body=?', ('x' * 70000,))
+        elif kind == 'aggregate':
+            kwargs = {'byte_limit': 100}
+        elif kind == 'blob':
+            change(native, 'UPDATE tasks SET body=?', (b'bad',))
+        else:
+            change(native, 'UPDATE tasks SET priority=?', (float('inf'),))
+        with pytest.raises((ValueError, sqlite3.Error)):
+>           snap(native, **kwargs)
+
+backend/tests/test_hermes_work.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_bad_or_overbudget_rec3/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_____________________ test_A10_readonly_guards_adversarial _____________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A10_readonly_guards_adver0/synthetic.db')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7747f80914d0>
+
+    def test_A10_readonly_guards_adversarial(native, monkeypatch):
+>       from workshop_collectors.base import ReadTransaction
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:191: ModuleNotFoundError
+__________ test_A05_pid_reuse_or_unverified_never_becomes_live[None] ___________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_pid_reuse_or_unverifi0/synthetic.db')
+fingerprint = None
+
+    @pytest.mark.parametrize('fingerprint', [None, 22, 'unverified', 'other:1|22', 'boot:1|23'])
+    def test_A05_pid_reuse_or_unverified_never_becomes_live(native, fingerprint):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:214: ModuleNotFoundError
+___________ test_A05_pid_reuse_or_unverified_never_becomes_live[22] ____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_pid_reuse_or_unverifi1/synthetic.db')
+fingerprint = 22
+
+    @pytest.mark.parametrize('fingerprint', [None, 22, 'unverified', 'other:1|22', 'boot:1|23'])
+    def test_A05_pid_reuse_or_unverified_never_becomes_live(native, fingerprint):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:214: ModuleNotFoundError
+_______ test_A05_pid_reuse_or_unverified_never_becomes_live[unverified] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_pid_reuse_or_unverifi2/synthetic.db')
+fingerprint = 'unverified'
+
+    @pytest.mark.parametrize('fingerprint', [None, 22, 'unverified', 'other:1|22', 'boot:1|23'])
+    def test_A05_pid_reuse_or_unverified_never_becomes_live(native, fingerprint):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:214: ModuleNotFoundError
+_______ test_A05_pid_reuse_or_unverified_never_becomes_live[other:1|22] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_pid_reuse_or_unverifi3/synthetic.db')
+fingerprint = 'other:1|22'
+
+    @pytest.mark.parametrize('fingerprint', [None, 22, 'unverified', 'other:1|22', 'boot:1|23'])
+    def test_A05_pid_reuse_or_unverified_never_becomes_live(native, fingerprint):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:214: ModuleNotFoundError
+________ test_A05_pid_reuse_or_unverified_never_becomes_live[boot:1|23] ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_pid_reuse_or_unverifi4/synthetic.db')
+fingerprint = 'boot:1|23'
+
+    @pytest.mark.parametrize('fingerprint', [None, 22, 'unverified', 'other:1|22', 'boot:1|23'])
+    def test_A05_pid_reuse_or_unverified_never_becomes_live(native, fingerprint):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:214: ModuleNotFoundError
+______ test_A05_silent_process_is_liveness_not_progress_or_tool_activity _______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_silent_process_is_liv0/synthetic.db')
+
+    def test_A05_silent_process_is_liveness_not_progress_or_tool_activity(native):
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:223: ModuleNotFoundError
+_________ test_A05_probe_failure_unknown_not_failure[PermissionError] __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown0/synthetic.db')
+error = <class 'PermissionError'>
+
+    @pytest.mark.parametrize('error', [PermissionError, FileNotFoundError, OSError])
+    def test_A05_probe_failure_unknown_not_failure(native, error):
+        def probe(pid):
+            raise error()
+>       s = snap(native, process_probe=probe)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown0/synthetic.db')
+kwargs = {'process_probe': <function test_A05_probe_failure_unknown_not_failure.<locals>.probe at 0x7747f830a3e0>}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+________ test_A05_probe_failure_unknown_not_failure[FileNotFoundError] _________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown1/synthetic.db')
+error = <class 'FileNotFoundError'>
+
+    @pytest.mark.parametrize('error', [PermissionError, FileNotFoundError, OSError])
+    def test_A05_probe_failure_unknown_not_failure(native, error):
+        def probe(pid):
+            raise error()
+>       s = snap(native, process_probe=probe)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown1/synthetic.db')
+kwargs = {'process_probe': <function test_A05_probe_failure_unknown_not_failure.<locals>.probe at 0x7747f830a020>}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_____________ test_A05_probe_failure_unknown_not_failure[OSError] ______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown2/synthetic.db')
+error = <class 'OSError'>
+
+    @pytest.mark.parametrize('error', [PermissionError, FileNotFoundError, OSError])
+    def test_A05_probe_failure_unknown_not_failure(native, error):
+        def probe(pid):
+            raise error()
+>       s = snap(native, process_probe=probe)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_probe_failure_unknown2/synthetic.db')
+kwargs = {'process_probe': <function test_A05_probe_failure_unknown_not_failure.<locals>.probe at 0x7747f830b240>}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+______ test_A05_no_probe_and_turn_finalization_do_not_prove_process_death ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_no_probe_and_turn_fin0/synthetic.db')
+
+    def test_A05_no_probe_and_turn_finalization_do_not_prove_process_death(native):
+        change(native, "UPDATE task_events SET kind='on_session_end'")
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:246: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_no_probe_and_turn_fin0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+______ test_A06_attempt_exit_keeps_station_and_ack_never_accepts[blocked] ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A06_attempt_exit_keeps_st0/synthetic.db')
+station = 'blocked'
+
+    @pytest.mark.parametrize('station', ['blocked', 'review'])
+    def test_A06_attempt_exit_keeps_station_and_ack_never_accepts(native, station):
+        from workshop.api import LocalAPI
+        from workshop.contracts import AlarmRule
+        from workshop.reducer import Reducer
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:257: ModuleNotFoundError
+______ test_A06_attempt_exit_keeps_station_and_ack_never_accepts[review] _______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A06_attempt_exit_keeps_st1/synthetic.db')
+station = 'review'
+
+    @pytest.mark.parametrize('station', ['blocked', 'review'])
+    def test_A06_attempt_exit_keeps_station_and_ack_never_accepts(native, station):
+        from workshop.api import LocalAPI
+        from workshop.contracts import AlarmRule
+        from workshop.reducer import Reducer
+>       from workshop_collectors.hermes_work import ProcessSample
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:257: ModuleNotFoundError
+___________ test_A06_unknown_status_not_coerced_to_todo_or_accepted ____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A06_unknown_status_not_co0/synthetic.db')
+
+    def test_A06_unknown_status_not_coerced_to_todo_or_accepted(native):
+        change(native, "UPDATE tasks SET status='future_state'")
+>       s = snap(native)
+            ^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:279: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/tests/test_hermes_work.py:59: in snap
+    return collector(native, **kwargs).observe(board='synthetic-board', acquired_at=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A06_unknown_status_not_co0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+_________ test_A05_disconnect_preserves_last_observation_and_recovery __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_disconnect_preserves_0/synthetic.db')
+
+    def test_A05_disconnect_preserves_last_observation_and_recovery(native):
+>       c = collector(native)
+            ^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_work.py:285: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_disconnect_preserves_0/synthetic.db')
+kwargs = {}
+
+    def collector(native, **kwargs):
+>       from workshop_collectors.base import SourceScope
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:52: ModuleNotFoundError
+__________________ test_A05_actual_silent_subprocess_identity __________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-28/test_A05_actual_silent_subproc0/synthetic.db')
+
+    def test_A05_actual_silent_subprocess_identity(native):
+>       from workshop_collectors.hermes_work import linux_process_probe
+E       ModuleNotFoundError: No module named 'workshop_collectors'
+
+backend/tests/test_hermes_work.py:300: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED backend/tests/test_hermes_work.py::test_A10_scope_mandatory_exact_path_and_board
+FAILED backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[board_view]
+FAILED backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[task_detail]
+FAILED backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[workers]
+FAILED backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[run]
+FAILED backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[inspect]
+FAILED backend/tests/test_hermes_work.py::test_A10_detail_grouping_links_runs_and_privacy
+FAILED backend/tests/test_hermes_work.py::test_A10_exact_schema_no_views_hidden_or_unknown_columns
+FAILED backend/tests/test_hermes_work.py::test_A10_view_refused - ModuleNotFo...
+FAILED backend/tests/test_hermes_work.py::test_A10_snapshot_and_watermark_share_one_transaction
+FAILED backend/tests/test_hermes_work.py::test_A10_row_bound_partial_never_claims_runtime_complete
+FAILED backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[oversized]
+FAILED backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[aggregate]
+FAILED backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[blob]
+FAILED backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[nonfinite]
+FAILED backend/tests/test_hermes_work.py::test_A10_readonly_guards_adversarial
+FAILED backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[None]
+FAILED backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[22]
+FAILED backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[unverified]
+FAILED backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[other:1|22]
+FAILED backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[boot:1|23]
+FAILED backend/tests/test_hermes_work.py::test_A05_silent_process_is_liveness_not_progress_or_tool_activity
+FAILED backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[PermissionError]
+FAILED backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[FileNotFoundError]
+FAILED backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[OSError]
+FAILED backend/tests/test_hermes_work.py::test_A05_no_probe_and_turn_finalization_do_not_prove_process_death
+FAILED backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[blocked]
+FAILED backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[review]
+FAILED backend/tests/test_hermes_work.py::test_A06_unknown_status_not_coerced_to_todo_or_accepted
+FAILED backend/tests/test_hermes_work.py::test_A05_disconnect_preserves_last_observation_and_recovery
+FAILED backend/tests/test_hermes_work.py::test_A05_actual_silent_subprocess_identity
+31 failed in 1.18s
+
+EXIT_CODE=1
