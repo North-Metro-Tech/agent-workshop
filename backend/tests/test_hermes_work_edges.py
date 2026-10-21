@@ -122,11 +122,14 @@ def test_collector_structural_no_control_native_helpers_network_or_clock():
                'workshop.contracts', 'workshop.freshness', 'workshop.ingest',
                'workshop.reducer', 'workshop.storage'}
     for path in root.glob('*.py'):
+        # Outbox generates durable stream identity; only the synthetic demo may
+        # allocate temporary fixture files. Neither grants agent/network control.
+        scoped = allowed | {'outbox.py': {'uuid'}, 'demo.py': {'tempfile'}}.get(path.name, set())
         for node in ast.walk(ast.parse(path.read_text())):
             if isinstance(node, ast.Import):
-                assert all(alias.name in allowed for alias in node.names)
+                assert all(alias.name in scoped for alias in node.names)
             elif isinstance(node, ast.ImportFrom) and not node.level:
-                assert node.module in allowed
+                assert node.module in scoped
             elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
                 assert node.func.id not in {'eval', 'exec', '__import__'}
 

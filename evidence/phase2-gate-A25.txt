@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 432 items / 427 deselected / 5 selected
+
+backend/tests/test_hermes_runtime.py::test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[blocked] PASSED [ 20%]
+backend/tests/test_hermes_runtime.py::test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[review] PASSED [ 40%]
+backend/tests/test_hermes_runtime.py::test_A25_runtime_public_surface_has_no_start_stop_install_control PASSED [ 60%]
+backend/tests/test_hermes_runtime_edges.py::test_A25_stop_uninstall_restore_isolated_deployment_native_child_tasks_schedules_unchanged PASSED [ 80%]
+backend/tests/test_phase2_gate.py::test_A25_full_workflow_uninstall_restore_retains_pending_outbox_native_independent PASSED [100%]
+
+====================== 5 passed, 427 deselected in 0.95s =======================

@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/projects/agent-workshop
+configfile: pytest.ini
+testpaths: backend/tests
+plugins: anyio-4.15.0
+collecting ... collected 432 items / 419 deselected / 13 selected
+
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[None] PASSED [  7%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[22] PASSED [ 15%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[unverified] PASSED [ 23%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[other:1|22] PASSED [ 30%]
+backend/tests/test_hermes_work.py::test_A05_pid_reuse_or_unverified_never_becomes_live[boot:1|23] PASSED [ 38%]
+backend/tests/test_hermes_work.py::test_A05_silent_process_is_liveness_not_progress_or_tool_activity PASSED [ 46%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[PermissionError] PASSED [ 53%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[FileNotFoundError] PASSED [ 61%]
+backend/tests/test_hermes_work.py::test_A05_probe_failure_unknown_not_failure[OSError] PASSED [ 69%]
+backend/tests/test_hermes_work.py::test_A05_no_probe_and_turn_finalization_do_not_prove_process_death PASSED [ 76%]
+backend/tests/test_hermes_work.py::test_A05_disconnect_preserves_last_observation_and_recovery PASSED [ 84%]
+backend/tests/test_hermes_work.py::test_A05_actual_silent_subprocess_identity PASSED [ 92%]
+backend/tests/test_phase2_gate.py::test_A05_full_workflow_actual_silent_child_never_implies_progress PASSED [100%]
+
+====================== 13 passed, 419 deselected in 0.48s ======================

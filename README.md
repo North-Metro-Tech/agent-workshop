@@ -19,19 +19,22 @@ alarms, function-level CloudEvents/OTLP JSON ingress, Workshop-owned SQLite WAL
 historian, atomic snapshot/restart/replay recovery, scoped task-link permissions,
 bounded read-only SQLite primitive, and runnable synthetic demo.
 
-Phase 2 slice 1 adds a bounded read-only Kanban work-observer library and an
-opt-in one-shot acquisition of the approved local board. A05/A06 regression
-fixtures distinguish process liveness from progress and task disposition from
-attempt exit. The actual board observation is partial (bounded event history).
-See `docs/hermes-work.md` for the exact scope, five views, privacy and limitations.
+Phase 2 integrates bounded read-only work/runtime observers, scoped durable
+correlation, and a bounded crash-recoverable observation outbox on the approved
+local board. A05/A06/A08/A10/A25 have named regression evidence, and an explicit
+opt-in workflow command compares actual acquired native facts to projections.
+Source event history and runtime coverage are plainly partial. Forced-transition,
+crash and uninstall/schedule variants remain isolated, not fabricated live
+transitions. See `docs/phase2-workflow.md` and `evidence/PHASE2_REVIEW.md`; Core
+independent review/merge is the Phase 2 acceptance gate.
 
 This is not a running monitoring service or operational acceptance. There is no
 network listener, HTTP/binary OTLP binding,
 renderer, native executor, enable switch or runtime-write route. The controller
 position cannot enable writes. Local alarm acknowledgement changes Workshop
 records only. No third-party renderer code or new dependency has been adopted.
-Durable real-workflow runtime integration, the full Phase 2 gate and renderer
-remain downstream; fixture success does not mean the product MVP is ready.
+Renderer and downstream operational acceptance remain separate; fixture success
+and scoped live readbacks do not mean the product MVP is ready.
 
 Read the precise contracts and limitations:
 
@@ -39,6 +42,8 @@ Read the precise contracts and limitations:
 - `docs/storage.md`: source watermark, recovery, replay and retention boundaries.
 - `docs/source-binding.md`: task permissions, instance identity and SQLite reads.
 - `docs/hermes-work.md`: scoped read-only collector and explicit live opt-in.
+- `docs/hermes-runtime.md`: lifecycle authority, correlation and restart contracts.
+- `docs/phase2-workflow.md`: outbox bounds/recovery, collector demo and gate limits.
 - `docs/standards.lock`: reference pins, including resolved GenAI repository;
   Development-stability conventions are not a conformance certification.
 
@@ -53,6 +58,7 @@ From a clean checkout, using the desired Python interpreter:
 
     python scripts/dev.py install
     python scripts/dev.py demo
+    python scripts/dev.py collector-demo
     python scripts/dev.py check
 
 Install creates `.venv` without pip or third-party downloads and links only this
@@ -69,8 +75,11 @@ Demo prints deterministic JSON to stdout; redirect it to a file if desired:
 
 It seeds synthetic instances/boards with colliding native IDs, active roles,
 an available idle role and an unobserved role whose availability stays unknown.
-There are no wall-clock reads, native inputs, file writes or service listeners
-inside the demo. The snapshot always says `native_write_enabled: false`.
+The Phase 1 `demo` has no wall-clock reads, native inputs, file writes or service
+listeners. The separate `collector-demo` exercises temporary synthetic SQLite
+files through the collector/outbox/OTLP/historian path, labels all samples
+synthetic, and performs no live acquisition or service binding. Both always say
+`native_write_enabled: false`.
 
 Run tests using the interpreter which already has approved pytest, NOT the
 runtime-only `.venv` created above (that environment intentionally has no pytest):
@@ -85,7 +94,8 @@ is missing, choose an existing approved test interpreter, or obtain dependency
 approval and quarantine verification separately; do not assume the development
 helper downloads it. Tests create synthetic fixture databases only in temporary
 paths, never query real Hermes databases. The separate explicitly opted-in
-`scripts/observe_work.py --approved-local` command is the live observation path.
+`scripts/observe_work.py --approved-local` command observes the work surfaces;
+`scripts/observe_workflow.py --approved-local` exercises the integrated live path.
 The clean-source-copy regression exercises
 install, both demo entrypoints, and the test command without inherited PYTHONPATH.
 
@@ -110,7 +120,10 @@ This writes only git-ignored `.workshop-state/` and prints redacted live evidenc
 Normal install/test/demo/check commands never read the live board. Details,
 caller-owned stream sequence/epoch, source identity fence and actual-vs-fixture
 A25 limits: `docs/hermes-runtime.md` and `evidence/HERMES_RUNTIME_REVIEW.md`.
-Outbox/full Phase 2 workflow acceptance remain the already-routed closing slice.
+`observe_workflow.py --approved-local` additionally uses a bounded durable
+outbox and verifies same-acquisition native/projection agreement. It writes only
+Workshop-owned git-ignored state. A25 removal/restore and schedule invariants
+remain isolated deployment evidence, not shared-live destructive operations.
 
 ## Evidence
 

@@ -219,3 +219,60 @@ def test_A10_outbox_source_privacy_and_fixed_off(native, tmp_path):
     assert e.task.native_id == 'task'
     q.close()
     store.close()
+
+
+def test_A08_outbox_retired_epoch_adjacent_cursor_retains_head(native, tmp_path):
+    observer, state = configured(native)
+    q = box(tmp_path / 'outbox.db', observer)
+    store = Storage(tmp_path / 'historian.db', initial=state)
+    q.enqueue(collect(observer))
+    q.deliver_one(store, received_at=10)
+    q.enqueue(collect(observer, 12))
+    # A divergent writer retires the queue's epoch at the adjacent numeric cursor.
+    with store.transaction() as saved:
+        ingest = saved.ingests['runtime']
+        ingest._retired_epochs.add(ingest._epoch)
+        ingest._epoch = 'other-writer'
+    before = store.snapshot(now=12)
+    with pytest.raises(RecoveryRequired, match='epoch'):
+        q.deliver_one(store, received_at=12)
+    assert store.snapshot(now=12) == before
+    assert q.status()['pending'] == 1
+    q.close()
+    store.close()
+
+
+def test_A08_outbox_empty_snapshot_rejected_without_consuming_cursor(native, tmp_path):
+    from test_hermes_work import change
+    change(native, 'DELETE FROM task_runs')
+    observer, _ = configured(native)
+    q = box(tmp_path / 'outbox.db', observer)
+    before = q.status()
+    with pytest.raises(ValueError, match='empty'):
+        q.enqueue(collect(observer))
+    assert q.status() == before
+    q.close()
+
+
+def test_A08_outbox_commit_ack_crash_both_handles_reopened(native, tmp_path, monkeypatch):
+    observer, state = configured(native)
+    qpath, hpath = tmp_path / 'outbox.db', tmp_path / 'historian.db'
+    q = box(qpath, observer)
+    store = Storage(hpath, initial=state)
+    q.enqueue(collect(observer))
+    def crash(cursor):
+        raise OSError('crash after commit')
+    monkeypatch.setattr(q, '_ack', crash)
+    with pytest.raises(OSError):
+        q.deliver_one(store, received_at=10)
+    q.close()
+    store.close()
+    q = box(qpath, observer)
+    store = Storage(hpath)
+    assert q.deliver_one(store, received_at=1000).duplicates == 1
+    assert store.read().source_cursors['runtime'] == 1
+    assert len(store.read().ingests['runtime'].records) == 1
+    assert next(iter(store.read().reducer.executions.values())).acquired_at is None
+    assert q.status()['pending'] == 0
+    q.close()
+    store.close()
