@@ -1,0 +1,67 @@
+{
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "historian": {
+    "binding_class": "source_record",
+    "correlated_attempts": 9,
+    "observations_accepted": 9,
+    "reconcile_required": false,
+    "reopened": false,
+    "source_cursor": 1,
+    "startup_live_freshness_invalidated": true,
+    "task_links": 9
+  },
+  "limitations": [
+    "Actual approved Kanban attempts; native facts are source_record, not runtime lifecycle proof.",
+    "Exact matching process incarnation only corroborates process liveness; no tool/session/progress inference.",
+    "Native tables and later proc samples have no shared atomic runtime watermark; no complete recovery claim.",
+    "Collector stream cursor is historian-owned monotonic input, NOT the diagnostic board event cursor.",
+    "Main DB/schema invariant excludes WAL/SHM reader coordination; native writers were not stopped.",
+    "One-shot observer naturally stops. Uninstall/schedule invariants use isolated deployment fixtures only.",
+    "Restore re-establishes observation, never runtime availability from disk; ordinary events do not clear reconciliation.",
+    "No renderer, outbox, daemon, hooks, schedule access, control, full Phase-2 or MVP acceptance."
+  ],
+  "native_complete": false,
+  "native_event_cursor": 1133,
+  "native_fence": {
+    "after": {
+      "main_sha256": "552ec818e3d8c1b4640e10a55bb4bb2cd1c824dcc1bf057b5d5732b4ba5847ac",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "552ec818e3d8c1b4640e10a55bb4bb2cd1c824dcc1bf057b5d5732b4ba5847ac",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_write_enabled": false,
+  "observed_lifecycle": {
+    "active": 1,
+    "succeeded": 4,
+    "unknown": 4
+  },
+  "observed_processes": {
+    "alive": 1,
+    "unknown": 8
+  },
+  "observed_task_stations": {
+    "archived": 1,
+    "done": 7,
+    "running": 1
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  }
+}

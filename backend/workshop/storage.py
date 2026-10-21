@@ -31,6 +31,7 @@ class State:
     ingests: dict[str, Ingest] = field(default_factory=dict)
     source_cursors: dict[str, int] = field(default_factory=dict)
     generations: dict[str, int] = field(default_factory=dict)
+    source_identities: dict[str, tuple[int, int]] = field(default_factory=dict)
 
 
 class RecoveryRequired(ValueError):
@@ -103,7 +104,8 @@ def _sections(state: State) -> dict[str, Any]:
     data['internal'] = {'feed_alarms': r._feed_alarms, 'pending': a._pending,
         'incident': a._incident, 'last_update': a._last_update,
         'current': {k: o.id for k, o in a._current.items()},
-        'source_cursors': state.source_cursors, 'generations': state.generations}
+        'source_cursors': state.source_cursors, 'generations': state.generations,
+        'source_identities': state.source_identities}
     return data
 
 
@@ -128,7 +130,8 @@ def _restore(data: dict[str, Any]) -> State:
         i = Ingest(r, entry['binding'])
         i.__dict__.update(entry['state'])
         ingests[name] = i
-    return State(r, ingests, internal['source_cursors'], internal['generations'])
+    return State(r, ingests, internal['source_cursors'], internal['generations'],
+                 internal.get('source_identities', {}))
 
 
 def _number(value, label, minimum=0):
@@ -301,10 +304,21 @@ class Storage:
                     for seq, data in self._db.execute(
                         'SELECT revision,state FROM revisions WHERE revision>? ORDER BY revision', (revision,))]
 
-    def _ingest(self, name, method, args, context, source_cursor):
+    def _ingest(self, name, method, args, context, source_cursor, source_identity=None):
         _number(source_cursor, 'source cursor')
+        if source_identity is not None:
+            if (not isinstance(source_identity, tuple) or len(source_identity) != 2
+                    or any(type(v) is not int or v < 0 for v in source_identity)):
+                raise ValueError('Invalid trusted source file identity')
         with self._atomic():
             state = self._load()
+            bound = state.source_identities.get(name)
+            if bound is not None and source_identity != bound:
+                raise RecoveryRequired('Source file identity changed; explicit new instance/rebind required')
+            if source_identity is not None and bound is None:
+                if name in state.source_cursors:
+                    raise RecoveryRequired('Missing durable source identity; explicit new instance/rebind required')
+                state.source_identities[name] = source_identity
             previous = state.source_cursors.get(name, 0)
             if source_cursor < previous:
                 raise RecoveryRequired('Source cursor regressed; reacquire snapshot')
@@ -322,11 +336,11 @@ class Storage:
                                'records': records, 'context': ctx, 'applied': applied})
             return result
 
-    def cloudevents(self, name, payload, *, context, source_cursor):
-        return self._ingest(name, 'cloudevents', (payload,), context, source_cursor)
+    def cloudevents(self, name, payload, *, context, source_cursor, source_identity=None):
+        return self._ingest(name, 'cloudevents', (payload,), context, source_cursor, source_identity)
 
-    def otlp(self, name, signal, payload, *, context, source_cursor):
-        return self._ingest(name, 'otlp', (signal, payload), context, source_cursor)
+    def otlp(self, name, signal, payload, *, context, source_cursor, source_identity=None):
+        return self._ingest(name, 'otlp', (signal, payload), context, source_cursor, source_identity)
 
     def begin_snapshot(self, name, *, generation, scope, epoch, watermark,
                        acquired_at, pages, complete):

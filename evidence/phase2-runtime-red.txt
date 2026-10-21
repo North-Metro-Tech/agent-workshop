@@ -1,0 +1,686 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                            [100%]
+=================================== FAILURES ===================================
+____ test_A08_A10_real_adapter_records_task_and_process_evidence_atomically ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A10_real_adapter_reco0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A10_real_adapter_reco0')
+
+    def test_A08_A10_real_adapter_records_task_and_process_evidence_atomically(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A10_real_adapter_reco0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_________________ test_A08_runtime_unknown_stays_unknown[None] _________________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays0')
+probe = None
+
+    @pytest.mark.parametrize('probe', [None, lambda pid: None,
+        lambda pid: (_ for _ in ()).throw(PermissionError()),
+        lambda pid: (_ for _ in ()).throw(FileNotFoundError())])
+    def test_A08_runtime_unknown_stays_unknown(native, tmp_path, probe):
+>       observer, state = configured(native, probe=probe)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays0/synthetic.db')
+probe = None, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______________ test_A08_runtime_unknown_stays_unknown[<lambda>0] _______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays1')
+probe = <function <lambda> at 0x72939ef27e20>
+
+    @pytest.mark.parametrize('probe', [None, lambda pid: None,
+        lambda pid: (_ for _ in ()).throw(PermissionError()),
+        lambda pid: (_ for _ in ()).throw(FileNotFoundError())])
+    def test_A08_runtime_unknown_stays_unknown(native, tmp_path, probe):
+>       observer, state = configured(native, probe=probe)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays1/synthetic.db')
+probe = <function <lambda> at 0x72939ef27e20>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______________ test_A08_runtime_unknown_stays_unknown[<lambda>1] _______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays2/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays2')
+probe = <function <lambda> at 0x72939ef27ec0>
+
+    @pytest.mark.parametrize('probe', [None, lambda pid: None,
+        lambda pid: (_ for _ in ()).throw(PermissionError()),
+        lambda pid: (_ for _ in ()).throw(FileNotFoundError())])
+    def test_A08_runtime_unknown_stays_unknown(native, tmp_path, probe):
+>       observer, state = configured(native, probe=probe)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays2/synthetic.db')
+probe = <function <lambda> at 0x72939ef27ec0>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______________ test_A08_runtime_unknown_stays_unknown[<lambda>2] _______________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays3/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays3')
+probe = <function <lambda> at 0x72939ef27f60>
+
+    @pytest.mark.parametrize('probe', [None, lambda pid: None,
+        lambda pid: (_ for _ in ()).throw(PermissionError()),
+        lambda pid: (_ for _ in ()).throw(FileNotFoundError())])
+    def test_A08_runtime_unknown_stays_unknown(native, tmp_path, probe):
+>       observer, state = configured(native, probe=probe)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_unknown_stays3/synthetic.db')
+probe = <function <lambda> at 0x72939ef27f60>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_______ test_A08_runtime_pid_reuse_does_not_prove_execution_or_terminal ________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_pid_reuse_doe0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_pid_reuse_doe0')
+
+    def test_A08_runtime_pid_reuse_does_not_prove_execution_or_terminal(native, tmp_path):
+        from workshop_collectors.hermes_work import ProcessSample
+>       observer, state = configured(native, probe=lambda pid: ProcessSample(pid, 'boot:1|23', 'Z'))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_pid_reuse_doe0/synthetic.db')
+probe = <function test_A08_runtime_pid_reuse_does_not_prove_execution_or_terminal.<locals>.<lambda> at 0x72939ef3fba0>
+binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+___ test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[blocked] ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does0')
+station = 'blocked'
+
+    @pytest.mark.parametrize('station', ['blocked', 'review'])
+    def test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process(native, tmp_path, station):
+        change(native, 'UPDATE tasks SET status=?', (station,))
+        change(native, "UPDATE task_runs SET status='done',ended_at=8,outcome='completed'")
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____ test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[review] ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does1')
+station = 'review'
+
+    @pytest.mark.parametrize('station', ['blocked', 'review'])
+    def test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process(native, tmp_path, station):
+        change(native, 'UPDATE tasks SET status=?', (station,))
+        change(native, "UPDATE task_runs SET status='done',ended_at=8,outcome='completed'")
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_A25_attempt_exit_does1/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+__ test_A08_attempt_mapping_closed_and_source_owned[running-None-None-active] __
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close0/synthetic.db')
+status = 'running', outcome = None, ended = None, expected = 'active'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_ test_A08_attempt_mapping_closed_and_source_owned[done-completed-8-succeeded] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close1/synthetic.db')
+status = 'done', outcome = 'completed', ended = 8, expected = 'succeeded'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close1/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____ test_A08_attempt_mapping_closed_and_source_owned[done-failed-8-failed] ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close2/synthetic.db')
+status = 'done', outcome = 'failed', ended = 8, expected = 'failed'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close2/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_ test_A08_attempt_mapping_closed_and_source_owned[done-cancelled-8-cancelled] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close3/synthetic.db')
+status = 'done', outcome = 'cancelled', ended = 8, expected = 'cancelled'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close3/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+___ test_A08_attempt_mapping_closed_and_source_owned[done-blocked-8-unknown] ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close4/synthetic.db')
+status = 'done', outcome = 'blocked', ended = 8, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close4/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____ test_A08_attempt_mapping_closed_and_source_owned[done-novel-8-unknown] ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close5/synthetic.db')
+status = 'done', outcome = 'novel', ended = 8, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close5/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+__ test_A08_attempt_mapping_closed_and_source_owned[novel-None-None-unknown] ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close6/synthetic.db')
+status = 'novel', outcome = None, ended = None, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close6/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_ test_A08_attempt_mapping_closed_and_source_owned[done-completed-None-unknown] _
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close7/synthetic.db')
+status = 'done', outcome = 'completed', ended = None, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('done', 'completed', 8, 'succeeded'),
+        ('done', 'failed', 8, 'failed'), ('done', 'cancelled', 8, 'cancelled'),
+        ('done', 'blocked', 8, 'unknown'), ('done', 'novel', 8, 'unknown'),
+        ('novel', None, None, 'unknown'), ('done', 'completed', None, 'unknown')])
+    def test_A08_attempt_mapping_closed_and_source_owned(native, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_attempt_mapping_close7/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______ test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes0] ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie0')
+scopes = ()
+
+    @pytest.mark.parametrize('scopes', [(), (('other-instance', 'synthetic-board'),),
+                                         (('synthetic-instance', 'other-board'),)])
+    def test_A10_runtime_ingress_denies_task_scope_and_rolls_back(native, tmp_path, scopes):
+>       observer, state = configured(native, probe=sample, binding_change={'task_scopes': scopes})
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>
+binding_change = {'task_scopes': ()}
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______ test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes1] ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie1')
+scopes = (('other-instance', 'synthetic-board'),)
+
+    @pytest.mark.parametrize('scopes', [(), (('other-instance', 'synthetic-board'),),
+                                         (('synthetic-instance', 'other-board'),)])
+    def test_A10_runtime_ingress_denies_task_scope_and_rolls_back(native, tmp_path, scopes):
+>       observer, state = configured(native, probe=sample, binding_change={'task_scopes': scopes})
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie1/synthetic.db')
+probe = <function sample at 0x72939ef25e40>
+binding_change = {'task_scopes': (('other-instance', 'synthetic-board'),)}
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______ test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes2] ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie2/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie2')
+scopes = (('synthetic-instance', 'other-board'),)
+
+    @pytest.mark.parametrize('scopes', [(), (('other-instance', 'synthetic-board'),),
+                                         (('synthetic-instance', 'other-board'),)])
+    def test_A10_runtime_ingress_denies_task_scope_and_rolls_back(native, tmp_path, scopes):
+>       observer, state = configured(native, probe=sample, binding_change={'task_scopes': scopes})
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_ingress_denie2/synthetic.db')
+probe = <function sample at 0x72939ef25e40>
+binding_change = {'task_scopes': (('synthetic-instance', 'other-board'),)}
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____ test_A10_runtime_binding_cannot_promote_process_to_lifecycle_authority ____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_binding_canno0/synthetic.db')
+
+    def test_A10_runtime_binding_cannot_promote_process_to_lifecycle_authority(native):
+        with pytest.raises(ValueError, match='source_record'):
+>           configured(native, binding_change={'evidence_class': 'runtime_observed'})
+
+backend/tests/test_hermes_runtime.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_binding_canno0/synthetic.db')
+probe = None, binding_change = {'evidence_class': 'runtime_observed'}
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+________ test_A10_runtime_snapshot_cannot_be_rebound_to_other_instance _________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_cann0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_cann0')
+
+    def test_A10_runtime_snapshot_cannot_be_rebound_to_other_instance(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_cann0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+__ test_A08_runtime_complete_native_tables_cannot_fabricate_atomic_watermark ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_complete_nati0/synthetic.db')
+
+    def test_A08_runtime_complete_native_tables_cannot_fabricate_atomic_watermark(native):
+>       observer, _ = configured(native, probe=sample)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_complete_nati0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+___ test_A08_runtime_restart_preserves_correlation_but_never_restores_online ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_restart_prese0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_restart_prese0')
+
+    def test_A08_runtime_restart_preserves_correlation_but_never_restores_online(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_restart_prese0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_____ test_A08_runtime_retries_dedup_and_changed_cursor_identity_rejected ______
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_retries_dedup0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_retries_dedup0')
+
+    def test_A08_runtime_retries_dedup_and_changed_cursor_identity_rejected(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_retries_dedup0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+___ test_A08_runtime_truncation_never_deletes_unseen_and_cursor_not_event_id ___
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_truncation_ne0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_truncation_ne0')
+
+    def test_A08_runtime_truncation_never_deletes_unseen_and_cursor_not_event_id(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_truncation_ne0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____________ test_A10_runtime_snapshot_privacy_and_detached_output _____________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_priv0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_priv0')
+
+    def test_A10_runtime_snapshot_privacy_and_detached_output(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:224: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A10_runtime_snapshot_priv0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+_________ test_A08_runtime_disconnect_does_not_commit_empty_inventory __________
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_disconnect_do0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_disconnect_do0')
+
+    def test_A08_runtime_disconnect_does_not_commit_empty_inventory(native, tmp_path):
+>       observer, state = configured(native, probe=sample)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_disconnect_do0/synthetic.db')
+probe = <function sample at 0x72939ef25e40>, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+____ test_A08_runtime_supported_complete_recovery_is_explicit_fixture_only _____
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_supported_com0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_supported_com0')
+
+    def test_A08_runtime_supported_complete_recovery_is_explicit_fixture_only(native, tmp_path):
+        # The live collector has no atomic runtime inventory. Exercise the standing
+        # A08 contract with a separately configured, truly runtime-observed fixture.
+>       observer, state = configured(native)
+                          ^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_hermes_runtime.py:256: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-48/test_A08_runtime_supported_com0/synthetic.db')
+probe = None, binding_change = None
+
+    def configured(native, *, probe=None, binding_change=None):
+>       from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:18: ModuleNotFoundError
+______ test_A25_runtime_public_surface_has_no_start_stop_install_control _______
+
+    def test_A25_runtime_public_surface_has_no_start_stop_install_control():
+>       from workshop_collectors.hermes_runtime import HermesRuntime
+E       ModuleNotFoundError: No module named 'workshop_collectors.hermes_runtime'
+
+backend/tests/test_hermes_runtime.py:284: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED backend/tests/test_hermes_runtime.py::test_A08_A10_real_adapter_records_task_and_process_evidence_atomically
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_unknown_stays_unknown[None]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_unknown_stays_unknown[<lambda>0]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_unknown_stays_unknown[<lambda>1]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_unknown_stays_unknown[<lambda>2]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_pid_reuse_does_not_prove_execution_or_terminal
+FAILED backend/tests/test_hermes_runtime.py::test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[blocked]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_A25_attempt_exit_does_not_accept_task_or_stop_process[review]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[running-None-None-active]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-completed-8-succeeded]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-failed-8-failed]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-cancelled-8-cancelled]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-blocked-8-unknown]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-novel-8-unknown]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[novel-None-None-unknown]
+FAILED backend/tests/test_hermes_runtime.py::test_A08_attempt_mapping_closed_and_source_owned[done-completed-None-unknown]
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes0]
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes1]
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes2]
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_binding_cannot_promote_process_to_lifecycle_authority
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_snapshot_cannot_be_rebound_to_other_instance
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_complete_native_tables_cannot_fabricate_atomic_watermark
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_restart_preserves_correlation_but_never_restores_online
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_retries_dedup_and_changed_cursor_identity_rejected
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_truncation_never_deletes_unseen_and_cursor_not_event_id
+FAILED backend/tests/test_hermes_runtime.py::test_A10_runtime_snapshot_privacy_and_detached_output
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_disconnect_does_not_commit_empty_inventory
+FAILED backend/tests/test_hermes_runtime.py::test_A08_runtime_supported_complete_recovery_is_explicit_fixture_only
+FAILED backend/tests/test_hermes_runtime.py::test_A25_runtime_public_surface_has_no_start_stop_install_control
+29 failed in 0.99s

@@ -96,6 +96,22 @@ links. Correlation mappings and runtime-instance names are trusted configuration
 Native rows read by the SQLite primitive are not runtime-liveness evidence.
 Never point Storage at a native database; its writable file is Workshop-owned.
 
+## Runtime correlation (Phase 2 slice 2)
+
+`collectors/workshop_collectors/hermes_runtime.py` maps the approved native
+attempts through scoped OTLP ingestion into the separate Workshop historian.
+Process liveness is independent corroboration; lifecycle retains the trusted
+`source_record` evidence class. No atomic runtime watermark is fabricated from
+the board cursor and later process samples; runtime coverage stays partial and
+reopening the historian cannot establish availability from disk.
+
+Explicit opt-in only: `python3 scripts/observe_runtime.py --approved-local`.
+This writes only git-ignored `.workshop-state/` and prints redacted live evidence.
+Normal install/test/demo/check commands never read the live board. Details,
+caller-owned stream sequence/epoch, source identity fence and actual-vs-fixture
+A25 limits: `docs/hermes-runtime.md` and `evidence/HERMES_RUNTIME_REVIEW.md`.
+Outbox/full Phase 2 workflow acceptance remain the already-routed closing slice.
+
 ## Evidence
 
 `evidence/PHASE1_REVIEW.md` maps the closing slice and its actual red/green output.
