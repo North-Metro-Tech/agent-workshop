@@ -1,0 +1,37 @@
+A09 — Release 1 §16 raw verification transcript
+Candidate: ce52227c983598dcbb951f3c1d2ff55fe354ccdf
+Started UTC: 2026-10-22T00:15:37.110049+00:00
+Scenario: Original acquisition, offline backlog, skew and restart without fabricated freshness.
+Pinning tests: exact collected node IDs / Vitest test names are printed below.
+Synthetic native stores only in unit/integration fixtures; OS children are test-owned.
+Real acquisition is limited to the explicitly approved Phase 2 board/profile scope.
+No product source modifications, dependency installs, native writes or deployment.
+
+$ python -m pytest backend/tests -v --no-header --tb=short -p no:cacheprovider -k A09
+============================= test session starts ==============================
+collecting ... collected 432 items / 416 deselected / 16 selected
+
+backend/tests/test_ingest.py::test_A09_backlog_uses_original_acquisition_never_receipt[ce] PASSED [  6%]
+backend/tests/test_ingest.py::test_A09_backlog_uses_original_acquisition_never_receipt[logs] PASSED [ 12%]
+backend/tests/test_ingest.py::test_A09_unknown_acquisition_cannot_establish_freshness[ce] PASSED [ 18%]
+backend/tests/test_ingest.py::test_A09_unknown_acquisition_cannot_establish_freshness[logs] PASSED [ 25%]
+backend/tests/test_ingest.py::test_A09_source_restart_invalidates_old_live_state[ce] PASSED [ 31%]
+backend/tests/test_ingest.py::test_A09_source_restart_invalidates_old_live_state[logs] PASSED [ 37%]
+backend/tests/test_ingest.py::test_A09_acquisition_clock_skew_is_diagnosed_not_fresh[ce] PASSED [ 43%]
+backend/tests/test_ingest.py::test_A09_acquisition_clock_skew_is_diagnosed_not_fresh[logs] PASSED [ 50%]
+backend/tests/test_ingest.py::test_A09_source_time_skew_does_not_set_acquisition_clock PASSED [ 56%]
+backend/tests/test_ingest_edges.py::test_A09_duplicate_after_restart_still_invalidates_old_live_state[ce] PASSED [ 62%]
+backend/tests/test_ingest_edges.py::test_A09_duplicate_after_restart_still_invalidates_old_live_state[logs] PASSED [ 68%]
+backend/tests/test_ingest_edges.py::test_A09_snapshot_represents_unknown_age_without_crashing PASSED [ 75%]
+backend/tests/test_ingest_edges.py::test_A09_terminal_fact_without_known_acquisition_is_not_delayed[ce] PASSED [ 81%]
+backend/tests/test_ingest_edges.py::test_A09_terminal_fact_without_known_acquisition_is_not_delayed[logs] PASSED [ 87%]
+backend/tests/test_ingest_edges.py::test_A09_unknown_order_does_not_hide_terminal_fact[ce] PASSED [ 93%]
+backend/tests/test_ingest_edges.py::test_A09_unknown_order_does_not_hide_terminal_fact[logs] PASSED [100%]
+
+====================== 16 passed, 416 deselected in 0.09s ======================
+
+exit_code=0
+
+Scenario fixture result: PASS. No actual-use/operational acceptance implied.
+
+Product-source immutability check: PASS (all tracked backend/collector/frontend/source/script hashes and candidate HEAD unchanged during this run).

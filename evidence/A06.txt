@@ -1,0 +1,789 @@
+A06 — Release 1 §16 raw verification transcript
+Candidate: ce52227c983598dcbb951f3c1d2ff55fe354ccdf
+Started UTC: 2026-10-22T00:15:37.110049+00:00
+Scenario: Execution exit preserves blocked/review task station; local acknowledgement never accepts native work.
+Pinning tests: exact collected node IDs / Vitest test names are printed below.
+Synthetic native stores only in unit/integration fixtures; OS children are test-owned.
+Real acquisition is limited to the explicitly approved Phase 2 board/profile scope.
+No product source modifications, dependency installs, native writes or deployment.
+
+$ python -m pytest backend/tests -v --no-header --tb=short -p no:cacheprovider -k A06
+============================= test session starts ==============================
+collecting ... collected 432 items / 427 deselected / 5 selected
+
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[blocked] PASSED [ 20%]
+backend/tests/test_hermes_work.py::test_A06_attempt_exit_keeps_station_and_ack_never_accepts[review] PASSED [ 40%]
+backend/tests/test_hermes_work.py::test_A06_unknown_status_not_coerced_to_todo_or_accepted PASSED [ 60%]
+backend/tests/test_phase2_gate.py::test_A06_full_workflow_attempt_exit_station_and_local_ack_independent[blocked] PASSED [ 80%]
+backend/tests/test_phase2_gate.py::test_A06_full_workflow_attempt_exit_station_and_local_ack_independent[review] PASSED [100%]
+
+====================== 5 passed, 427 deselected in 0.33s =======================
+
+exit_code=0
+
+$ npm --prefix frontend run test -- --run --reporter=tap src/workshop/projection.test.ts
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run --reporter=tap src/workshop/projection.test.ts
+
+TAP version 13
+1..1
+ok 1 - src/workshop/projection.test.ts # time=7.30ms {
+    1..3
+    ok 1 - A01/A02/A06/A07/A08 projection truth # time=5.28ms {
+        1..12
+        ok 1 - clones and deeply freezes one fact hierarchy shared by scene and DOM # time=2.48ms
+        ok 2 - keeps blocked/review tasks when actors exit and units remain independent # time=0.45ms
+        ok 3 - does not regress revision; accepts identity only through an atomic path # time=0.44ms
+        ok 4 - rejects malformed, duplicate or write-enabled snapshots 0 # time=0.17ms
+        ok 5 - rejects malformed, duplicate or write-enabled snapshots 1 # time=0.14ms
+        ok 6 - rejects malformed, duplicate or write-enabled snapshots 2 # time=0.16ms
+        ok 7 - rejects malformed, duplicate or write-enabled snapshots 3 # time=0.12ms
+        ok 8 - rejects malformed, duplicate or write-enabled snapshots 4 # time=0.13ms
+        ok 9 - rejects malformed, duplicate or write-enabled snapshots 5 # time=0.15ms
+        ok 10 - rejects malformed, duplicate or write-enabled snapshots 6 # time=0.20ms
+        ok 11 - rejects malformed, duplicate or write-enabled snapshots 7 # time=0.15ms
+        ok 12 - keeps unknown signal values explicit rather than coercing availability # time=0.14ms
+    }
+    ok 2 - A23 evidence URL boundary # time=0.90ms {
+        1..12
+        ok 1 - rejects javascript:alert(1) # time=0.16ms
+        ok 2 - rejects data:text/html,<script>alert(1)</script> # time=0.06ms
+        ok 3 - rejects https://github.com.evil/North-Metro-Tech/agent-workshop # time=0.06ms
+        ok 4 - rejects https://evil.com/North-Metro-Tech/agent-workshop # time=0.04ms
+        ok 5 - rejects https://github.com/North-Metro-Tech/agent-workshop-evil # time=0.08ms
+        ok 6 - rejects https://user@github.com/North-Metro-Tech/agent-workshop # time=0.05ms
+        ok 7 - rejects http://github.com/North-Metro-Tech/agent-workshop # time=0.04ms
+        ok 8 - rejects //github.com/North-Metro-Tech/agent-workshop # time=0.07ms
+        ok 9 - rejects file:///etc/passwd # time=0.06ms
+        ok 10 - rejects https://github.com/North-Metro-Tech/agent-workshop/../../evil # time=0.07ms
+        ok 11 - rejects https://github.com:8443/North-Metro-Tech/agent-workshop # time=0.05ms
+        ok 12 - permits only the exact HTTPS repository and its subpaths # time=0.07ms
+    }
+    ok 3 - actual adapted Pixel Agents geometry and raster loop # time=0.46ms {
+        1..2
+        ok 1 - aligns DOM world points and canvas device pixels at fractional DPR and pan # time=0.22ms
+        ok 2 - rasterizes original art using only opaque pixels without image/network APIs # time=0.21ms
+    }
+}
+
+exit_code=0
+
+Fixture result: PASS. Current approved-workflow raw same-acquisition readbacks follow after all isolated tests. Forced silence/station transitions, native schedule invariance and uninstall/restore use isolated fixtures only; no shared-live destructive variant is claimed.
+
+APPROVED PHASE 2 ACQUISITION 1; raw same-acquisition comparator output (not continuous transition coverage):
+
+$ python scripts/observe_workflow.py --approved-local
+{
+  "acquisition_evidence": {
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 112348.169309413,
+    "source_cursor": 3
+  },
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 15,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "archived",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a759113b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "4",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_9466d0f8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "5",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f6e9e637",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "6",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_dbf6fb11",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "7",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "8",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "9",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_bbfe861b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "10",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f11a8ea8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "11",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "12",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "13",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "14",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_3da4ecd5",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "15",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "historian": {
+    "reconcile_required": true,
+    "reopened": true,
+    "source_cursor": 3,
+    "startup_live_freshness_invalidated": true
+  },
+  "limitations": [
+    "Only this approved local board and profile scope, not fleet-wide health or MVP readiness.",
+    "Bounded source tables plus later proc observations have no atomic runtime watermark.",
+    "Partial native/event history never implies complete runtime coverage or deletion of unseen records.",
+    "Same-acquisition comparison, not continuous capture of all workflow transitions.",
+    "No live silent-tool/forced station transition/uninstall/schedule access was performed.",
+    "Main/schema hashes exclude WAL/SHM coordination; native writers were not stopped.",
+    "Outbox bounds logical pending payloads; historian/domain history and SQLite physical files are not byte-capped.",
+    "Comparable monotonic boot clock required; new boot/configuration needs explicit recovery, never timestamp rebasing.",
+    "Core independent review/merge is the Phase 2 acceptance gate; no renderer or running service."
+  ],
+  "native_event_cursor": 2404,
+  "native_fence": {
+    "after": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_snapshot_complete": false,
+  "native_write_enabled": false,
+  "outbox": {
+    "delivered_cursor": 3,
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "next_cursor": 4,
+    "observations_accepted": 6,
+    "overflow_policy": "reject-no-drop",
+    "payload_bytes": 0,
+    "pending": 0,
+    "pending_before_acquisition": 0,
+    "runtime_coverage": "partial"
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scenario_coverage": {
+    "A05": "actual acquired process/source agreement; silence/PID-reuse/turn variants isolated",
+    "A06": "actual acquired station/attempt independence; forced blocked/review/ack variants isolated",
+    "A08": "actual durable delivery/readback + reopened historian; crash/overflow/disconnect variants isolated",
+    "A10": "actual same-data empty-scope denial + main/schema invariant; DML interlock attacks isolated",
+    "A25": "one-shot observer exits; uninstall/restore + schedule invariants isolated, not shared live operations"
+  },
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_projection_agreement": true,
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  },
+  "truncated_tables": [
+    "task_events"
+  ]
+}
+
+exit_code=0
+
+APPROVED PHASE 2 ACQUISITION 2; raw same-acquisition comparator output (not continuous transition coverage):
+
+$ python scripts/observe_workflow.py --approved-local
+{
+  "acquisition_evidence": {
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 112348.300555566,
+    "source_cursor": 4
+  },
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 15,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "archived",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a759113b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "4",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_9466d0f8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "5",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f6e9e637",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "6",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_dbf6fb11",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "7",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "8",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "9",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_bbfe861b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "10",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f11a8ea8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "11",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "12",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "13",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "14",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_3da4ecd5",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "15",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "historian": {
+    "reconcile_required": true,
+    "reopened": true,
+    "source_cursor": 4,
+    "startup_live_freshness_invalidated": true
+  },
+  "limitations": [
+    "Only this approved local board and profile scope, not fleet-wide health or MVP readiness.",
+    "Bounded source tables plus later proc observations have no atomic runtime watermark.",
+    "Partial native/event history never implies complete runtime coverage or deletion of unseen records.",
+    "Same-acquisition comparison, not continuous capture of all workflow transitions.",
+    "No live silent-tool/forced station transition/uninstall/schedule access was performed.",
+    "Main/schema hashes exclude WAL/SHM coordination; native writers were not stopped.",
+    "Outbox bounds logical pending payloads; historian/domain history and SQLite physical files are not byte-capped.",
+    "Comparable monotonic boot clock required; new boot/configuration needs explicit recovery, never timestamp rebasing.",
+    "Core independent review/merge is the Phase 2 acceptance gate; no renderer or running service."
+  ],
+  "native_event_cursor": 2404,
+  "native_fence": {
+    "after": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_snapshot_complete": false,
+  "native_write_enabled": false,
+  "outbox": {
+    "delivered_cursor": 4,
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "next_cursor": 5,
+    "observations_accepted": 6,
+    "overflow_policy": "reject-no-drop",
+    "payload_bytes": 0,
+    "pending": 0,
+    "pending_before_acquisition": 0,
+    "runtime_coverage": "partial"
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scenario_coverage": {
+    "A05": "actual acquired process/source agreement; silence/PID-reuse/turn variants isolated",
+    "A06": "actual acquired station/attempt independence; forced blocked/review/ack variants isolated",
+    "A08": "actual durable delivery/readback + reopened historian; crash/overflow/disconnect variants isolated",
+    "A10": "actual same-data empty-scope denial + main/schema invariant; DML interlock attacks isolated",
+    "A25": "one-shot observer exits; uninstall/restore + schedule invariants isolated, not shared live operations"
+  },
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_projection_agreement": true,
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  },
+  "truncated_tables": [
+    "task_events"
+  ]
+}
+
+exit_code=0
+
+Product-source immutability check: PASS (all tracked backend/collector/frontend/source/script hashes and candidate HEAD unchanged during this run).
+Live acquisition exit codes: [0, 0]. Same-acquisition agreement does not prove forced transitions, full runtime coverage, deployed service, live uninstall/schedule invariants or fleet health.
