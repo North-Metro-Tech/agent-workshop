@@ -1,0 +1,2 @@
+Verified frontend/src/workshop/generated.ts
+Verified docs/web-schema.json

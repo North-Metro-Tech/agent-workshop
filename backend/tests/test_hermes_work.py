@@ -52,7 +52,7 @@ def collector(native, **kwargs):
     from workshop_collectors.base import SourceScope
     from workshop_collectors.hermes_work import HermesWork
     return HermesWork(SourceScope('synthetic-instance', 'synthetic-board', native,
-                                 ('coder', 'vitruvius-core')), **kwargs)
+                                 ('coder', 'default')), **kwargs)
 
 
 def snap(native, **kwargs):
@@ -73,6 +73,30 @@ def hashes(path):
     finally:
         db.close()
     return hashlib.sha256(path.read_bytes()).hexdigest(), hashlib.sha256(repr(schema).encode()).hexdigest()
+
+
+def test_A10_approved_scope_pins_actual_operator_profiles():
+    from workshop_collectors.hermes_work import approved_scope
+    assert approved_scope().profiles == ('coder', 'default')
+
+
+@pytest.mark.parametrize('profile', ['coder', 'default', None, 'vitruvius-core', 'unapproved'])
+def test_A10_approved_profiles_accept_actual_operators_and_fail_closed(native, profile):
+    from dataclasses import replace
+    from workshop_collectors.hermes_work import HermesWork, approved_scope
+    # Retain the actual factory's profile policy but read only a synthetic store.
+    scope = replace(approved_scope(), path=native, board='synthetic-board')
+    change(native, 'UPDATE task_runs SET profile=?', (profile,))
+    observer = HermesWork(scope)
+    before = hashes(native)
+    if profile in ('coder', 'default', None):
+        snapshot = observer.observe(board='synthetic-board', acquired_at=10)
+        assert snapshot.run(1)['run']['profile'] == profile
+    else:
+        with pytest.raises(ValueError, match='Run profile outside approved source scope'):
+            observer.observe(board='synthetic-board', acquired_at=10)
+        assert observer.last_snapshot is None
+    assert hashes(native) == before
 
 
 def test_A10_scope_mandatory_exact_path_and_board(native):

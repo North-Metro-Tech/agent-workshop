@@ -1,0 +1,28 @@
+Base: 60f507670cfa46facd01638dc272d804d7edad73
+Python: 3.11.15 (main, Jun 11 2026, 04:03:40) [Clang 22.1.3 ]
+Test runner: 9.1.1
+Candidate import: workshop backend/workshop/__init__.py
+Candidate import: workshop_collectors collectors/workshop_collectors/__init__.py
+Locked runtime: annotated-doc 0.0.5
+Locked runtime: annotated-types 0.8.0
+Locked runtime: anyio 4.15.1
+Locked runtime: click 8.5.0
+Locked runtime: fastapi 0.143.1
+Locked runtime: h11 0.16.0
+Locked runtime: idna 3.20
+Locked runtime: opentelemetry-api 1.45.1
+Locked runtime: pydantic 2.14.1
+Locked runtime: pydantic-core 2.50.1
+Locked runtime: starlette 1.8.0
+Locked runtime: typing-extensions 4.16.0
+Locked runtime: typing-inspection 0.4.4
+Locked runtime: uvicorn 0.54.0
+PASS: production diff is exactly one approved profile tuple replacement
+PASS: original path/board fences and observe() fail-closed logic byte-identical
+Unchanged: collectors/workshop_collectors/demo.py cedf2f90f1a1648fa9a52e0404b54deecce651808c1037f9d8a0f788ce138600
+Unchanged: requirements.lock a1134eba32ae2feb2065a023c0b7bc744a7ff3659123d3e21375ae4248d640a9
+Unchanged: requirements.in 12903de6cb3a0e79d9c426859ccf55baef7b240781ad5e124f42279b96e8ab2f
+Unchanged: RESUME.md 385eefd31d9c19817c3fed7e54255a13c5341a2544b3b45bcaec6a926cf5e58d
+PASS: recorded before/after regression and 472 named backend passes; zero skips
+No native source acquisition performed by this verifier; no dependency install.
+Stage 1 only. Independent approval, integration and twelve-scenario rerun remain pending.

@@ -30,7 +30,7 @@ def approved_scope(*, path=APPROVED_PATH, board='agent-workshop'):
     if Path(path) != APPROVED_PATH or Path(path).resolve() != APPROVED_PATH or board != 'agent-workshop':
         raise ValueError('Source is outside approved local scope')
     return SourceScope('local-hermes-agent-workshop', board, APPROVED_PATH,
-                       ('coder', 'vitruvius-core'))
+                       ('coder', 'default'))
 
 
 @dataclass(frozen=True)
