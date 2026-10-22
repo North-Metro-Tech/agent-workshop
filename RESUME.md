@@ -1,5 +1,36 @@
 # RESUME — Agent Workshop
 
+## Phase 3 intermediate checkpoint — NOT MVP ready
+
+Task `t_7e8a8223`, branch `feat/phase3-mvp`, based on accepted main
+`68e2367dd4b6552a9b0d6be9d33f56f35c211013` (Phase 2 PR #7 accepted/merged).
+The frontend is implemented and independently exercised: 47 Vitest tests pass,
+typecheck/build pass, full dev audit reports zero vulnerabilities. Existing
+backend suite re-run: 432 pass. Exact approved frontend pins plus lock, all 99
+resolution publication/integrity/tarball checks and Socket-wrapped ci evidence
+are preserved. Pixel Agents visual-only adaptation is pinned/licensed, with
+original stationary art and equivalent DOM. No live reads or installation.
+
+This remains an intermediate checkpoint: no HTTP/SSE service or backend-generated
+frontend schema, actual-service browser verification, full scenario acceptance,
+independent review or release. The temporary TypeScript contract is marked as
+such. See `docs/phase3-progress.md` for precise evidence, contract and remaining
+work. Do NOT complete the sole owner-notification gate from frontend unit tests.
+
+Before service adoption, Core/PO must explicitly allow a maintained minimal ASGI
+server (`uvicorn`, no extras) and necessary audited runtime transitives, and
+confirm runtime transitives of the already-selected FastAPI/Pydantic stack for
+an exact Python lock. Current ruling covers the frontend toolchain; the host
+harness's incidental installed server is not a reproducible product dependency
+or authority to bypass the freeze. No packages outside the approved frontend
+allowlist have been added/installed; no age exception requested. Resume service,
+auth/SSE/security tests, Pydantic type generation, browser/final scenarios,
+review and approved-scope installation only after that narrow ruling.
+
+Claude Code remains absent; documented fallback used. Parent independently
+reran the delegated frontend's gates. This entry is one serialized additive
+hotspot edit; all prior Core/coder sections below are historical and preserved.
+
 ## Latest implementation handoff — Phase 2 closing gate
 
 Task `t_f11a8ea8` implemented on `feat/phase2-workflow-gate`, incorporating

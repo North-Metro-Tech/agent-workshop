@@ -1,0 +1,8 @@
+import {useState} from 'react';
+import {isUnacknowledged,type Projection} from './projection';
+export type Position='viewer'|'operator'|'controller';
+export function canAcknowledge(position:Position,permissions:readonly string[],snapshot:Projection){return position==='operator'&&permissions.includes('operator')&&snapshot.connection_quality==='fresh';}
+export function OperatorPanel({snapshot,permissions,busy,onAcknowledge}:{snapshot:Projection;permissions:readonly string[];busy:boolean;onAcknowledge:(id:string)=>void}){
+ const [position,setPosition]=useState<Position>('viewer');
+ return <section aria-labelledby="operator-heading"><h2 id="operator-heading">Local operator panel</h2><label>Key-switch position <select value={position} onChange={e=>setPosition(e.target.value as Position)}><option value="viewer">viewer</option><option value="operator">operator</option><option value="controller">controller</option></select></label><p>Controller: not connected / read-only. Native writes disabled. Switch position is not authentication.</p><button disabled>ADMISSION HOLD — NOT A SAFETY-RATED STOP</button><p>Unavailable in Release 1. Cannot stop actors, machinery or energy.</p>{snapshot.items.filter(i=>i.kind==='alarm').map(i=><p key={i.id}><button disabled={busy||!canAcknowledge(position,permissions,snapshot)||!i.acknowledge_id||!isUnacknowledged(i)} onClick={()=>{if(i.acknowledge_id&&canAcknowledge(position,permissions,snapshot))onAcknowledge(i.acknowledge_id);}}>Acknowledge locally: {i.label}</button></p>)}<p>Acknowledgement records attention only; it never clears a cause, resumes work or accepts an outcome.</p></section>;
+}

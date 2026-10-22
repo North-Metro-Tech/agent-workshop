@@ -1,0 +1,2 @@
+export type Observation={cursor:string;generated_at:number};
+export function Timeline({observations}:{observations:readonly Observation[]}){return <section aria-labelledby="timeline-heading"><h2 id="timeline-heading">Projection observation timeline</h2><p>Historical receipt list, not current alarms or verified progress. No execution history inferred.</p><ol>{observations.map(o=><li key={o.cursor}>Snapshot {o.cursor} · service generated at {o.generated_at}</li>)}</ol></section>;}
