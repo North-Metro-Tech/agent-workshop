@@ -95,6 +95,16 @@ Current complete suite:
 - schema-attempt1.txt: scripts/generate_schema.py --check succeeded.
 - demo-attempt1.txt, collector-demo-attempt1.txt, compile-attempt1.txt:
   scripts/dev.py demo, collector-demo, check all succeeded.
+- Post-commit fresh-clone verification: signed implementation commit
+  e42d77025e49ba9ec1b682038e68704bb79377e0 has parent EXACTLY the approved base.
+  In a new no-hardlinks clone, initially/finally clean and detached at that head,
+  the Lead reran the full gates: exact-head-backend.txt = 494 passed/zero skips;
+  exact-head-frontend.txt = 57 passed/zero skips plus typecheck/build;
+  exact-head-browser.txt = four passed/zero skips; exact-head-schema.txt passed;
+  exact-head-product-manifest-check.txt verifies all 101 tracked non-evidence
+  files. These reruns are production QA, NOT independent Core approval.
+  The subsequent signed sealing commit adds only these evidence logs and this
+  handoff note; final product files are byte-identical to that exercised head.
 - Dependency manifests/locks and service/collector implementations have empty
   diffs. No package was added/installed/downloaded. Frontend node_modules was
   copied into this task from the existing installed cache ONLY AFTER its
