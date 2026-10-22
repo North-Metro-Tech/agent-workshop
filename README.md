@@ -28,13 +28,77 @@ crash and uninstall/schedule variants remain isolated, not fabricated live
 transitions. See `docs/phase2-workflow.md` and `evidence/PHASE2_REVIEW.md`; Core
 independent review/merge is the Phase 2 acceptance gate.
 
-This is not a running monitoring service or operational acceptance. There is no
-network listener, HTTP/binary OTLP binding,
-renderer, native executor, enable switch or runtime-write route. The controller
-position cannot enable writes. Local alarm acknowledgement changes Workshop
-records only. No third-party renderer code or new dependency has been adopted.
-Renderer and downstream operational acceptance remain separate; fixture success
-and scoped live readbacks do not mean the product MVP is ready.
+The Phase 3 remediation adds a loopback-only HTTP/SSE binding and a built
+React canvas/DOM HMI. This remains a development service, not operational/MVP
+acceptance. There is no native executor, enable switch or runtime-write route;
+controller cannot enable writes. Workshop-local acknowledgement changes only
+Workshop records. Frontend visual extraction attribution is in THIRD_PARTY_NOTICES.md.
+
+## Start the loopback HMI (Phase 3)
+
+Use Python 3.11+ and Node with the approved toolchain. The pure domain/demo stays
+standard-library-only. The serving layer additionally requires the exact approved
+runtime lock. Install commands must run through Socket Firewall; no extra packages,
+Uvicorn standard extras, public bind, reload, or multiple workers are supported.
+
+    python3 scripts/dev.py install
+    python3 scripts/check_python_lock.py
+    sfw uv pip install --python .venv/bin/python --require-hashes --only-binary :all: --exclude-newer 2026-10-15T00:00:00Z -r requirements.lock
+    python3 scripts/check_npm_quarantine.py
+    cd frontend
+    sfw npm ci --include=dev
+    npm audit
+    npm run typecheck
+    npm run build
+    cd ..
+    .venv/bin/python scripts/dev.py schema --check
+    .venv/bin/python scripts/dev.py serve --synthetic --init-secret
+    .venv/bin/python scripts/dev.py serve --synthetic
+
+Open http://127.0.0.1:8765 exactly (localhost is a different authority). Enter the
+private secret from .workshop-state/service/synthetic/login-secret into the login
+form; never place it in a URL, VITE variable, bundle, browser storage or evidence.
+The init command creates a mode-600 file and never prints its contents. A provisioned
+WORKSHOP_LOGIN_TOKEN environment variable can instead supply a distinct 32+ character
+secret in the server process only. Session cookies are HttpOnly/SameSite Strict,
+loopback HTTP (not Secure/TLS); session and CSRF authority expires after one hour
+and is revoked by process restart. This is not protection from a hostile local OS
+user or same-origin XSS. Do not reverse-proxy, tunnel or expose this service.
+
+Explicit --approved-local instead of --synthetic uses only the already-approved
+agent-workshop board/runtime scope. It is opt-in live read-only acquisition; no
+native controls. It uses separate state and requires its own init-secret invocation.
+No live collection is performed by install, test, schema or synthetic serve.
+The single event loop owns every SQLite access; a lifetime advisory writer lock
+rejects a second service before opening Storage. Keep all other writers away from
+the service historian. Source mode and Linux boot clock identity are fenced in a
+sidecar: process restart preserves diagnostics but invalidates live acquisition;
+a host reboot requires explicit new state/recovery, never reuse old monotonic ages.
+Do not delete the sidecar to bypass a recovery failure. No service autostart is installed.
+
+The committed generated.ts and docs/web-schema.json are generated from backend
+Pydantic models by scripts/generate_schema.py. Regenerate with dev.py schema;
+--check fails on drift. They are not a handwritten TypeScript contract mirror.
+History is a bounded historian-backed excerpt with stable identity/provenance,
+not snapshot receipts or current state. Observations without retained acquisition
+timestamps say so explicitly. No transcript or native filesystem browser is served.
+
+After building, npm --prefix frontend run test:e2e provisions its own isolated
+synthetic TCP service, random secret and historian. There are no service-dependent
+skips. Existing audited Chromium can be selected with WORKSHOP_E2E_CHROMIUM; this
+command does not download a browser. It tests real canvas/DOM facts, transport
+reconnect, a new browser process, service restart, retained history and local ack.
+Manual screen-reader/assistive-technology speech has not been verified: live-region
+DOM, transition deduplication, focus preservation and reduced-motion are automated
+coverage only. Clean-checkout QA and twelve-scenario reruns remain downstream gates.
+
+The lock was resolved for Linux x86_64 / Python 3.11; that is the verified serving
+environment. The explicit installation cutoff matches its recorded resolution,
+is over seven days old, and avoids an unrelated user's stricter uv default making
+the exact lock unsatisfiable. The metadata/hash/OSV quarantine check is still
+mandatory before installation; this cutoff is not an age exception. Every Python
+resolution, including transitives, is pinned and hashed. Do not resolve additional
+platform dependencies without a fresh allowance/quarantine/security check.
 
 Read the precise contracts and limitations:
 
@@ -49,8 +113,9 @@ Read the precise contracts and limitations:
 
 ## Development: install, test, demo
 
-Requires Python 3.11+ and its standard-library `venv` support. Runtime uses only
-the standard library. Tests additionally require pytest in an existing approved
+Requires Python 3.11+ and its standard-library `venv` support. Domain/demo runtime
+uses only the standard library; HTTP serving requires the lock above. Tests
+additionally require pytest in an existing approved
 Python environment. The verified test environment uses Python 3.11.15 and pytest
 9.1.1; the no-pip runtime install/demo/check also work on Python 3.14.7.
 
@@ -88,6 +153,16 @@ runtime-only `.venv` created above (that environment intentionally has no pytest
     python scripts/dev.py test backend/tests/test_source_scope.py -q
     python -m pytest -q
     git diff --check
+
+The service tests additionally require the exact runtime lock. With the verified
+Python 3.11 runtime-only `.venv` and a separate existing approved Python 3.11 pytest
+interpreter, use (set APPROVED_TEST_PYTHON to that interpreter's absolute path):
+
+    PYTHONPATH=.venv/lib/python3.11/site-packages:backend:collectors "$APPROVED_TEST_PYTHON" -m pytest -q
+
+This does not install pytest or use an incidental harness FastAPI/Pydantic version.
+Alternatively use an already-approved test environment containing both pytest and
+the exact runtime pins. A missing pytest is not a product test pass.
 
 No dependency installation or update is performed by these commands. If pytest
 is missing, choose an existing approved test interpreter, or obtain dependency

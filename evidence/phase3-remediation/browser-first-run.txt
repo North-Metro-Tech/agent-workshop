@@ -1,0 +1,55 @@
+
+> agent-workshop-hmi@0.1.0 test:e2e
+> playwright test
+
+
+Running 4 tests using 1 worker
+
+  ✘  1 e2e/workshop.spec.ts:48:1 › provisioned service: scene/DOM facts, keyboard, reduced motion and local-only authority (6.2s)
+  -  2 e2e/workshop.spec.ts:75:1 › real transport reconnect restores atomic facts without replacing retained history
+  -  3 e2e/workshop.spec.ts:83:1 › new browser process and service restart retain diagnostics, revoke sessions and invalidate live freshness
+  -  4 e2e/workshop.spec.ts:102:1 › actual local acknowledgement updates one restrained live region and preserves focus
+
+
+  1) e2e/workshop.spec.ts:48:1 › provisioned service: scene/DOM facts, keyboard, reduced motion and local-only authority 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.roster > li').filter({ has: getByRole('button', { name: 'execution: attempt-1', exact: true }) })
+    Expected substring: "1.7722942989930743"
+    Received string:    "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:[\"synthetic-runtime\",\"attempt-1\"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age6.701072137992014retained_observation_count1historybounded retained observations available separately; not current state"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.roster > li').filter({ has: getByRole('button', { name: 'execution: attempt-1', exact: true }) }) with timeout 5000ms
+      - waiting for locator('.roster > li').filter({ has: getByRole('button', { name: 'execution: attempt-1', exact: true }) })
+        5 × locator resolved to <li>…</li>
+          - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age1.6940502889920026retained_observation_count1historybounded retained observations available separately; not current state"
+        2 × locator resolved to <li>…</li>
+          - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age2.692107582988683retained_observation_count1historybounded retained observations available separately; not current state"
+        2 × locator resolved to <li>…</li>
+          - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age3.6945522589958273retained_observation_count1historybounded retained observations available separately; not current state"
+        2 × locator resolved to <li>…</li>
+          - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age4.696682071997202retained_observation_count1historybounded retained observations available separately; not current state"
+        2 × locator resolved to <li>…</li>
+          - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age5.699102617989411retained_observation_count1historybounded retained observations available separately; not current state"
+        - locator resolved to <li>…</li>
+        - unexpected value "execution: attempt-1All facts · synthetic-coder / observed workIdentity: execution:["synthetic-runtime","attempt-1"] · execution · Station: synthetic-coder / observed workkey.runtimesynthetic-runtimekey.native_idattempt-1rolesynthetic-codersessionsynthetic-sessionparentunknowntask.source_instancesynthetic-instancetask.namespacesynthetic-boardtask.native_idtask-1lifecycle.nativeworkinglifecycle.mappedactivelifecycle.mapping_versionsynthetic-v1lifecycle.sourceurn:synthetic:servicelifecycle.feedsynthetic-feedlifecycle.observed_at115844.604786551lifecycle.supportedtruelifecycle.evidence_classsource_recordacquired_at115844.604786551discrepancies[]lifecycle_qualityfreshacquisition_age6.701072137992014retained_observation_count1historybounded retained observations available separately; not current state"
+
+
+      54 |   await expect(row).toHaveCount(1);await row.locator('summary').click();
+      55 |   await expect(row).toContainText(item.id);await expect(row).toContainText(item.station);
+    > 56 |   for(const f of item.facts){await expect(row).toContainText(f.name);await expect(row).toContainText(f.value);}
+         |                                                                                        ^
+      57 |  }
+      58 |  const canvas=page.locator('canvas');await expect(canvas).toBeVisible();
+      59 |  expect(await canvas.evaluate((node:HTMLCanvasElement)=>{const pixels=node.getContext('2d')!.getImageData(0,0,node.width,node.height).data;return pixels.some((value,index)=>index%4!==3&&value!==0);})).toBe(true);
+        at /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_1503dfef/repo/frontend/e2e/workshop.spec.ts:56:88
+
+    Error Context: test-results/workshop-provisioned-servi-44cd4-on-and-local-only-authority/error-context.md
+
+    Error Context: test-results/workshop-provisioned-servi-44cd4-on-and-local-only-authority/error-context.md
+
+  1 failed
+    e2e/workshop.spec.ts:48:1 › provisioned service: scene/DOM facts, keyboard, reduced motion and local-only authority 
+  3 did not run

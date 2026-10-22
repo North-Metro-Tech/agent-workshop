@@ -17,6 +17,18 @@ let fetcher:ReturnType<typeof vi.fn>,subscription:ReturnType<typeof observe>|und
 beforeEach(()=>{Stream.instances=[];fetcher=vi.fn().mockResolvedValue(response(fixture()));vi.stubGlobal('fetch',fetcher);vi.stubGlobal('EventSource',Stream);});
 afterEach(()=>{subscription?.close();subscription=undefined;vi.unstubAllGlobals();});
 describe('A08 authenticated atomic transport and recovery',()=>{
+ it('an HTTP 401 on EventSource reconnect requests login without a page reload',async()=>{
+  const errors:unknown[]=[];subscription=observe(()=>{},e=>errors.push(e));await settle();
+  fetcher.mockResolvedValueOnce(response({},401));Stream.instances[0].onerror?.();await settle();
+  expect(errors.some(e=>e instanceof AuthenticationRequired)).toBe(true);expect(Stream.instances[0].closed).toBe(true);
+ });
+ it('offline marks retained state disconnected and ignores ongoing stream frames until online recovery',async()=>{
+  const seen:Projection[]=[];subscription=observe(p=>seen.push(p),vi.fn());await settle();
+  window.dispatchEvent(new Event('offline'));Stream.instances[0].emit(fixture(9));
+  expect(seen.at(-1)?.connection_quality).toBe('disconnected');expect(seen.at(-1)?.cursor).toBe('store:1');
+  fetcher.mockResolvedValueOnce(response(fixture(10)));window.dispatchEvent(new Event('online'));await settle();
+  expect(seen.at(-1)?.connection_quality).toBe('fresh');expect(seen.at(-1)?.cursor).toBe('store:10');
+ });
  it('uses same-origin cookie auth, POST-only secret and CSRF mutation, never query/storage',async()=>{fetcher.mockResolvedValueOnce(response({})).mockResolvedValueOnce(response(session));expect(await login('test-login-secret')).toEqual(session);expect(fetcher.mock.calls.map(c=>c[0])).toEqual(['/api/session','/api/session']);expect(fetcher.mock.calls[0][1]).toMatchObject({method:'POST',body:JSON.stringify({token:'test-login-secret'}),credentials:'same-origin',redirect:'error'});fetcher.mockResolvedValueOnce(response({}));await acknowledge(session,'odd [id]/:#');expect(fetcher.mock.calls[2]).toEqual(['/api/alarms/acknowledge',expect.objectContaining({headers:{'Content-Type':'application/json','X-CSRF-Token':'test-csrf'},body:JSON.stringify({occurrence_id:'odd [id]/:#',position:'operator'})})]);expect(localStorage.length).toBe(0);});
  it('rejects unauthenticated sessions and client-side permission escalation',async()=>{fetcher.mockResolvedValueOnce(response({},401));await expect(getSession()).rejects.toBeInstanceOf(AuthenticationRequired);await expect(acknowledge({...session,permissions:['viewer']},'id')).rejects.toThrow('Operator');expect(fetcher).toHaveBeenCalledTimes(1);});
  it('new browser observer always fetches full snapshot and keeps EventSource URL credential/cursor-free',async()=>{const seen:Projection[]=[];subscription=observe(p=>seen.push(p),vi.fn());await settle();expect(seen.at(-1)?.cursor).toBe('store:1');expect(fetcher.mock.calls[0][0]).toBe('/api/snapshot');expect(Stream.instances[0].url).toBe('/api/events');subscription.close();subscription=observe(p=>seen.push(p),vi.fn());await settle();expect(fetcher).toHaveBeenCalledTimes(2);});

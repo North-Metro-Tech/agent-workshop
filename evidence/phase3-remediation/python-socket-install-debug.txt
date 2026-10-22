@@ -1,0 +1,55 @@
+Protected by Socket Firewall
+DEBUG Searching for user configuration in: `/home/aaron/.config/uv/uv.toml`
+DEBUG Found user configuration in: `/home/aaron/.config/uv/uv.toml`
+DEBUG uv 0.11.21 (x86_64-unknown-linux-gnu)
+DEBUG Checking for Python interpreter at path `.venv/bin/python`
+DEBUG Using Python 3.11.15 environment at: .venv
+DEBUG Using request connect timeout of 10s and read timeout of 30s
+DEBUG Solving with installed Python version: 3.11.15
+DEBUG Solving with target Python version: >=3.11.15
+DEBUG Solving with exclude-newer: global: 2026-10-08T00:58:57.268890942Z
+DEBUG Adding direct dependency: annotated-doc>=0.0.5, <0.0.5+
+DEBUG Adding direct dependency: annotated-types>=0.8.0, <0.8.0+
+DEBUG Adding direct dependency: anyio>=4.15.1, <4.15.1+
+DEBUG Adding direct dependency: click>=8.5.0, <8.5.0+
+DEBUG Adding direct dependency: fastapi>=0.143.1, <0.143.1+
+DEBUG Adding direct dependency: h11>=0.16.0, <0.16.0+
+DEBUG Adding direct dependency: idna>=3.20, <3.20+
+DEBUG Adding direct dependency: opentelemetry-api>=1.45.1, <1.45.1+
+DEBUG Adding direct dependency: pydantic>=2.14.1, <2.14.1+
+DEBUG Adding direct dependency: pydantic-core>=2.50.1, <2.50.1+
+DEBUG Adding direct dependency: starlette>=1.8.0, <1.8.0+
+DEBUG Adding direct dependency: typing-extensions>=4.16.0, <4.16.0+
+DEBUG Adding direct dependency: typing-inspection>=0.4.4, <0.4.4+
+DEBUG Adding direct dependency: uvicorn>=0.54.0, <0.54.0+
+DEBUG Found fresh response for: https://pypi.org/simple/annotated-doc/
+DEBUG Found fresh response for: https://pypi.org/simple/annotated-types/
+DEBUG Found fresh response for: https://pypi.org/simple/anyio/
+DEBUG Searching for a compatible version of annotated-doc (>=0.0.5, <0.0.5+)
+DEBUG Found fresh response for: https://pypi.org/simple/click/
+DEBUG Found fresh response for: https://pypi.org/simple/h11/
+DEBUG Selecting: annotated-doc==0.0.5 [compatible] (annotated_doc-0.0.5-py3-none-any.whl)
+DEBUG Found fresh response for: https://pypi.org/simple/idna/
+DEBUG Searching for a compatible version of annotated-types (>=0.8.0, <0.8.0+)
+DEBUG Selecting: annotated-types==0.8.0 [compatible] (annotated_types-0.8.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of anyio (>=4.15.1, <4.15.1+)
+DEBUG Found fresh response for: https://pypi.org/simple/opentelemetry-api/
+DEBUG Selecting: anyio==4.15.1 [compatible] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of click (>=8.5.0, <8.5.0+)
+DEBUG Selecting: click==8.5.0 [compatible] (click-8.5.0-py3-none-any.whl)
+DEBUG Found fresh response for: https://pypi.org/simple/typing-extensions/
+DEBUG Found fresh response for: https://pypi.org/simple/starlette/
+DEBUG Found fresh response for: https://pypi.org/simple/fastapi/
+DEBUG Found fresh response for: https://pypi.org/simple/uvicorn/
+DEBUG Searching for a compatible version of fastapi (>=0.143.1, <0.143.1+)
+DEBUG Searching for a compatible version of fastapi (>0.143.1, <0.143.1+)
+DEBUG No compatible version found for: fastapi
+DEBUG Found fresh response for: https://pypi.org/simple/typing-inspection/
+DEBUG Found fresh response for: https://pypi.org/simple/pydantic/
+DEBUG Found fresh response for: https://pypi.org/simple/pydantic-core/
+  × No solution found when resolving dependencies:
+  ╰─▶ Because fastapi==0.143.1 has no usable wheels and you require
+      fastapi==0.143.1, we can conclude that your requirements are
+      unsatisfiable.
+
+hint: Wheels are required for `fastapi` because building from source is disabled for all packages (i.e., with `--no-build`)

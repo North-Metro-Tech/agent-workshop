@@ -1,0 +1,4 @@
+Created private login secret at /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_1503dfef/repo/.workshop-state/remediation-startup/synthetic/login-secret
+secret permissions: 600
+index HTTP 200
+unprovisioned session HTTP 401

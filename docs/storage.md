@@ -1,7 +1,8 @@
 # A08 Workshop historian and recovery
 
-This is an in-process, synthetic-tested storage slice, not a running service,
-HTTP/SSE binding, collector or interoperability claim. A10's separate bounded
+The original Phase 1 slice is in-process and synthetic-tested. The Phase 3
+loopback binding is described separately below; this is not an interoperability
+or operational acceptance claim. A10's separate bounded
 read-only SQLite primitive (not a native schema adapter) is in `source-binding.md`.
 It uses the Python standard library and the existing reducer/ingress contracts.
 
@@ -157,8 +158,53 @@ explicit caller acquisition clock; history/receipt does not advance freshness.
 A cursor at the current revision yields no entries. Malformed, foreign,
 future or expired cursors raise `RecoveryRequired`: obtain one fresh atomic
 snapshot, not a replay storm. Backend source history is not deleted by a browser
-reconnect. HTTP/SSE and browser code remain later bindings of this in-process
-contract, not implemented here.
+reconnect. The Phase 3 binding below sends full current snapshots, not historical
+checkpoints relabelled as current state.
+
+## Phase 3 loopback binding and retained diagnostics
+
+`scripts/dev.py serve --synthetic` (or explicitly `--approved-local`) serves the
+built HMI and authenticated `/api/session`, `/api/snapshot`, `/api/history`,
+`/api/events` and local `/api/alarms/acknowledge` routes. README contains exact
+dependency checks, installation, secret provisioning and startup commands.
+
+The single Uvicorn worker/event loop opens and owns Storage. All route methods
+and acquisition calls are async loop calls, not FastAPI threadpool handlers.
+An exclusive lifetime advisory lock is obtained before Storage is opened; a
+second service cannot trigger startup invalidation in a running writer. This
+does not make direct Storage clients multiprocess-safe: never open another
+writer against the service's historian. Shutdown cancels SSE after a two-second
+grace period, then closes collector and storage. No autostart or native writes.
+
+Source mode and Linux boot identity are persisted separately and compared before
+Storage opens. Synthetic and approved-local state are isolated. A process restart
+retains historical facts but invalidates acquisition and sessions. A reboot/clock
+domain or mode mismatch fails closed and requires explicit recovery/new state;
+deleting the sidecar is not recovery. No availability is inferred from disk.
+
+SSE validates Last-Event-ID shape, database identity, range and replay retention
+using Storage. Invalid/foreign/future/expired cursors emit one reset followed by
+a full atomic current snapshot. Each poll projects current signal ages using the
+trusted acquisition clock, even if the committed revision is unchanged. Cookies
+and CSRF secrets never occur in SSE URLs. Backend session expiry terminates the
+stream; browser reconnect probes authentication because EventSource hides 401s.
+
+`retained_diagnostics(limit=100)` uses a read transaction on that same connection
+and returns detached retained execution observations and Workshop-local alarm
+audit, with one historian cursor. At most 100 entries are exposed, reserving up
+to 20 for local alarm audit. Per-identity retained indices and canonical native
+identity form stable diagnostic IDs. `/api/history` maps the excerpt into
+Pydantic models, with source/feed/mapping/evidence class and historical occurrence
+times. Per-observation acquisition times not retained by the domain stay explicitly
+unknown; the latest execution acquisition is never reused as historical proof.
+Cross-source time ordering and first-out causality are not asserted. The browser
+refetches after new revisions and restarts, rather than retaining receipt lists.
+
+This bounds the exposed excerpt and serialized display values, not total disk,
+domain history or the cost of loading the existing full-state historian. No raw
+transcript, native database query or filesystem browser is exposed. The original
+Phase 1 limitations below describe the storage layer, not a claim that Phase 3
+HTTP/auth or Phase 2 collectors are absent from the integrated repository.
 
 ## Bounds and limitations
 

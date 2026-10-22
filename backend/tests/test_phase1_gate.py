@@ -40,7 +40,8 @@ def test_phase1_interlock_explicit_closed_public_mutation_surface():
         LocalAPI: {'snapshot', 'acknowledge', 'request'},
         Ingest: {'cloudevents', 'otlp'},
         Storage: {'close', 'read', 'transaction', 'snapshot', 'replay', 'cloudevents',
-                  'otlp', 'begin_snapshot', 'snapshot_page', 'finish_snapshot'},
+                  'otlp', 'begin_snapshot', 'snapshot_page', 'finish_snapshot',
+                  'retained_diagnostics'},
     }
     for cls, allowed in expected.items():
         actual = {name for name, fn in inspect.getmembers(cls, inspect.isfunction)
@@ -55,13 +56,24 @@ def test_phase1_interlock_explicit_closed_public_mutation_surface():
     allowed = {'__future__', 'base64', 'binascii', 'collections', 'contextlib', 'copy',
         'dataclasses', 'datetime', 'hashlib', 'json', 'math', 'pathlib', 're', 'sqlite3',
         'typing', 'urllib.parse', 'uuid', 'argparse', 'sys'}
+    # HTTP/source bindings have a separate, exact-file import boundary. The
+    # domain's no-network/no-clock boundary remains unchanged.
+    binding_imports = {
+        'service.py': {'asyncio', 'fcntl', 'hmac', 'secrets', 'time', 'fastapi',
+                       'fastapi.exceptions', 'fastapi.responses', 'fastapi.staticfiles'},
+        'web_contracts.py': {'pydantic'},
+        'web_projection.py': set(),
+        'web_source.py': {'workshop_collectors.hermes_runtime',
+                          'workshop_collectors.hermes_work', 'workshop_collectors.outbox'},
+    }
     for path in root.rglob('*.py'):
+        file_allowed = allowed | binding_imports.get(path.name, set())
         tree = ast.parse(path.read_text())
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):
-                assert all(a.name in allowed for a in node.names), path
+                assert all(a.name in file_allowed for a in node.names), path
             elif isinstance(node, ast.ImportFrom) and node.level == 0:
-                assert node.module in allowed, path
+                assert node.module in file_allowed, path
             elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
                 assert node.func.id not in {'eval', 'exec', '__import__'}, path
 

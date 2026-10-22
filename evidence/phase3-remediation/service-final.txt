@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_1503dfef/repo
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 34 items
+
+backend/tests/test_service.py::test_real_session_cookie_generated_contract_and_historical_provenance PASSED [  2%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers0] PASSED [  5%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers1] PASSED [  8%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers2] PASSED [ 11%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers3] PASSED [ 14%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers4] PASSED [ 17%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers5] PASSED [ 20%]
+backend/tests/test_service.py::test_bad_host_origin_boundary_covers_reads_and_login[headers6] PASSED [ 23%]
+backend/tests/test_service.py::test_absent_origin_on_login_and_duplicate_authority_rejected PASSED [ 26%]
+backend/tests/test_service.py::test_missing_invalid_csrf_cannot_change_local_alarm[None] PASSED [ 29%]
+backend/tests/test_service.py::test_missing_invalid_csrf_cannot_change_local_alarm[invalid-csrf] PASSED [ 32%]
+backend/tests/test_service.py::test_missing_invalid_csrf_cannot_change_local_alarm[invalid-\xe9-csrf] PASSED [ 35%]
+backend/tests/test_service.py::test_viewer_and_body_position_never_grant_authority PASSED [ 38%]
+backend/tests/test_service.py::test_malformed_revisions_and_mutations_rejected_without_commit[body0] PASSED [ 41%]
+backend/tests/test_service.py::test_malformed_revisions_and_mutations_rejected_without_commit[body1] PASSED [ 44%]
+backend/tests/test_service.py::test_malformed_revisions_and_mutations_rejected_without_commit[body2] PASSED [ 47%]
+backend/tests/test_service.py::test_malformed_revisions_and_mutations_rejected_without_commit[body3] PASSED [ 50%]
+backend/tests/test_service.py::test_malformed_revisions_and_mutations_rejected_without_commit[body4] PASSED [ 52%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[bogus] PASSED [ 55%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[other:1] PASSED [ 58%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:-1] PASSED [ 61%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:01] PASSED [ 64%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:999999999999999999999999] PASSED [ 67%]
+backend/tests/test_service.py::test_bad_sse_cursors_reset_once_and_recover_full_snapshot[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] PASSED [ 70%]
+backend/tests/test_service.py::test_sse_current_reconnect_and_durable_local_acknowledgement PASSED [ 73%]
+backend/tests/test_service.py::test_sse_foreign_future_and_expired_well_formed_cursors_recover_full PASSED [ 76%]
+backend/tests/test_service.py::test_expired_absent_rotated_sessions_and_stream_expiry PASSED [ 79%]
+backend/tests/test_service.py::test_service_restart_preserves_historical_provenance_not_live_freshness PASSED [ 82%]
+backend/tests/test_service.py::test_single_writer_lock_fails_before_second_open_and_mode_binding PASSED [ 85%]
+backend/tests/test_service.py::test_historian_diagnostics_bound_detached_and_restart PASSED [ 88%]
+backend/tests/test_service.py::test_unicode_login_rejected_without_500_and_provisioned_utf8_secret_works PASSED [ 91%]
+backend/tests/test_service.py::test_expiry_of_open_sse_stream_is_announced PASSED [ 94%]
+backend/tests/test_service.py::test_wire_projection_omits_unbounded_observation_arrays_and_bounds_display PASSED [ 97%]
+backend/tests/test_service.py::test_documented_cli_private_secret_bootstrap_is_exclusive PASSED [100%]
+
+============================== 34 passed in 7.87s ==============================
