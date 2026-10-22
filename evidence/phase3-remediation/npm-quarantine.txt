@@ -1,0 +1,1 @@
+{"checked_at": "2026-10-22T00:58:13.254559+00:00", "required_age_days": 7, "resolutions": 99, "all_pass": true}

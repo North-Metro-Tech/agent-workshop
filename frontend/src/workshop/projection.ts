@@ -26,7 +26,9 @@ export function acceptSnapshot(current:Projection|null,next:Projection,authorita
   if(!current) return next;
   const a=cursorParts(current.cursor),b=cursorParts(next.cursor);
   if(a.identity!==b.identity) {if(!authoritative) throw new Error('Cursor identity changed: atomic snapshot required');return next;}
-  return b.revision>=a.revision?next:current;
+  if(b.revision<a.revision)return current;
+  if(b.revision===a.revision&&next.generated_at<current.generated_at)return current;
+  return next;
 }
 export function disconnected(p:Projection):Projection {return Object.freeze({...p,connection_quality:'disconnected'});}
 export function fact(item:ViewItem,name:string):string|undefined{return item.facts.find(f=>f.name===name)?.value;}

@@ -1,5 +1,41 @@
 # RESUME — Agent Workshop
 
+## Phase 3 F1–F3 remediation implementation — independent acceptance pending
+
+Task `t_1503dfef`, branch `fix/phase3-service-history-annunciation`, based on
+`ce52227c983598dcbb951f3c1d2ff55fe354ccdf`; PR base is `feat/phase3-mvp`, not
+main. The recorded Core/PO minimal Uvicorn/runtime-transitive allowance now
+exists. Exact hashed runtime lock, fourteen-resolution publication/hash/OSV
+checks, Socket-wrapped installs and refreshed frontend quarantine/audit are
+preserved under `evidence/phase3-remediation/`.
+
+Actual loopback single-writer HTTP/SSE service, cookie login/CSRF/Host/Origin
+boundary and Pydantic-generated TypeScript/JSON Schema are implemented. Timeline
+now reads a bounded retained evidence excerpt, preserving provenance and unknown
+historical acquisition times; alarm changes have a deduplicated polite live
+region. README documents private secret provisioning and synthetic startup.
+Approved-local collection remains explicit opt-in to the existing Phase 2 scope.
+No real-fleet interaction or installation occurred in this remediation run.
+
+Final local gates: 466 backend tests (including 34 service/CLI cases),
+57 frontend tests, typecheck/build and schema reproducibility pass; actual
+provisioned-browser suite runs all four tests with ZERO skips. It covers
+canvas/DOM facts, reconnect, a new browser process, service restart/session
+revocation/history retention and actual local acknowledgement. Raw earlier
+failures are retained separately from final results. See
+`evidence/phase3-remediation/REVIEW.md` for commands, mapping and limitations.
+Manual screen-reader speech is NOT verified. Screenshot interpretation was
+unavailable because the image-analysis provider rejected its API key; automated
+real-browser pixel/DOM evidence is not a human visual review.
+
+Next: independent review/merge of this remediation into `feat/phase3-mvp`, then
+exact-head re-audit/Core approval (`t_86139b05`), twelve-scenario evidence rerun
+(`t_4002229b`, PR #8 stays draft until rerun) and clean-checkout QA
+(`t_f429ab51`, operator unblock still required). Their existing graph gates stay
+in force. This is implementation completion only, not MVP readiness, permission
+to deploy, auto-merge or an owner-ready notification. All earlier sections below
+are preserved historical/Core handoff text. RESUME remains a serialized hotspot.
+
 ## Phase 3 intermediate checkpoint — NOT MVP ready
 
 Task `t_7e8a8223`, branch `feat/phase3-mvp`, based on accepted main

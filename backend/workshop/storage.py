@@ -295,6 +295,37 @@ class Storage:
             return {'cursor': self._cursor(self._meta('revision')),
                     'projection': LocalAPI(state.reducer).snapshot(now=now)}
 
+    def retained_diagnostics(self, *, limit=100):
+        """Detached bounded excerpt of retained evidence, NOT current projection.
+
+        The observation list retains per-identity order but not per-observation
+        acquisition times. Do not relabel the execution's latest acquisition as
+        the historical observation's acquisition. No journal payload/transcript
+        or arbitrary database query is exposed by this diagnostic surface.
+        """
+        _number(limit, 'history limit', 1)
+        if limit > 100:
+            raise ValueError('Diagnostic history limit exceeds 100')
+        with self._atomic(read=True):
+            state = self._load()
+            rows = []
+            # Reverse retained order is deterministic, not global event time.
+            for execution in reversed(tuple(state.reducer.executions.values())):
+                for index in range(len(execution.observations) - 1, -1, -1):
+                    observation = execution.observations[index]
+                    rows.append({'kind': 'execution-observation', 'key': execution.key,
+                                 'index': index, 'observation': observation})
+                    if len(rows) == limit:
+                        break
+                if len(rows) == limit:
+                    break
+            # Reserve room for recent local alarm audit alongside source history.
+            audit = state.reducer.alarms.audit[-min(limit, 20):]
+            rows = rows[:limit - len(audit)]
+            rows.extend({'kind': 'alarm-audit', 'index': len(state.reducer.alarms.audit)-len(audit)+n,
+                         'audit': deepcopy(entry)} for n, entry in enumerate(audit))
+            return {'cursor': self._cursor(self._meta('revision')), 'records': deepcopy(rows)}
+
     def replay(self, cursor, *, now):
         timestamp(now)
         with self._atomic(read=True):

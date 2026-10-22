@@ -1,0 +1,297 @@
+{
+  "$defs": {
+    "Acknowledgement": {
+      "additionalProperties": false,
+      "properties": {
+        "occurrence_id": {
+          "pattern": "^[1-9][0-9]{0,18}$",
+          "title": "Occurrence Id",
+          "type": "string"
+        },
+        "position": {
+          "const": "operator",
+          "title": "Position",
+          "type": "string"
+        }
+      },
+      "required": [
+        "occurrence_id",
+        "position"
+      ],
+      "title": "Acknowledgement",
+      "type": "object"
+    },
+    "Fact": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 16384,
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "maxLength": 16384,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "Fact",
+      "type": "object"
+    },
+    "History": {
+      "additionalProperties": false,
+      "properties": {
+        "cursor": {
+          "pattern": "^[^:\\s]{1,128}:(0|[1-9][0-9]{0,18})$",
+          "title": "Cursor",
+          "type": "string"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/HistoryEntry"
+          },
+          "maxItems": 100,
+          "title": "Entries",
+          "type": "array"
+        },
+        "ordering": {
+          "const": "per-identity retained order; cross-source ordering uncertain",
+          "title": "Ordering",
+          "type": "string"
+        },
+        "semantics": {
+          "const": "historical evidence; bounded excerpt, not current state or verified progress",
+          "title": "Semantics",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cursor",
+        "entries",
+        "semantics",
+        "ordering"
+      ],
+      "title": "History",
+      "type": "object"
+    },
+    "HistoryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/Fact"
+          },
+          "maxItems": 256,
+          "title": "Facts",
+          "type": "array"
+        },
+        "id": {
+          "maxLength": 16384,
+          "title": "Id",
+          "type": "string"
+        },
+        "item_id": {
+          "maxLength": 16384,
+          "title": "Item Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 16384,
+          "title": "Label",
+          "type": "string"
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Observed At"
+        }
+      },
+      "required": [
+        "id",
+        "item_id",
+        "label",
+        "observed_at",
+        "facts"
+      ],
+      "title": "HistoryEntry",
+      "type": "object"
+    },
+    "Item": {
+      "additionalProperties": false,
+      "properties": {
+        "acknowledge_id": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Acknowledge Id"
+        },
+        "attention": {
+          "title": "Attention",
+          "type": "boolean"
+        },
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/Fact"
+          },
+          "maxItems": 256,
+          "title": "Facts",
+          "type": "array"
+        },
+        "id": {
+          "maxLength": 16384,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "role",
+            "execution",
+            "task",
+            "alarm",
+            "incident",
+            "diagnostic"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 16384,
+          "title": "Label",
+          "type": "string"
+        },
+        "station": {
+          "maxLength": 16384,
+          "title": "Station",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "label",
+        "station",
+        "facts",
+        "attention",
+        "acknowledge_id"
+      ],
+      "title": "Item",
+      "type": "object"
+    },
+    "Login": {
+      "additionalProperties": false,
+      "properties": {
+        "token": {
+          "maxLength": 256,
+          "minLength": 32,
+          "title": "Token",
+          "type": "string"
+        }
+      },
+      "required": [
+        "token"
+      ],
+      "title": "Login",
+      "type": "object"
+    },
+    "Session": {
+      "additionalProperties": false,
+      "properties": {
+        "controller_connected": {
+          "const": false,
+          "title": "Controller Connected",
+          "type": "boolean"
+        },
+        "csrf": {
+          "maxLength": 16384,
+          "title": "Csrf",
+          "type": "string"
+        },
+        "permissions": {
+          "items": {
+            "enum": [
+              "viewer",
+              "operator"
+            ],
+            "type": "string"
+          },
+          "title": "Permissions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "csrf",
+        "permissions",
+        "controller_connected"
+      ],
+      "title": "Session",
+      "type": "object"
+    },
+    "Snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "connection_quality": {
+          "maxLength": 16384,
+          "title": "Connection Quality",
+          "type": "string"
+        },
+        "cursor": {
+          "pattern": "^[^:\\s]{1,128}:(0|[1-9][0-9]{0,18})$",
+          "title": "Cursor",
+          "type": "string"
+        },
+        "generated_at": {
+          "minimum": 0,
+          "title": "Generated At",
+          "type": "number"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/Item"
+          },
+          "maxItems": 10000,
+          "title": "Items",
+          "type": "array"
+        },
+        "native_write_enabled": {
+          "const": false,
+          "title": "Native Write Enabled",
+          "type": "boolean"
+        },
+        "source_mode": {
+          "enum": [
+            "synthetic",
+            "approved-local"
+          ],
+          "title": "Source Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cursor",
+        "generated_at",
+        "native_write_enabled",
+        "source_mode",
+        "connection_quality",
+        "items"
+      ],
+      "title": "Snapshot",
+      "type": "object"
+    }
+  }
+}
