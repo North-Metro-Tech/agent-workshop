@@ -1,0 +1,8 @@
+{"accepted_identities": 360, "allocated_bytes": 27136000, "cycles": 180, "observations": 360, "records": 360, "revision_bytes": 21754623, "revisions": 128, "seen": 360, "state_bytes": 261079}
+Traceback (most recent call last):
+  File "/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_127a054a/repo/evidence/release1-retention/growth_probe.py", line 45, in <module>
+    assert result['revision_bytes'] < 8 * 1024 * 1024, 'Retained revision payload exceeds fixed 8MiB bound'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Retained revision payload exceeds fixed 8MiB bound
+
+actual_exit_code=1 (base regression is expected RED)

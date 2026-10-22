@@ -65,7 +65,7 @@ def rule(name='lost', **kw):
 def test_A08_migration_WAL_and_domain_tables(store):
     db = sqlite3.connect(store.path)
     assert db.execute('PRAGMA journal_mode').fetchone()[0] == 'wal'
-    assert db.execute('PRAGMA user_version').fetchone()[0] == 1
+    assert db.execute('PRAGMA user_version').fetchone()[0] == 2
     tables = {r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     assert {'executions', 'roles', 'feeds', 'correlations', 'ambiguities', 'alarm_occurrences',
             'alarm_audit', 'alarm_rules', 'alarm_controls', 'ingests', 'revisions'} <= tables

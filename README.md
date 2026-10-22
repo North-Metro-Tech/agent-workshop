@@ -83,6 +83,15 @@ History is a bounded historian-backed excerpt with stable identity/provenance,
 not snapshot receipts or current state. Observations without retained acquisition
 timestamps say so explicitly. No transcript or native filesystem browser is served.
 
+The version-2 historian uses changes-only revisions with 32-revision anchors and
+deterministic retirement of redundant observations/metadata/dedup identities.
+Existing version-1 historians are rejected without mutation: keep them preserved
+and use an explicitly chosen fresh separate historian after the release gates.
+Protected evidence is never silently pruned; capacity exhaustion rejects the
+whole acquisition transaction. Read `docs/storage.md` for exact limits, dedup
+first-sighting-after-eviction semantics and the owner-reviewed recovery boundary.
+This is not a whole-domain byte quota or an installed-fleet/30-day capacity claim.
+
 After building, npm --prefix frontend run test:e2e provisions its own isolated
 synthetic TCP service, random secret and historian. There are no service-dependent
 skips. Existing audited Chromium can be selected with WORKSHOP_E2E_CHROMIUM; this
