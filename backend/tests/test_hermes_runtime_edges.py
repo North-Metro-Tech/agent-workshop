@@ -219,7 +219,7 @@ from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, i
 from workshop.storage import Storage
 import json, sys
 native, historian = map(Path, sys.argv[1:3])
-scope = SourceScope('synthetic-instance', 'synthetic-board', native, ('coder', 'vitruvius-core'))
+scope = SourceScope('synthetic-instance', 'synthetic-board', native, ('coder', 'default'))
 binding = runtime_binding(scope)
 observer = HermesRuntime(HermesWork(scope, process_probe=linux_process_probe), binding)
 store = Storage(historian, initial=initial_state(binding, scope)) if not historian.exists() else Storage(historian)

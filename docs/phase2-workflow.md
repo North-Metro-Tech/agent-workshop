@@ -35,7 +35,7 @@ Only this command reads the real approved source (run serially):
 
 No argument, environment variable, current-board selection or default path can
 implicitly authorise live reads. `approved_scope()` still binds only the exact
-`agent-workshop` board and coder/vitruvius-core profiles described in
+`agent-workshop` board and coder/default profiles described in
 `hermes-work.md`. Native acquisition and optional proc metadata use the existing
 bounded read-only adapters. No helpers that initialise/migrate the native DB are
 called. No schedules, command lines, environment, transcripts or attachment
