@@ -18,6 +18,7 @@ from urllib.parse import urlsplit
 
 from .contracts import ExecutionKey, Observation, TaskKey, timestamp
 from .reducer import ACTIVE, LIFECYCLE, TERMINAL, Reducer
+from .retention import retire_records, retire_seen, metadata_key, material_metadata
 
 EVENT_TYPE = 'org.agentworkshop.execution.lifecycle.v1'
 MAPPING_VERSION = 'workshop-ingest-v1'
@@ -335,6 +336,8 @@ class Ingest:
             staged._apply(record, context, result)
             if result.accepted > before:
                 applied.append(index)
+        retire_records(staged.records)
+        retire_seen(staged._seen)
         self.reducer.__dict__.update(staged.reducer.__dict__)
         staged.reducer = self.reducer
         self.__dict__.update(staged.__dict__)
@@ -363,10 +366,19 @@ class Ingest:
             self._diagnose('source_clock_skew')
             acquired = None
         metadata = {k: deepcopy(v) for k, v in record.items()
-                    if k not in {'domain', 'identity'}}
+                    if k != 'identity'}
         metadata.update(source=self.binding.source, epoch=ctx.epoch,
                         acquired_at=acquired, received_at=ctx.received_at,
                         mapping_version=MAPPING_VERSION, evidence_class=self.binding.evidence_class)
+        native_execution = (record['domain']['execution_id'] if record['domain'] is not None
+                            else record.get('attributes', {}).get('workshop.execution.id'))
+        if native_execution is not None:
+            native_key = ExecutionKey(self.binding.runtime, native_execution)
+            metadata['execution_key'] = self.reducer.correlations.get(native_key, (native_key, ''))[0]
+        previous_metadata = next((old for old in reversed(self.records)
+                                  if metadata_key(old) == metadata_key(metadata)), None)
+        metadata['retention_protected'] = (previous_metadata is None or
+            material_metadata(previous_metadata) != material_metadata(metadata))
         self.records.append(metadata)
         if record['domain'] is None:
             result.corroborated += 1
@@ -374,6 +386,12 @@ class Ingest:
         domain = record['domain']
         key = ExecutionKey(self.binding.runtime, domain['execution_id'])
         canonical = self.reducer.correlations.get(key, (key, ''))[0]
+        if domain['lifecycle'] in TERMINAL:
+            terminal_fact = Observation(domain['lifecycle'], domain['lifecycle'], MAPPING_VERSION,
+                self.binding.source, self.binding.feed, occurrence, True, self.binding.evidence_class)
+            previous_execution = self.reducer.executions.get(canonical)
+            if previous_execution is None or terminal_fact not in previous_execution.observations:
+                metadata['retention_protected'] = True
         revision = domain.get('revision')
         previous_order = self._ordering.get(canonical)
         if previous_order is not None:
@@ -397,10 +415,18 @@ class Ingest:
         observation = Observation(native, mapped, MAPPING_VERSION,
             self.binding.source, self.binding.feed, occurrence,
             supported=native in LIFECYCLE, evidence_class=self.binding.evidence_class)
+        previous_execution = self.reducer.executions.get(canonical)
+        previous_number = (previous_execution.next_observation_id
+                           if previous_execution is not None else 0)
         self.reducer.observe_execution(self.binding.role, key, session=domain['session_id'],
             parent=ExecutionKey(self.binding.runtime, parent) if parent else None,
             task=TaskKey(**task) if task else None,
             lifecycle=observation, acquired_at=acquired, source_ordered=True)
+        execution = self.reducer.executions[canonical]
+        # Protect the original metadata for material domain facts, not every
+        # redundant acquisition of an already-retained terminal fact.
+        self.records[-1]['retention_protected'] |= (previous_execution is None or
+            any(n >= previous_number for n in execution.protected_observation_ids))
         self._ordering[canonical] = (revision, acquired)
         result.accepted += 1
 

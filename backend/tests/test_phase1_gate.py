@@ -59,6 +59,9 @@ def test_phase1_interlock_explicit_closed_public_mutation_surface():
     # HTTP/source bindings have a separate, exact-file import boundary. The
     # domain's no-network/no-clock boundary remains unchanged.
     binding_imports = {
+        # Stdlib pure-data sequence matching only; no clock/network/execution
+        # permission is added to the domain or any other module.
+        'delta.py': {'difflib'},
         'service.py': {'asyncio', 'fcntl', 'hmac', 'secrets', 'time', 'fastapi',
                        'fastapi.exceptions', 'fastapi.responses', 'fastapi.staticfiles'},
         'web_contracts.py': {'pydantic'},

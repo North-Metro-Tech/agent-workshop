@@ -1,0 +1,64 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_127a054a/repo
+configfile: pytest.ini
+plugins: anyio-4.15.0
+collecting ... collected 14 items
+
+backend/tests/test_retention.py::test_sustained_default_policy_bytes_restart_replay_and_protected_facts bounded-growth 180 {"allocated_bytes": 6254592, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 1426703, "revisions": 128, "seen": 512, "state_bytes": 184035}
+bounded-growth 270 {"allocated_bytes": 6750208, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 1634083, "revisions": 128, "seen": 512, "state_bytes": 184334}
+bounded-growth 360 {"allocated_bytes": 6787072, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 1656121, "revisions": 128, "seen": 512, "state_bytes": 184334}
+PASSED
+backend/tests/test_retention.py::test_collision_discipline_on_both_sides_of_eviction_and_restart PASSED
+backend/tests/test_retention.py::test_transitions_conflicts_correlation_audit_and_original_indices_survive PASSED
+backend/tests/test_retention.py::test_protected_observation_capacity_rejects_atomically_instead_of_pruning FAILED
+backend/tests/test_retention.py::test_metadata_capacity_never_evicts_protected_facts PASSED
+backend/tests/test_retention.py::test_snapshot_newer_key_path_uses_same_retirement_policy PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[replace] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[delete] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[reorder] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[splice] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[nested] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[types] PASSED
+backend/tests/test_retention.py::test_delta_randomized_roundtrips PASSED
+backend/tests/test_retention.py::test_v1_and_foreign_files_rejected_before_mutation PASSED
+
+=================================== FAILURES ===================================
+__ test_protected_observation_capacity_rejects_atomically_instead_of_pruning ___
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-165/test_protected_observation_cap0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x73492cb37910>
+
+    def test_protected_observation_capacity_rejects_atomically_instead_of_pruning(tmp_path, monkeypatch):
+        monkeypatch.setattr('workshop.retention.OBSERVATION_LIMIT', 4)
+        s = Storage(tmp_path / 'capacity.db', initial=initial())
+        for number, lifecycle in enumerate(['starting', 'active', 'stopping', 'succeeded'], 1):
+            emit(s, seq=number, at=number, id=str(number), revision=number, state=lifecycle)
+        before = s.snapshot(now=10)
+        conflict = wire(id='conflict', revision=5, state='failed')
+        with pytest.raises(RetentionCapacityError, match='protected facts'):
+            s.cloudevents('source', conflict, context=Acquisition(5, 5, 'boot'), source_cursor=5)
+        assert s.snapshot(now=10) == before
+        # Also test the in-memory reducer's feed/acquisition clocks on failure.
+        detached = s.read().reducer
+        saved = deepcopy(detached.__dict__)
+        with pytest.raises(RetentionCapacityError):
+            detached.observe_execution('agent', KEY, session='session', parent=None, task=None,
+                lifecycle=Observation('failed', 'failed', 'new', 'urn:fixture:source', 'runtime', 5), acquired_at=5)
+>       assert detached.__dict__ == saved
+E       AssertionError: assert {'roles': {'a...ons': {}, ...} == {'roles': {'a...ons': {}, ...}
+E         
+E         Omitting 6 identical items, use -vv to show
+E         Differing items:
+E         {'alarms': <workshop.alarms.Alarms object at 0x73492cc3f010>} != {'alarms': <workshop.alarms.Alarms object at 0x73492cc3ded0>}
+E         
+E         Full diff:
+E           {...
+E         
+E         ...Full output truncated (119 lines hidden), use '-vv' to show
+
+backend/tests/test_retention.py:187: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_retention.py::test_protected_observation_capacity_rejects_atomically_instead_of_pruning
+======================== 1 failed, 13 passed in 40.22s =========================

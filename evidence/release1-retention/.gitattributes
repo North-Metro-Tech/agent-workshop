@@ -1,0 +1,2 @@
+# Raw command transcripts, including failed attempts, remain byte-preserved.
+*.txt -whitespace

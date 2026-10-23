@@ -1,0 +1,13 @@
+
+> agent-workshop-hmi@0.1.0 test:e2e
+> playwright test
+
+
+Running 4 tests using 1 worker
+
+  ✓  1 e2e/workshop.spec.ts:48:1 › provisioned service: scene/DOM facts, keyboard, reduced motion and local-only authority (2.4s)
+  ✓  2 e2e/workshop.spec.ts:81:1 › real transport reconnect restores atomic facts without replacing retained history (240ms)
+  ✓  3 e2e/workshop.spec.ts:89:1 › new browser process and service restart retain diagnostics, revoke sessions and invalidate live freshness (6.3s)
+  ✓  4 e2e/workshop.spec.ts:109:1 › actual local acknowledgement updates one restrained live region and preserves focus (1.6s)
+
+  4 passed (11.9s)
