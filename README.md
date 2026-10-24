@@ -63,7 +63,11 @@ WORKSHOP_LOGIN_TOKEN environment variable can instead supply a distinct 32+ char
 secret in the server process only. Session cookies are HttpOnly/SameSite Strict,
 loopback HTTP (not Secure/TLS); session and CSRF authority expires after one hour
 and is revoked by process restart. This is not protection from a hostile local OS
-user or same-origin XSS. Do not reverse-proxy, tunnel or expose this service.
+user or same-origin XSS. Do not reverse-proxy, tunnel or expose this service
+except for the single owner-authorised tailnet-only origin documented in
+`OPERATOR.md` (24 October 2026). `WORKSHOP_EXTRA_ORIGIN` is optional and must be
+one exact HTTPS `.ts.net` origin; omission preserves the loopback-only boundary.
+This is not a wildcard allowance or public/Funnel authorisation.
 
 Explicit --approved-local instead of --synthetic uses only the already-approved
 agent-workshop board/runtime scope. It is opt-in live read-only acquisition; no

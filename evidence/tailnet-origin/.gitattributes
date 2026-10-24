@@ -1,0 +1,5 @@
+# Preserve raw pytest failure captures and runner stdout; never relax source checks.
+attempt1-new-tests.txt whitespace=-blank-at-eol
+attempt1-new-tests.xml whitespace=-blank-at-eol
+frontend-tests.txt whitespace=-blank-at-eof
+typecheck.txt whitespace=-blank-at-eof

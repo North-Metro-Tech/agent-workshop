@@ -1,0 +1,36 @@
+{
+  "actual_login_secret_absent_from_evidence": true,
+  "base": "d56e3ccf6f332fd4b578fa47cd2e2a7f24a726d4",
+  "browser": {
+    "duration": 15958.074,
+    "expected": 4,
+    "flaky": 0,
+    "skipped": 0,
+    "startTime": "2026-10-24T10:32:52.675Z",
+    "unexpected": 0
+  },
+  "new_tests": 74,
+  "protected_files_byte_equal": 60,
+  "static_added_line_scan": {
+    "literal_credentials": [],
+    "shell_injection": [],
+    "sql_interpolation": [],
+    "unsafe_eval": [],
+    "unsafe_pickle": []
+  },
+  "suites": {
+    "backend": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 568
+    },
+    "baseline": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 494
+    }
+  },
+  "unit_dropin_exact": true
+}

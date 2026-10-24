@@ -42,12 +42,33 @@ class Settings:
     session_seconds: float = 3600
     poll_seconds: float = 1
     frontend: Path | None = None
+    extra_origin: str | None = None
 
     def __post_init__(self):
         url = urlsplit(self.origin)
         if (url.scheme != 'http' or url.hostname not in {'127.0.0.1', 'localhost'}
                 or url.path or url.query or url.fragment or url.username or not url.port):
             raise ValueError('Only an explicit loopback HTTP origin is supported')
+        if self.extra_origin is not None:
+            extra = urlsplit(self.extra_origin)
+            hostname = extra.hostname or ''
+            labels = hostname.split('.')
+            # Configuration guard only; requests NEVER use suffix matching.
+            # Require a plain ASCII DNS authority, not userinfo, URL decorations
+            # or parser-normalized whitespace/control characters.
+            if (extra.scheme != 'https' or not hostname.endswith('.ts.net')
+                    or extra.username is not None or extra.password is not None
+                    or extra.path or extra.query or extra.fragment
+                    or extra.geturl() != self.extra_origin
+                    or any(ord(c) <= 32 or ord(c) >= 127 for c in self.extra_origin)
+                    or len(hostname) > 253
+                    or any(not label or len(label) > 63
+                           or label[0] == '-' or label[-1] == '-'
+                           or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-' for c in label)
+                           for label in labels)
+                    or extra.netloc != hostname + (f':{extra.port}' if extra.port is not None else '')
+                    or extra.port == 0):
+                raise ValueError('Extra origin must be an exact HTTPS origin under .ts.net')
         if self.source_mode not in {'synthetic', 'approved-local'}:
             raise ValueError('Explicit source mode required')
         if not 32 <= len(self.operator_token) <= 256 or (self.viewer_token is not None and
@@ -59,9 +80,11 @@ class Settings:
 
 class Boundary:
     """Check exact authority/origin, never trust X-Forwarded-* or arbitrary CORS."""
-    def __init__(self, app, *, origin):
-        self.app, self.origin = app, origin
-        self.host = urlsplit(origin).netloc.encode('ascii')
+    def __init__(self, app, *, origin, extra_origin=None):
+        self.app = app
+        approved = (origin,) if extra_origin is None else (origin, extra_origin)
+        self.origins = frozenset(value.encode('ascii') for value in approved)
+        self.hosts = frozenset(urlsplit(value).netloc.encode('ascii') for value in approved)
 
     async def __call__(self, scope, receive, send):
         if scope['type'] != 'http':
@@ -71,9 +94,9 @@ class Boundary:
         values = lambda name: [v for k,v in headers if k.lower() == name]
         hosts, origins = values(b'host'), values(b'origin')
         mutation = scope['method'] not in {'GET', 'HEAD'}
-        bad = (hosts != [self.host] or len(origins) > 1 or
-               (origins and origins != [self.origin.encode('ascii')]) or
-               (mutation and origins != [self.origin.encode('ascii')]) or
+        bad = (len(hosts) != 1 or hosts[0] not in self.hosts or len(origins) > 1 or
+               (origins and origins[0] not in self.origins) or
+               (mutation and not origins) or
                values(b'sec-fetch-site') == [b'cross-site'] or
                len(values(b'cookie')) > 1)
         if scope['path'].startswith('/api/'):
@@ -191,7 +214,7 @@ def create_app(settings, *, clock=time.monotonic):
                 sessions.clear()
 
     app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
-    app.add_middleware(Boundary, origin=settings.origin)
+    app.add_middleware(Boundary, origin=settings.origin, extra_origin=settings.extra_origin)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request, exception):
