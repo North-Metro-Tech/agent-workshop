@@ -1,0 +1,74 @@
+{
+  "binding_sha256": "59caf6714ef98f4853e21b75a4c7cc4621ac3328a8bb61af51ed830d407c57e1",
+  "historian_device": 2050,
+  "historian_inode": 22545997,
+  "local_session": {
+    "authenticated": true,
+    "controller_connected": false,
+    "cursor": "11b81ad2e71345f58d79cc97b3b78e9e:45546",
+    "native_write_enabled": false,
+    "source_mode": "approved-local"
+  },
+  "serve": {
+    "TCP": {
+      "10000": {
+        "HTTPS": true
+      },
+      "443": {
+        "HTTPS": true
+      },
+      "4599": {
+        "HTTPS": true
+      },
+      "8443": {
+        "HTTPS": true
+      }
+    },
+    "Web": {
+      "frankenfarm.taile4f46c.ts.net:10000": {
+        "Handlers": {
+          "/": {
+            "Proxy": "http://127.0.0.1:8765"
+          }
+        }
+      },
+      "frankenfarm.taile4f46c.ts.net:443": {
+        "Handlers": {
+          "/": {
+            "Path": "/home/aaron/skysteps/dist"
+          }
+        }
+      },
+      "frankenfarm.taile4f46c.ts.net:4599": {
+        "Handlers": {
+          "/": {
+            "Proxy": "http://127.0.0.1:4600"
+          }
+        }
+      },
+      "frankenfarm.taile4f46c.ts.net:8443": {
+        "Handlers": {
+          "/": {
+            "Path": "/home/aaron/toyshop-escape/dist"
+          }
+        }
+      }
+    }
+  },
+  "statuses": {
+    "foreign_host": 403,
+    "loopback": 200,
+    "missing_port": 403,
+    "tailnet_https": 403,
+    "wrong_port": 403,
+    "wrong_scheme_origin": 403
+  },
+  "unit_extra_present": false,
+  "unit_state": [
+    "Restart=no",
+    "MainPID=3340243",
+    "ActiveState=active",
+    "SubState=running",
+    "UnitFileState=disabled"
+  ]
+}

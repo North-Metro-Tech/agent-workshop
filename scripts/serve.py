@@ -43,7 +43,8 @@ def main(argv=None):
     from workshop.service import Settings, create_app
     settings = Settings(historian=directory/'historian.db', operator_token=token,
                         origin=f'http://127.0.0.1:{args.port}', source_mode=source_mode,
-                        frontend=ROOT/'frontend/dist')
+                        frontend=ROOT/'frontend/dist',
+                        extra_origin=os.environ.get('WORKSHOP_EXTRA_ORIGIN'))
     print('Workshop '+source_mode+' at '+settings.origin+'; no native controls; single writer', flush=True)
     uvicorn.run(create_app(settings), host='127.0.0.1', port=args.port,
                 workers=1, proxy_headers=False, access_log=False, log_level='warning',
