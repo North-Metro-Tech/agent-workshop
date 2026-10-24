@@ -1,0 +1,70 @@
+A03 — Release 1 §16 raw verification transcript
+Candidate: ce52227c983598dcbb951f3c1d2ff55fe354ccdf
+Started UTC: 2026-10-22T00:15:37.110049+00:00
+Scenario: Fresh complete reconciliation and admission/reachability/capacity; idle non-alarming; fixed-off native writes.
+Pinning tests: exact collected node IDs / Vitest test names are printed below.
+Synthetic native stores only in unit/integration fixtures; OS children are test-owned.
+Real acquisition is limited to the explicitly approved Phase 2 board/profile scope.
+No product source modifications, dependency installs, native writes or deployment.
+
+$ python -m pytest backend/tests -v --no-header --tb=short -p no:cacheprovider -k 'A03 or phase1_interlock or phase2_interlock'
+============================= test session starts ==============================
+collecting ... collected 432 items / 383 deselected / 49 selected
+
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-viewer] PASSED [  2%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-operator] PASSED [  4%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/run-controller] PASSED [  6%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-viewer] PASSED [  8%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-operator] PASSED [ 10%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/stop-controller] PASSED [ 12%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-viewer] PASSED [ 14%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-operator] PASSED [ 16%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/retry-controller] PASSED [ 18%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-viewer] PASSED [ 20%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-operator] PASSED [ 22%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/native/write-enable-controller] PASSED [ 24%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-viewer] PASSED [ 26%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-operator] PASSED [ 28%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/executions/start-controller] PASSED [ 30%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-viewer] PASSED [ 32%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-operator] PASSED [ 34%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/tasks/update-controller] PASSED [ 36%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-viewer] PASSED [ 38%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-operator] PASSED [ 40%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_no_native_route_even_for_authorized_controller[/hooks/install-controller] PASSED [ 42%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_explicit_closed_public_mutation_surface PASSED [ 44%]
+backend/tests/test_phase1_gate.py::test_phase1_interlock_ignores_environment_and_observation_enable_flags PASSED [ 46%]
+backend/tests/test_phase2_gate.py::test_phase2_interlock_closed_collector_imports_and_no_domain_clock PASSED [ 48%]
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[admission-enabled] PASSED [ 51%]
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[reachability-reachable] PASSED [ 53%]
+backend/tests/test_truth_edges.py::test_A03_inferred_or_agent_reported_values_cannot_prove_available[capacity-value2] PASSED [ 55%]
+backend/tests/test_truth_edges.py::test_A03_same_feed_other_role_cannot_revive_reconciliation PASSED [ 57%]
+backend/tests/test_truth_edges.py::test_A03_snapshot_is_defensive_and_interlock_has_no_setter PASSED [ 59%]
+backend/tests/test_truth_edges.py::test_A03_unverified_terminal_report_cannot_prove_available PASSED [ 61%]
+backend/tests/test_truth_model.py::test_A03_available_only_with_all_fresh_evidence_idle_never_alarms PASSED [ 63%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[admission-held] PASSED [ 65%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[reachability-unknown] PASSED [ 67%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped2] PASSED [ 69%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped3] PASSED [ 71%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped4] PASSED [ 73%]
+backend/tests/test_truth_model.py::test_A03_unsafe_evidence_never_available[capacity-mapped5] PASSED [ 75%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[admission] PASSED [ 77%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[reachability] PASSED [ 79%]
+backend/tests/test_truth_model.py::test_A03_missing_signal_never_available[capacity] PASSED [ 81%]
+backend/tests/test_truth_model.py::test_A03_active_execution_prevents_available_and_preserves_concurrency PASSED [ 83%]
+backend/tests/test_truth_model.py::test_A03_unknown_execution_cannot_mean_zero_active PASSED [ 85%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/dispatch] PASSED [ 87%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/cancel] PASSED [ 89%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/steer] PASSED [ 91%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/approve] PASSED [ 93%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/admission] PASSED [ 95%]
+backend/tests/test_truth_model.py::test_A03_no_effective_native_write_path[/runtime/execute] PASSED [ 97%]
+backend/tests/test_truth_model.py::test_A03_ack_is_local_authorized_only PASSED [100%]
+
+====================== 49 passed, 383 deselected in 0.49s ======================
+
+exit_code=0
+
+Scenario fixture result: PASS. No actual-use/operational acceptance implied.
+
+Product-source immutability check: PASS (all tracked backend/collector/frontend/source/script hashes and candidate HEAD unchanged during this run).
