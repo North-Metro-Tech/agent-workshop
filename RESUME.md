@@ -1,5 +1,43 @@
 # RESUME — Agent Workshop
 
+## Root final recheck — audit accepted; live agreement decision OPEN (25 October 2026)
+
+Core's `t_817d72ca` time-bounded dev-only Happy DOM risk disposition is accepted,
+NOT a clean dev audit/age exception. Exact21.0.4 patch `t_89910f17` remains
+scheduled for28Oct05:05:53.295AEDT with independent Core review/merge
+`t_d2afc283`. Owner actual-use PASS remains accepted; no repeat owner review.
+
+Fresh rerun on unchanged approved installed5f7df84d: **568 backend/57 frontend/
+four real synthetic TCP/Chromium tests, zero skips**, typecheck/build/schema/
+repeatable demos PASS. Actual full dev audit still one accepted HIGH, production
+audit zero. But final approved-local workflow acquisition now **FAILS source/
+projection agreement for attempt42** after its running->blocked transition:
+latest native mapping unknown, raw newer record retained, canonical lifecycle
+remains prior active (quality unknown). Independent actual installed HTTPS
+Chromium shows the same mismatch for42 and44 (scheduled patch attempt);
+43 succeeded/45 active match. Exact captured schema2 revisions93700/93701
+match all72 browser items; native main/schema unchanged in measured interval.
+Browser/historian equality is NOT current native lifecycle agreement. Service
+still active/running, Restart=no/NRestarts0/boot disabled, unchanged24Oct22:02
+start; no installed product/service/native changes.
+
+Preserved failure and read-only diagnostics: `evidence/root-mvp-final-recheck/`
+REPORT.md, one-shot-workflow-1.json (non-JSON traceback), agreement-diagnostic.json,
+live-diagnostic-report.json, exact durable browser snapshots/readback and raw
+fresh test/audit logs. Original fb56ff6 evidence unchanged. Mechanism appears
+conservative reconciliation/acquisition ordering (`ingest.py:318-319,395-410`),
+but conflicts with current lifecycle-equality verifier. No timestamp invention,
+state reset, assertion weakening, product patch or all45 agreement claim.
+
+**New Core/default prerequisite t_38604cb5** classifies whether retained-fact
+semantics need an approved verification/presentation correction or an adapter/
+domain repair; any implementation/review must be gated before root release.
+Linked as root's parent, NOT vice versa. **MVP root incomplete; no owner-ready
+notification.** This is not the resolved advisory decision or owner acceptance.
+Next root run must read that disposition and rerun required fresh live checks.
+30-day daily use remains outside this gate. This additive isolated documentation
+checkpoint preserves every earlier section below.
+
 ## Root MVP recheck — owner PASS; new development-audit gate OPEN (25 October 2026)
 
 Root `t_7e8a8223` rechecked the installed/Core-approved tailnet-origin merge

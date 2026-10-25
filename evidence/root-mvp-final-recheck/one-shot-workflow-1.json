@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/scripts/observe_workflow.py", line 103, in <module>
+    main()
+  File "/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/scripts/observe_workflow.py", line 62, in main
+    report = verify_agreement(observer, snapshot, store, now=time.monotonic())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/collectors/workshop_collectors/workflow.py", line 67, in verify_agreement
+    raise ValueError('Source/projection disagreement for attempt ' + identity)
+ValueError: Source/projection disagreement for attempt 42

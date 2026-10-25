@@ -1,0 +1,2425 @@
+{
+  "isolated": {
+    "revision": 6,
+    "reconcile_required": true,
+    "rows": [
+      {
+        "id": "42",
+        "current_source": {
+          "execution_id": "42",
+          "attempt_context": "kanban-attempt/42",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_7e8a8223"
+          },
+          "lifecycle": "unknown",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "running",
+          "attempt_status": "blocked",
+          "attempt_outcome": "blocked",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "active",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_7e8a8223"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "72df24570da2e73a6cc9b2b8353abff416d6b15976b54b998dc74e302d98f8bf",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",1,395638.190960334,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3760,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": 395638.190960334,
+            "received_at": 395638.221038049,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "8ad6fd13417cbd44fb8eadd03ca942f04887269dddfc6a928de20adc853898f6",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",2,395638.404301388,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3760,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": null,
+            "received_at": 395638.435129349,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "a517ce0717d699a3717f705325ac2945354c6e267e18273d801605c698408cc0",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",3,397423.308401742,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3826,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": null,
+            "received_at": 397423.340169327,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          }
+        ]
+      },
+      {
+        "id": "43",
+        "current_source": {
+          "execution_id": "43",
+          "attempt_context": "kanban-attempt/43",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_817d72ca"
+          },
+          "lifecycle": "succeeded",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "done",
+          "attempt_status": "done",
+          "attempt_outcome": "completed",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "succeeded",
+          "mapped": "succeeded",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_817d72ca"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "22b6cfaaae006a44f653ca44667686a698ddd0a2d9602aaaf9abde6f730ab48f",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",3,397423.308401742,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3826,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": null,
+            "received_at": 397423.340169327,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          }
+        ]
+      },
+      {
+        "id": "44",
+        "current_source": {
+          "execution_id": "44",
+          "attempt_context": "kanban-attempt/44",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_89910f17"
+          },
+          "lifecycle": "unknown",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "unknown",
+          "attempt_status": "unknown",
+          "attempt_outcome": "unknown",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "unknown",
+          "mapped": "unknown",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": false,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_89910f17"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "cca5f1067c177002cf4675177d5da8e16b580b483c3bf54097ca06bbe3d1bed2",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",3,397423.308401742,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3826,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": null,
+            "received_at": 397423.340169327,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          }
+        ]
+      },
+      {
+        "id": "45",
+        "current_source": {
+          "execution_id": "45",
+          "attempt_context": "kanban-attempt/45",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_7e8a8223"
+          },
+          "lifecycle": "active",
+          "lifecycle_evidence": "source_record",
+          "process": "alive",
+          "process_reason": "matching spawn identity",
+          "task_station": "running",
+          "attempt_status": "running",
+          "attempt_outcome": "unknown",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "active",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_7e8a8223"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "600911487466f624421f5933598993cf51123cece1e04ce3c35335f24d313781",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"59049f5eec444868ba8d050378a1a104\",3,397423.308401742,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3826,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "59049f5eec444868ba8d050378a1a104",
+            "acquired_at": null,
+            "received_at": 397423.340169327,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": true
+          }
+        ]
+      }
+    ]
+  },
+  "installed": {
+    "revision": 93651,
+    "reconcile_required": true,
+    "rows": [
+      {
+        "id": "42",
+        "current_source": {
+          "execution_id": "42",
+          "attempt_context": "kanban-attempt/42",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_7e8a8223"
+          },
+          "lifecycle": "unknown",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "running",
+          "attempt_status": "blocked",
+          "attempt_outcome": "blocked",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "active",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_7e8a8223"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "425ff2e60c7c083ab9e70cd93140666c787ff1496054c8e6a084f9a919fc5f21",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92265,395330.84373073,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3751,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 395330.84373073,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "9b8327aea3d42ea07a746bc8bd6474794ad06d33b8996658931156c90f14f39a",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92266,395332.494574668,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3754,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 395332.494574668,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "fdce8bb8e1d61b93183385cde7841e7abbb51b7b4c0944e1f97e8d1a087e9cde",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92809,396190.004537579,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "todo",
+              "workshop.hermes.board.event_id": 3779,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 396190.004537579,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "93e9c0a82be8e557e6f5bcc69e0d4ca4e03c825b81794d4893560ad46a5fdcb4",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92837,396233.831782155,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "not_alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "todo",
+              "workshop.hermes.board.event_id": 3780,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 396233.831782155,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "b0e42e50b25512a31a20d50d63f827a612a6cf65b80e46317ca182e0543ef646",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92839,396236.97657781,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "no verified process observation",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "todo",
+              "workshop.hermes.board.event_id": 3780,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 396236.97657781,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "4b4e7fd0521b337ffa315ba8d13905e690fdbb046259cb63ad25741bd9ea500f",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92917,396359.006334664,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "todo",
+              "workshop.hermes.board.event_id": 3782,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 396359.006334664,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "7bf8d710e7d1691f99ffbd6fad2706309ddc94d3efe399de6b4c2f66ab4c97aa",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93446,397186.603293792,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "ready",
+              "workshop.hermes.board.event_id": 3809,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397186.603293792,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "9612bb657816819bde8cc8a3543f540bb6f75b5eeb9e8a85f145ae338aa2894a",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93457,397203.957078097,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3813,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397203.957078097,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "6ff3ecac62e9450b1219b051f5b08ddf6ebb5b75bfe1bcb91810699adf0df21e",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93646,397505.980751708,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397505.980751708,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "64fd3f42e44cdf667ac5d567ebf4923315bd5746b07ed6029646c104592e00bf",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93647,397507.5506385,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397507.5506385,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "6e4e04d34baa1997468b9503905ac38c016220bcaf4bbee98335e070569aa60c",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93648,397509.128129429,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397509.128129429,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "42",
+              "session_id": "kanban-attempt/42",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "9cf1fbbcc8679ed3accc6da53f4eb5824e8e6f26e08747a70d2e46bb2fa7fafd",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93649,397510.672755541,\"42\"]",
+              "workshop.execution.id": "42",
+              "workshop.session.id": "kanban-attempt/42",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "blocked",
+              "workshop.hermes.attempt.outcome": "blocked",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397510.672755541,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')",
+            "retention_protected": false
+          }
+        ]
+      },
+      {
+        "id": "43",
+        "current_source": {
+          "execution_id": "43",
+          "attempt_context": "kanban-attempt/43",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_817d72ca"
+          },
+          "lifecycle": "succeeded",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "done",
+          "attempt_status": "done",
+          "attempt_outcome": "completed",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "succeeded",
+          "mapped": "succeeded",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_817d72ca"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "5c467815032cf758c8d5a63c85f32dec6341ca8143e6dcc2624e601db60f8395",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",92762,396116.654216103,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3773,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 396116.654216103,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "7180c01c715c92045b629f53662a9fd7a5f28f9391e910823a1190887b7649dd",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93446,397186.603293792,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3809,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397186.603293792,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "88df05d9703ea47317463b28c632917caee1b1fff3c259f4de4d03880ad22a1b",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93461,397210.321149895,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "not_alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3818,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397210.321149895,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "b07f4211d2f8e291aad88c138453d786259278cb5fab8571f22989859a8e1ddb",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93496,397265.224342885,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "no verified process observation",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3822,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397265.224342885,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "2fd23e72a3f5cbce38d118937c795a530b45a2a15a82dbda510ea32d3ea989f2",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93534,397324.945617282,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3824,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397324.945617282,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "c94f3d43b3bf55332744f1b55255ad9e18f5880e5f333ed91a29793d66649440",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93646,397505.980751708,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397505.980751708,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "6f706c866e6aa907a77e1670ecd25d0c6c9f9ff17dc2fc664dc17957fbb46972",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93647,397507.5506385,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397507.5506385,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "d142aec4e3affb5446db168821ae02726bec719577459fab9358393f0790b7b3",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93648,397509.128129429,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397509.128129429,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "43",
+              "session_id": "kanban-attempt/43",
+              "lifecycle": "succeeded",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_817d72ca"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "a54a50662e48693c5fc6e852f84fac8bb9aa0ee1504e000dc17c66927fc4442b",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93649,397510.672755541,\"43\"]",
+              "workshop.execution.id": "43",
+              "workshop.session.id": "kanban-attempt/43",
+              "workshop.lifecycle": "succeeded",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_817d72ca",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "done",
+              "workshop.hermes.attempt.outcome": "completed",
+              "workshop.hermes.task.station": "done",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397510.672755541,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='43')",
+            "retention_protected": false
+          }
+        ]
+      },
+      {
+        "id": "44",
+        "current_source": {
+          "execution_id": "44",
+          "attempt_context": "kanban-attempt/44",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_89910f17"
+          },
+          "lifecycle": "unknown",
+          "lifecycle_evidence": "source_record",
+          "process": "unknown",
+          "process_reason": "missing or unsupported spawn identity",
+          "task_station": "unknown",
+          "attempt_status": "unknown",
+          "attempt_outcome": "unknown",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "active",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_89910f17"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "a8d768518c2410bfe427afbc1c651efa5277dc7529ffe4498a1fd2dc5061b1b2",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93457,397203.957078097,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3813,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397203.957078097,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "84ae9d500beae30df6f627feb31e456bb3f476c468d04c3977e96db4621e68c8",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93470,397224.763839345,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3821,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397224.763839345,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "7e74f9a646ed9e6d5ad35006349b7590f99d88217b8e0873bf47a4983fd11b11",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93474,397230.812593801,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "not_alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3822,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397230.812593801,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "7573414aa530669b330aa5b0531286e8ec7662c790491f9a25ec9032d2b1659c",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93496,397265.224342885,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "no verified process observation",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3822,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397265.224342885,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "1a58d88d697e39c45504c41f09c603c3cb0875e8af756f8cc045565f3e9e3b07",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93573,397385.891690464,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3825,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397385.891690464,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "12a0c3a27e84634a6575cfb38d087c5be1bc23b9ceac26a2402a239d1c8a9b40",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93646,397505.980751708,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397505.980751708,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "44e11d1b120d2ea4340c08ffaa6cfa0eaa4fee2ee8b285f3d84ecf10768c86a1",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93647,397507.5506385,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397507.5506385,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "18cd2d58d01cfbb05f6c69e0f0a4e752213158f9553de2aa5f701e47b65d62df",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93648,397509.128129429,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397509.128129429,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "44",
+              "session_id": "kanban-attempt/44",
+              "lifecycle": "unknown",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_89910f17"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "131ec4ed49966829c1e030afcd09d96de341597df25c9d14f0caafcd84e84fd2",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93649,397510.672755541,\"44\"]",
+              "workshop.execution.id": "44",
+              "workshop.session.id": "kanban-attempt/44",
+              "workshop.lifecycle": "unknown",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_89910f17",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "unknown",
+              "workshop.hermes.process.reason": "missing or unsupported spawn identity",
+              "workshop.hermes.attempt.status": "unknown",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "unknown",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397510.672755541,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='44')",
+            "retention_protected": false
+          }
+        ]
+      },
+      {
+        "id": "45",
+        "current_source": {
+          "execution_id": "45",
+          "attempt_context": "kanban-attempt/45",
+          "task": {
+            "source_instance": "local-hermes-agent-workshop",
+            "namespace": "agent-workshop",
+            "native_id": "t_7e8a8223"
+          },
+          "lifecycle": "active",
+          "lifecycle_evidence": "source_record",
+          "process": "alive",
+          "process_reason": "matching spawn identity",
+          "task_station": "running",
+          "attempt_status": "running",
+          "attempt_outcome": "unknown",
+          "progress": "unknown",
+          "tool_activity": "unsupported",
+          "retry": "not_requested"
+        },
+        "saved_lifecycle": {
+          "native": "active",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "feed": "local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+          "observed_at": null,
+          "supported": true,
+          "evidence_class": "source_record"
+        },
+        "saved_task": {
+          "source_instance": "local-hermes-agent-workshop",
+          "namespace": "agent-workshop",
+          "native_id": "t_7e8a8223"
+        },
+        "saved_discrepancies": 0,
+        "retained_records": [
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "578ce620992f451b60602020dc299872a48506a572a7b53649a58ba29a725a3d",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93457,397203.957078097,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3813,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397203.957078097,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": true
+          },
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "efdaaf3bc9f09e81f7801e512baacc8847162b04d8fa484f17b707003a6a5685",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93646,397505.980751708,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397505.980751708,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "5f94122f4635b6d8ddb5bedaccb6a043e44083de7dd4abfabd19a8256356d78d",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93647,397507.5506385,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397507.5506385,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "30f61c4d2c5c88096aebe1a96a4a9dabd2a2941f44818830f8b9ffc4fa82c6b4",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93648,397509.128129429,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397509.128129429,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": false
+          },
+          {
+            "domain": {
+              "execution_id": "45",
+              "session_id": "kanban-attempt/45",
+              "lifecycle": "active",
+              "task": {
+                "source_instance": "local-hermes-agent-workshop",
+                "namespace": "agent-workshop",
+                "native_id": "t_7e8a8223"
+              }
+            },
+            "occurrence_at": null,
+            "source_observed_at": null,
+            "protocol": "otlp-logs",
+            "trace_id": null,
+            "span_id": null,
+            "merge_policy": "workshop-ingest-v1",
+            "digest": "9fbc95f451c83f7915c8e3304f82f09953e5d36a889bcb70624e6eb7bc629189",
+            "resource": {},
+            "attributes": {
+              "workshop.record.id": "[\"outbox-v1\",\"9520297153284dedbd42c376b7a44c04\",93649,397510.672755541,\"45\"]",
+              "workshop.execution.id": "45",
+              "workshop.session.id": "kanban-attempt/45",
+              "workshop.lifecycle": "active",
+              "workshop.task.source_instance": "local-hermes-agent-workshop",
+              "workshop.task.namespace": "agent-workshop",
+              "workshop.task.native_id": "t_7e8a8223",
+              "workshop.hermes.mapping.version": "hermes-runtime-v1",
+              "workshop.hermes.process": "alive",
+              "workshop.hermes.process.reason": "matching spawn identity",
+              "workshop.hermes.attempt.status": "running",
+              "workshop.hermes.attempt.outcome": "unknown",
+              "workshop.hermes.task.station": "running",
+              "workshop.hermes.board.event_id": 3828,
+              "workshop.hermes.native.complete": false
+            },
+            "resource_schema_url": "",
+            "schema_url": "",
+            "scope": {
+              "name": "workshop.hermes_runtime",
+              "version": "hermes-runtime-v1"
+            },
+            "source": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts",
+            "epoch": "9520297153284dedbd42c376b7a44c04",
+            "acquired_at": null,
+            "received_at": 397510.672755541,
+            "mapping_version": "workshop-ingest-v1",
+            "evidence_class": "source_record",
+            "execution_key": "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='45')",
+            "retention_protected": false
+          }
+        ]
+      }
+    ]
+  }
+}

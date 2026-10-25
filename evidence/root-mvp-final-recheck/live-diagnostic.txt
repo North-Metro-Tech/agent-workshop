@@ -1,0 +1,47 @@
+{
+  "result": "MISMATCH_REPRODUCED_NOT_MVP_PASS",
+  "origin": "https://frankenfarm.taile4f46c.ts.net:10000",
+  "initial_cursor": "11b81ad2e71345f58d79cc97b3b78e9e:93700",
+  "final_cursor": "11b81ad2e71345f58d79cc97b3b78e9e:93701",
+  "connection_quality": "fresh",
+  "native_write_enabled": false,
+  "rows": [
+    {
+      "id": "42",
+      "native_lifecycle": "unknown",
+      "retained_lifecycle": "active",
+      "quality": "unknown",
+      "source_record": "source_record",
+      "task": "t_7e8a8223",
+      "agrees": false
+    },
+    {
+      "id": "43",
+      "native_lifecycle": "succeeded",
+      "retained_lifecycle": "succeeded",
+      "quality": "unknown",
+      "source_record": "source_record",
+      "task": "t_817d72ca",
+      "agrees": true
+    },
+    {
+      "id": "44",
+      "native_lifecycle": "unknown",
+      "retained_lifecycle": "active",
+      "quality": "unknown",
+      "source_record": "source_record",
+      "task": "t_89910f17",
+      "agrees": false
+    },
+    {
+      "id": "45",
+      "native_lifecycle": "active",
+      "retained_lifecycle": "active",
+      "quality": "unknown",
+      "source_record": "source_record",
+      "task": "t_7e8a8223",
+      "agrees": true
+    }
+  ],
+  "interpretation": "Current native unknown transitions retained as raw records but prior active lifecycle is preserved with unknown quality under reconciliation latch; Core disposition required, no assertion weakened to manufacture agreement."
+}
