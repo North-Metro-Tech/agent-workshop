@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="34" time="3.740" timestamp="2026-10-25T18:47:10.644425+11:00" hostname="frankenfarm"><testcase classname="backend.tests.test_workflow_retained" name="test_live_shape_reopen_two_retained_two_current_and_ignored_raw_retained" time="0.105"><failure message="ValueError: Source/projection disagreement for attempt 1">mixed = (&lt;workshop_collectors.hermes_runtime.HermesRuntime object at 0x79274ca28cd0&gt;, RuntimeSnapshot(binding=SourceBinding(so...e/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_live_shape_reopen_two_ret0/synthetic.db'))
+
+    def test_live_shape_reopen_two_retained_two_current_and_ignored_raw_retained(mixed):
+        observer, snapshot, store, native = mixed
+        before = hashes(native)
+        saved = store.read()
+        ingest = saved.ingests['runtime']
+        # Ordering rejects canonical replacements, NOT the newest raw provenance.
+        assert len(ingest.records) == 7
+        for identity, status in [('1', 'blocked'), ('2', 'unknown')]:
+            records = [r for r in ingest.records
+                       if r['attributes']['workshop.execution.id'] == identity]
+            assert len(records) == 2
+            assert records[0]['domain']['lifecycle'] == 'active'
+            assert records[-1]['domain']['lifecycle'] == 'unknown'
+            assert records[-1]['attributes']['workshop.hermes.attempt.status'] == status
+            assert records[-1]['acquired_at'] is None
+            fact = saved.reducer.executions[ExecutionKey(observer.binding.runtime, identity)]
+            assert fact.lifecycle.mapped == 'active' and fact.acquired_at is None
+&gt;       report = verify_agreement(observer, snapshot, store, now=12)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_workflow_retained.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+observer = &lt;workshop_collectors.hermes_runtime.HermesRuntime object at 0x79274ca28cd0&gt;
+snapshot = RuntimeSnapshot(binding=SourceBinding(source='urn:agentworkshop:hermes:synthetic-instance/synthetic-board/kanban-attem...ing", "attempt_outcome": "unknown", "progress": "unknown", "tool_activity": "unsupported", "retry": "not_requested"}]')
+storage = &lt;workshop.storage.Storage object at 0x79274ccda990&gt;, now = 12
+
+    def verify_agreement(observer, snapshot, storage, *, now):
+        """Verify acquired native attempts against both durable facts and API output.
+    
+        This is a bounded same-acquisition comparison, NOT continuous event capture.
+        The native table copy is already redacted by HermesWork. No source requery or
+        process resampling (which could race the acquisition) occurs here.
+        """
+        work = observer.work.last_snapshot
+        if work is None or work.acquired_at != snapshot.acquired_at:
+            raise ValueError('Matching work acquisition required')
+        saved = storage.read()
+        projection = storage.snapshot(now=now)['projection']
+        projected = {e['key']['native_id']: e for e in projection['executions']
+                     if e['key']['runtime'] == observer.binding.runtime}
+        records = {r['execution_id']: r for r in snapshot.observations()}
+        ingest = saved.ingests['runtime']
+        retained = {r['attributes']['workshop.execution.id']: r for r in ingest.records}
+        if not records or len(records) != len(work._tables['task_runs']):
+            raise ValueError('Nonempty matching acquisition required')
+        cursor = saved.source_cursors.get('runtime')
+        comparisons = []
+        for run in work._tables['task_runs']:
+            identity = str(run['id'])
+            evidence = work.execution(run['id'])
+            # Intentionally independent of the adapter's _lifecycle mapping.
+            expected = 'unknown'
+            if run['ended_at'] is None and run['status'] == 'running':
+                expected = 'active'
+            elif run['ended_at'] is not None and run['status'] == 'done':
+                expected = {'completed': 'succeeded', 'failed': 'failed',
+                            'cancelled': 'cancelled'}.get(run['outcome'], 'unknown')
+            record = records[identity]
+            fact = saved.reducer.executions[ExecutionKey(observer.binding.runtime, identity)]
+            view = projected[identity]
+            attrs = retained[identity]['attributes']
+            if (attrs.get('workshop.record.id') != _observation_id(
+                    ingest._epoch, cursor, snapshot.acquired_at, identity)
+                    or retained[identity]['epoch'] != ingest._epoch
+                    or attrs.get('workshop.hermes.board.event_id') != work.latest_event_id
+                    or attrs.get('workshop.hermes.native.complete') != work.complete):
+                raise ValueError('Current acquisition not durably delivered for attempt ' + identity)
+            status = run['status'] if run['status'] in _NATIVE_STATUS else 'unknown'
+            outcome = run['outcome'] if run['outcome'] in _NATIVE_OUTCOME else 'unknown'
+            task = TaskKey(work.source_instance, work.board, run['task_id'])
+            checks = [fact.task == task, fact.lifecycle.mapped == expected,
+                fact.lifecycle.evidence_class == 'source_record', record['lifecycle'] == expected,
+                view['lifecycle']['mapped'] == expected, view['lifecycle']['evidence_class'] == 'source_record',
+                view['task'] == {'source_instance': task.source_instance,
+                                'namespace': task.namespace, 'native_id': task.native_id},
+                attrs['workshop.hermes.process'] == evidence['process'] == record['process'],
+                attrs['workshop.hermes.task.station'] == evidence['task_station'] == record['task_station'],
+                attrs['workshop.hermes.attempt.status'] == record['attempt_status'] == status,
+                attrs['workshop.hermes.attempt.outcome'] == record['attempt_outcome'] == outcome,
+                evidence['progress'] == 'unknown', evidence['tool_activity'] == 'unsupported',
+                evidence['retry'] == 'not_requested', evidence['failure'] == 'unknown']
+            if not all(checks):
+&gt;               raise ValueError('Source/projection disagreement for attempt ' + identity)
+E               ValueError: Source/projection disagreement for attempt 1
+
+collectors/workshop_collectors/workflow.py:67: ValueError</failure></testcase><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[terminal]" time="0.099" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[unknown]" time="0.116" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[unsupported]" time="0.103" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[not_source]" time="0.116" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[acquired]" time="0.118" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[unlatched]" time="0.116" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[projected_terminal]" time="0.124" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[projected_unknown]" time="0.137" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[projected_not_source]" time="0.126" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_contract_requires_every_guard[projected_unsupported]" time="0.111" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_requires_presented_unknown_quality[fresh]" time="0.103" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_requires_presented_unknown_quality[stale]" time="0.114" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_requires_presented_unknown_quality[disconnected]" time="0.107" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_requires_presented_unknown_quality[unsupported]" time="0.107" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_requires_presented_unknown_quality[None]" time="0.110" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.record.id-not-current]" time="0.103" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[epoch-other-epoch]" time="0.105" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[cursor-1]" time="0.131" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.board.event_id-999]" time="0.126" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.native.complete-False]" time="0.126" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.process-exited]" time="0.095" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.task.station-done]" time="0.115" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.attempt.status-running]" time="0.107" /><testcase classname="backend.tests.test_workflow_retained" name="test_retained_never_waives_current_raw_checks[workshop.hermes.attempt.outcome-completed]" time="0.116" /><testcase classname="backend.tests.test_workflow_retained" name="test_active_and_terminal_equality_still_required[fact-3]" time="0.111" /><testcase classname="backend.tests.test_workflow_retained" name="test_active_and_terminal_equality_still_required[fact-4]" time="0.094" /><testcase classname="backend.tests.test_workflow_retained" name="test_active_and_terminal_equality_still_required[view-3]" time="0.115" /><testcase classname="backend.tests.test_workflow_retained" name="test_active_and_terminal_equality_still_required[view-4]" time="0.144" /><testcase classname="backend.tests.test_workflow_retained" name="test_fresh_first_observation_unchanged[running-None-None-active]" time="0.049"><failure message="KeyError: 'agreement_basis'">native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u0/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u0')
+status = 'running', outcome = None, ended = None, expected = 'active'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('blocked', 'blocked', 8, 'unknown'),
+        ('scheduled', None, None, 'unknown'), ('done', 'completed', 8, 'succeeded'),
+    ])
+    def test_fresh_first_observation_unchanged(native, tmp_path, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+        observer, state = configured(native)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        queue = Outbox(tmp_path / 'outbox.db', binding=observer.binding, clock_id='fixture-boot')
+        try:
+            snapshot = collect(observer)
+            queue.enqueue(snapshot)
+            queue.deliver_one(store, received_at=10)
+            assert not store.read().ingests['runtime'].reconcile_required
+            row = verify_agreement(observer, snapshot, store, now=10)['comparisons'][0]
+&gt;           assert row['projected_lifecycle'] == expected and row['agreement_basis'] == 'current'
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'agreement_basis'
+
+backend/tests/test_workflow_retained.py:187: KeyError</failure></testcase><testcase classname="backend.tests.test_workflow_retained" name="test_fresh_first_observation_unchanged[blocked-blocked-8-unknown]" time="0.052"><failure message="KeyError: 'agreement_basis'">native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u1/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u1')
+status = 'blocked', outcome = 'blocked', ended = 8, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('blocked', 'blocked', 8, 'unknown'),
+        ('scheduled', None, None, 'unknown'), ('done', 'completed', 8, 'succeeded'),
+    ])
+    def test_fresh_first_observation_unchanged(native, tmp_path, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+        observer, state = configured(native)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        queue = Outbox(tmp_path / 'outbox.db', binding=observer.binding, clock_id='fixture-boot')
+        try:
+            snapshot = collect(observer)
+            queue.enqueue(snapshot)
+            queue.deliver_one(store, received_at=10)
+            assert not store.read().ingests['runtime'].reconcile_required
+            row = verify_agreement(observer, snapshot, store, now=10)['comparisons'][0]
+&gt;           assert row['projected_lifecycle'] == expected and row['agreement_basis'] == 'current'
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'agreement_basis'
+
+backend/tests/test_workflow_retained.py:187: KeyError</failure></testcase><testcase classname="backend.tests.test_workflow_retained" name="test_fresh_first_observation_unchanged[scheduled-None-None-unknown]" time="0.052"><failure message="KeyError: 'agreement_basis'">native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u2/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u2')
+status = 'scheduled', outcome = None, ended = None, expected = 'unknown'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('blocked', 'blocked', 8, 'unknown'),
+        ('scheduled', None, None, 'unknown'), ('done', 'completed', 8, 'succeeded'),
+    ])
+    def test_fresh_first_observation_unchanged(native, tmp_path, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+        observer, state = configured(native)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        queue = Outbox(tmp_path / 'outbox.db', binding=observer.binding, clock_id='fixture-boot')
+        try:
+            snapshot = collect(observer)
+            queue.enqueue(snapshot)
+            queue.deliver_one(store, received_at=10)
+            assert not store.read().ingests['runtime'].reconcile_required
+            row = verify_agreement(observer, snapshot, store, now=10)['comparisons'][0]
+&gt;           assert row['projected_lifecycle'] == expected and row['agreement_basis'] == 'current'
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'agreement_basis'
+
+backend/tests/test_workflow_retained.py:187: KeyError</failure></testcase><testcase classname="backend.tests.test_workflow_retained" name="test_fresh_first_observation_unchanged[done-completed-8-succeeded]" time="0.053"><failure message="KeyError: 'agreement_basis'">native = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u3/synthetic.db')
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-199/test_fresh_first_observation_u3')
+status = 'done', outcome = 'completed', ended = 8, expected = 'succeeded'
+
+    @pytest.mark.parametrize('status,outcome,ended,expected', [
+        ('running', None, None, 'active'), ('blocked', 'blocked', 8, 'unknown'),
+        ('scheduled', None, None, 'unknown'), ('done', 'completed', 8, 'succeeded'),
+    ])
+    def test_fresh_first_observation_unchanged(native, tmp_path, status, outcome, ended, expected):
+        change(native, 'UPDATE task_runs SET status=?,outcome=?,ended_at=?', (status, outcome, ended))
+        observer, state = configured(native)
+        store = Storage(tmp_path / 'historian.db', initial=state)
+        queue = Outbox(tmp_path / 'outbox.db', binding=observer.binding, clock_id='fixture-boot')
+        try:
+            snapshot = collect(observer)
+            queue.enqueue(snapshot)
+            queue.deliver_one(store, received_at=10)
+            assert not store.read().ingests['runtime'].reconcile_required
+            row = verify_agreement(observer, snapshot, store, now=10)['comparisons'][0]
+&gt;           assert row['projected_lifecycle'] == expected and row['agreement_basis'] == 'current'
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'agreement_basis'
+
+backend/tests/test_workflow_retained.py:187: KeyError</failure></testcase><testcase classname="backend.tests.test_workflow_retained" name="test_retained_unknown_cannot_hide_source_now_active" time="0.083" /></testsuite></testsuites>

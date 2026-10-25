@@ -1,0 +1,38 @@
+{
+  "baseline.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "focused.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "backend.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "schema.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "demo.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "demo-repeat.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "collector-demo.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "collector-demo-repeat.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "check.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  }
+}

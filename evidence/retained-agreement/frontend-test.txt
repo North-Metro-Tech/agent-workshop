@@ -1,0 +1,16 @@
+COMMAND: ['npm', '--prefix', 'frontend', 'run', 'test', '--', '--run']
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run
+
+
+ RUN  v5.0.4 /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_53f5e3fb/retained-agreement/frontend
+
+
+ Test Files  5 passed (5)
+      Tests  57 passed (57)
+   Start at  18:52:43
+   Duration  681ms (environment 49%, transform 23%, tests 17%, import 9%, worker 1%)
+
+
+EXIT_CODE: 0
