@@ -1,0 +1,101 @@
+A23 — Release 1 §16 raw verification transcript
+Candidate: ce52227c983598dcbb951f3c1d2ff55fe354ccdf
+Started UTC: 2026-10-22T00:15:37.110049+00:00
+Scenario: Canvas/DOM equivalence, permitted local actions, keyboard/accessibility/reduced motion, text/URL boundary, no inherited controls.
+Pinning tests: exact collected node IDs / Vitest test names are printed below.
+Synthetic native stores only in unit/integration fixtures; OS children are test-owned.
+Real acquisition is limited to the explicitly approved Phase 2 board/profile scope.
+No product source modifications, dependency installs, native writes or deployment.
+
+$ npm --prefix frontend run test -- --run --reporter=tap src/workshop/accessibility.test.tsx src/workshop/projection.test.ts
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run --reporter=tap src/workshop/accessibility.test.tsx src/workshop/projection.test.ts
+
+TAP version 13
+1..2
+ok 1 - src/workshop/accessibility.test.tsx # time=197.32ms {
+    1..1
+    ok 1 - A23 accessible shared scene / DOM # time=196.66ms {
+        1..12
+        ok 1 - real canvas rendering prints the same selected identity, native/mapped/source/age/evidence facts as DOM # time=33.61ms
+        ok 2 - exposes every scene fact verbatim in equivalent DOM, including identity and quality # time=15.68ms
+        ok 3 - supports arrow/Home/End/Enter/space navigation without interpreting source IDs as selectors # time=29.47ms
+        ok 4 - escapes hostile text, refuses unsafe links and cannot grant authority # time=12.51ms
+        ok 5 - source proof opens the same detail facts, never a terminal # time=19.56ms
+        ok 6 - honours reduced-motion preference, changes and explicit stationary unack markers # time=12.15ms
+        ok 7 - does not animate stale state # time=7.66ms
+        ok 8 - does not animate unknown state # time=7.40ms
+        ok 9 - does not animate disconnected state # time=9.38ms
+        ok 10 - does not animate unsupported state # time=9.04ms
+        ok 11 - operator intersection is strict; viewer/controller remain read-only, hold always disabled # time=10.46ms
+        ok 12 - acknowledged-active, cleared-unacked, shelved and suppressed states are preserved, not resolved by UI # time=29.18ms
+    }
+}
+ok 2 - src/workshop/projection.test.ts # time=7.43ms {
+    1..3
+    ok 1 - A01/A02/A06/A07/A08 projection truth # time=5.34ms {
+        1..12
+        ok 1 - clones and deeply freezes one fact hierarchy shared by scene and DOM # time=2.55ms
+        ok 2 - keeps blocked/review tasks when actors exit and units remain independent # time=0.45ms
+        ok 3 - does not regress revision; accepts identity only through an atomic path # time=0.46ms
+        ok 4 - rejects malformed, duplicate or write-enabled snapshots 0 # time=0.18ms
+        ok 5 - rejects malformed, duplicate or write-enabled snapshots 1 # time=0.14ms
+        ok 6 - rejects malformed, duplicate or write-enabled snapshots 2 # time=0.16ms
+        ok 7 - rejects malformed, duplicate or write-enabled snapshots 3 # time=0.13ms
+        ok 8 - rejects malformed, duplicate or write-enabled snapshots 4 # time=0.13ms
+        ok 9 - rejects malformed, duplicate or write-enabled snapshots 5 # time=0.15ms
+        ok 10 - rejects malformed, duplicate or write-enabled snapshots 6 # time=0.18ms
+        ok 11 - rejects malformed, duplicate or write-enabled snapshots 7 # time=0.14ms
+        ok 12 - keeps unknown signal values explicit rather than coercing availability # time=0.13ms
+    }
+    ok 2 - A23 evidence URL boundary # time=0.94ms {
+        1..12
+        ok 1 - rejects javascript:alert(1) # time=0.17ms
+        ok 2 - rejects data:text/html,<script>alert(1)</script> # time=0.06ms
+        ok 3 - rejects https://github.com.evil/North-Metro-Tech/agent-workshop # time=0.06ms
+        ok 4 - rejects https://evil.com/North-Metro-Tech/agent-workshop # time=0.06ms
+        ok 5 - rejects https://github.com/North-Metro-Tech/agent-workshop-evil # time=0.09ms
+        ok 6 - rejects https://user@github.com/North-Metro-Tech/agent-workshop # time=0.05ms
+        ok 7 - rejects http://github.com/North-Metro-Tech/agent-workshop # time=0.04ms
+        ok 8 - rejects //github.com/North-Metro-Tech/agent-workshop # time=0.07ms
+        ok 9 - rejects file:///etc/passwd # time=0.05ms
+        ok 10 - rejects https://github.com/North-Metro-Tech/agent-workshop/../../evil # time=0.08ms
+        ok 11 - rejects https://github.com:8443/North-Metro-Tech/agent-workshop # time=0.05ms
+        ok 12 - permits only the exact HTTPS repository and its subpaths # time=0.07ms
+    }
+    ok 3 - actual adapted Pixel Agents geometry and raster loop # time=0.47ms {
+        1..2
+        ok 1 - aligns DOM world points and canvas device pixels at fractional DPR and pan # time=0.22ms
+        ok 2 - rasterizes original art using only opaque pixels without image/network APIs # time=0.22ms
+    }
+}
+
+exit_code=0
+
+ACTUAL-SERVICE CHECK: deliberately no fabricated/provisioned token; no mock server substituted. A skipped test is NOT a pass.
+
+$ npm --prefix frontend run test:e2e -- --reporter=list
+
+> agent-workshop-hmi@0.1.0 test:e2e
+> playwright test --reporter=list
+
+
+Running 1 test using 1 worker
+
+  -  1 e2e/workshop.spec.ts:4:1 › actual service: local login, immutable scene/DOM facts, keyboard, reduced motion and browser restart
+
+  1 skipped
+
+exit_code=0
+
+A23 acceptance result: INCOMPLETE / NOT VERIFIED. Client fixture assertions may pass, but the actual-service browser scenario cannot prove server-authorised local actions, real browser accessibility/equivalence, or HTTP/SSE integration. Escalate missing service rather than convert the guarded browser skip to a pass.
+
+UNMOCKED LOOPBACK SERVICE AVAILABILITY PROBE (expected service endpoint; no credentials sent):
+
+$ curl --silent --show-error --noproxy '*' --max-time 3 --fail-with-body -i http://127.0.0.1:8765/api/session
+curl: (7) Failed to connect to 127.0.0.1 port 8765 after 0 ms: Couldn't connect to server
+
+exit_code=7
+
+Product-source immutability check: PASS (all tracked backend/collector/frontend/source/script hashes and candidate HEAD unchanged during this run).

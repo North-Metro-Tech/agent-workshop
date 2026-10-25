@@ -1,0 +1,806 @@
+A10 — Release 1 §16 raw verification transcript
+Candidate: ce52227c983598dcbb951f3c1d2ff55fe354ccdf
+Started UTC: 2026-10-22T00:15:37.110049+00:00
+Scenario: Scoped identities, spoof rejection and unchanged native SQLite records/schema.
+Pinning tests: exact collected node IDs / Vitest test names are printed below.
+Synthetic native stores only in unit/integration fixtures; OS children are test-owned.
+Real acquisition is limited to the explicitly approved Phase 2 board/profile scope.
+No product source modifications, dependency installs, native writes or deployment.
+
+$ python -m pytest backend/tests -v --no-header --tb=short -p no:cacheprovider -k A10
+============================= test session starts ==============================
+collecting ... collected 432 items / 362 deselected / 70 selected
+
+backend/tests/test_hermes_runtime.py::test_A08_A10_real_adapter_records_task_and_process_evidence_atomically PASSED [  1%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes0] PASSED [  2%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes1] PASSED [  4%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_ingress_denies_task_scope_and_rolls_back[scopes2] PASSED [  5%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_binding_cannot_promote_process_to_lifecycle_authority PASSED [  7%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_snapshot_cannot_be_rebound_to_other_instance PASSED [  8%]
+backend/tests/test_hermes_runtime.py::test_A10_runtime_snapshot_privacy_and_detached_output PASSED [ 10%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_process_only_corroboration_still_enforces_task_allowlist PASSED [ 11%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.process-value0] PASSED [ 12%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.process.reason-value1] PASSED [ 14%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.board.event_id-value2] PASSED [ 15%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.native.complete-value3] PASSED [ 17%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.mapping.version-value4] PASSED [ 18%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_corrupt_process_metadata_rolls_back_entire_batch[workshop.hermes.process-None] PASSED [ 20%]
+backend/tests/test_hermes_runtime_edges.py::test_A10_identical_attempt_task_ids_across_scopes_remain_distinct PASSED [ 21%]
+backend/tests/test_hermes_work.py::test_A10_scope_mandatory_exact_path_and_board PASSED [ 22%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[board_view] PASSED [ 24%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[task_detail] PASSED [ 25%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[workers] PASSED [ 27%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[run] PASSED [ 28%]
+backend/tests/test_hermes_work.py::test_A10_each_surface_native_bytes_schema_unchanged[inspect] PASSED [ 30%]
+backend/tests/test_hermes_work.py::test_A10_detail_grouping_links_runs_and_privacy PASSED [ 31%]
+backend/tests/test_hermes_work.py::test_A10_exact_schema_no_views_hidden_or_unknown_columns PASSED [ 32%]
+backend/tests/test_hermes_work.py::test_A10_view_refused PASSED          [ 34%]
+backend/tests/test_hermes_work.py::test_A10_snapshot_and_watermark_share_one_transaction PASSED [ 35%]
+backend/tests/test_hermes_work.py::test_A10_row_bound_partial_never_claims_runtime_complete PASSED [ 37%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[oversized] PASSED [ 38%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[aggregate] PASSED [ 40%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[blob] PASSED [ 41%]
+backend/tests/test_hermes_work.py::test_A10_bad_or_overbudget_record_no_partial_publish[nonfinite] PASSED [ 42%]
+backend/tests/test_hermes_work.py::test_A10_readonly_guards_adversarial PASSED [ 44%]
+backend/tests/test_outbox.py::test_A10_outbox_rejects_native_historian_and_symlink_unchanged PASSED [ 45%]
+backend/tests/test_outbox.py::test_A10_outbox_wrong_historian_binding_and_early_receipt PASSED [ 47%]
+backend/tests/test_outbox.py::test_A10_outbox_source_privacy_and_fixed_off PASSED [ 48%]
+backend/tests/test_phase2_gate.py::test_A10_full_workflow_empty_task_scope_denies_same_data_without_ack PASSED [ 50%]
+backend/tests/test_source_scope.py::test_A10_same_native_ids_have_distinct_instance_board_and_runtime_keys PASSED [ 51%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-ce] PASSED [ 52%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-otlp] PASSED [ 54%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[instance-snapshot] PASSED [ 55%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-ce] PASSED [ 57%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-otlp] PASSED [ 58%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[board-snapshot] PASSED [ 60%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-ce] PASSED [ 61%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-otlp] PASSED [ 62%]
+backend/tests/test_source_scope.py::test_A10_scope_spoof_rejected_atomically[both-snapshot] PASSED [ 64%]
+backend/tests/test_source_scope.py::test_A10_no_task_permission_by_default PASSED [ 65%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes0] PASSED [ 67%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes1] PASSED [ 68%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes2] PASSED [ 70%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes3] PASSED [ 71%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes4] PASSED [ 72%]
+backend/tests/test_source_scope.py::test_A10_invalid_trusted_scope_configuration_fails_closed[scopes5] PASSED [ 74%]
+backend/tests/test_source_scope.py::test_A10_cloudevents_source_cannot_select_another_binding PASSED [ 75%]
+backend/tests/test_source_scope.py::test_A10_durable_runtime_instance_collision_is_rejected PASSED [ 77%]
+backend/tests/test_source_scope.py::test_A10_sqlite_bounded_scoped_acquisition_leaves_bytes_schema_and_records_unchanged PASSED [ 78%]
+backend/tests/test_source_scope.py::test_A10_sqlite_ro_and_query_only_are_enforced PASSED [ 80%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change0] PASSED [ 81%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change1] PASSED [ 82%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change2] PASSED [ 84%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change3] PASSED [ 85%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change4] PASSED [ 87%]
+backend/tests/test_source_scope.py::test_A10_sqlite_rejects_unknown_schema_or_unbounded_query_unchanged[change5] PASSED [ 88%]
+backend/tests/test_source_scope.py::test_A10_sqlite_does_not_create_missing_source PASSED [ 90%]
+backend/tests/test_source_scope.py::test_A10_sqlite_live_WAL_is_visible_without_immutable PASSED [ 91%]
+backend/tests/test_source_scope_edges.py::test_A10_aggregate_bound_stops_cursor_before_materializing_whole_batch PASSED [ 92%]
+backend/tests/test_source_scope_edges.py::test_A10_otlp_resource_and_identity_attributes_cannot_change_binding PASSED [ 94%]
+backend/tests/test_source_scope_edges.py::test_A10_unknown_SQLite_extra_column_rejected_and_bytes_unchanged PASSED [ 95%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[oversized] PASSED [ 97%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[blob] PASSED [ 98%]
+backend/tests/test_source_scope_edges.py::test_A10_unsupported_SQLite_values_and_views_fail_closed[view] PASSED [100%]
+
+====================== 70 passed, 362 deselected in 1.59s ======================
+
+exit_code=0
+
+Fixture result: PASS. Current approved-workflow raw same-acquisition readbacks follow after all isolated tests. Forced silence/station transitions, native schedule invariance and uninstall/restore use isolated fixtures only; no shared-live destructive variant is claimed.
+
+APPROVED PHASE 2 ACQUISITION 1; raw same-acquisition comparator output (not continuous transition coverage):
+
+$ python scripts/observe_workflow.py --approved-local
+{
+  "acquisition_evidence": {
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 112348.169309413,
+    "source_cursor": 3
+  },
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 15,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "archived",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a759113b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "4",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_9466d0f8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "5",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f6e9e637",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "6",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_dbf6fb11",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "7",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "8",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "9",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_bbfe861b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "10",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f11a8ea8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "11",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "12",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "13",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "14",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_3da4ecd5",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "15",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "historian": {
+    "reconcile_required": true,
+    "reopened": true,
+    "source_cursor": 3,
+    "startup_live_freshness_invalidated": true
+  },
+  "limitations": [
+    "Only this approved local board and profile scope, not fleet-wide health or MVP readiness.",
+    "Bounded source tables plus later proc observations have no atomic runtime watermark.",
+    "Partial native/event history never implies complete runtime coverage or deletion of unseen records.",
+    "Same-acquisition comparison, not continuous capture of all workflow transitions.",
+    "No live silent-tool/forced station transition/uninstall/schedule access was performed.",
+    "Main/schema hashes exclude WAL/SHM coordination; native writers were not stopped.",
+    "Outbox bounds logical pending payloads; historian/domain history and SQLite physical files are not byte-capped.",
+    "Comparable monotonic boot clock required; new boot/configuration needs explicit recovery, never timestamp rebasing.",
+    "Core independent review/merge is the Phase 2 acceptance gate; no renderer or running service."
+  ],
+  "native_event_cursor": 2404,
+  "native_fence": {
+    "after": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_snapshot_complete": false,
+  "native_write_enabled": false,
+  "outbox": {
+    "delivered_cursor": 3,
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "next_cursor": 4,
+    "observations_accepted": 6,
+    "overflow_policy": "reject-no-drop",
+    "payload_bytes": 0,
+    "pending": 0,
+    "pending_before_acquisition": 0,
+    "runtime_coverage": "partial"
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scenario_coverage": {
+    "A05": "actual acquired process/source agreement; silence/PID-reuse/turn variants isolated",
+    "A06": "actual acquired station/attempt independence; forced blocked/review/ack variants isolated",
+    "A08": "actual durable delivery/readback + reopened historian; crash/overflow/disconnect variants isolated",
+    "A10": "actual same-data empty-scope denial + main/schema invariant; DML interlock attacks isolated",
+    "A25": "one-shot observer exits; uninstall/restore + schedule invariants isolated, not shared live operations"
+  },
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_projection_agreement": true,
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  },
+  "truncated_tables": [
+    "task_events"
+  ]
+}
+
+exit_code=0
+
+APPROVED PHASE 2 ACQUISITION 2; raw same-acquisition comparator output (not continuous transition coverage):
+
+$ python scripts/observe_workflow.py --approved-local
+{
+  "acquisition_evidence": {
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 112348.300555566,
+    "source_cursor": 4
+  },
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 15,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "archived",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a759113b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "4",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_9466d0f8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "5",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f6e9e637",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "6",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_dbf6fb11",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "7",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "8",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "9",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_bbfe861b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "10",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f11a8ea8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "11",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "12",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "todo",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "13",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "14",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_3da4ecd5",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "15",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "historian": {
+    "reconcile_required": true,
+    "reopened": true,
+    "source_cursor": 4,
+    "startup_live_freshness_invalidated": true
+  },
+  "limitations": [
+    "Only this approved local board and profile scope, not fleet-wide health or MVP readiness.",
+    "Bounded source tables plus later proc observations have no atomic runtime watermark.",
+    "Partial native/event history never implies complete runtime coverage or deletion of unseen records.",
+    "Same-acquisition comparison, not continuous capture of all workflow transitions.",
+    "No live silent-tool/forced station transition/uninstall/schedule access was performed.",
+    "Main/schema hashes exclude WAL/SHM coordination; native writers were not stopped.",
+    "Outbox bounds logical pending payloads; historian/domain history and SQLite physical files are not byte-capped.",
+    "Comparable monotonic boot clock required; new boot/configuration needs explicit recovery, never timestamp rebasing.",
+    "Core independent review/merge is the Phase 2 acceptance gate; no renderer or running service."
+  ],
+  "native_event_cursor": 2404,
+  "native_fence": {
+    "after": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "c2bb9f728cea0b4adef929ddf2a8386445de90f4483a43ccc7f37c5f4576e44c",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_snapshot_complete": false,
+  "native_write_enabled": false,
+  "outbox": {
+    "delivered_cursor": 4,
+    "epoch": "3975512a19fa47d699e3bc2ff57a504c",
+    "next_cursor": 5,
+    "observations_accepted": 6,
+    "overflow_policy": "reject-no-drop",
+    "payload_bytes": 0,
+    "pending": 0,
+    "pending_before_acquisition": 0,
+    "runtime_coverage": "partial"
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scenario_coverage": {
+    "A05": "actual acquired process/source agreement; silence/PID-reuse/turn variants isolated",
+    "A06": "actual acquired station/attempt independence; forced blocked/review/ack variants isolated",
+    "A08": "actual durable delivery/readback + reopened historian; crash/overflow/disconnect variants isolated",
+    "A10": "actual same-data empty-scope denial + main/schema invariant; DML interlock attacks isolated",
+    "A25": "one-shot observer exits; uninstall/restore + schedule invariants isolated, not shared live operations"
+  },
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "vitruvius-core"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_projection_agreement": true,
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  },
+  "truncated_tables": [
+    "task_events"
+  ]
+}
+
+exit_code=0
+
+Product-source immutability check: PASS (all tracked backend/collector/frontend/source/script hashes and candidate HEAD unchanged during this run).
+Live acquisition exit codes: [0, 0]. Same-acquisition agreement does not prove forced transitions, full runtime coverage, deployed service, live uninstall/schedule invariants or fleet health.
