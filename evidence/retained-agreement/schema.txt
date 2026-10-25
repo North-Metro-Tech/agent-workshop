@@ -1,0 +1,5 @@
+COMMAND: ['/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_53f5e3fb/retained-agreement/.venv/bin/python', 'scripts/dev.py', 'schema', '--check']
+Verified frontend/src/workshop/generated.ts
+Verified docs/web-schema.json
+
+EXIT_CODE: 0

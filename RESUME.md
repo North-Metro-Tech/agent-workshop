@@ -1,5 +1,44 @@
 # RESUME — Agent Workshop
 
+## Retained-fact verifier correction — implementation only, review pending (25 October 2026)
+
+Gate A `t_53f5e3fb` implements Core's normative `t_38604cb5` disposition on
+`fix/release1-retained-agreement`, from exact signed checkpoint
+`5ee7ab43697ef8fc5b583341e4c45703184d586b`; sole product base remains
+`5f7df84d`. Only product change: `collectors/workshop_collectors/workflow.py`.
+Independent expected derivation, every raw identity/epoch/cursor/watermark and
+native evidence check, plus global safety guard, are preserved byte-for-byte.
+Canonical equality remains mandatory for active/terminal source mappings.
+Unknown source mappings permit only current mapped equality OR the full latched,
+supported ACTIVE/source_record, invalidated-acquisition, unknown-quality retained
+presentation. Rows explicitly distinguish `retained_prior_fact` from `current`;
+projected/retained lifecycle reports the actual retained fact, never invented
+current truth. `scripts/observe_workflow.py` needs no change and is untouched.
+
+New committed regression file: 34 tests, including real synthetic running ->
+reopen -> blocked/scheduled/terminal/new-active outbox delivery (2 retained +
+2 current rows), ignored records still retained as newest raw provenance,
+per-guard negatives that first prove unmodified inputs pass, active/terminal
+mismatch rejection, unsupported-prior -> active rejection, and fresh first
+observations. Red baseline preserved (5 failures/29 passes); final unchanged
+baseline568 + new34 = **602 backend**, **57 frontend**, **four real synthetic
+TCP/Chromium tests zero-skip**, typecheck/build/schema/compile/repeatable demos
+PASS. Dev audit still exits1 with exactly accepted HIGH GHSA-834v-8h66-3h79;
+production audit zero. No dependency/lock changes or new package adoption;
+existing approved environments copied locally. Claude Code absent (PATH and
+standard local/npm locations checked); bounded direct implementation fallback,
+not a fabricated harness success. Evidence: `evidence/retained-agreement/`.
+
+Independent exact-head Gate B `t_1160dd3c` must approve before Core/root release.
+Implementation-phase completion releases that pre-created review; no same-card
+review duplication. PR targets `docs/release1-mvp-closure`; no self-approval,
+merge or deployment. Root still owns fresh post-review merged-head live/native
+fence and un-reset historian/installed HTTPS verification and the sole owner-ready
+notification. This task ran synthetic state only: no installed/native state read
+or write, no historian reset, no service restart, no backend/adapter/schema edits.
+All original sealed evidence and prior RESUME text below remain unchanged.
+RESUME is a serialized hotspot; this is one additive isolated edit.
+
 ## Root final recheck — audit accepted; live agreement decision OPEN (25 October 2026)
 
 Core's `t_817d72ca` time-bounded dev-only Happy DOM risk disposition is accepted,

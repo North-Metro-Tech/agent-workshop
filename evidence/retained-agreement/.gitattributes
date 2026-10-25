@@ -1,0 +1,3 @@
+# Preserve only raw pre-fix pytest trace whitespace; source checks stay enabled.
+red.txt whitespace=-blank-at-eol
+red.xml whitespace=-blank-at-eol

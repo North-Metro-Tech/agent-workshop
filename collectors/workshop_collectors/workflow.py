@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Same-acquisition source/projection agreement, never a fleet health claim."""
 from workshop.contracts import ExecutionKey, TaskKey
+from workshop.reducer import ACTIVE
 from .outbox import _observation_id
 
 
@@ -52,9 +53,21 @@ def verify_agreement(observer, snapshot, storage, *, now):
         status = run['status'] if run['status'] in _NATIVE_STATUS else 'unknown'
         outcome = run['outcome'] if run['outcome'] in _NATIVE_OUTCOME else 'unknown'
         task = TaskKey(work.source_instance, work.board, run['task_id'])
-        checks = [fact.task == task, fact.lifecycle.mapped == expected,
+        current = fact.lifecycle.mapped == expected and view['lifecycle']['mapped'] == expected
+        # Reopen deliberately invalidates acquisition and retains earlier active
+        # facts when an unsupported native lifecycle cannot prove a newer fact.
+        # This is presentation agreement, NOT current canonical lifecycle proof.
+        retained_prior = (expected == 'unknown' and not current
+            and ingest.reconcile_required is True
+            and fact.lifecycle.mapped in ACTIVE and fact.lifecycle.supported is True
+            and fact.lifecycle.evidence_class == 'source_record'
+            and fact.acquired_at is None
+            and view['lifecycle']['mapped'] == fact.lifecycle.mapped
+            and view['lifecycle']['supported'] is True
+            and view['lifecycle_quality'] == 'unknown')
+        checks = [fact.task == task, current or retained_prior,
             fact.lifecycle.evidence_class == 'source_record', record['lifecycle'] == expected,
-            view['lifecycle']['mapped'] == expected, view['lifecycle']['evidence_class'] == 'source_record',
+            view['lifecycle']['evidence_class'] == 'source_record',
             view['task'] == {'source_instance': task.source_instance,
                             'namespace': task.namespace, 'native_id': task.native_id},
             attrs['workshop.hermes.process'] == evidence['process'] == record['process'],
@@ -68,10 +81,13 @@ def verify_agreement(observer, snapshot, storage, *, now):
         comparisons.append({'execution_id': identity, 'task': view['task'],
             'native_attempt_status': record['attempt_status'],
             'native_attempt_outcome': record['attempt_outcome'],
-            'native_task_station': evidence['task_station'], 'projected_lifecycle': expected,
+            'native_task_station': evidence['task_station'],
+            'projected_lifecycle': view['lifecycle']['mapped'],
             'process_at_acquisition': evidence['process'], 'lifecycle_evidence': 'source_record',
             'progress': 'unknown', 'tool_activity': 'unsupported', 'retry': 'not_requested',
-            'agrees': True})
+            'agrees': True, 'agreement_basis': 'retained_prior_fact' if retained_prior else 'current',
+            **({'retained_lifecycle': fact.lifecycle.mapped, 'lifecycle_quality': 'unknown',
+                'reconcile_latched': True} if retained_prior else {})})
     if (projection['native_write_enabled'] or saved.reducer.roles[observer.binding.role].complete
             or saved.reducer.summary(observer.binding.role, now=now)['availability'] != 'unknown'):
         raise ValueError('Partial native observation promoted to runtime availability/control')

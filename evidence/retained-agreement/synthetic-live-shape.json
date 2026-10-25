@@ -1,0 +1,101 @@
+{
+  "source_projection_agreement": true,
+  "compared_attempts": 4,
+  "comparisons": [
+    {
+      "execution_id": "1",
+      "task": {
+        "source_instance": "synthetic-instance",
+        "namespace": "synthetic-board",
+        "native_id": "task"
+      },
+      "native_attempt_status": "blocked",
+      "native_attempt_outcome": "blocked",
+      "native_task_station": "running",
+      "projected_lifecycle": "active",
+      "process_at_acquisition": "alive",
+      "lifecycle_evidence": "source_record",
+      "progress": "unknown",
+      "tool_activity": "unsupported",
+      "retry": "not_requested",
+      "agrees": true,
+      "agreement_basis": "retained_prior_fact",
+      "retained_lifecycle": "active",
+      "lifecycle_quality": "unknown",
+      "reconcile_latched": true
+    },
+    {
+      "execution_id": "2",
+      "task": {
+        "source_instance": "synthetic-instance",
+        "namespace": "synthetic-board",
+        "native_id": "task"
+      },
+      "native_attempt_status": "unknown",
+      "native_attempt_outcome": "unknown",
+      "native_task_station": "running",
+      "projected_lifecycle": "active",
+      "process_at_acquisition": "unknown",
+      "lifecycle_evidence": "source_record",
+      "progress": "unknown",
+      "tool_activity": "unsupported",
+      "retry": "not_requested",
+      "agrees": true,
+      "agreement_basis": "retained_prior_fact",
+      "retained_lifecycle": "active",
+      "lifecycle_quality": "unknown",
+      "reconcile_latched": true
+    },
+    {
+      "execution_id": "3",
+      "task": {
+        "source_instance": "synthetic-instance",
+        "namespace": "synthetic-board",
+        "native_id": "task"
+      },
+      "native_attempt_status": "done",
+      "native_attempt_outcome": "completed",
+      "native_task_station": "running",
+      "projected_lifecycle": "succeeded",
+      "process_at_acquisition": "unknown",
+      "lifecycle_evidence": "source_record",
+      "progress": "unknown",
+      "tool_activity": "unsupported",
+      "retry": "not_requested",
+      "agrees": true,
+      "agreement_basis": "current"
+    },
+    {
+      "execution_id": "4",
+      "task": {
+        "source_instance": "synthetic-instance",
+        "namespace": "synthetic-board",
+        "native_id": "task"
+      },
+      "native_attempt_status": "running",
+      "native_attempt_outcome": "unknown",
+      "native_task_station": "running",
+      "projected_lifecycle": "active",
+      "process_at_acquisition": "unknown",
+      "lifecycle_evidence": "source_record",
+      "progress": "unknown",
+      "tool_activity": "unsupported",
+      "retry": "not_requested",
+      "agrees": true,
+      "agreement_basis": "current"
+    }
+  ],
+  "native_snapshot_complete": true,
+  "truncated_tables": [],
+  "native_event_cursor": 1,
+  "atomic_runtime_watermark": null,
+  "runtime_coverage": "partial",
+  "acquisition_evidence": {
+    "original_acquired_at": 12,
+    "epoch": "69f014a2f3a041528c7e0a1892fe4c8f",
+    "source_cursor": 2,
+    "immutable_acquisition_identity_verified": true
+  },
+  "role_availability": "unknown",
+  "native_write_enabled": false
+}
