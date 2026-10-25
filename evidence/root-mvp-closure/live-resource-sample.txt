@@ -1,0 +1,83 @@
+COMMAND: ['/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/.venv/bin/python', '/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/evidence/root-mvp-closure/verify-installed.py', 'sample']
+{
+  "at": "2026-10-25T06:58:35.586336+00:00",
+  "monotonic": 395712.585592548,
+  "unit": {
+    "Restart": "no",
+    "MainPID": "1472920",
+    "NRestarts": "0",
+    "MemoryCurrent": "109510656",
+    "ActiveState": "active",
+    "SubState": "running",
+    "UnitFileState": "disabled"
+  },
+  "rss_kb": 79800,
+  "revision": 92506,
+  "retained_revisions": 128,
+  "oldest": 92379,
+  "revision_event_bytes": 28492211,
+  "state_bytes": 1234010,
+  "allocated_db_wal_shm_bytes": 39232832,
+  "anchors": [
+    92379,
+    92385,
+    92417,
+    92449,
+    92481
+  ],
+  "executions": 42,
+  "observation_counts": {
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='1')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='2')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='3')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='4')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='5')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='6')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='7')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='8')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='9')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='10')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='11')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='12')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='13')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='14')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='15')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='16')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='17')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='18')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='19')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='20')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='21')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='22')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='23')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='24')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='25')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='26')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='27')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='28')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='29')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='30')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='31')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='32')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='33')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='34')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='35')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='36')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='37')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='38')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='39')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='40')": 64,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='41')": 1,
+    "ExecutionKey(runtime='local-hermes-agent-workshop/agent-workshop/kanban-attempts', native_id='42')": 1
+  },
+  "record_counts": [
+    256
+  ],
+  "seen_counts": [
+    512
+  ],
+  "outbox_pending": 1,
+  "outbox_allocated_bytes": 4247200
+}
+
+EXIT_CODE: 0

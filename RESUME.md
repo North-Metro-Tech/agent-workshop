@@ -1,5 +1,46 @@
 # RESUME — Agent Workshop
 
+## Root MVP recheck — owner PASS; new development-audit gate OPEN (25 October 2026)
+
+Root `t_7e8a8223` rechecked the installed/Core-approved tailnet-origin merge
+`5f7df84da20206a89d87a8ed692dff537edfefc4` in a new clean clone. Owner desktop
+actual-use PASS is recorded by Core on `t_a87670b9` (25 October); do not ask for
+that review again. Named-device enrolment and the authorised tailnet-only path
+were accepted there. Live HTTPS and loopback both return 200; real Chromium on
+the HTTPS path compares all 42 execution/task links, selects this root's actual
+run 42, and matches exact durable schema2 revisions 92504/92505. Native controls
+remain fixed off, coverage partial and availability unknown. Service remains
+active/running, Restart=no, boot disabled, with no restart or deployment by this
+root recheck. Canonical execution acquisition remains unknown after restart's
+reconciliation latch; fresh HTTP transport must not be treated as fresh execution
+proof. The original overstrict numeric-age QA failure is preserved separately.
+
+Fresh exact-head results: 568 backend / 57 frontend / four actual synthetic TCP
+Chromium tests, all zero-skip; typecheck/build/schema and clean-checkout demos
+pass. Twelve named §16 transcripts remain committed at signed final-sweep
+`df2ef871a6f45c1c82d65bb055ac500403fce80f` (d56e3ccf product), not relabelled as
+fresh scenario runs at this newer head. Phase 3 independent audit and Core's
+independent tailnet merge/delivery remain accepted upstream.
+
+NEW BLOCKER: full development `sfw npm audit --include=dev` now reports one high
+advisory, GHSA-834v-8h66-3h79 / CVE-2026-115895, on pinned happy-dom 21.0.1.
+Production-only audit is clean; Happy DOM is a development test environment, not
+a shipped application import. That distinction is not a silent audit waiver.
+Patched 21.0.4 was published 20 October 2026 18:05:53.295 UTC and cannot clear
+the seven-day quarantine until 28 October 2026 05:05:53.295 AEDT without an
+explicit PO exception. No package/lock change, forced audit fix, age bypass,
+untrusted-module exploit, or service/native-state mutation has been performed.
+Core must disposition the development-only risk or route a quarantine-compliant
+minimal remedy and independent verification before root completion.
+
+Raw logs, JUnit, browser reports, registry metadata and failed attempts are in
+`evidence/root-mvp-closure/`. This isolated local-only branch changes evidence and
+this one additive RESUME entry only; every older section below is historical and
+preserved verbatim. The installed checkout/OPERATOR/service remain untouched.
+Do NOT send the owner-ready message or claim MVP completion from this checkpoint.
+Owner first use occurred today, but the 30-day validation/write-up remains a
+separate post-gate activity, not completed or self-certified here.
+
 ## Phase 3 F1–F3 remediation implementation — independent acceptance pending
 
 Task `t_1503dfef`, branch `fix/phase3-service-history-annunciation`, based on

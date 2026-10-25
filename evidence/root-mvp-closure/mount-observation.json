@@ -1,0 +1,6 @@
+{
+  "pid": "1472920",
+  "native_mount": "30 1 8:2 / / rw,relatime shared:1 - ext4 /dev/sda2 rw",
+  "effective_readonly_observed": false,
+  "limit": "Observation only; systemd requested properties do not establish effective restrictions"
+}

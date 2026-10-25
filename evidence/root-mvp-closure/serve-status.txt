@@ -1,0 +1,15 @@
+COMMAND: ['tailscale', 'serve', 'status']
+https://frankenfarm.taile4f46c.ts.net:10000 (tailnet only)
+|-- / proxy http://127.0.0.1:8765
+
+https://frankenfarm.taile4f46c.ts.net (tailnet only)
+|-- / path  /home/aaron/skysteps/dist
+
+https://frankenfarm.taile4f46c.ts.net:4599 (tailnet only)
+|-- / proxy http://127.0.0.1:4600
+
+https://frankenfarm.taile4f46c.ts.net:8443 (tailnet only)
+|-- / path  /home/aaron/toyshop-escape/dist
+
+
+EXIT_CODE: 0

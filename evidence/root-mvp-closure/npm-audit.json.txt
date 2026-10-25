@@ -1,0 +1,59 @@
+COMMAND: ['sfw', 'npm', 'audit', '--include=dev', '--json']
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "happy-dom": {
+      "name": "happy-dom",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1243084,
+          "name": "happy-dom",
+          "dependency": "happy-dom",
+          "title": "Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution",
+          "url": "https://github.com/advisories/GHSA-834v-8h66-3h79",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 8.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "range": ">=17.0.0 <=21.0.3"
+        }
+      ],
+      "effects": [],
+      "range": "17.0.0 - 21.0.3",
+      "nodes": [
+        "node_modules/happy-dom"
+      ],
+      "fixAvailable": {
+        "name": "happy-dom",
+        "version": "21.0.4",
+        "isSemVerMajor": false
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 1,
+      "critical": 0,
+      "total": 1
+    },
+    "dependencies": {
+      "prod": 4,
+      "dev": 96,
+      "optional": 47,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 99
+    }
+  }
+}
+
+EXIT_CODE: 1

@@ -1,0 +1,3 @@
+COMMAND: ['git', 'restore', 'evidence/phase3-npm-quarantine.json']
+
+EXIT_CODE: 0

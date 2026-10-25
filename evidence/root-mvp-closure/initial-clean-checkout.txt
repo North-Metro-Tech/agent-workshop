@@ -1,0 +1,4 @@
+COMMAND: ['git', 'status', '--porcelain']
+?? evidence/root-mvp-closure/
+
+EXIT_CODE: 0

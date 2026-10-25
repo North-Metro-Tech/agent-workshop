@@ -1,0 +1,3 @@
+COMMAND: ['git', 'restore', '--', 'evidence/phase3-remediation/browser-scene.png']
+
+EXIT_CODE: 0

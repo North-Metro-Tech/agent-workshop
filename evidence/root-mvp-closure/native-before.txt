@@ -1,0 +1,4 @@
+COMMAND: ['/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/.venv/bin/python', '/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/evidence/root-mvp-closure/verify-installed.py', 'before']
+Captured native fence and actual mountinfo; no effective hardening inference
+
+EXIT_CODE: 0

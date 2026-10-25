@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "exact_service_revision_checks": [
+    {
+      "file": "browser-snapshot-initial.json",
+      "cursor": "11b81ad2e71345f58d79cc97b3b78e9e:92504",
+      "items": 67,
+      "source_cursor": 92502,
+      "outbox_epoch": "9520297153284dedbd42c376b7a44c04",
+      "all_items_equal_exact_durable_revision": true,
+      "native_identity_matches": true,
+      "original_record_identities_verified": true
+    },
+    {
+      "file": "browser-snapshot-final.json",
+      "cursor": "11b81ad2e71345f58d79cc97b3b78e9e:92505",
+      "items": 67,
+      "source_cursor": 92503,
+      "outbox_epoch": "9520297153284dedbd42c376b7a44c04",
+      "all_items_equal_exact_durable_revision": true,
+      "native_identity_matches": true,
+      "original_record_identities_verified": true
+    }
+  ],
+  "live_outbox": {
+    "epoch": "9520297153284dedbd42c376b7a44c04",
+    "next_cursor": 92505,
+    "pending_at_readback": 0
+  },
+  "native_fence": {
+    "before": {
+      "main_sha256": "00603f010c98f44ebe492c20e97d5e1f339191b893b36bcf1c9249a88b230192",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "after": {
+      "main_sha256": "00603f010c98f44ebe492c20e97d5e1f339191b893b36bcf1c9249a88b230192",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true,
+    "limits": "Main/schema measured interval only; concurrent native writers live; excludes WAL/SHM; no causal write-attribution or kernel read-only boundary claim"
+  }
+}
