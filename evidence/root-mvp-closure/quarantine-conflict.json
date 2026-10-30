@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-10-25T06:56:44.704094+00:00",
+  "installed": "happy-dom@21.0.1",
+  "patched": "happy-dom@21.0.4",
+  "patched_published_utc": "2026-10-20T18:05:53.295000+00:00",
+  "patched_age_days": 4.53531723488426,
+  "quarantine_eligible_utc": "2026-10-27T18:05:53.295000+00:00",
+  "quarantine_eligible_aedt": "2026-10-28T05:05:53.295000+11:00",
+  "eligible_now": false,
+  "advisory": "GHSA-834v-8h66-3h79",
+  "no_fix_or_override_installed": true
+}

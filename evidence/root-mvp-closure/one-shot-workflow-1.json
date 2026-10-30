@@ -1,0 +1,837 @@
+{
+  "acquisition_evidence": {
+    "epoch": "59049f5eec444868ba8d050378a1a104",
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 395638.190960334,
+    "source_cursor": 1
+  },
+  "actual_live_observation": true,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 42,
+  "comparisons": [
+    {
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_941ea707",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "archived",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a759113b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "4",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_9466d0f8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "5",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f6e9e637",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "6",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_dbf6fb11",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "7",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "8",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_69111745",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "9",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_bbfe861b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "10",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f11a8ea8",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "11",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "running",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "12",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "running",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "13",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "14",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_3da4ecd5",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "15",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "16",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a2a9747f",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "17",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "timed_out",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_1503dfef",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "18",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_1503dfef",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "19",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_86139b05",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "20",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_86139b05",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "21",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_86139b05",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "22",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_86139b05",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "23",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_f429ab51",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "24",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "25",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_684f0878",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "26",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "27",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "28",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "29",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_4002229b",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "30",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_2ec73616",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "31",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_6ea78601",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "32",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_127a054a",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "33",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_aa215edd",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "34",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_41c8ebed",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "35",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_41c8ebed",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "36",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_41c8ebed",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "37",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_2ec73616",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "38",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "blocked",
+      "native_attempt_status": "blocked",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a87670b9",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "39",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_989a6842",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "40",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_65bd6a42",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "41",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "unknown",
+      "native_task_station": "done",
+      "process_at_acquisition": "unknown",
+      "progress": "unknown",
+      "projected_lifecycle": "unknown",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_a87670b9",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agrees": true,
+      "execution_id": "42",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "agent-workshop",
+        "native_id": "t_7e8a8223",
+        "source_instance": "local-hermes-agent-workshop"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "historian": {
+    "reconcile_required": false,
+    "reopened": false,
+    "source_cursor": 1,
+    "startup_live_freshness_invalidated": true
+  },
+  "limitations": [
+    "Only this approved local board and profile scope, not fleet-wide health or MVP readiness.",
+    "Bounded source tables plus later proc observations have no atomic runtime watermark.",
+    "Partial native/event history never implies complete runtime coverage or deletion of unseen records.",
+    "Same-acquisition comparison, not continuous capture of all workflow transitions.",
+    "No live silent-tool/forced station transition/uninstall/schedule access was performed.",
+    "Main/schema hashes exclude WAL/SHM coordination; native writers were not stopped.",
+    "Outbox bounds logical pending payloads; historian/domain history and SQLite physical files are not byte-capped.",
+    "Comparable monotonic boot clock required; new boot/configuration needs explicit recovery, never timestamp rebasing.",
+    "Core independent review/merge is the Phase 2 acceptance gate; no renderer or running service."
+  ],
+  "native_event_cursor": 3760,
+  "native_fence": {
+    "after": {
+      "main_sha256": "aeca278afe01a4e42164c1c0bb2f78a99ad5397579379890d80e2fe616e42413",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "before": {
+      "main_sha256": "aeca278afe01a4e42164c1c0bb2f78a99ad5397579379890d80e2fe616e42413",
+      "schema_sha256": "e2ca7ff5b0ca7b6cee138b6d79c891eaa66e709602bf2d41bd6e3befa872eb7d"
+    },
+    "unchanged": true
+  },
+  "native_snapshot_complete": false,
+  "native_write_enabled": false,
+  "outbox": {
+    "delivered_cursor": 1,
+    "epoch": "59049f5eec444868ba8d050378a1a104",
+    "next_cursor": 2,
+    "observations_accepted": 42,
+    "overflow_policy": "reject-no-drop",
+    "payload_bytes": 0,
+    "pending": 0,
+    "pending_before_acquisition": 0,
+    "runtime_coverage": "partial"
+  },
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "scenario_coverage": {
+    "A05": "actual acquired process/source agreement; silence/PID-reuse/turn variants isolated",
+    "A06": "actual acquired station/attempt independence; forced blocked/review/ack variants isolated",
+    "A08": "actual initial durable delivery/readback; reopen not yet exercised; crash/overflow/disconnect variants isolated",
+    "A10": "actual same-data empty-scope denial + main/schema invariant; DML interlock attacks isolated",
+    "A25": "one-shot observer exits; uninstall/restore + schedule invariants isolated, not shared live operations"
+  },
+  "scope": {
+    "board": "agent-workshop",
+    "profiles": [
+      "coder",
+      "default"
+    ],
+    "source_instance": "local-hermes-agent-workshop"
+  },
+  "source_projection_agreement": true,
+  "task_scope_denial": {
+    "actual_source_data": true,
+    "empty_scope_denied": true,
+    "historian_unchanged": true
+  },
+  "truncated_tables": [
+    "task_events"
+  ]
+}

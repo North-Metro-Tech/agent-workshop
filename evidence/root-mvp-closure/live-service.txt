@@ -1,0 +1,9 @@
+COMMAND: ['systemctl', '--user', 'show', 'agent-workshop-release1.service', '-p', 'ActiveState', '-p', 'SubState', '-p', 'Restart', '-p', 'NRestarts', '-p', 'UnitFileState', '-p', 'ExecMainStartTimestamp']
+Restart=no
+NRestarts=0
+ExecMainStartTimestamp=Sat 2026-10-24 22:02:06 AEDT
+ActiveState=active
+SubState=running
+UnitFileState=disabled
+
+EXIT_CODE: 0

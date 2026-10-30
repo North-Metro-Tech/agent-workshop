@@ -1,0 +1,3 @@
+COMMAND: ['/home/aaron/hermes-agent/.venv/bin/python', 'scripts/dev.py', 'check']
+
+EXIT_CODE: 0

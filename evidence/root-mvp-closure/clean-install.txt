@@ -1,0 +1,4 @@
+COMMAND: ['/home/aaron/hermes-agent/.venv/bin/python', 'scripts/dev.py', 'install']
+Workshop source linked in /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/.venv
+
+EXIT_CODE: 0

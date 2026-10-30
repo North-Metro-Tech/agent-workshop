@@ -1,5 +1,123 @@
 # RESUME — Agent Workshop
 
+## Retained-fact verifier correction — implementation only, review pending (25 October 2026)
+
+Gate A `t_53f5e3fb` implements Core's normative `t_38604cb5` disposition on
+`fix/release1-retained-agreement`, from exact signed checkpoint
+`5ee7ab43697ef8fc5b583341e4c45703184d586b`; sole product base remains
+`5f7df84d`. Only product change: `collectors/workshop_collectors/workflow.py`.
+Independent expected derivation, every raw identity/epoch/cursor/watermark and
+native evidence check, plus global safety guard, are preserved byte-for-byte.
+Canonical equality remains mandatory for active/terminal source mappings.
+Unknown source mappings permit only current mapped equality OR the full latched,
+supported ACTIVE/source_record, invalidated-acquisition, unknown-quality retained
+presentation. Rows explicitly distinguish `retained_prior_fact` from `current`;
+projected/retained lifecycle reports the actual retained fact, never invented
+current truth. `scripts/observe_workflow.py` needs no change and is untouched.
+
+New committed regression file: 34 tests, including real synthetic running ->
+reopen -> blocked/scheduled/terminal/new-active outbox delivery (2 retained +
+2 current rows), ignored records still retained as newest raw provenance,
+per-guard negatives that first prove unmodified inputs pass, active/terminal
+mismatch rejection, unsupported-prior -> active rejection, and fresh first
+observations. Red baseline preserved (5 failures/29 passes); final unchanged
+baseline568 + new34 = **602 backend**, **57 frontend**, **four real synthetic
+TCP/Chromium tests zero-skip**, typecheck/build/schema/compile/repeatable demos
+PASS. Dev audit still exits1 with exactly accepted HIGH GHSA-834v-8h66-3h79;
+production audit zero. No dependency/lock changes or new package adoption;
+existing approved environments copied locally. Claude Code absent (PATH and
+standard local/npm locations checked); bounded direct implementation fallback,
+not a fabricated harness success. Evidence: `evidence/retained-agreement/`.
+
+Independent exact-head Gate B `t_1160dd3c` must approve before Core/root release.
+Implementation-phase completion releases that pre-created review; no same-card
+review duplication. PR targets `docs/release1-mvp-closure`; no self-approval,
+merge or deployment. Root still owns fresh post-review merged-head live/native
+fence and un-reset historian/installed HTTPS verification and the sole owner-ready
+notification. This task ran synthetic state only: no installed/native state read
+or write, no historian reset, no service restart, no backend/adapter/schema edits.
+All original sealed evidence and prior RESUME text below remain unchanged.
+RESUME is a serialized hotspot; this is one additive isolated edit.
+
+## Root final recheck — audit accepted; live agreement decision OPEN (25 October 2026)
+
+Core's `t_817d72ca` time-bounded dev-only Happy DOM risk disposition is accepted,
+NOT a clean dev audit/age exception. Exact21.0.4 patch `t_89910f17` remains
+scheduled for28Oct05:05:53.295AEDT with independent Core review/merge
+`t_d2afc283`. Owner actual-use PASS remains accepted; no repeat owner review.
+
+Fresh rerun on unchanged approved installed5f7df84d: **568 backend/57 frontend/
+four real synthetic TCP/Chromium tests, zero skips**, typecheck/build/schema/
+repeatable demos PASS. Actual full dev audit still one accepted HIGH, production
+audit zero. But final approved-local workflow acquisition now **FAILS source/
+projection agreement for attempt42** after its running->blocked transition:
+latest native mapping unknown, raw newer record retained, canonical lifecycle
+remains prior active (quality unknown). Independent actual installed HTTPS
+Chromium shows the same mismatch for42 and44 (scheduled patch attempt);
+43 succeeded/45 active match. Exact captured schema2 revisions93700/93701
+match all72 browser items; native main/schema unchanged in measured interval.
+Browser/historian equality is NOT current native lifecycle agreement. Service
+still active/running, Restart=no/NRestarts0/boot disabled, unchanged24Oct22:02
+start; no installed product/service/native changes.
+
+Preserved failure and read-only diagnostics: `evidence/root-mvp-final-recheck/`
+REPORT.md, one-shot-workflow-1.json (non-JSON traceback), agreement-diagnostic.json,
+live-diagnostic-report.json, exact durable browser snapshots/readback and raw
+fresh test/audit logs. Original fb56ff6 evidence unchanged. Mechanism appears
+conservative reconciliation/acquisition ordering (`ingest.py:318-319,395-410`),
+but conflicts with current lifecycle-equality verifier. No timestamp invention,
+state reset, assertion weakening, product patch or all45 agreement claim.
+
+**New Core/default prerequisite t_38604cb5** classifies whether retained-fact
+semantics need an approved verification/presentation correction or an adapter/
+domain repair; any implementation/review must be gated before root release.
+Linked as root's parent, NOT vice versa. **MVP root incomplete; no owner-ready
+notification.** This is not the resolved advisory decision or owner acceptance.
+Next root run must read that disposition and rerun required fresh live checks.
+30-day daily use remains outside this gate. This additive isolated documentation
+checkpoint preserves every earlier section below.
+
+## Root MVP recheck — owner PASS; new development-audit gate OPEN (25 October 2026)
+
+Root `t_7e8a8223` rechecked the installed/Core-approved tailnet-origin merge
+`5f7df84da20206a89d87a8ed692dff537edfefc4` in a new clean clone. Owner desktop
+actual-use PASS is recorded by Core on `t_a87670b9` (25 October); do not ask for
+that review again. Named-device enrolment and the authorised tailnet-only path
+were accepted there. Live HTTPS and loopback both return 200; real Chromium on
+the HTTPS path compares all 42 execution/task links, selects this root's actual
+run 42, and matches exact durable schema2 revisions 92504/92505. Native controls
+remain fixed off, coverage partial and availability unknown. Service remains
+active/running, Restart=no, boot disabled, with no restart or deployment by this
+root recheck. Canonical execution acquisition remains unknown after restart's
+reconciliation latch; fresh HTTP transport must not be treated as fresh execution
+proof. The original overstrict numeric-age QA failure is preserved separately.
+
+Fresh exact-head results: 568 backend / 57 frontend / four actual synthetic TCP
+Chromium tests, all zero-skip; typecheck/build/schema and clean-checkout demos
+pass. Twelve named §16 transcripts remain committed at signed final-sweep
+`df2ef871a6f45c1c82d65bb055ac500403fce80f` (d56e3ccf product), not relabelled as
+fresh scenario runs at this newer head. Phase 3 independent audit and Core's
+independent tailnet merge/delivery remain accepted upstream.
+
+NEW BLOCKER: full development `sfw npm audit --include=dev` now reports one high
+advisory, GHSA-834v-8h66-3h79 / CVE-2026-115895, on pinned happy-dom 21.0.1.
+Production-only audit is clean; Happy DOM is a development test environment, not
+a shipped application import. That distinction is not a silent audit waiver.
+Patched 21.0.4 was published 20 October 2026 18:05:53.295 UTC and cannot clear
+the seven-day quarantine until 28 October 2026 05:05:53.295 AEDT without an
+explicit PO exception. No package/lock change, forced audit fix, age bypass,
+untrusted-module exploit, or service/native-state mutation has been performed.
+Core must disposition the development-only risk or route a quarantine-compliant
+minimal remedy and independent verification before root completion.
+
+Raw logs, JUnit, browser reports, registry metadata and failed attempts are in
+`evidence/root-mvp-closure/`. This isolated local-only branch changes evidence and
+this one additive RESUME entry only; every older section below is historical and
+preserved verbatim. The installed checkout/OPERATOR/service remain untouched.
+Do NOT send the owner-ready message or claim MVP completion from this checkpoint.
+Owner first use occurred today, but the 30-day validation/write-up remains a
+separate post-gate activity, not completed or self-certified here.
+
 ## Phase 3 F1–F3 remediation implementation — independent acceptance pending
 
 Task `t_1503dfef`, branch `fix/phase3-service-history-annunciation`, based on

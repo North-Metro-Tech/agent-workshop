@@ -1,0 +1,5 @@
+COMMAND: ['/home/aaron/hermes-agent/.venv/bin/python', '-m', 'pytest', '-q', 'backend/tests/test_workflow_retained.py', '--junitxml=/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_53f5e3fb/retained-agreement/evidence/retained-agreement/focused.xml']
+..................................                                       [100%]
+34 passed in 3.51s
+
+EXIT_CODE: 0

@@ -1,0 +1,37 @@
+COMMAND: ['node', '/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/evidence/root-mvp-closure/live-browser.mjs']
+{
+  "result": "PASS",
+  "origin": "https://frankenfarm.taile4f46c.ts.net:10000",
+  "source_mode": "approved-local",
+  "connection_quality": "fresh",
+  "compared_executions": 42,
+  "all_execution_lifecycle_task_links_match_separate_native_acquisition": true,
+  "target_execution": "42",
+  "target_task": "t_7e8a8223",
+  "target_process_at_separate_acquisition": "alive",
+  "selected_detail_facts": 22,
+  "canvas_pixels": true,
+  "live_cursor_advanced": true,
+  "initial_cursor": "11b81ad2e71345f58d79cc97b3b78e9e:92504",
+  "final_cursor": "11b81ad2e71345f58d79cc97b3b78e9e:92505",
+  "history_entries": 100,
+  "keyboard_detail_focus": true,
+  "admission_hold_disconnected": true,
+  "controller_does_not_enable_controls": true,
+  "native_write_enabled": false,
+  "session_reload": true,
+  "new_context_requires_auth": true,
+  "host_origin_query_boundary": true,
+  "no_execute_route": true,
+  "browser_storage_entries": 0,
+  "page_errors": [],
+  "coverage": "partial",
+  "availability": "unknown",
+  "limits": [
+    "Native comparison uses a separately timed acquisition; historian exact-revision verification is a separate step.",
+    "No manual assistive-technology speech or owner daily-use judgement.",
+    "No native controls, forced native task changes, remote exposure or broader fleet discovery."
+  ]
+}
+
+EXIT_CODE: 0

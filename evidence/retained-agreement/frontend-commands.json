@@ -1,0 +1,26 @@
+{
+  "frontend-test.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "frontend-typecheck.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "frontend-build.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "browser.txt": {
+    "exit_code": 0,
+    "expected_exit": 0
+  },
+  "npm-audit.json": {
+    "exit_code": 1,
+    "expected_exit": 1
+  },
+  "npm-production-audit.json": {
+    "exit_code": 0,
+    "expected_exit": 0
+  }
+}

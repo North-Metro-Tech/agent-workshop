@@ -1,0 +1,92 @@
+COMMAND: ['/home/aaron/hermes-agent/.venv/bin/python', 'scripts/dev.py', 'collector-demo']
+{
+  "acquisition_evidence": {
+    "immutable_acquisition_identity_verified": true,
+    "original_acquired_at": 10,
+    "source_cursor": 1
+  },
+  "actual_live_observation": false,
+  "atomic_runtime_watermark": null,
+  "compared_attempts": 3,
+  "comparisons": [
+    {
+      "agreement_basis": "current",
+      "agrees": true,
+      "execution_id": "1",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "unknown",
+      "native_attempt_status": "running",
+      "native_task_station": "running",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "active",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-1",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agreement_basis": "current",
+      "agrees": true,
+      "execution_id": "2",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "blocked",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-2",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    },
+    {
+      "agreement_basis": "current",
+      "agrees": true,
+      "execution_id": "3",
+      "lifecycle_evidence": "source_record",
+      "native_attempt_outcome": "completed",
+      "native_attempt_status": "done",
+      "native_task_station": "review",
+      "process_at_acquisition": "alive",
+      "progress": "unknown",
+      "projected_lifecycle": "succeeded",
+      "retry": "not_requested",
+      "task": {
+        "namespace": "synthetic-board",
+        "native_id": "task-3",
+        "source_instance": "synthetic-instance"
+      },
+      "tool_activity": "unsupported"
+    }
+  ],
+  "delivered_cursor": 1,
+  "feed_quality_at_delivery": "disconnected",
+  "limitations": [
+    "Synthetic fixture DB and process samples only; never live evidence.",
+    "Partial runtime coverage; queued receipt does not refresh original acquisition.",
+    "No global health, renderer, service, native controls or MVP-readiness claim."
+  ],
+  "native_event_cursor": 1,
+  "native_snapshot_complete": true,
+  "native_write_enabled": false,
+  "observations_accepted": 3,
+  "original_acquired_at": 10,
+  "pending": 0,
+  "process_samples": "synthetic, not OS processes",
+  "received_at": 100,
+  "role_availability": "unknown",
+  "runtime_coverage": "partial",
+  "source_projection_agreement": true,
+  "synthetic_only": true,
+  "truncated_tables": []
+}
+
+EXIT_CODE: 0

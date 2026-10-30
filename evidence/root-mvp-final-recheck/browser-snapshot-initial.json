@@ -1,0 +1,6077 @@
+{
+  "cursor": "11b81ad2e71345f58d79cc97b3b78e9e:93700",
+  "generated_at": 397588.092966529,
+  "native_write_enabled": false,
+  "source_mode": "approved-local",
+  "connection_quality": "fresh",
+  "items": [
+    {
+      "id": "role:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\"]",
+      "kind": "role",
+      "label": "local-hermes-agent-workshop/agent-workshop/kanban-attempts · unknown",
+      "station": "roles",
+      "facts": [
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "availability",
+          "value": "unknown"
+        },
+        {
+          "name": "coverage",
+          "value": "not_configured"
+        },
+        {
+          "name": "inventory",
+          "value": "incomplete"
+        },
+        {
+          "name": "claimed_scope",
+          "value": "[]"
+        },
+        {
+          "name": "active_executions",
+          "value": "[]"
+        },
+        {
+          "name": "disputed_executions",
+          "value": "[]"
+        },
+        {
+          "name": "reconciliation_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "indication",
+          "value": "no observed executions / availability unknown"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"1\"]",
+      "kind": "execution",
+      "label": "1",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "1"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/1"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_941ea707"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"2\"]",
+      "kind": "execution",
+      "label": "2",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "2"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/2"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_941ea707"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"3\"]",
+      "kind": "execution",
+      "label": "3",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "3"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/3"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_a759113b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"4\"]",
+      "kind": "execution",
+      "label": "4",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "4"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/4"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_9466d0f8"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"5\"]",
+      "kind": "execution",
+      "label": "5",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "5"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/5"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_f6e9e637"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"6\"]",
+      "kind": "execution",
+      "label": "6",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "6"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/6"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_dbf6fb11"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"7\"]",
+      "kind": "execution",
+      "label": "7",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "7"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/7"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_69111745"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"8\"]",
+      "kind": "execution",
+      "label": "8",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "8"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/8"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_69111745"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"9\"]",
+      "kind": "execution",
+      "label": "9",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "9"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/9"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_bbfe861b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"10\"]",
+      "kind": "execution",
+      "label": "10",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "10"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/10"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_f11a8ea8"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"11\"]",
+      "kind": "execution",
+      "label": "11",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "11"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/11"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_7e8a8223"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"12\"]",
+      "kind": "execution",
+      "label": "12",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "12"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/12"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_7e8a8223"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"13\"]",
+      "kind": "execution",
+      "label": "13",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "13"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/13"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"14\"]",
+      "kind": "execution",
+      "label": "14",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "14"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/14"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_3da4ecd5"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"15\"]",
+      "kind": "execution",
+      "label": "15",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "15"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/15"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_f429ab51"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"16\"]",
+      "kind": "execution",
+      "label": "16",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "16"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/16"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_a2a9747f"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"17\"]",
+      "kind": "execution",
+      "label": "17",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "17"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/17"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_1503dfef"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"18\"]",
+      "kind": "execution",
+      "label": "18",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "18"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/18"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_1503dfef"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"19\"]",
+      "kind": "execution",
+      "label": "19",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "19"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/19"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_86139b05"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"20\"]",
+      "kind": "execution",
+      "label": "20",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "20"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/20"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_86139b05"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"21\"]",
+      "kind": "execution",
+      "label": "21",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "21"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/21"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_86139b05"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"22\"]",
+      "kind": "execution",
+      "label": "22",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "22"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/22"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_86139b05"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"23\"]",
+      "kind": "execution",
+      "label": "23",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "23"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/23"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_f429ab51"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"24\"]",
+      "kind": "execution",
+      "label": "24",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "24"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/24"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"25\"]",
+      "kind": "execution",
+      "label": "25",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "25"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/25"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_684f0878"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"26\"]",
+      "kind": "execution",
+      "label": "26",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "26"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/26"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"27\"]",
+      "kind": "execution",
+      "label": "27",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "27"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/27"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"28\"]",
+      "kind": "execution",
+      "label": "28",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "28"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/28"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"29\"]",
+      "kind": "execution",
+      "label": "29",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "29"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/29"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"30\"]",
+      "kind": "execution",
+      "label": "30",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "30"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/30"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_2ec73616"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"31\"]",
+      "kind": "execution",
+      "label": "31",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "31"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/31"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_6ea78601"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"32\"]",
+      "kind": "execution",
+      "label": "32",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "32"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/32"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_127a054a"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"33\"]",
+      "kind": "execution",
+      "label": "33",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "33"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/33"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_aa215edd"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"34\"]",
+      "kind": "execution",
+      "label": "34",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "34"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/34"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_41c8ebed"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"35\"]",
+      "kind": "execution",
+      "label": "35",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "35"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/35"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_41c8ebed"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"36\"]",
+      "kind": "execution",
+      "label": "36",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "36"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/36"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_41c8ebed"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "247703.074063041"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149885.01890348803"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"37\"]",
+      "kind": "execution",
+      "label": "37",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "37"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/37"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_2ec73616"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "248531.5244267"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "149056.56853982902"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"38\"]",
+      "kind": "execution",
+      "label": "38",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "38"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/38"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_a87670b9"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"39\"]",
+      "kind": "execution",
+      "label": "39",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "39"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/39"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_989a6842"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "322971.111324343"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "disconnected"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "74616.981642186"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"40\"]",
+      "kind": "execution",
+      "label": "40",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "40"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/40"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_65bd6a42"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "64"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"41\"]",
+      "kind": "execution",
+      "label": "41",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "41"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/41"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_a87670b9"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "false"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unsupported"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"42\"]",
+      "kind": "execution",
+      "label": "42",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "42"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/42"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_7e8a8223"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"43\"]",
+      "kind": "execution",
+      "label": "43",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "43"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/43"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_817d72ca"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "2"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"44\"]",
+      "kind": "execution",
+      "label": "44",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "44"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/44"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_89910f17"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "execution:[\"local-hermes-agent-workshop/agent-workshop/kanban-attempts\",\"45\"]",
+      "kind": "execution",
+      "label": "45",
+      "station": "local-hermes-agent-workshop/agent-workshop/kanban-attempts / observed work",
+      "facts": [
+        {
+          "name": "key.runtime",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "key.native_id",
+          "value": "45"
+        },
+        {
+          "name": "role",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "session",
+          "value": "kanban-attempt/45"
+        },
+        {
+          "name": "parent",
+          "value": "unknown"
+        },
+        {
+          "name": "task.source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "task.namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "task.native_id",
+          "value": "t_7e8a8223"
+        },
+        {
+          "name": "lifecycle.native",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapped",
+          "value": "active"
+        },
+        {
+          "name": "lifecycle.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "lifecycle.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "lifecycle.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "lifecycle.supported",
+          "value": "true"
+        },
+        {
+          "name": "lifecycle.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "acquired_at",
+          "value": "unknown"
+        },
+        {
+          "name": "discrepancies",
+          "value": "[]"
+        },
+        {
+          "name": "lifecycle_quality",
+          "value": "unknown"
+        },
+        {
+          "name": "acquisition_age",
+          "value": "unknown"
+        },
+        {
+          "name": "retained_observation_count",
+          "value": "1"
+        },
+        {
+          "name": "history",
+          "value": "bounded retained observations available separately; not current state"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_941ea707\"]",
+      "kind": "task",
+      "label": "t_941ea707",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_941ea707"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "false"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_a759113b\"]",
+      "kind": "task",
+      "label": "t_a759113b",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_a759113b"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "false"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_9466d0f8\"]",
+      "kind": "task",
+      "label": "t_9466d0f8",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_9466d0f8"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_f6e9e637\"]",
+      "kind": "task",
+      "label": "t_f6e9e637",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_f6e9e637"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_dbf6fb11\"]",
+      "kind": "task",
+      "label": "t_dbf6fb11",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_dbf6fb11"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_69111745\"]",
+      "kind": "task",
+      "label": "t_69111745",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_69111745"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_bbfe861b\"]",
+      "kind": "task",
+      "label": "t_bbfe861b",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_bbfe861b"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_f11a8ea8\"]",
+      "kind": "task",
+      "label": "t_f11a8ea8",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_f11a8ea8"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_7e8a8223\"]",
+      "kind": "task",
+      "label": "t_7e8a8223",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_7e8a8223"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "active"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "active"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_4002229b\"]",
+      "kind": "task",
+      "label": "t_4002229b",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_4002229b"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_3da4ecd5\"]",
+      "kind": "task",
+      "label": "t_3da4ecd5",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_3da4ecd5"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_f429ab51\"]",
+      "kind": "task",
+      "label": "t_f429ab51",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_f429ab51"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_a2a9747f\"]",
+      "kind": "task",
+      "label": "t_a2a9747f",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_a2a9747f"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_1503dfef\"]",
+      "kind": "task",
+      "label": "t_1503dfef",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_1503dfef"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_86139b05\"]",
+      "kind": "task",
+      "label": "t_86139b05",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_86139b05"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "false"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_684f0878\"]",
+      "kind": "task",
+      "label": "t_684f0878",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_684f0878"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_2ec73616\"]",
+      "kind": "task",
+      "label": "t_2ec73616",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_2ec73616"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_6ea78601\"]",
+      "kind": "task",
+      "label": "t_6ea78601",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_6ea78601"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_127a054a\"]",
+      "kind": "task",
+      "label": "t_127a054a",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_127a054a"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_aa215edd\"]",
+      "kind": "task",
+      "label": "t_aa215edd",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_aa215edd"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_41c8ebed\"]",
+      "kind": "task",
+      "label": "t_41c8ebed",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_41c8ebed"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_a87670b9\"]",
+      "kind": "task",
+      "label": "t_a87670b9",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_a87670b9"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "false"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_989a6842\"]",
+      "kind": "task",
+      "label": "t_989a6842",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_989a6842"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_65bd6a42\"]",
+      "kind": "task",
+      "label": "t_65bd6a42",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_65bd6a42"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_817d72ca\"]",
+      "kind": "task",
+      "label": "t_817d72ca",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_817d72ca"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "succeeded"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    },
+    {
+      "id": "task:[\"local-hermes-agent-workshop\",\"agent-workshop\",\"t_89910f17\"]",
+      "kind": "task",
+      "label": "t_89910f17",
+      "station": "linked work",
+      "facts": [
+        {
+          "name": "source_instance",
+          "value": "local-hermes-agent-workshop"
+        },
+        {
+          "name": "namespace",
+          "value": "agent-workshop"
+        },
+        {
+          "name": "native_id",
+          "value": "t_89910f17"
+        },
+        {
+          "name": "disposition",
+          "value": "unknown; linked identity only, not accepted outcome"
+        },
+        {
+          "name": "provenance.native",
+          "value": "active"
+        },
+        {
+          "name": "provenance.mapped",
+          "value": "active"
+        },
+        {
+          "name": "provenance.mapping_version",
+          "value": "workshop-ingest-v1"
+        },
+        {
+          "name": "provenance.source",
+          "value": "urn:agentworkshop:hermes:local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.feed",
+          "value": "local-hermes-agent-workshop/agent-workshop/kanban-attempts"
+        },
+        {
+          "name": "provenance.observed_at",
+          "value": "unknown"
+        },
+        {
+          "name": "provenance.supported",
+          "value": "true"
+        },
+        {
+          "name": "provenance.evidence_class",
+          "value": "source_record"
+        },
+        {
+          "name": "coverage",
+          "value": "partial"
+        }
+      ],
+      "attention": false,
+      "acknowledge_id": null
+    }
+  ]
+}
