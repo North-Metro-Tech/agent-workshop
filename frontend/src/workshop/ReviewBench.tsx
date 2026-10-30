@@ -1,0 +1,2 @@
+import type {Projection} from './projection';
+export function ReviewBench({snapshot,onSelect}:{snapshot:Projection;onSelect:(id:string)=>void}){return <section aria-labelledby="review-heading"><h2 id="review-heading">Independent work stations</h2><p>Blocked and review work persists after an execution exits. Source-reported completion is not accepted outcome.</p>{snapshot.items.filter(i=>i.kind==='task').map(i=><p key={i.id}><button onClick={()=>onSelect(i.id)}>{i.station}: {i.label}</button></p>)}</section>;}

@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_127a054a/repo
+configfile: pytest.ini
+plugins: anyio-4.15.0
+collecting ... collected 18 items
+
+backend/tests/test_retention.py::test_sustained_default_policy_bytes_restart_replay_and_protected_facts bounded-growth 180 {"allocated_bytes": 7053312, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 1762448, "revisions": 128, "seen": 512, "state_bytes": 241962}
+bounded-growth 270 {"allocated_bytes": 7528448, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 2007094, "revisions": 128, "seen": 512, "state_bytes": 242271}
+bounded-growth 360 {"allocated_bytes": 7716864, "anchors": 5, "observations": 64, "records": 256, "revision_bytes": 2029323, "revisions": 128, "seen": 512, "state_bytes": 242271}
+PASSED
+backend/tests/test_retention.py::test_collision_discipline_on_both_sides_of_eviction_and_restart PASSED
+backend/tests/test_retention.py::test_transitions_conflicts_correlation_audit_and_original_indices_survive PASSED
+backend/tests/test_retention.py::test_protected_observation_capacity_rejects_atomically_instead_of_pruning PASSED
+backend/tests/test_retention.py::test_metadata_capacity_never_evicts_protected_facts PASSED
+backend/tests/test_retention.py::test_snapshot_newer_key_path_uses_same_retirement_policy PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[replace] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[delete] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[reorder] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[splice] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[nested] PASSED
+backend/tests/test_retention.py::test_delta_codec_roundtrip_changes_only_and_order[types] PASSED
+backend/tests/test_retention.py::test_delta_randomized_roundtrips PASSED
+backend/tests/test_retention.py::test_v1_and_foreign_files_rejected_before_mutation PASSED
+backend/tests/test_retention.py::test_process_change_without_lifecycle_change_survives_metadata_retirement PASSED
+backend/tests/test_retention.py::test_trace_span_correlation_metadata_survives_unchanged_lifecycle[False] PASSED
+backend/tests/test_retention.py::test_trace_span_correlation_metadata_survives_unchanged_lifecycle[True] PASSED
+backend/tests/test_retention.py::test_ignored_terminal_assertion_keeps_original_safe_domain_and_provenance PASSED
+
+======================== 18 passed in 65.12s (0:01:05) =========================

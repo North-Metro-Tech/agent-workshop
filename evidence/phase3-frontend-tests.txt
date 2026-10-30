@@ -1,0 +1,60 @@
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run --reporter=verbose
+
+
+ RUN  v5.0.4 /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/repo/frontend
+
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > clones and deeply freezes one fact hierarchy shared by scene and DOM 3ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > keeps blocked/review tasks when actors exit and units remain independent 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > does not regress revision; accepts identity only through an atomic path 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 0 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 1 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 2 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 3 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 4 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 5 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 6 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > rejects malformed, duplicate or write-enabled snapshots 7 0ms
+ ✓ src/workshop/projection.test.ts > A01/A02/A06/A07/A08 projection truth > keeps unknown signal values explicit rather than coercing availability 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects javascript:alert(1) 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects data:text/html,<script>alert(1)</script> 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://github.com.evil/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://evil.com/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://github.com/North-Metro-Tech/agent-workshop-evil 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://user@github.com/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects http://github.com/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects //github.com/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects file:///etc/passwd 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://github.com/North-Metro-Tech/agent-workshop/../../evil 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > rejects https://github.com:8443/North-Metro-Tech/agent-workshop 0ms
+ ✓ src/workshop/projection.test.ts > A23 evidence URL boundary > permits only the exact HTTPS repository and its subpaths 0ms
+ ✓ src/workshop/projection.test.ts > actual adapted Pixel Agents geometry and raster loop > aligns DOM world points and canvas device pixels at fractional DPR and pan 0ms
+ ✓ src/workshop/projection.test.ts > actual adapted Pixel Agents geometry and raster loop > rasterizes original art using only opaque pixels without image/network APIs 0ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > uses same-origin cookie auth, POST-only secret and CSRF mutation, never query/storage 4ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > rejects unauthenticated sessions and client-side permission escalation 1ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > new browser observer always fetches full snapshot and keeps EventSource URL credential/cursor-free 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > ignores older stream revision and forces snapshot on changed cursor identity 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > buffers snapshot/event race and replays newer revision after reset GET 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > transport error forces disconnected projection and reconnect reacquires atomically 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > a pre-disconnect pending GET cannot restore live quality after error 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > reset invalidates a previous atomic fetch and auth expiry closes stream 3ms
+ ✓ src/workshop/api.test.ts > A08 authenticated atomic transport and recovery > close cancels delivery and invalid JSON never enters projection 3ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > real canvas rendering prints the same selected identity, native/mapped/source/age/evidence facts as DOM 34ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > exposes every scene fact verbatim in equivalent DOM, including identity and quality 16ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > supports arrow/Home/End/Enter/space navigation without interpreting source IDs as selectors 30ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > escapes hostile text, refuses unsafe links and cannot grant authority 13ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > source proof opens the same detail facts, never a terminal 20ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > honours reduced-motion preference, changes and explicit stationary unack markers 12ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > does not animate stale state 8ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > does not animate unknown state 7ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > does not animate disconnected state 9ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > does not animate unsupported state 9ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > operator intersection is strict; viewer/controller remain read-only, hold always disabled 10ms
+ ✓ src/workshop/accessibility.test.tsx > A23 accessible shared scene / DOM > acknowledged-active, cleared-unacked, shelved and suppressed states are preserved, not resolved by UI 29ms
+
+ Test Files  3 passed (3)
+      Tests  47 passed (47)
+   Start at  11:07:31
+   Duration  541ms (environment 64%, tests 25%, import 7%, transform 3%, worker 1%)
+

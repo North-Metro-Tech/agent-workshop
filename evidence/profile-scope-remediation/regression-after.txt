@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+collecting ... collected 37 items / 31 deselected / 6 selected
+
+backend/tests/test_hermes_work.py::test_A10_approved_scope_pins_actual_operator_profiles PASSED [ 16%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[coder] PASSED [ 33%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[default] PASSED [ 50%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[None] PASSED [ 66%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[vitruvius-core] PASSED [ 83%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[unapproved] PASSED [100%]
+
+======================= 6 passed, 31 deselected in 0.29s =======================

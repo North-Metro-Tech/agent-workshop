@@ -1,0 +1,3 @@
+COMMAND: ['curl', '--silent', '--show-error', '--max-time', '20', '-o', '/dev/null', '-w', '%{http_code}', 'https://frankenfarm.taile4f46c.ts.net:10000/']
+200
+EXIT_CODE: 0

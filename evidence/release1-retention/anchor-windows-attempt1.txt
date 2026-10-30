@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /home/aaron/hermes-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_127a054a/repo
+configfile: pytest.ini
+plugins: anyio-4.15.0
+collecting ... collected 22 items / 18 deselected / 4 selected
+
+backend/tests/test_retention.py::test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[2] PASSED [ 25%]
+backend/tests/test_retention.py::test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[8] PASSED [ 50%]
+backend/tests/test_retention.py::test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[33] PASSED [ 75%]
+backend/tests/test_retention.py::test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[128] FAILED [100%]
+
+=================================== FAILURES ===================================
+_ test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[128] _
+
+tmp_path = PosixPath('/home/aaron/.hermes/profiles/coder/cache/scratch/pytest-of-aaron/pytest-169/test_unchanged_audit_is_not_co3')
+retention = 128
+
+    @pytest.mark.parametrize('retention', [2, 8, 33, 128])
+    def test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor(tmp_path, retention):
+        s = Storage(tmp_path / 'deltas.db', initial=initial(), retention=retention)
+        with s.transaction() as state:
+            state.reducer.alarms.register(rule())
+            state.reducer.alarms.update('lost', True, now=1)
+            state.reducer.alarms.acknowledge('1', actor='AUDIT_KEEP_ME', now=2)
+        audit = deepcopy(s.read().reducer.alarms.audit)
+        for _ in range(72):
+            with s.transaction():
+                pass
+        rows = s._db.execute('SELECT revision,state FROM revisions ORDER BY revision').fetchall()
+        assert len(rows) == min(retention, 74)
+        assert _unpack(rows[0][1])['format'] == 'anchor-v2'
+        anchors = 0
+        for revision, payload in rows:
+            value = _unpack(payload)
+            if value['format'] == 'delta-v2':
+>               assert value['value'] == ('same',)
+E               AssertionError: assert ('dict', [], ...), ...}, None) == ('same',)
+E                 
+E                 At index 0 diff: 'dict' != 'same'
+E                 Left contains 3 more items, first extra item: []
+E                 
+E                 Full diff:
+E                   (
+E                 -     'same',...
+E                 
+E                 ...Full output truncated (162 lines hidden), use '-vv' to show
+
+backend/tests/test_retention.py:353: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_retention.py::test_unchanged_audit_is_not_copied_into_deltas_and_every_window_has_anchor[128]
+================== 1 failed, 3 passed, 18 deselected in 1.03s ==================

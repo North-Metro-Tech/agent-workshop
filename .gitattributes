@@ -1,3 +1,13 @@
 # Preserve byte-for-byte pytest assertion captures, including its "E     " lines.
 # This exception applies only to red stdout/stderr artifacts, never source code.
 evidence/*-red.txt -whitespace
+# npm/Vitest raw stdout includes a final empty line; do not rewrite evidence.
+evidence/phase3-frontend-tests.txt whitespace=-blank-at-eof
+evidence/phase3-frontend-typecheck.txt whitespace=-blank-at-eof
+# Preserve remediation failure captures and runner stdout byte-for-byte.
+evidence/phase3-remediation/backend-wip.txt whitespace=-blank-at-eol
+evidence/phase3-remediation/browser-first-run.txt whitespace=-blank-at-eol
+evidence/phase3-remediation/browser-second-run.txt whitespace=-blank-at-eol
+evidence/phase3-remediation/frontend-final.txt whitespace=-blank-at-eof
+evidence/phase3-remediation/frontend-wip.txt whitespace=-blank-at-eof
+evidence/phase3-remediation/frontend-typecheck.txt whitespace=-blank-at-eof

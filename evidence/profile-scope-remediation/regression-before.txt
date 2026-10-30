@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+collecting ... collected 37 items / 31 deselected / 6 selected
+
+backend/tests/test_hermes_work.py::test_A10_approved_scope_pins_actual_operator_profiles FAILED [ 16%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[coder] PASSED [ 33%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[default] FAILED [ 50%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[None] PASSED [ 66%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[vitruvius-core] FAILED [ 83%]
+backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[unapproved] PASSED [100%]
+
+=================================== FAILURES ===================================
+____________ test_A10_approved_scope_pins_actual_operator_profiles _____________
+backend/tests/test_hermes_work.py:80: in test_A10_approved_scope_pins_actual_operator_profiles
+    assert approved_scope().profiles == ('coder', 'default')
+E   AssertionError: assert ('coder', 'vitruvius-core') == ('coder', 'default')
+E     
+E     At index 1 diff: 'vitruvius-core' != 'default'
+E     
+E     Full diff:
+E       (
+E           'coder',
+E     -     'default',
+E     +     'vitruvius-core',
+E       )
+_ test_A10_approved_profiles_accept_actual_operators_and_fail_closed[default] __
+backend/tests/test_hermes_work.py:93: in test_A10_approved_profiles_accept_actual_operators_and_fail_closed
+    snapshot = observer.observe(board='synthetic-board', acquired_at=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+collectors/workshop_collectors/hermes_work.py:203: in observe
+    raise ValueError('Run profile outside approved source scope')
+E   ValueError: Run profile outside approved source scope
+_ test_A10_approved_profiles_accept_actual_operators_and_fail_closed[vitruvius-core] _
+backend/tests/test_hermes_work.py:96: in test_A10_approved_profiles_accept_actual_operators_and_fail_closed
+    with pytest.raises(ValueError, match='Run profile outside approved source scope'):
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED backend/tests/test_hermes_work.py::test_A10_approved_scope_pins_actual_operator_profiles
+FAILED backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[default]
+FAILED backend/tests/test_hermes_work.py::test_A10_approved_profiles_accept_actual_operators_and_fail_closed[vitruvius-core]
+================== 3 failed, 3 passed, 31 deselected in 0.32s ==================

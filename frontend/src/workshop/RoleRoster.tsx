@@ -1,0 +1,3 @@
+import type {Projection} from './projection';
+import {ItemFacts} from './ActorExecutionFaceplate';
+export function RoleRoster({snapshot,station,onSelect}:{snapshot:Projection;station:string|null;onSelect:(id:string)=>void}){return <section aria-labelledby="roster-heading"><h2 id="roster-heading">Roles, executions and source facts</h2><p>Registered roles are not a live execution inventory. No observed executions ≠ available.</p><ul className="roster">{snapshot.items.filter(i=>(station===null||i.station===station)).map(i=><li key={i.id}><button onClick={()=>onSelect(i.id)}>{i.kind}: {i.label}</button><details><summary>All facts · {i.station}</summary><ItemFacts item={i}/></details></li>)}</ul></section>;}

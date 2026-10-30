@@ -1,0 +1,257 @@
+COMMAND: ['/home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_7e8a8223/root-mvp-closure/.venv/bin/python', '-m', 'workshop.demo']
+{
+  "alarms": [],
+  "ambiguities": [],
+  "correlations": [],
+  "executions": [
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-a"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "a",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:a",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "a",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:a",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "a",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-a",
+        "native_id": "same-task",
+        "source_instance": "instance-a"
+      }
+    },
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-b"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "b",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:b",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "b",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:b",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "b",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-b",
+        "native_id": "same-task",
+        "source_instance": "instance-a"
+      }
+    },
+    {
+      "acquired_at": 20,
+      "acquisition_age": 0,
+      "discrepancies": [],
+      "key": {
+        "native_id": "same-execution",
+        "runtime": "synthetic-runtime-c"
+      },
+      "lifecycle": {
+        "evidence_class": "runtime_observed",
+        "feed": "c",
+        "mapped": "active",
+        "mapping_version": "workshop-ingest-v1",
+        "native": "active",
+        "observed_at": null,
+        "source": "urn:synthetic:c",
+        "supported": true
+      },
+      "lifecycle_quality": "fresh",
+      "observations": [
+        {
+          "evidence_class": "runtime_observed",
+          "feed": "c",
+          "mapped": "active",
+          "mapping_version": "workshop-ingest-v1",
+          "native": "active",
+          "observed_at": null,
+          "source": "urn:synthetic:c",
+          "supported": true
+        }
+      ],
+      "parent": null,
+      "role": "c",
+      "session": "same-session",
+      "task": {
+        "namespace": "board-a",
+        "native_id": "same-task",
+        "source_instance": "instance-b"
+      }
+    }
+  ],
+  "incidents": [],
+  "native_write_enabled": false,
+  "roles": [
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-a"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "a",
+      "signals": {}
+    },
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-b"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "b",
+      "signals": {}
+    },
+    {
+      "active_executions": [
+        {
+          "native_id": "same-execution",
+          "runtime": "synthetic-runtime-c"
+        }
+      ],
+      "availability": "busy",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "busy",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "c",
+      "signals": {}
+    },
+    {
+      "active_executions": [],
+      "availability": "available",
+      "claimed_scope": [
+        "synthetic-chat"
+      ],
+      "coverage": "covered",
+      "disputed_executions": [],
+      "indication": "available",
+      "inventory": "approved",
+      "reconciliation_quality": "fresh",
+      "role": "idle",
+      "signals": {
+        "admission": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": "enabled",
+          "mapping_version": "synthetic-v1",
+          "native": "enabled",
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        },
+        "capacity": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": {
+            "limit": 1,
+            "used": 0
+          },
+          "mapping_version": "synthetic-v1",
+          "native": {
+            "limit": 1,
+            "used": 0
+          },
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        },
+        "reachability": {
+          "acquired_at": 20,
+          "evidence_class": "runtime_observed",
+          "feed": "idle",
+          "mapped": "reachable",
+          "mapping_version": "synthetic-v1",
+          "native": "reachable",
+          "observed_at": null,
+          "quality": "fresh",
+          "source": "urn:synthetic:idle"
+        }
+      }
+    },
+    {
+      "active_executions": [],
+      "availability": "unknown",
+      "claimed_scope": [],
+      "coverage": "not_configured",
+      "disputed_executions": [],
+      "indication": "no observed executions / availability unknown",
+      "inventory": "approved",
+      "reconciliation_quality": "unknown",
+      "role": "unobserved",
+      "signals": {}
+    }
+  ]
+}
+
+EXIT_CODE: 0

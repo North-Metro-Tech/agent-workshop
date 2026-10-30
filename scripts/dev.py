@@ -19,8 +19,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('install', 'test', 'demo', 'collector-demo', 'check'))
+    parser.add_argument('command', choices=('install', 'test', 'demo', 'collector-demo', 'check', 'serve', 'schema'))
     args, rest = parser.parse_known_args()
+    if args.command == 'serve':
+        from serve import main as serve
+        return serve(rest)
+    if args.command == 'schema':
+        return subprocess.run([sys.executable, str(ROOT/'scripts/generate_schema.py'), *rest],
+                              cwd=ROOT, check=False).returncode
     if args.command != 'test' and rest:
         parser.error('extra arguments are supported only by test')
     if args.command == 'install':

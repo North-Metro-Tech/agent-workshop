@@ -1,0 +1,998 @@
+{
+  "checked_at": "2026-10-22T01:25:14.379755+00:00",
+  "required_age_days": 7,
+  "resolutions": 99,
+  "all_pass": true,
+  "packages": [
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "published": "2024-02-14T19:32:38.143000+00:00",
+      "age_days": 980.244863851331,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "published": "2026-08-28T01:14:47.331000+00:00",
+      "age_days": 55.00725750873843,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "published": "2025-09-10T20:12:49.468000+00:00",
+      "age_days": 406.2169549971644,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@oxc-project/types",
+      "version": "0.154.0",
+      "published": "2026-10-13T09:15:00.630000+00:00",
+      "age_days": 8.673770251793982,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.64.1",
+      "published": "2026-10-14T11:58:13.696000+00:00",
+      "age_days": 7.560424580497685,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-android-arm-eabi",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:41:51.271000+00:00",
+      "age_days": 7.613461906886575,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-android-arm64",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:40:13.184000+00:00",
+      "age_days": 7.614597173090278,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-darwin-arm64",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:41:05.609000+00:00",
+      "age_days": 7.613990402256944,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-darwin-x64",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:40:01.688000+00:00",
+      "age_days": 7.614730228645834,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-freebsd-x64",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:40:49.070000+00:00",
+      "age_days": 7.614181825868056,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:39:59.632000+00:00",
+      "age_days": 7.61475402494213,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:41:27.874000+00:00",
+      "age_days": 7.613732705497686,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:39:05.105000+00:00",
+      "age_days": 7.615385124479167,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:39:38.676000+00:00",
+      "age_days": 7.614996571238426,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:41:20.827000+00:00",
+      "age_days": 7.613814267997685,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:42:58.495000+00:00",
+      "age_days": 7.612683851331019,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-musl",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:39:13.167000+00:00",
+      "age_days": 7.615291814293982,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-openharmony-arm64",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:38:44.327000+00:00",
+      "age_days": 7.6156256105902775,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:37:47.538000+00:00",
+      "age_days": 7.61628289068287,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:41:40.652000+00:00",
+      "age_days": 7.613584811979167,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "published": "2026-05-13T03:52:29.927000+00:00",
+      "age_days": 161.8977367217014,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/chai",
+      "version": "5.2.3",
+      "published": "2025-10-20T23:32:43.277000+00:00",
+      "age_days": 366.07813776336803,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/deep-eql",
+      "version": "4.0.2",
+      "published": "2023-11-07T01:34:12.026000+00:00",
+      "age_days": 1079.9937772425346,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/estree",
+      "version": "1.0.9",
+      "published": "2026-05-06T21:01:00.975000+00:00",
+      "age_days": 168.18348848096065,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/node",
+      "version": "26.6.5",
+      "published": "2026-10-09T18:46:47.657000+00:00",
+      "age_days": 12.276698180034723,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "published": "2026-09-09T18:08:49.750000+00:00",
+      "age_days": 42.303062844386574,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "published": "2026-09-09T18:07:51.886000+00:00",
+      "age_days": 42.3037325666088,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/whatwg-mimetype",
+      "version": "3.0.2",
+      "published": "2023-11-07T19:14:14.212000+00:00",
+      "age_days": 1079.2576408304976,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@types/ws",
+      "version": "8.18.2",
+      "published": "2026-09-29T08:07:45.655000+00:00",
+      "age_days": 22.72047135133102,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-aix-ppc64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:32.839000+00:00",
+      "age_days": 105.39978635133102,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-darwin-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:36.897000+00:00",
+      "age_days": 105.39973938373842,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-darwin-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:40.886000+00:00",
+      "age_days": 105.39969321475694,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-freebsd-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:45.020000+00:00",
+      "age_days": 105.39964536753472,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-freebsd-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:49.189000+00:00",
+      "age_days": 105.3995971152199,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-arm",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:53.075000+00:00",
+      "age_days": 105.39955213836807,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:49:57.270000+00:00",
+      "age_days": 105.39950358512732,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-loong64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:01.501000+00:00",
+      "age_days": 105.3994546152199,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-mips64el",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:05.178000+00:00",
+      "age_days": 105.39941205734954,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-ppc64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:09.539000+00:00",
+      "age_days": 105.3993615828125,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-riscv64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:13.357000+00:00",
+      "age_days": 105.39931739299769,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-s390x",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:17.275000+00:00",
+      "age_days": 105.39927204577546,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-linux-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:21.639000+00:00",
+      "age_days": 105.3992215365162,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-netbsd-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:25.229000+00:00",
+      "age_days": 105.39917998559027,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-netbsd-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:29.798000+00:00",
+      "age_days": 105.39912710364582,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-openbsd-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:33.600000+00:00",
+      "age_days": 105.39908309901621,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-openbsd-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:37.789000+00:00",
+      "age_days": 105.39903461521992,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-sunos-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:41.700000+00:00",
+      "age_days": 105.3989893490162,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-win32-arm64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:45.825000+00:00",
+      "age_days": 105.39894160596066,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:50:50.403000+00:00",
+      "age_days": 105.39888861984954,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@vitest/mocker",
+      "version": "5.0.4",
+      "published": "2026-10-12T09:46:48.133000+00:00",
+      "age_days": 9.651692670775462,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "@vitest/spy",
+      "version": "5.0.4",
+      "published": "2026-10-12T09:46:55.177000+00:00",
+      "age_days": 9.651611142997686,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "assertion-error",
+      "version": "2.0.1",
+      "published": "2023-10-18T18:04:13.507000+00:00",
+      "age_days": 1099.3062601013312,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "buffer-image-size",
+      "version": "0.6.4",
+      "published": "2018-03-01T02:15:16.382000+00:00",
+      "age_days": 3156.965254603646,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "chai",
+      "version": "6.3.0",
+      "published": "2026-09-30T19:18:04.368000+00:00",
+      "age_days": 21.254976987905092,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "published": "2025-11-17T11:42:27.045000+00:00",
+      "age_days": 338.57138118929396,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "published": "2025-10-05T12:46:33.077000+00:00",
+      "age_days": 381.5268669300347,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "entities",
+      "version": "7.0.1",
+      "published": "2026-01-21T13:46:30.165000+00:00",
+      "age_days": 273.48523396707174,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "es-module-lexer",
+      "version": "2.3.2",
+      "published": "2026-08-17T01:57:36.160000+00:00",
+      "age_days": 65.9775256916088,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "estree-walker",
+      "version": "3.0.3",
+      "published": "2023-01-20T02:27:12.467000+00:00",
+      "age_days": 1370.9569665828126,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "expect-type",
+      "version": "1.4.0",
+      "published": "2026-06-25T13:41:23.573000+00:00",
+      "age_days": 118.48878248559029,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "fdir",
+      "version": "6.5.0",
+      "published": "2025-08-14T16:56:03.948000+00:00",
+      "age_days": 433.3535929601273,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "fsevents",
+      "version": "2.3.3",
+      "published": "2023-08-21T16:24:22.854000+00:00",
+      "age_days": 1157.375596362905,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "happy-dom",
+      "version": "21.0.1",
+      "published": "2026-10-12T00:31:42.127000+00:00",
+      "age_days": 10.037178851331019,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:11:09.509000+00:00",
+      "age_days": 93.84311193003472,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-android-arm64",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:36.404000+00:00",
+      "age_days": 93.84349508975694,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:38.380000+00:00",
+      "age_days": 93.84347221938657,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-darwin-x64",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:40.758000+00:00",
+      "age_days": 93.84344469623842,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-freebsd-x64",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:43.067000+00:00",
+      "age_days": 93.84341797170138,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-linux-arm-gnueabihf",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:45.198000+00:00",
+      "age_days": 93.84339330734953,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-linux-arm64-gnu",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:47.355000+00:00",
+      "age_days": 93.84336834207176,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-linux-arm64-musl",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:49.830000+00:00",
+      "age_days": 93.84333969623842,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:52.507000+00:00",
+      "age_days": 93.84330871244214,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-linux-x64-musl",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:54.935000+00:00",
+      "age_days": 93.84328061059028,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-win32-arm64-msvc",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:57.219000+00:00",
+      "age_days": 93.8432541754051,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "lightningcss-win32-x64-msvc",
+      "version": "1.33.0",
+      "published": "2026-07-20T05:10:59.727000+00:00",
+      "age_days": 93.84322514762731,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "magic-string",
+      "version": "1.4.3",
+      "published": "2026-10-05T04:52:23.519000+00:00",
+      "age_days": 16.85614422170139,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.20",
+      "published": "2026-10-05T09:44:40.679000+00:00",
+      "age_days": 16.6531678328125,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "obug",
+      "version": "3.0.0",
+      "published": "2026-09-09T06:13:50.788000+00:00",
+      "age_days": 42.79957860827546,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "published": "2024-10-16T18:20:03.921000+00:00",
+      "age_days": 735.2952599392939,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.7",
+      "published": "2026-08-24T14:36:23.690000+00:00",
+      "age_days": 58.45058668697917,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "playwright",
+      "version": "1.64.1",
+      "published": "2026-10-14T11:54:49.998000+00:00",
+      "age_days": 7.562782196238426,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.64.1",
+      "published": "2026-10-14T11:54:58.323000+00:00",
+      "age_days": 7.56268584207176,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.30",
+      "published": "2026-10-12T20:38:43.212000+00:00",
+      "age_days": 9.198971849016203,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "react",
+      "version": "19.3.1",
+      "published": "2026-10-14T16:47:15.290000+00:00",
+      "age_days": 7.359711686979166,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.1",
+      "published": "2026-10-14T16:49:10.081000+00:00",
+      "age_days": 7.35838308744213,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "rolldown",
+      "version": "1.2.14",
+      "published": "2026-10-14T10:47:22.477000+00:00",
+      "age_days": 7.609628504108797,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "published": "2026-09-09T17:17:30.281000+00:00",
+      "age_days": 42.33870484670139,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "published": "2026-09-30T14:08:09.382000+00:00",
+      "age_days": 21.47019673327546,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "std-env",
+      "version": "4.3.0",
+      "published": "2026-09-29T12:40:32.756000+00:00",
+      "age_days": 22.53103731197917,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "tinybench",
+      "version": "6.2.2",
+      "published": "2026-10-10T19:50:11.229000+00:00",
+      "age_days": 11.232675355960648,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "tinyexec",
+      "version": "1.3.1",
+      "published": "2026-09-03T08:50:07.324000+00:00",
+      "age_days": 48.69105388605324,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "published": "2026-05-30T19:57:21.717000+00:00",
+      "age_days": 144.22769285596064,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "typescript",
+      "version": "7.0.2",
+      "published": "2026-07-08T15:55:18.431000+00:00",
+      "age_days": 105.39578644392361,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "undici-types",
+      "version": "8.9.0",
+      "published": "2026-07-24T12:32:56.109000+00:00",
+      "age_days": 89.53632257818288,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "vite",
+      "version": "8.3.4",
+      "published": "2026-10-08T12:07:04.441000+00:00",
+      "age_days": 13.554281698553241,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "vitest",
+      "version": "5.0.4",
+      "published": "2026-10-12T09:47:02.826000+00:00",
+      "age_days": 9.651522612905092,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "whatwg-mimetype",
+      "version": "3.0.0",
+      "published": "2021-09-18T19:28:10.916000+00:00",
+      "age_days": 1859.2479567564237,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "why-is-node-running",
+      "version": "3.2.1",
+      "published": "2024-10-29T17:08:48.344000+00:00",
+      "age_days": 722.3447457842015,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    },
+    {
+      "name": "ws",
+      "version": "8.22.0",
+      "published": "2026-09-26T15:00:57.748000+00:00",
+      "age_days": 25.433525830497686,
+      "registry_integrity_matches": true,
+      "registry_tarball_matches": true,
+      "pass": true,
+      "install_script": null
+    }
+  ]
+}

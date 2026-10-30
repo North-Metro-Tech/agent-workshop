@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKER_PRESERVED_NOT_MVP_PASS",
+  "manifest_files": 38,
+  "unchanged_product_files": 103,
+  "backend": 568,
+  "frontend": 57,
+  "browser": {
+    "startTime": "2026-10-25T07:26:52.636Z",
+    "duration": 11603.364000000001,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "retained_source_mismatches": [
+    "42",
+    "44"
+  ],
+  "durable_http_revisions": [
+    "11b81ad2e71345f58d79cc97b3b78e9e:93700",
+    "11b81ad2e71345f58d79cc97b3b78e9e:93701"
+  ],
+  "original_resume_preserved": true
+}

@@ -100,6 +100,10 @@ class Execution:
     acquired_at: float | None
     observations: list[Observation] = field(default_factory=list)
     discrepancies: list[dict] = field(default_factory=list)
+    # Permanent per-identity diagnostic indices survive retirement/restart.
+    observation_ids: list[int] = field(default_factory=list)
+    next_observation_id: int = 0
+    protected_observation_ids: set[int] = field(default_factory=set)
 
 
 @dataclass(frozen=True)

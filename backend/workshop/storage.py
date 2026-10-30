@@ -23,6 +23,8 @@ from .freshness import Feed
 from .ingest import (Acquisition, Ingest, SourceBinding, MAX_BATCH,
                      MAX_EVENT, MAX_REQUEST, MAPPING_VERSION, _canonical, _text)
 from .reducer import LIFECYCLE, TERMINAL, Reducer, Role
+from .retention import append_observation
+from .delta import difference, apply_difference
 
 
 @dataclass
@@ -44,6 +46,7 @@ _TYPES: dict[str, Any] = {c.__name__: c for c in (Controls, Occurrence, AlarmRul
 _TABLES = ('roles', 'feeds', 'executions', 'correlations', 'ambiguities',
            'alarm_rules', 'alarm_controls', 'alarm_occurrences', 'alarm_audit', 'ingests')
 APPLICATION_ID = 1096239921
+ANCHOR_INTERVAL = 32
 
 
 def _encode(value: Any) -> Any:
@@ -169,7 +172,7 @@ class Storage:
             tables = {v[0] for v in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
             version = db.execute('PRAGMA user_version').fetchone()[0]
             app = db.execute('PRAGMA application_id').fetchone()[0]
-            if tables and (app != APPLICATION_ID or version != 1):
+            if tables and (app != APPLICATION_ID or version != 2):
                 raise ValueError('Not a supported Workshop-owned database')
             if not tables and (initial is None or version != 0 or app != 0):
                 raise ValueError('New historian requires explicit initial State')
@@ -244,16 +247,43 @@ class Storage:
     def _save(self, state, event):
         self._validate(state)
         sections = _sections(state)
-        encoded = _pack(sections)  # fail serialization before any DELETE
+        revision = self._meta('revision') + 1
+        if revision == 1 or (revision - 1) % ANCHOR_INTERVAL == 0:
+            checkpoint = {'format': 'anchor-v2', 'value': sections}
+        else:
+            checkpoint = {'format': 'delta-v2', 'value':
+                          difference(_sections(self._load()), sections, pack=_pack)}
+        encoded = _pack(checkpoint)  # fail serialization before any DELETE
         for table in _TABLES:
             self._db.execute(f'DELETE FROM {table}')
             self._db.executemany(f'INSERT INTO {table} VALUES (?,?)',
                 [(_pack(k), _pack(v)) for k, v in sections[table].items()])
         self._set_meta('internal', sections['internal'])
-        revision = self._meta('revision') + 1
         self._set_meta('revision', revision)
         self._db.execute('INSERT INTO revisions VALUES (?,?,?)', (revision, encoded, _pack(event)))
+        oldest = revision - self.retention + 1
+        if oldest > 1:
+            row = self._db.execute('SELECT state FROM revisions WHERE revision=?', (oldest,)).fetchone()
+            if row is not None and _unpack(row[0])['format'] != 'anchor-v2':
+                anchor = next(data for seq, data in self._revision_states(through=oldest) if seq == oldest)
+                self._db.execute('UPDATE revisions SET state=? WHERE revision=?',
+                                 (_pack({'format': 'anchor-v2', 'value': anchor}), oldest))
         self._db.execute('DELETE FROM revisions WHERE revision <= ?', (revision - self.retention,))
+
+    def _revision_states(self, *, through=None):
+        """Reconstruct from the retained oldest anchor, in one SQLite view."""
+        data = None
+        for sequence, encoded in self._db.execute(
+                'SELECT revision,state FROM revisions WHERE revision<=? ORDER BY revision',
+                (through if through is not None else self._meta('revision'),)):
+            checkpoint = _unpack(encoded)
+            if checkpoint['format'] == 'anchor-v2':
+                data = checkpoint['value']
+            elif checkpoint['format'] == 'delta-v2' and data is not None:
+                data = apply_difference(data, checkpoint['value'])
+            else:
+                raise RecoveryRequired('Historian anchor missing or invalid; explicit recovery required')
+            yield sequence, data
 
     def read(self):
         with self._atomic(read=True):
@@ -295,14 +325,46 @@ class Storage:
             return {'cursor': self._cursor(self._meta('revision')),
                     'projection': LocalAPI(state.reducer).snapshot(now=now)}
 
+    def retained_diagnostics(self, *, limit=100):
+        """Detached bounded excerpt of retained evidence, NOT current projection.
+
+        The observation list retains per-identity order but not per-observation
+        acquisition times. Do not relabel the execution's latest acquisition as
+        the historical observation's acquisition. No journal payload/transcript
+        or arbitrary database query is exposed by this diagnostic surface.
+        """
+        _number(limit, 'history limit', 1)
+        if limit > 100:
+            raise ValueError('Diagnostic history limit exceeds 100')
+        with self._atomic(read=True):
+            state = self._load()
+            rows = []
+            # Reverse retained order is deterministic, not global event time.
+            for execution in reversed(tuple(state.reducer.executions.values())):
+                for index in range(len(execution.observations) - 1, -1, -1):
+                    observation = execution.observations[index]
+                    rows.append({'kind': 'execution-observation', 'key': execution.key,
+                                 'index': (execution.observation_ids[index]
+                                           if execution.observation_ids else index),
+                                 'observation': observation})
+                    if len(rows) == limit:
+                        break
+                if len(rows) == limit:
+                    break
+            # Reserve room for recent local alarm audit alongside source history.
+            audit = state.reducer.alarms.audit[-min(limit, 20):]
+            rows = rows[:limit - len(audit)]
+            rows.extend({'kind': 'alarm-audit', 'index': len(state.reducer.alarms.audit)-len(audit)+n,
+                         'audit': deepcopy(entry)} for n, entry in enumerate(audit))
+            return {'cursor': self._cursor(self._meta('revision')), 'records': deepcopy(rows)}
+
     def replay(self, cursor, *, now):
         timestamp(now)
         with self._atomic(read=True):
             revision = self._revision(cursor)
             return [{'cursor': self._cursor(seq), 'projection':
-                     LocalAPI(_restore(_unpack(data)).reducer).snapshot(now=now)}
-                    for seq, data in self._db.execute(
-                        'SELECT revision,state FROM revisions WHERE revision>? ORDER BY revision', (revision,))]
+                     LocalAPI(_restore(data).reducer).snapshot(now=now)}
+                    for seq, data in self._revision_states() if seq > revision]
 
     def _ingest(self, name, method, args, context, source_cursor, source_identity=None):
         _number(source_cursor, 'source cursor')
@@ -464,7 +526,7 @@ class Storage:
                             parent=parent_key, task=task_key, lifecycle=observation,
                             acquired_at=None)
                     else:
-                        previous.observations.append(observation)
+                        append_observation(previous, observation)
                     continue
                 old_revision = current._ordering.get(canonical, (None, None))[0]
                 revision = record.get('revision')

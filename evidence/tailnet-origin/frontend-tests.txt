@@ -1,0 +1,13 @@
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run
+
+
+ RUN  v5.0.4 /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_989a6842/repo/frontend
+
+
+ Test Files  5 passed (5)
+      Tests  57 passed (57)
+   Start at  21:32:34
+   Duration  694ms (environment 51%, transform 21%, tests 17%, import 10%, worker 1%)
+

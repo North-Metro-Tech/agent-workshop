@@ -11,6 +11,7 @@ from .alarms import Alarms
 from .contracts import (Ambiguity, Execution, ExecutionKey, Observation, FeedPolicy,
                         AlarmRule, TaskKey, timestamp)
 from .freshness import Feed, quality
+from .retention import append_observation
 
 
 ACTIVE = {'starting', 'active', 'stopping'}
@@ -99,17 +100,15 @@ class Reducer:
         # Historical records may arrive behind another execution on this feed.
         # Keep each field's original capture time without rewinding the feed.
         feed = self.feeds[lifecycle.feed]
-        if acquired_at is not None and (feed.last_acquired_at is None
-                                       or acquired_at >= feed.last_acquired_at):
-            self.acquire(lifecycle.feed, acquired_at)
         observation = deepcopy(lifecycle)
         if previous:
-            previous.observations.append(observation)
             identity_changed = (role, session, parent, task) != (
                 previous.role, previous.session, previous.parent, previous.task)
             state_changed = observation.mapped != previous.lifecycle.mapped
             cross_authority = observation.source != previous.lifecycle.source
             terminal = previous.lifecycle.mapped in TERMINAL
+            append_observation(previous, observation, discrepancy=(identity_changed or
+                (state_changed and (cross_authority or terminal))))
             if identity_changed or (state_changed and (cross_authority or terminal)):
                 previous.discrepancies.append({'source_key': original, 'role': role,
                     'session': session, 'parent': parent, 'task': task,
@@ -128,7 +127,11 @@ class Reducer:
             if not session:
                 raise ValueError('Execution requires explicit session identity')
             self.executions[key] = Execution(key, role, session, parent, task,
-                observation, acquired_at, [observation])
+                observation, acquired_at, [observation], observation_ids=[0],
+                next_observation_id=1, protected_observation_ids={0})
+        if acquired_at is not None and (feed.last_acquired_at is None
+                                       or acquired_at >= feed.last_acquired_at):
+            self.acquire(lifecycle.feed, acquired_at)
         r.present.add(key)
         return key
 

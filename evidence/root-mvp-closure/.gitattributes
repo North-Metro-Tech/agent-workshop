@@ -1,0 +1,2 @@
+# Raw command captures retain their original final blank lines.
+*.txt whitespace=-blank-at-eof

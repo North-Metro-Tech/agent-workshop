@@ -274,7 +274,7 @@ from workshop_collectors.hermes_work import HermesWork, linux_process_probe
 from workshop_collectors.hermes_runtime import HermesRuntime, runtime_binding, initial_state
 from workshop_collectors.outbox import Outbox
 native, retained = map(Path, sys.argv[1:3])
-scope = SourceScope('synthetic-instance', 'synthetic-board', native, ('coder', 'vitruvius-core'))
+scope = SourceScope('synthetic-instance', 'synthetic-board', native, ('coder', 'default'))
 binding = runtime_binding(scope)
 observer = HermesRuntime(HermesWork(scope, process_probe=linux_process_probe), binding)
 queue = Outbox(retained/'outbox.db', binding=binding, clock_id='fixture-boot')

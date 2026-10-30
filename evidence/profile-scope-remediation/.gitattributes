@@ -1,0 +1,2 @@
+# Preserve raw pytest assertion output ("E     ") without editing the transcript.
+regression-before.txt whitespace=-blank-at-eol

@@ -26,7 +26,8 @@ class LocalAPI:
         assert self._reducer is not None
         return {'native_write_enabled': False,
             'roles': [self._reducer.summary(role, now=now) for role in self._reducer.roles],
-            'executions': [{**deepcopy(asdict(e)),
+            'executions': [{**{k: v for k, v in asdict(e).items() if k not in {
+                'observation_ids', 'next_observation_id', 'protected_observation_ids'}},
                 'lifecycle_quality': self._reducer._observation_quality(e.lifecycle, e.acquired_at, now),
                 'acquisition_age': (max(0, now - e.acquired_at)
                                     if e.acquired_at is not None else None)}

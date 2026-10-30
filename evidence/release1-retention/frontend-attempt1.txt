@@ -1,0 +1,31 @@
+
+> agent-workshop-hmi@0.1.0 typecheck
+> tsc --noEmit
+
+
+> agent-workshop-hmi@0.1.0 test
+> vitest --run
+
+
+ RUN  v5.0.4 /home/aaron/.hermes/kanban/boards/agent-workshop/workspaces/t_127a054a/repo/frontend
+
+
+ Test Files  5 passed (5)
+      Tests  57 passed (57)
+   Start at  02:37:55
+   Duration  650ms (environment 52%, transform 21%, tests 18%, import 8%, worker 1%)
+
+
+> agent-workshop-hmi@0.1.0 build
+> vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 30 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.37 kB │ gzip:  0.27 kB
+dist/assets/index-BGis_zdw.css    1.96 kB │ gzip:  0.94 kB
+dist/assets/index-Cn7oA35-.js   240.80 kB │ gzip: 75.79 kB
+
+✓ built in 184ms

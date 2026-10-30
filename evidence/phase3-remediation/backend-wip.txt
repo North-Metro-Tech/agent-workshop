@@ -1,0 +1,30 @@
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+...........................................F............................ [ 66%]
+........................................................................ [ 83%]
+........................................................................ [100%]
+=================================== FAILURES ===================================
+________ test_phase1_interlock_explicit_closed_public_mutation_surface _________
+
+    def test_phase1_interlock_explicit_closed_public_mutation_surface():
+        expected = {
+            LocalAPI: {'snapshot', 'acknowledge', 'request'},
+            Ingest: {'cloudevents', 'otlp'},
+            Storage: {'close', 'read', 'transaction', 'snapshot', 'replay', 'cloudevents',
+                      'otlp', 'begin_snapshot', 'snapshot_page', 'finish_snapshot'},
+        }
+        for cls, allowed in expected.items():
+            actual = {name for name, fn in inspect.getmembers(cls, inspect.isfunction)
+                      if not name.startswith('_')}
+>           assert actual == allowed
+E           AssertionError: assert {'begin_snaps..., 'read', ...} == {'begin_snaps..., 'read', ...}
+E             
+E             Extra items in the left set:
+E             'retained_diagnostics'
+E             Use -v to get more diff
+
+backend/tests/test_phase1_gate.py:48: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_phase1_gate.py::test_phase1_interlock_explicit_closed_public_mutation_surface
+1 failed, 431 passed in 10.37s

@@ -12,7 +12,7 @@ CREATE TABLE alarm_controls (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
 CREATE TABLE alarm_occurrences (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
 CREATE TABLE alarm_audit (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
 CREATE TABLE ingests (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
--- Each committed revision is an atomic projection checkpoint + redacted replay.
+-- Atomic bounded anchor/delta projection checkpoint + redacted replay.
 CREATE TABLE revisions (
     revision INTEGER PRIMARY KEY,
     state TEXT NOT NULL,
@@ -24,5 +24,5 @@ CREATE TABLE snapshot_jobs (
     payload TEXT NOT NULL
 );
 PRAGMA application_id = 1096239921;
-PRAGMA user_version = 1;
+PRAGMA user_version = 2;
 COMMIT;

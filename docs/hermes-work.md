@@ -8,7 +8,10 @@ not a monitoring daemon, frontend, durable ingestion pipeline or Phase 2 gate.
 `approved_scope()` is the only approved live factory. It binds the literal board
 `agent-workshop` to `/home/aaron/.hermes/kanban/boards/agent-workshop/kanban.db`,
 source instance `local-hermes-agent-workshop`, and profiles `coder` and
-`vitruvius-core`. It refuses path/board overrides, symlink resolution to another
+`default` (Core's actual operator profile, corrected by ruling t_684f0878).
+`vitruvius-core` was not provisioned and is not authorised. The observer still
+rejects any non-null run profile outside this exact pair. It refuses
+path/board overrides, symlink resolution to another
 path, and environment/current-board fallback. Legacy `~/.hermes/kanban.db`, other
 boards and HTTP helpers are excluded. Generic `SourceScope` construction is
 trusted local adapter configuration for synthetic fixtures or a separately

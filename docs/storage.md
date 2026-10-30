@@ -1,7 +1,8 @@
 # A08 Workshop historian and recovery
 
-This is an in-process, synthetic-tested storage slice, not a running service,
-HTTP/SSE binding, collector or interoperability claim. A10's separate bounded
+The original Phase 1 slice is in-process and synthetic-tested. The Phase 3
+loopback binding is described separately below; this is not an interoperability
+or operational acceptance claim. A10's separate bounded
 read-only SQLite primitive (not a native schema adapter) is in `source-binding.md`.
 It uses the Python standard library and the existing reducer/ingress contracts.
 
@@ -19,11 +20,18 @@ transactions on the service connection; WAL also permits separate SQLite read
 connections without taking its writer lock.
 
 The initial migration is `backend/workshop/migrations/001_initial.sql`.
-`application_id` and `user_version=1` identify this schema. Nonempty foreign
+`application_id` and `user_version=2` identify this schema. Nonempty foreign
 files and unsupported versions are rejected before WAL/schema mutations.
 Never point Storage at a native actor database. Fixture databases exist only
 under pytest temporary paths, including the foreign/native-shaped fixture.
 This historian is separate from the A10 read-only source acquisition primitive.
+
+Version 2 is fresh-historian-only. Version 1 is deliberately rejected before
+WAL/schema/data changes; there is no automatic migration, pruning or replacement.
+The preserved Release 1 installation's version-1 historian is read-only diagnostic
+evidence, not an input to this implementation. Deployment/recovery/rollback must
+use an explicitly chosen separate historian and matching product version; do not
+delete/overwrite old state or its mode/boot sidecar to bypass this fence.
 
 WAL + `synchronous=FULL`, short `BEGIN IMMEDIATE` writer transactions and atomic
 commits persist domain tables and one monotonically increasing service revision
@@ -57,7 +65,7 @@ The Hermes runtime adapter adds an optional trusted `source_identity=(device,
 inode)` to durable ingress and persists it atomically with cursor and records.
 Once bound, changed or omitted identity is rejected, including across service
 restart. Already-observed unproven history cannot silently acquire a binding.
-Existing non-file-bound feeds and older saved state remain readable. This is
+Existing non-file-bound feeds and supported version-2 saved state remain readable. This is
 trusted adapter configuration, not producer telemetry or a runtime watermark;
 see `hermes-runtime.md` for replacement/restore limitations and live evidence.
 
@@ -119,7 +127,8 @@ Snapshot generation/scope/watermark/epoch/acquisition/completeness are journaled
 Complete absence removes a key only from current role inventory, not execution
 history. An omitted nonterminal execution loses live acquisition freshness;
 absence never fabricates succeeded/failed/cancelled. Terminal observations,
-identity hashes, conflicts and alarm audit remain retained. Partial scope,
+conflicts and alarm audit remain retained; wire dedup identities follow the explicit
+bounded first-sighting policy below. Partial scope,
 `complete=False` or unsupported mappings merge without removing unseen execution
 objects/presence, degrade coverage and leave reconciliation required. Partial
 snapshot records cannot restore live freshness, particularly after restart.
@@ -157,23 +166,123 @@ explicit caller acquisition clock; history/receipt does not advance freshness.
 A cursor at the current revision yields no entries. Malformed, foreign,
 future or expired cursors raise `RecoveryRequired`: obtain one fresh atomic
 snapshot, not a replay storm. Backend source history is not deleted by a browser
-reconnect. HTTP/SSE and browser code remain later bindings of this in-process
-contract, not implemented here.
+reconnect. The Phase 3 binding below sends full current snapshots, not historical
+checkpoints relabelled as current state.
 
-## Bounds and limitations
+## Phase 3 loopback binding and retained diagnostics
 
-Replay checkpoints/journal retain at most `retention` service revisions (default
-128); pending snapshots retain one generation per source with the page bounds
-above. A snapshot taking longer than retained replay history must restart.
-Domain history, observations, alarm audit and identity/order indexes are retained,
-not pruned by that setting. Each revision currently stores a full domain
-checkpoint and domain table writes are straightforward replacements: this is
-correctness-first Phase 1, not a demonstrated high-volume historian or a disk
-quota/archival policy. Retention count does not claim a byte/time bound for all
-durable history. No bounded collector outbox, online-backup command, concurrent
-worker queue, native schema adapter, HTTP/auth/CSRF layer, renderer or binary
-OTLP codec is included. Never delete dedup identity independently of retained
-source replay semantics. No external dependency was added or installed.
+`scripts/dev.py serve --synthetic` (or explicitly `--approved-local`) serves the
+built HMI and authenticated `/api/session`, `/api/snapshot`, `/api/history`,
+`/api/events` and local `/api/alarms/acknowledge` routes. README contains exact
+dependency checks, installation, secret provisioning and startup commands.
+
+The single Uvicorn worker/event loop opens and owns Storage. All route methods
+and acquisition calls are async loop calls, not FastAPI threadpool handlers.
+An exclusive lifetime advisory lock is obtained before Storage is opened; a
+second service cannot trigger startup invalidation in a running writer. This
+does not make direct Storage clients multiprocess-safe: never open another
+writer against the service's historian. Shutdown cancels SSE after a two-second
+grace period, then closes collector and storage. No autostart or native writes.
+
+Source mode and Linux boot identity are persisted separately and compared before
+Storage opens. Synthetic and approved-local state are isolated. A process restart
+retains historical facts but invalidates acquisition and sessions. A reboot/clock
+domain or mode mismatch fails closed and requires explicit recovery/new state;
+deleting the sidecar is not recovery. No availability is inferred from disk.
+
+SSE validates Last-Event-ID shape, database identity, range and replay retention
+using Storage. Invalid/foreign/future/expired cursors emit one reset followed by
+a full atomic current snapshot. Each poll projects current signal ages using the
+trusted acquisition clock, even if the committed revision is unchanged. Cookies
+and CSRF secrets never occur in SSE URLs. Backend session expiry terminates the
+stream; browser reconnect probes authentication because EventSource hides 401s.
+
+`retained_diagnostics(limit=100)` uses a read transaction on that same connection
+and returns detached retained execution observations and Workshop-local alarm
+audit, with one historian cursor. At most 100 entries are exposed, reserving up
+to 20 for local alarm audit. Per-identity retained indices and canonical native
+identity form stable diagnostic IDs. `/api/history` maps the excerpt into
+Pydantic models, with source/feed/mapping/evidence class and historical occurrence
+times. Per-observation acquisition times not retained by the domain stay explicitly
+unknown; the latest execution acquisition is never reused as historical proof.
+Cross-source time ordering and first-out causality are not asserted. The browser
+refetches after new revisions and restarts, rather than retaining receipt lists.
+
+This bounds the exposed excerpt and serialized display values, not total disk or
+all domain history. Version-2 storage also retires redundant streams below. No raw
+transcript, native database query or filesystem browser is exposed. The original
+Phase 1 limitations below describe the storage layer, not a claim that Phase 3
+HTTP/auth or Phase 2 collectors are absent from the integrated repository.
+
+## Version-2 delta/anchor and deterministic retirement policy
+
+One mechanism: the existing closed data-only codec encodes changes-only revision
+patches, with full anchors every 32 service revisions (1, 33, 65, ...). Dict patches
+record only changed/deleted keys and necessary order; list patches record changed
+spans, not unchanged rows; dataclass patches record changed fields. Replay applies
+them in order and reconstructs the existing projection API. No executable codec,
+compression/dependency, producer input format or source-trust change is involved.
+
+At most `retention` revision rows remain (default 128). Before deleting their
+predecessor, the new oldest retained revision is atomically promoted to a full
+anchor. Thus no retained delta depends on discarded history; at most
+`ceil(retention / 32) + 1` full anchors remain. Restart retains the anchor/delta
+chain and, as before, commits a NEW invalidation revision: retained historical
+projections are unchanged; current live freshness/coverage is deliberately lost.
+Cursor identity/range/expiry and the bounded source-reconciliation journal keep
+their existing semantics. Pending snapshots retain one generation per source
+with the page bounds above. A snapshot outliving the journal must restart.
+
+Retirement is insertion/count-based, never TTL, wall time or retry-refreshed LRU.
+Constants live in `backend/workshop/retention.py` and apply to all normal ingress
+and source-snapshot observation append paths:
+
+* 64 observations per execution. Keep first, every lifecycle/native/mapping/
+  authority transition, every distinct terminal observation (including original
+  occurrence time), and every discrepancy-linked observation. Retire oldest
+  unprotected same-lifecycle repeats only. An EXACT identical terminal fact is
+  represented once and cannot refresh its original terminal acquisition time.
+  Surviving entries retain their original sequence numbers, values and order;
+  diagnostic IDs are not renumbered after retirement. Observation acquisition
+  times were never retained individually and remain explicitly unknown.
+* 256 safe metadata records per source Ingest. Retire oldest unprotected entry.
+  Preserve original metadata for material facts: lifecycle/discrepancy/terminal
+  assertions (including ignored older terminal assertions), task/process/station/
+  outcome changes, and OTLP trace/span/resource/scope correlations. Changes are
+  protected even if the lifecycle is unchanged or the record is corroboration
+  only. Keep intervening transitions, not merely the latest distinct value.
+  Safe validated domain fields are retained with this metadata, never raw wire
+  payload/body/status text, secrets or unknown attributes. Repeated transport IDs,
+  digest, receipt/acquisition/occurrence clocks, native revision and collector
+  event/cursor fields alone do not make redundant acquisition metadata material.
+  Surviving metadata retains all its original values, clocks and digest.
+* 512 wire dedup identities per source Ingest. Evict oldest first-sighting,
+  preserving insertion order across persistence/restart. Within the retained
+  map, same identity + changed digest is still rejected atomically. After eviction,
+  an identity has EXACT normal first-sighting semantics: full validation, source/
+  scope/epoch/native revision/terminal guard/source-cursor checks, then its digest
+  is retained again. There is no tombstone that silently accepts a changed digest,
+  and no claim of indefinite duplicate/collision detection for evicted identities.
+
+If observation or metadata limits contain only protected facts, raise
+`RetentionCapacityError` and roll back the ENTIRE staged transaction, including
+clock/feed/order/dedup/source-cursor changes. No terminal/conflict/correlation/
+discrepancy evidence is sacrificed to meet a quota. Acquisition cannot progress
+past that capacity until explicit owner-reviewed recovery/disposition; retries
+or service restarts do not erase protected evidence or solve the limit. This is
+an explicit operational limitation, not a silent archival policy or permission
+to discard facts. Correlations, ambiguities, executions, alarm occurrences/audit
+and source ordering/retired epochs are not retired. Arbitrarily many distinct
+protected facts/identities therefore do NOT have a fixed whole-domain byte quota.
+
+The fixed-cardinality redundant-poll tests assert state/revision/file allocation
+bounds after saturation, not time-rate/RSS/30-day/fleet capacity guarantees. Domain
+tables still use straightforward replacements and the oldest anchor is promoted
+on retirement; no claim of constant write cost, physical file shrink, vacuum,
+backups, multiwriter support or demonstrated high-throughput capacity is made.
+HTTP diagnostics remain independently bounded at 100. No source delays, restart
+scheduler, native writes, scope expansion, fixed-off control changes or mount
+hardening claims are part of this implementation. No dependency was added.
 
 ## Verification
 

@@ -1,0 +1,6 @@
+Restart=no
+NRestarts=0
+ExecMainStartTimestamp=Sat 2026-10-24 22:02:06 AEDT
+ActiveState=active
+SubState=running
+UnitFileState=disabled
