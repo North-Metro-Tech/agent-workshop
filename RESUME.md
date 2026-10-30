@@ -1,5 +1,30 @@
 # RESUME — Agent Workshop
 
+## Main reconciliation — Release 1 schema2 + MVP-closure union (30 October 2026)
+
+Core reconciliation branch `reconcile/release1-schema2` unions the deployed
+schema2 release line (`d055ba7`: Phase 3 HMI, PR #9 annunciation fix,
+approved-profile binding, bounded historian retention, PR #11 tailnet origin,
+happy-dom 21.0.4 pin) with the MVP-closure line (`cfdf012`: PR #12
+retained-agreement fix and closure evidence). Neither line is an ancestor of
+the other: the release line branched from `5f7df84` BEFORE PR #12 merged, so
+the installed schema2 deployment (running since 29 Oct 16:24) does NOT contain
+the approved retained-fact verifier correction. Flagged to the owner 30 Oct;
+redeploy during the validation window is an owner decision — no deployment,
+restart, install or native-state change was performed by this task. `main`
+was 16 commits behind this union and 0 ahead (deployment head was
+fast-forwardable); merge `072ca90` is content-clean, no conflicts. At the
+union head Core re-ran: full backend suite **602 passed** (fresh uv env from
+committed `requirements.lock` + pytest, 116.9s); frontend typecheck PASS,
+vitest 57/57; merge signature Good (ED25519). PR review basis:
+commit-by-commit traceability to the original exact-head review gates — the
+union contains no code outside those reviewed lines. Gate B status now
+CLOSED: `t_1160dd3c` APPROVED at `260b0ad`, PR #12 merged as `cfdf012` (the
+section below predates that close). PR targets `main` for record alignment
+only; the release pin remains `d055ba7` until the owner approves a rebuild.
+This additive isolated section preserves every earlier section verbatim.
+RESUME is a serialized hotspot.
+
 ## Retained-fact verifier correction — implementation only, review pending (25 October 2026)
 
 Gate A `t_53f5e3fb` implements Core's normative `t_38604cb5` disposition on
